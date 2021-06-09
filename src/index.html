@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./css/splash.css">
         <link rel="stylesheet" href="./css/terminal.css">
         <link id="first-boot-slideshow" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/first-boot/slideshow-on.css">
+        <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/accent-color/default.css">
         <link id="layout-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/layout/sidebar.css">
         <link id="sidebar-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-size/confortable.css">
@@ -34,10 +35,24 @@
     <body id="body">
         <div class="tab_area">
             <div class="tabs">
+              <div class="lang_en">
                 <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> News</button>
                 <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Client Panel</button>
                 <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Game Panel</p> <p id="unload">Ga...</p></button>
                 <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins Mining</button>
+              </div>
+              <div class="lang_es">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> Noticias</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Panel de cliente</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Panel de juego</p> <p id="unload">Pa...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> Minería de monedas Falix</button>
+              </div>
+              <div class="lang_cn">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> 新闻</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> 客户端面板</button>
+                <button id="gp_tab" style="width: 100%;" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">游戏面板</p> <p id="unload">游戏...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> Falix硬币矿业</button>
+              </div>
                 <!-- <button style="z-index: 5;" id="Zen" class="tab" onclick="openAddMenu();"><i class="fas fa-window-restore"></i> New Window</button> -->
                 <!-- <div style="display: none;" id="new_window_options" class="new_window_options">
                     <button onclick="openAddMenu();"><a href="../../new-window/client.html" target="_blank" title="Open a new window display Client Panel"><i class="fas fa-id-card"></i> Client Panel</a></button>
@@ -45,6 +60,7 @@
                 </div> -->
             </div>
             <div class="bottom_a">
+              <div class="lang_en">
                 <div class="notify">
                     <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Connection lost</button>
                     <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Connection restored</button>
@@ -52,15 +68,48 @@
                 <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Help Center</button>
                 <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Support</button>
                 <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Settings</button>
+              </div>
+              <div class="lang_es">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Conexión perdida</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Conexión restaurada</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Centro de asistencia</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Respaldar</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Configuraciones</button>
+              </div>
+              <div class="lang_cn">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> 连接丢失</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> 连接已恢复</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> 帮助中心</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> 支持</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> 设置</button>
+              </div>
             </div>
         </div>
         <div class="content">
             <div id="game_panel" class="tab_content">
                 <div id="unloaded" class="game_panel_unloaded">
-                    <h1>Game Panel is Unloaded</h1>
-                    <p>The Game Panel is unloaded by default when starting up Falix Software.</p>
-                    <p>This is to help with performance.</p>
-                    <button id="load" onclick="load_game_panel();">Load Panel</button>
+                    <h1>
+                      <h1 class="lang_en">Game Panel is Unloaded</h1>
+                      <h1 class="lang_es">Panel de juego no está cargado</h1>
+                      <h1 class="lang_cn">游戏面板未加载</h1>
+                    </h1>
+                    <p>
+                      <p class="lang_en">The Game Panel is unloaded by default when starting up Falix Software.</p>
+                      <p class="lang_es">El panel de juego no se carga por defecto cuando se inicia Falix software.</p>
+                      <p class="lang_cn">启动 Falix 软件 时，默认情况下不加载游戏面板。</p>
+                    </p>
+                    <p>
+                      <p class="lang_en">This is to help with performance.</p>
+                      <p class="lang_en">Esto es para ayudar con el rendimiento.</p>
+                      <p class="lang_en">这是为了帮助提高性能。</p>
+                    </p>
+                    <button id="load" class="lang_en" onclick="load_game_panel();">Load Panel</button>
+                    <button id="load" class="lang_es" onclick="load_game_panel();">Cargar el panel</button>
+                    <button id="load" class="lang_cn" onclick="load_game_panel();">负载面板</button>
                 </div>
                 <div id="loaded" class="game_panel_loaded">
                     <div id="controls">
@@ -111,11 +160,27 @@
                       </div>
                       <div id="sad-webview">
                         <div id="sad-webview-icon">&#9762;</div>
-                        <h2 id="crashed-label">Aw, Snap!</h2>
-                        <h2 id="killed-label">Something may of went wrong.</h2>
+                        <h2>
+                          <h2 id="crashed-label" class="lang_en">Aw, Snap!</h2>
+                          <h2 id="crashed-label" class="lang_es">Aw chasquido!</h2>
+                          <h2 id="crashed-label" class="lang_cn">哦不!</h2>
+                        </h2>
+                        <h2>
+                          <h2 id="killed-label" class="lang_en">Something may of went wrong.</h2>
+                          <h2 id="killed-label" class="lang_es">Es posible que algo haya salido mal.</h2>
+                          <h2 id="killed-label" class="lang_cn">可能出了点问题。</h2>
+                        </h2>
                   
-                        <p>The page is taking too long to load or it has crashed.</p>
-                        <p>Try to unload the panel and load again.</p>
+                        <p>
+                          <div class="lang_en">The page is taking too long to load or it has crashed.</div>
+                          <div class="lang_es">La página está tardando demasiado en cargarse o se ha bloqueado.</div>
+                          <div class="lang_cn">该页面正在载入时间太长或页面有崩溃。</div>
+                        </p>
+                        <p>
+                          <p class="lang_en">Try to unload the panel and load again.</p>
+                          <p class="lang_es">Intente descargar el panel y vuelva a cargar.</p>
+                          <p class="lang_cn">尝试卸载面板并再次加载。</p>
+                        </p>
                       </div>
                 </div>
             </div>
@@ -143,9 +208,17 @@
               </div>
             </div>
             <div id="settings" class="tab_content">
-                <h1>Settings</h1>
+                <h1>
+                  <h1 class="lang_en">Settings</h1>
+                  <h1 class="lang_es">Configuraciones</h1>
+                  <h1 class="lang_cn">设置</h1>
+                </h1>
                 <div class="about">
-                    <p>Software Version: 3.0.0</p>
+                    <p>
+                      <p class="lang_en">Software Version: 3.0.0</p>
+                      <p class="lang_es">Versión del software: 3.0.0</p>
+                      <p class="lang_cn">软件版本: 3.0.0</p>
+                    </p>
                 </div>
                 <!-- <div class="set_selection">
                     <h2>Layout</h2>
@@ -169,12 +242,20 @@
                   </div>
                 </div> -->
                 <div id="remove_in_TabView" class="set_selection">
-                    <h2>Sidebar Layout</h2>
+                    <h2>
+                      <h2 class="lang_en">Sidebar Layout</h2>
+                      <h2 class="lang_es">Diseño de la barra lateral</h2>
+                      <h2 class="lang_cn">边栏布局</h2>
+                    </h2>
                     <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Confortable</p> <img src="./images/Sidebar.png"></button>
                     <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compact</p> <img src="./images/SidebarCompact.png"></button>
                 </div>
                 <div class="set_selection_color">
-                    <h2>Accent Color</h2>
+                  <h2>
+                    <h2 class="lang_en">Accent Color</h2>
+                    <h2 class="lang_es">Color de acento</h2>
+                    <h2 class="lang_cn">强调色</h2>
+                  </h2>
                     <div class="grid_icons">
                         <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Default</button><span id="color_selected_default"></span>
                         <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Purple</button><span id="color_selected_purple"></span>
@@ -208,6 +289,7 @@
 
         <script src="./js/panel/controls.js"></script>
 
+        <script src="./js/settings/language.js"></script>
         <script src="./js/settings/layout.js"></script>
         <script src="./js/settings/sidebar.js"></script>
         <script src="./js/settings/sidebar-opacity.js"></script>
