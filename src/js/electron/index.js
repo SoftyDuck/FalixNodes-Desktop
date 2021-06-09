@@ -9,6 +9,7 @@ const pty = require("node-pty");
 const osUI = require('os-utils');
 const os = require("os");
 var shell = os.platform() === "win32" ? "powershell.exe" : "bash"; // Use Powershell instead of Command Prompt
+var macshell = os.platform() === "win32" ? "powershell.exe" : "zsh";
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 
 var osvar = process.platform; /* Detecting OS */
@@ -153,8 +154,8 @@ function createWindowMac () { /* Linux */
  setTimeout(() => {
   loadWindow.close();
  }, 4900);
- var ptyProcess = pty.spawn(shell, [], {
-     name: "xterm-color",
+var ptyProcess = pty.spawn(macshell, [], {
+	name: "xterm-color",
      cols: 80,
      rows: 30,
      cwd: process.env.HOME,
