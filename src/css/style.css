@@ -322,11 +322,14 @@ div#unloaded {
     width: 100%;
 }
 div#unloaded button {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
 }
 
 button.tab {
@@ -404,8 +407,44 @@ a#addTerm:hover {
     transition: 1s background;
 }
 
-span#beta::after {
+.lang_sel_st button {
+  width: fit-content;
+  text-align: left;
+  color: white;
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+}
+
+.lang_en#beta::after {
     content: "BETA";
+    background: var(--accent);
+    padding: 3px 11px;
+    position: fixed;
+    top: 38px;
+    right: 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.lang_es#beta::after {
+    content: "LA BETA";
+    background: var(--accent);
+    padding: 3px 11px;
+    position: fixed;
+    top: 38px;
+    right: 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.lang_cn#beta::after {
+    content: "测试版";
     background: var(--accent);
     padding: 3px 11px;
     position: fixed;
@@ -499,4 +538,48 @@ span#beta::after {
   100% {
     opacity: 0;
   }
+}
+
+.boxtmc button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 180px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.term_content {
+  position: absolute;
+  top: 450px;
+  left: 25px;
+  width: calc(100% - 50px);
+}
+
+div#windows-miner {
+  background: #18273a;
+  padding: 1px 20px 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+}
+div#windows-miner h1 {
+  font-size: 24px;
+}
+div#windows-miner h2 {
+  font-size: 18px;
+}
+
+div#linux-miner {
+  background: #18273a;
+  padding: 1px 20px 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+}
+div#linux-miner h1 {
+  font-size: 24px;
+}
+div#linux-miner h2 {
+  font-size: 18px;
 }
