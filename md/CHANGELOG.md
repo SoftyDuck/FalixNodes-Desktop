@@ -1,3 +1,20 @@
+# v3.1.0 Changelog (WIP) - Bonjour
+ - Added language support
+   - Spansih
+   - Chinese
+   - Hindi
+   - French
+ - Added instructions to FalixCoins Mining
+ - Added download button for CPU and GPU miner
+ - Added Push Notifications
+   - Will only show if application is open
+ - Snapstore support dropped
+ - Converted to AppImage on Linux
+ *Since this is a WIP changelog, the following below are plans, either haven't been added yet in developement and/or can't confirm*
+ - Improvements for macOS Support [Can't confirm]
+   - Added auto update for macOS
+   - Signed DMG file for macOS
+
 # v3.0.0 Changelog - Vivify
  - Added new protocol `falix://falix`
  - Added FalixCoins Mining tab
