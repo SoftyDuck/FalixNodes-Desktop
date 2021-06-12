@@ -1,3 +1,3 @@
-.lang_en, .lang_es, .lang_hn {display: none;}
+.lang_en, .lang_es, .lang_hn, .lang_fr {display: none;}
 .lang_cn {display: inherit !important;}
 button#lang_sel_do_cn {background: var(--accent)} 
