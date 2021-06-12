@@ -15,21 +15,25 @@
                     <h1>
                         <h1 class="lang_en">Select a Language</h1>
                         <h1 class="lang_es">Selecciona un idioma</h1>
+                        <h1 class="lang_fr">Sélectionnez une langue</h1>
                         <h1 class="lang_cn">选择语言</h1>
                         <h1 class="lang_hn">भाषा चुनें</h1>
                     </h1>
                     <button class="lang_en" style="color: var(--accent);border: none;background: white;padding: 10px 20px;border-radius: 50px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);cursor: pointer;" onclick="document.getElementById('lang_menu').style.display = 'inherit'">English <i class="fas fa-angle-down"></i></button>
                     <button class="lang_es" style="color: var(--accent);border: none;background: white;padding: 10px 20px;border-radius: 50px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);cursor: pointer;" onclick="document.getElementById('lang_menu').style.display = 'inherit'">Español <i class="fas fa-angle-down"></i></button>
+                    <button class="lang_es" style="color: var(--accent);border: none;background: white;padding: 10px 20px;border-radius: 50px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);cursor: pointer;" onclick="document.getElementById('lang_menu').style.display = 'inherit'">français <i class="fas fa-angle-down"></i></button>
                     <button class="lang_cn" style="color: var(--accent);border: none;background: white;padding: 10px 20px;border-radius: 50px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);cursor: pointer;" onclick="document.getElementById('lang_menu').style.display = 'inherit'">中国人 <i class="fas fa-angle-down"></i></button>
                     <button class="lang_hn" style="color: var(--accent);border: none;background: white;padding: 10px 20px;border-radius: 50px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);cursor: pointer;" onclick="document.getElementById('lang_menu').style.display = 'inherit'">हिंदी <i class="fas fa-angle-down"></i></button>
                     <div id="lang_menu">
                         <button onclick="document.getElementById('lang_menu').style.display = 'none'; setLanguage('./css/settings/language/english.css'); document.title = 'Welcome to Falix Software';">English</button>
                         <button onclick="document.getElementById('lang_menu').style.display = 'none'; setLanguage('./css/settings/language/spanish.css'); document.title = 'Bienvenido a Falix Software';">Español</button>
+                        <button onclick="document.getElementById('lang_menu').style.display = 'none'; setLanguage('./css/settings/language/french.css'); document.title = 'Bienvenue chez Falix Software';">français</button>
                         <button onclick="document.getElementById('lang_menu').style.display = 'none'; setLanguage('./css/settings/language/chinese.css'); document.title = '欢迎来到 Falix 软件';">中国人</button>
                         <button onclick="document.getElementById('lang_menu').style.display = 'none'; setLanguage('./css/settings/language/hindi.css'); document.title = 'Falix सॉफ्टवेयर में आपका स्वागत है';">हिंदी</button>
                     </div>
                     <button class="lang_en" id="moveOnSlide" onclick="document.getElementById('slide_1').style.display = 'none'; document.getElementById('slide_3').style.display = 'inherit';">Next <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_es" id="moveOnSlide" onclick="document.getElementById('slide_1').style.display = 'none'; document.getElementById('slide_3').style.display = 'inherit';">Próximo <i class="fas fa-long-arrow-alt-right"></i></button>
+                    <button class="lang_en" id="moveOnSlide" onclick="document.getElementById('slide_1').style.display = 'none'; document.getElementById('slide_3').style.display = 'inherit';">Suivant <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_cn" id="moveOnSlide" onclick="document.getElementById('slide_1').style.display = 'none'; document.getElementById('slide_3').style.display = 'inherit';">下一个 <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_hn" id="moveOnSlide" onclick="document.getElementById('slide_1').style.display = 'none'; document.getElementById('slide_3').style.display = 'inherit';">अगला <i class="fas fa-long-arrow-alt-right"></i></button>
                 </div>
@@ -72,6 +76,7 @@
                     <h1>
                         <h1 class="lang_en">Navigation</h1>
                         <h1 class="lang_es">Navegación</h1>
+                        <h1 class="lang_fr">La navigation</h1>
                         <h1 class="lang_cn">导航</h1>
                         <h1 class="lang_hn">पथ प्रदर्शन</h1>
                     </h1>
@@ -79,11 +84,13 @@
                     <p>
                         <p class="lang_en">Use the sidebar to navigate between tabs. You can also use the controls in the Game Panel to navigate back and forth between pages and if you need to, you can also reload pages.</p> 
                         <p class="lang_es">Utilice la barra lateral para navegar entre pestañas. También puede usar los controles en el Panel de juego para navegar hacia adelante y hacia atrás entre las páginas y, si lo necesita, también puede volver a cargar las páginas.</p>
+                        <p class="lang_fr">Utilisez la barre latérale pour naviguer entre les onglets. Vous pouvez également utiliser les commandes dans le panneau de jeu pour revenir naviguer et reculez dans les pages et si vous avez besoin, vous pouvez également recharger les pages.</p> 
                         <p class="lang_cn">使用侧边栏在选项卡之间导航。 您还可以使用游戏面板中的控件在页面之间来回导航，如果需要，您还可以重新加载页面。</p>
                         <p class="lang_hn">टैब के बीच नेविगेट करने के लिए साइडबार का उपयोग करें। आप पृष्ठों के बीच आगे और पीछे नेविगेट करने के लिए गेम पैनल में नियंत्रणों का उपयोग कर सकते हैं और यदि आपको आवश्यकता हो, तो आप पृष्ठों को पुनः लोड भी कर सकते हैं।</p> 
                     </p>
                     <button class="lang_en" id="moveOnSlide" onclick="document.getElementById('slide_3').style.display = 'none'; document.getElementById('slide_4').style.display = 'inherit';">Next <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_es" id="moveOnSlide" onclick="document.getElementById('slide_3').style.display = 'none'; document.getElementById('slide_4').style.display = 'inherit';">Próximo <i class="fas fa-long-arrow-alt-right"></i></button>
+                    <button class="lang_fr" id="moveOnSlide" onclick="document.getElementById('slide_3').style.display = 'none'; document.getElementById('slide_4').style.display = 'inherit';">Suivant <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_cn" id="moveOnSlide" onclick="document.getElementById('slide_3').style.display = 'none'; document.getElementById('slide_4').style.display = 'inherit';">下一个 <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_hn" id="moveOnSlide" onclick="document.getElementById('slide_3').style.display = 'none'; document.getElementById('slide_4').style.display = 'inherit';">अगला <i class="fas fa-long-arrow-alt-right"></i></button>
                 </div>
@@ -93,6 +100,7 @@
                     <h1>
                         <h1 class="lang_en">See a problem?</h1>
                         <h1 class="lang_es">¿Ves algún problema?</h1>
+                        <h1 class="lang_fr">Voir un problème?</h1>
                         <h1 class="lang_cn">看到问题了吗？</h1>
                         <h1 class="lang_hn">एक समस्या देखते हैं?</h1>
                     </h1>
@@ -100,15 +108,18 @@
                     <p>
                         <p class="lang_en">If you see any issues or bugs with our software, let us know right away by reporting it on GitHub. If you don't say anything, we may never become aware of the issue.</p>
                         <p class="lang_es">Si ve algún problema o error con nuestro software, infórmenos de inmediato en GitHub. Si no dice nada, es posible que nunca nos demos cuenta del problema.</p>
+                        <p class="lang_fr">Si vous constatez des problèmes ou des bogues avec notre logiciel, faites-le nous savoir immédiatement en le signalant sur GitHub. Si vous ne dites rien, nous ne prendrons peut-être jamais conscience du problème.</p>
                         <p class="lang_cn">如果您发现我们的软件有任何问题或错误，请立即通过在 GitHub 上报告来告诉我们。 如果你什么都不说，我们可能永远不会意识到这个问题。</p>
                         <p class="lang_hn">यदि आप हमारे सॉफ़्टवेयर के साथ कोई समस्या या बग देखते हैं, तो हमें तुरंत GitHub पर इसकी रिपोर्ट करके बताएं। यदि आप कुछ नहीं कहते हैं, तो हो सकता है कि हम इस मुद्दे से अवगत न हों।</p>
                     </p>
                     <button class="lang_en" style="background: black; color: white;" id="bl"><i class="fab fa-github"></i> GitHub</button>
                     <button class="lang_es" style="background: black; color: white;" id="bl"><i class="fab fa-github"></i> GitHub</button>
+                    <button class="lang_fr" style="background: black; color: white;" id="bl"><i class="fab fa-github"></i> GitHub</button>
                     <button class="lang_cn" style="background: black; color: white;" id="bl"><i class="fab fa-github"></i> GitHub</button>
                     <button class="lang_hn" style="background: black; color: white;" id="bl"><i class="fab fa-github"></i> GitHub</button>
                     <button class="lang_en" id="moveOnSlide" onclick="document.getElementById('slide_4').style.display = 'none'; document.getElementById('slide_5').style.display = 'inherit';">Next <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_es" id="moveOnSlide" onclick="document.getElementById('slide_4').style.display = 'none'; document.getElementById('slide_5').style.display = 'inherit';">Próximo <i class="fas fa-long-arrow-alt-right"></i></button>
+                    <button class="lang_fr" id="moveOnSlide" onclick="document.getElementById('slide_4').style.display = 'none'; document.getElementById('slide_5').style.display = 'inherit';">Suivant <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_cn" id="moveOnSlide" onclick="document.getElementById('slide_4').style.display = 'none'; document.getElementById('slide_5').style.display = 'inherit';">下一个 <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_hn" id="moveOnSlide" onclick="document.getElementById('slide_4').style.display = 'none'; document.getElementById('slide_5').style.display = 'inherit';">अगला <i class="fas fa-long-arrow-alt-right"></i></button>
                 </div>
@@ -118,6 +129,7 @@
                     <h1>
                         <h1 class="lang_en">Support</h1>
                         <h1 class="lang_es">Apoyo</h1>
+                        <h1 class="lang_fr">Supporté</h1>
                         <h1 class="lang_cn">支撑</h1>
                         <h1 class="lang_hn">समर्थन</h1>
                     </h1>
@@ -125,15 +137,18 @@
                     <p>
                         <p class="lang_en">If you need help with anything else with our services, make sure to join our Discord server. It is also required to be on our Discord server to use our service.</p> 
                         <p class="lang_es">Si necesita ayuda con cualquier otra cosa con nuestros servicios, asegúrese de unirse a nuestro servidor de Discord. También es necesario estar en nuestro servidor de Discord para utilizar nuestro servicio.</p>
+                        <p class="lang_fr">Si vous avez besoin d'aide pour quoi que ce soit d'autre avec nos services, assurez-vous de rejoindre notre serveur Discord. Il est également nécessaire d'être sur notre serveur Discord pour utiliser notre service.</p> 
                         <p class="lang_cn">如果您需要有关我们服务的任何其他帮助，请确保加入我们的 Discord 服务器。 还需要在我们的 Discord 服务器上使用我们的服务。</p>
                         <p class="lang_hn">अगर आपको हमारी सेवाओं के साथ किसी और चीज की मदद चाहिए, तो हमारे डिस्कॉर्ड सर्वर से जुड़ना सुनिश्चित करें। हमारी सेवा का उपयोग करने के लिए हमारे डिस्कॉर्ड सर्वर पर होना भी आवश्यक है।</p> 
                     </p>
                     <button class="lang_en" style="background: white; color: var(--accent);" id="bl"><i class="fab fa-discord"></i> Discord</button>
                     <button class="lang_es" style="background: white; color: var(--accent);" id="bl"><i class="fab fa-discord"></i> Discordia</button>
+                    <button class="lang_fr" style="background: white; color: var(--accent);" id="bl"><i class="fab fa-discord"></i> Discorde</button>
                     <button class="lang_cn" style="background: white; color: var(--accent);" id="bl"><i class="fab fa-discord"></i> 不和谐</button>
                     <button class="lang_hn" style="background: white; color: var(--accent);" id="bl"><i class="fab fa-discord"></i> कलह</button>
                     <button class="lang_en" id="moveOnSlide" onclick="document.getElementById('slide_5').style.display = 'none'; window.close();">Get Started <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_es" id="moveOnSlide" onclick="document.getElementById('slide_5').style.display = 'none'; window.close();">Empezar <i class="fas fa-long-arrow-alt-right"></i></button>
+                    <button class="lang_fr" id="moveOnSlide" onclick="document.getElementById('slide_5').style.display = 'none'; window.close();">démarrer <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_cn" id="moveOnSlide" onclick="document.getElementById('slide_5').style.display = 'none'; window.close();">入门 <i class="fas fa-long-arrow-alt-right"></i></button>
                     <button class="lang_hn" id="moveOnSlide" onclick="document.getElementById('slide_5').style.display = 'none'; window.close();">शुरू हो जाओ <i class="fas fa-long-arrow-alt-right"></i></button>
                 </div>
