@@ -1,5 +1,5 @@
 # Falix Software (Formly FalixNodes Software)
-![preview](https://i.imgur.com/eTVgn6E.png)
+![image](https://user-images.githubusercontent.com/51213244/121123903-fe27d080-c7f1-11eb-9aba-4102590265f7.png)
 
 ## 🔗 Links
 
