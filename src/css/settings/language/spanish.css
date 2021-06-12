@@ -1,2 +1,3 @@
-.lang_en, .lang_cn {display: none;}
+.lang_en, .lang_cn, .lang_hn {display: none;}
 .lang_es {display: inherit !important;}
+button#lang_sel_do_es {background: var(--accent)} 
