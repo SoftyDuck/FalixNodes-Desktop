@@ -41,6 +41,12 @@
                 <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Game Panel</p> <p id="unload">Ga...</p></button>
                 <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins Mining</button>
               </div>
+              <div class="lang_fr">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> Des nouvelles</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Panneau Client</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Panneau de jeu</p> <p id="unload">Ga...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins Minière</button>
+              </div>
               <div class="lang_es">
                 <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> Noticias</button>
                 <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Panel de cliente</button>
@@ -84,6 +90,15 @@
                 <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Respaldar</button>
                 <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Configuraciones</button>
               </div>
+              <div class="lang_fr">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Connexion perdue</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Connexion rétablie</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Centre d'aide</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Supporté</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Paramètres</button>
+              </div>
               <div class="lang_cn">
                 <div class="notify">
                     <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> 连接丢失</button>
@@ -110,24 +125,28 @@
                     <h1>
                       <h1 class="lang_en">Game Panel is Unloaded</h1>
                       <h1 class="lang_es">Panel de juego no está cargado</h1>
+                      <h1 class="lang_fr">Le panneau de jeu est déchargé</h1>
                       <h1 class="lang_cn">游戏面板未加载</h1>
                       <h1 class="lang_hn">गेम पैनल अनलोड है</h1>
                     </h1>
                     <p>
                       <p class="lang_en">The Game Panel is unloaded by default when starting up Falix Software.</p>
                       <p class="lang_es">El panel de juego no se carga por defecto cuando se inicia Falix software.</p>
+                      <p class="lang_fr">Le panneau de jeu est déchargé par défaut lors du démarrage Falix Software.</p>
                       <p class="lang_cn">启动 Falix 软件 时，默认情况下不加载游戏面板。</p>
                       <p class="lang_hn">खेल पैनल डिफ़ॉल्ट रूप से उतार दिया जब Falix सॉफ्टवेयर शुरू कर रहा है।</p>
                     </p>
                     <p>
                       <p class="lang_en">This is to help with performance.</p>
                       <p class="lang_es">Esto es para ayudar con el rendimiento.</p>
+                      <p class="lang_fr">C'est pour aider à la performance.</p>
                       <p class="lang_cn">这是为了帮助提高性能。</p>
                       <p class="lang_hn">यह प्रदर्शन में मदद करने के लिए है।</p>
                     </p>
                     <div>
                       <button id="load" class="lang_en" onclick="navigateTo('http:/panel.falixnodes.net/');">Load Panel</button>
                       <button id="load" class="lang_es" onclick="navigateTo('http:/panel.falixnodes.net/');">Cargar el panel</button>
+                      <button id="load" class="lang_fr" onclick="navigateTo('http:/panel.falixnodes.net/');">Panneau de charge</button>
                       <button id="load" class="lang_cn" onclick="navigateTo('http:/panel.falixnodes.net/');">负载面板</button>
                       <button id="load" class="lang_hn" onclick="navigateTo('http:/panel.falixnodes.net/');">लोड पैनल</button>
                     </div>
@@ -184,12 +203,14 @@
                         <h2>
                           <h2 id="crashed-label" class="lang_en">Aw, Snap!</h2>
                           <h2 id="crashed-label" class="lang_es">Aw chasquido!</h2>
+                          <h2 id="crashed-label" class="lang_fr">Oh non</h2>
                           <h2 id="crashed-label" class="lang_cn">哦不!</h2>
                           <h2 id="crashed-label" class="lang_hn">अरे नहीं</h2>
                         </h2>
                         <h2>
                           <h2 id="killed-label" class="lang_en">Something may of went wrong.</h2>
                           <h2 id="killed-label" class="lang_es">Es posible que algo haya salido mal.</h2>
+                          <h2 id="killed-label" class="lang_fr">Quelque chose peut bien qui a mal tourné.</h2>
                           <h2 id="killed-label" class="lang_cn">可能出了点问题。</h2>
                           <h2 id="killed-label" class="lang_hn">कुछ गलत हो गया था की हो सकती है।</h2>
                         </h2>
@@ -197,12 +218,14 @@
                         <p>
                           <div class="lang_en">The page is taking too long to load or it has crashed.</div>
                           <div class="lang_es">La página está tardando demasiado en cargarse o se ha bloqueado.</div>
+                          <div class="lang_fr">La page met trop de temps à se charger ou elle a planté.</div>
                           <div class="lang_cn">该页面正在载入时间太长或页面有崩溃。</div>
                           <div class="lang_hn">पृष्ठ लोड होने में बहुत अधिक समय ले रहा है या यह क्रैश हो गया है।</div>
                         </p>
                         <p>
                           <p class="lang_en">Try to unload the panel and load again.</p>
                           <p class="lang_es">Intente descargar el panel y vuelva a cargar.</p>
+                          <p class="lang_fr">Essayez de décharger le panneau et de le charger à nouveau.</p>
                           <p class="lang_cn">尝试卸载面板并再次加载。</p>
                           <p class="lang_hn">पैनल को उतारने और फिर से लोड करने का प्रयास करें।</p>
                         </p>
@@ -279,6 +302,7 @@
                 <h1>
                   <h1 class="lang_en">Settings</h1>
                   <h1 class="lang_es">Configuraciones</h1>
+                  <h1 class="lang_fr">Paramètres</h1>
                   <h1 class="lang_cn">设置</h1>
                   <h1 class="lang_hn">सेटिंग्स</h1>
                 </h1>
@@ -286,6 +310,7 @@
                     <p>
                       <p class="lang_en">Software Version: 3.1.0</p>
                       <p class="lang_es">Versión del software: 3.1.0</p>
+                      <p class="lang_fr">Version du logiciel: 3.1.0</p>
                       <p class="lang_cn">软件版本: 3.1.0</p>
                       <p class="lang_hn">सॉफ्टवेयर संस्करण: 3.1.0</p>
                     </p>
@@ -294,13 +319,14 @@
                   <h2>
                     <h2 class="lang_en">Language</h2>
                     <h2 class="lang_es">Lenguaje</h2>
+                    <h2 class="lang_fr">Langue</h2>
                     <h2 class="lang_cn">语言</h2>
                     <h2 class="lang_hn">भाषा</h2>
                   </h2>
                   <div class="lang_sel_st">
                     <button id="lang_sel_do_en" onclick="setLanguage('./css/settings/language/english.css'); navigateTo('https://software.falixnodes.net/blank/');">English</button>
                     <button id="lang_sel_do_es" onclick="setLanguage('./css/settings/language/spanish.css'); navigateTo('https://software.falixnodes.net/blank/');">Español</button>
-                    <!-- <button id="lang_sel_do_fr">fançais</button> -->
+                    <button id="lang_sel_do_fr" onclick="setLanguage('./css/settings/language/french.css'); navigateTo('https://software.falixnodes.net/blank/');">fançais</button>
                     <button id="lang_sel_do_cn" onclick="setLanguage('./css/settings/language/chinese.css'); navigateTo('https://software.falixnodes.net/blank/');">中国人</button>
                     <button id="lang_sel_do_hn" onclick="setLanguage('./css/settings/language/hindi.css'); navigateTo('https://software.falixnodes.net/blank/');">हिंदी</button>
                   </div>
@@ -309,7 +335,9 @@
                     <h2>
                       <h2 class="lang_en">Sidebar Layout</h2>
                       <h2 class="lang_es">Diseño de la barra lateral</h2>
+                      <h2 class="lang_fr">Disposition de la barre latérale</h2>
                       <h2 class="lang_cn">边栏布局</h2>
+                      <h2 class="lang_hn">साइडबार लेआउट</h2>
                     </h2>
                     <div class="lang_en">
                       <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Confortable</p> <img src="./images/Sidebar.png"></button>
@@ -318,6 +346,10 @@
                     <div class="lang_es">
                       <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Cómodo</p> <img src="./images/Sidebar.png"></button>
                       <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compacto</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                    <div class="lang_fr">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Confortable</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compact</p> <img src="./images/SidebarCompact.png"></button>
                     </div>
                     <div class="lang_cn">
                       <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>舒适</p> <img src="./images/Sidebar.png"></button>
@@ -332,6 +364,7 @@
                   <h2>
                     <h2 class="lang_en">Accent Color</h2>
                     <h2 class="lang_es">Color de acento</h2>
+                    <h2 class="lang_fr">Couleur d'accent</h2>
                     <h2 class="lang_cn">强调色</h2>
                     <h2 class="lang_hn">एक्सेंट रंग</h2>
                   </h2>
@@ -345,6 +378,11 @@
                         <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Defecto</button><span id="color_selected_default"></span>
                         <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Morado</button><span id="color_selected_purple"></span>
                         <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">Rojo</button><span id="color_selected_red"></span>
+                      </div>
+                      <div class="lang_fr">
+                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Défaut</button><span id="color_selected_default"></span>
+                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Violet</button><span id="color_selected_purple"></span>
+                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">rouge</button><span id="color_selected_red"></span>
                       </div>
                       <div class="lang_cn">
                         <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">默认</button><span id="color_selected_default"></span>
@@ -365,6 +403,10 @@
                       <div class="lang_es">
                         <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">Verde</button><span id="color_selected_green"></span>
                         <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Rucio</button><span id="color_selected_gray"></span>
+                      </div>
+                      <div class="lang_fr">
+                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">Vert</button><span id="color_selected_green"></span>
+                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Gris</button><span id="color_selected_gray"></span>
                       </div>
                       <div class="lang_cn">
                         <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">绿色的</button><span id="color_selected_green"></span>
