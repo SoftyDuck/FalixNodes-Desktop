@@ -43,3 +43,26 @@ function handleWindowControls() {
 console.log('preload.js file is loaded.')
 delete process.env.ELECTRON_ENABLE_SECURITY_WARNINGS;
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
+
+
+function downloadStartedNotify(){
+    const notif={
+          title: 'Download Started',
+          body: 'Download file...',
+        };
+    new Notification(notif).show();
+  }
+  function downloadSuccessNotify(){
+    const notif={
+          title: 'Download Successful',
+          body: 'The file has been downloaded.',
+        };
+    new Notification(notif).show();
+  }
+  function downloadFailedNotify(){
+    const notif={
+          title: 'Download Failed',
+          body: `${state}`,
+        };
+    new Notification(notif).show();
+  }
