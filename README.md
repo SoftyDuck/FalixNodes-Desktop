@@ -81,8 +81,11 @@ In the notification data, when sending a notification, it should look like this:
 ```
 
 In Pushy's API, the data is set out like this:
+
 `title` - `${data.title}`
+
 `message` - `${data.message}`
+
 `url` - `${data.url}`
 
 You can see these used in the main file.
