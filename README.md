@@ -102,6 +102,9 @@ If you want, you can read [Pushy's Docs](https://pushy.me/docs).
 ### Requirements
  - [NodeJS](https://nodejs.org/en/) 14.16.0 or above
  - [Python](https://www.python.org/) 3.9 or above (Windows 7 no longer supprted)
+ - G++ (Linux)
+    - Debian/Ubuntu: `apt install g++`
+    - Fedora: `dnf install g++`
  - [Visual Studio Community](https://visualstudio.microsoft.com/) (Install Desktop Development with C++) (on Windows)
  - [Visual C++ Redistributable](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) (on Windows)
  - At least 8GB of storage
