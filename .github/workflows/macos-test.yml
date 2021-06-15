@@ -1,17 +1,35 @@
-name: Build and Sign macOS
+
+name: Node.js CI
+
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 on:
   workflow_dispatch:
+    
 jobs:
-  macos:
-    runs-on: macos-latest
+  build-mac:
+
+    runs-on: macOS-10.15
+
+    strategy:
+      matrix:
+        node-version: [15.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Codesign executable
-        env: 
-          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
-        run: |
-          echo $MACOS_CERTIFICATE | base64 --decode > certificate.p12
-          security create-keychain build.keychain security default-keychain -s build.keychain
-          security unlock-keychain build.keychain
-          security import certificate.p12 -k build.keychain -P $MACOS_CERTIFICATE_PWD -T /usr/bin/codesign
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k <your-password> build.keychain
+    
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        mac_certs: ${{ secrets.MACOS_CERTIFICATE }}
+        mac_certs_password: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+    - run: npm install
+    - run: npm run rebuild
+    - run: npm run publish
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: my-artifact
+        path: dist/
