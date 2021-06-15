@@ -1,3 +1,12 @@
+<!-- ##### Translation of README
+👉 [Spanish]()
+
+👉 [French]()
+
+👉 [Chinese]()
+
+👉 [Hindi]() -->
+
 # Falix Software (Formly FalixNodes Software)
 ![image](https://user-images.githubusercontent.com/51213244/121123903-fe27d080-c7f1-11eb-9aba-4102590265f7.png)
 
