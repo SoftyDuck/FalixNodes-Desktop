@@ -62,7 +62,7 @@ function createWindowWin () { /* Windows */
       devTools: false
     }
   })
-  mainWindow.setIcon(path.join(__dirname, '../../images/icons/app/256x256.ico'));
+  mainWindow.setIcon(path.join(__dirname, '../../images/icons/app/256x256.png'));
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.webContents.insertCSS('button#linux-miner-cpu, button#linux-miner-gpu, button#mac-miner-cpu {display: none !important;} div#linux-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
  })
