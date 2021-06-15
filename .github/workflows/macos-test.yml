@@ -1,8 +1,6 @@
 name: Build and Sign macOS
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
 jobs:
   macos:
     runs-on: macos-11.0
