@@ -40,7 +40,7 @@ function createWindowWin () { /* Windows */
       preload: path.join(__dirname, "../../js/electron/preload.js"),
 			nodeIntegration: true,
 			webviewTag: true,
-			devTools: true,
+			devTools: false,
       enableRemoteModule: true,
       contextIsolation: false
     }
@@ -299,7 +299,7 @@ function createWindowLinux () { /* Linux */
       preload: path.join(__dirname, "preload.js"),
 			nodeIntegration: true,
 			webviewTag: true,
-      devTools: true,
+      devTools: false,
       enableRemoteModule: true,
       contextIsolation: false
     }
