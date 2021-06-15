@@ -64,7 +64,7 @@ function createWindowWin () { /* Windows */
   })
   mainWindow.setIcon(path.join(__dirname, '../../images/icons/app/256x256.ico'));
   mainWindow.webContents.on('did-finish-load', function() {
-    mainWindow.webContents.insertCSS('#titlebar{display: none !important;} button#linux-miner-cpu, button#linux-miner-gpu, button#mac-miner-cpu {display: none !important;} div#linux-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
+    mainWindow.webContents.insertCSS('button#linux-miner-cpu, button#linux-miner-gpu, button#mac-miner-cpu {display: none !important;} div#linux-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
  })
   loadWindow.loadFile('src/html/splash/index.html');
   mainWindow.loadFile('src/index.html');
