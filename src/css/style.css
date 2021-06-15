@@ -456,6 +456,32 @@ a#addTerm:hover {
     z-index: 10;
 }
 
+.lang_hn#beta::after {
+    content: "बीटा";
+    background: var(--accent);
+    padding: 3px 11px;
+    position: fixed;
+    top: 38px;
+    right: 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.lang_fr#beta::after {
+    content: "Bêta";
+    background: var(--accent);
+    padding: 3px 11px;
+    position: fixed;
+    top: 38px;
+    right: 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
 .lds-spinner {
     display: inline-block;
     position: absolute;
