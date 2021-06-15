@@ -51,9 +51,9 @@ The reason why the software needs all these requirements like Python and Visual 
    - May
      - 25th - ~~Upgrade Electron from `v12` or `v9.4.4` to `v13`~~
      - 27th or 28th - ~~Stable release of v3.0.0 for Windows 10~~
-   - June
-     - 18th - Will be removed from the Snapstore and switch to AppImage
-     - 18th - Release v3.1.0
+   - July
+     - 1st - Will be removed from the Snapstore and switch to AppImage
+     - 1st - Release v3.1.0
    - December
      - 15th - v4.0.0 Beta opens
    - October 
