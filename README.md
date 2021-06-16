@@ -198,15 +198,16 @@ This will show data and timing of Falix Software being ran on my machines. This 
 Running software after intended install (Not building)
 
 #### HP All In One 24-e014
-❌ Not tested yet
+ - Start softwre              |        01s
 
 #### Dell Inspiron 15-3552
-❌ Not tested yet
+ - Start softwre              |        09s
+
 
 ### Building
 Running commands from __package.json__ in order:
  - Install node packages: `npm i`
- - Rebuild models like node-pty and Glasstron: `npm run rebuild`
+ - Rebuild modules like node-pty and Glasstron: `npm run rebuild`
  - Start software: `npm start`
  - Build setup files: `npm run build`
 
@@ -214,7 +215,11 @@ Running commands from __package.json__ in order:
 ❌ Not tested yet
 
 #### Dell Inspiron 15-3552
-❌ Not tested yet
+ - Installing node packges    |    4m  31s
+ - Rebuild Modules            |    2m  15s
+ - Start softwre              |        09s
+ - Build - Target: NSIS       |    10m 23s
+   NSIS isn't used in production
 
 ## 💡 Credits
 Built and maintained by [Korbs Studio](https://github.com/KorbsStudio).
