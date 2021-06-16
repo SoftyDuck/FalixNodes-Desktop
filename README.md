@@ -212,13 +212,19 @@ Running commands from __package.json__ in order:
  - Build setup files: `npm run build`
 
 #### HP All In One 24-e014
-❌ Not tested yet
+ - Installing node packges    |        50s
+ - Rebuild Modules            |        12s
+ - Start software             |        09s
+ - Build - Target: AppImage   |     1m 49s
+ 
+ AppImage file is smaller than NSIS
 
 #### Dell Inspiron 15-3552
  - Installing node packges    |    4m  31s
  - Rebuild Modules            |    2m  15s
  - Start software             |        09s
  - Build - Target: NSIS       |    10m 23s
+ 
    NSIS isn't used in production
 
 ## 💡 Credits
