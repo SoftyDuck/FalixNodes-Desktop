@@ -29,6 +29,7 @@ Linux:
 ### Other
 [License](https://github.com/FalixNodes-Software/Desktop-App/blob/master/md/LICENSE)
 
+________________________
 
 ## ❔ Q&A for Developers
 ### Why is Font Awesome included offline? You could use a script instead.
@@ -46,6 +47,8 @@ There are tons of other good reasons why to use Electron, you can read more abou
 ### Why all these requirements to just build it?
 The reason why the software needs all these requirements like Python and Visual Studio(Desktop Development with C++) is because of technology that was coded into the software like [Glasstron](https://www.npmjs.com/package/glasstron) and [XTerm](https://xtermjs.org/).
 
+________________________
+
 ## 🕑 Timeline
  - 2021
    - May
@@ -61,6 +64,8 @@ The reason why the software needs all these requirements like Python and Visual 
  - 2022
    - October 
      - 18th - Upgrade requirements of NodeJS from `v16` to `v18`
+
+________________________
 
 ## Push Notification
 ### What is it?
@@ -98,6 +103,8 @@ If a message or title isn't used, it will default to `undefined`.
 
 If you want, you can read [Pushy's Docs](https://pushy.me/docs).
 
+________________________
+
 ## 🔧 Preparing to Build
 ### Requirements
  - [NodeJS](https://nodejs.org/en/) 14.16.0 or above
@@ -125,6 +132,8 @@ gh repo clone FalixNodes-Software/Desktop-App
 If you don't have Git or GitHub CLI installed, you can download it manually from our [GitHub](https://github.com/FalixNodes-Software/Desktop-App/) or install [Git](https://git-scm.com/) or install [GitHub CLI](https://cli.github.com/).
 
 You can also download the source code manually and go from there.
+
+________________________
 
 ### Building
 #### Installing Dependencies
@@ -158,6 +167,54 @@ npm run build
 NOTE: If you're using versions of Windows older than Windows 10, please change `appx` to `exe` in the build configuration found in __package.json__, `appx` files are for Windows 10 only.
 
 If you're using Windows 10, Electron may have some issues building the APPX file, as we don't use Electron Builder for Window 10.
+
+________________________
+
+## 📊 Benchmark Testing
+### What is this?
+This will show data and timing of Falix Software being ran on my machines. This will show how well the computer performs running the software, as we're still improving performance in v3.
+
+### Machines
+#### HP All In One 24-e014
+ - CPU: Intel Core i3 7100u | 2.24GHz | 4 Cores
+ - Memory: 16GB DDR4
+ - Graphics Card: Intel HD 620 Kaby Lake GT2
+ - Storage: 120GB SSD
+ - Operating System: Fedora 34
+ - Desktop Environment: GNOME 40 Wayland
+ - Node Version: v14.17.1
+
+#### Dell Inspiron 15-3552
+ Note: This low end laptop appears to have no fans.
+ - CPU: Intel Celeron N3060 | 1.60GHz | 2 Cores
+ - Memory: 4GB DDR3L
+ - Graphics Card: Intel HD (Unknown model)
+ - Storage: 320GB HDD
+ - Operating System: Windows 10 v1909
+ - DirectX: 12
+ - Node Version: v14.17.1
+
+### Running
+Running software after intended install (Not building)
+
+#### HP All In One 24-e014
+❌ Not tested yet
+
+#### Dell Inspiron 15-3552
+❌ Not tested yet
+
+### Building
+Running commands from __package.json__ in order:
+ - Install node packages: `npm i`
+ - Rebuild models like node-pty and Glasstron: `npm run rebuild`
+ - Start software: `npm start`
+ - Build setup files: `npm run build`
+
+#### HP All In One 24-e014
+❌ Not tested yet
+
+#### Dell Inspiron 15-3552
+❌ Not tested yet
 
 ## 💡 Credits
 Built and maintained by [Korbs Studio](https://github.com/KorbsStudio).
