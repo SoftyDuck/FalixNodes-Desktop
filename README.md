@@ -198,10 +198,10 @@ This will show data and timing of Falix Software being ran on my machines. This 
 Running software after intended install (Not building)
 
 #### HP All In One 24-e014
- - Start software              |        01s
+ - Start software             |        01s
 
 #### Dell Inspiron 15-3552
- - Start software              |        09s
+ - Start software             |        09s
 
 
 ### Building
@@ -217,7 +217,7 @@ Running commands from __package.json__ in order:
 #### Dell Inspiron 15-3552
  - Installing node packges    |    4m  31s
  - Rebuild Modules            |    2m  15s
- - Start software              |        09s
+ - Start software             |        09s
  - Build - Target: NSIS       |    10m 23s
    NSIS isn't used in production
 
