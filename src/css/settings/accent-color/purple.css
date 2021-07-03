@@ -3,15 +3,17 @@
 }
 
 span#color_selected_purple {
-    background: #18273A;
+    border: 4px var(--accent) solid;
     position: absolute;
-    width: 155px;
+    width: 40px;
     height: 40px;
-    margin: 0px 0px 0px -159px;
+    margin: 9px 0px 0px -47px;
     border-radius: 50px;
-    z-index: -1;
+    z-index: 1;
+    pointer-events: none;
 }
 
 button#set_layout img {
     filter: hue-rotate(47deg);
 }
+button#Purple-sel {background: var(--accent)}
