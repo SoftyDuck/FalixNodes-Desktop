@@ -1,28 +1,9 @@
 if(!localStorage.getItem("firstBoot")){
-  console.log('New user, showing welcome screen') // This will show up if your cache was clear
+  console.log('New user, showing welcome screen') // This will show up if your cache was clear or the item was removed from local storage
   localStorage.setItem("firstBoot","true");
   setTimeout(() => {
-    createBrowserWindow();
+    document.write('<style>.content {opacity: 0.4; background: rgb(11 23 37 / 80%) !important;} div#window-controls, div#game_panel, div#client_panel, div#help_center, div#support, div#terminal_mining, div#settings, div#sb_ct {display: none;}</style> <div include-html="./index.html"></div> <div include-html="./welcome.html"></div> <script src="./js/ui/include.js"></script> <script>includeHTML();</script> <script src="./js/switchIndex.js"></script>')
   }, 5250);
 }else{
   console.log('Existing user, aborting welcome screen.');
-}
-
-function createBrowserWindow() {
-  const remote = require('electron').remote;
-  const BrowserWindow = remote.BrowserWindow;
-  const welcome = new BrowserWindow({
-    height: 360,
-    width: 500,
-    autoHideMenuBar: true,
-    resizable: false,
-    maxHeight: false,
-    center: true,
-    webPreferences: {
-      devTools: true
-    }
-  });
-  welcome.loadFile('./src/welcome.html');
-  mainWindow.hide;
-  setTimeout(() => {mainWindow.hide();}, 5500);
 }
