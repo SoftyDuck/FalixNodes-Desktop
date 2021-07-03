@@ -20,7 +20,7 @@ onload = function() {
   };
 
   document.querySelector('#load').onclick = function() {
-    navigateTo('http:/panel.falixnodes.net/');
+    navigateTo('https://panel.falixnodes.net/');
     document.getElementById("game_panel_loading").style.display = "block";
     document.getElementById("loaded").style.display = "block";
     document.getElementById("unloaded").style.display = "none";

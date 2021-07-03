@@ -5,11 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/smallWindow.css">
         <link rel="stylesheet" href="./css/splash.css">
         <link rel="stylesheet" href="./css/terminal.css">
         <link id="first-boot-slideshow" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/first-boot/slideshow-on.css">
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/accent-color/default.css">
+        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/rounded-corners/off.css">
         <link id="layout-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/layout/sidebar.css">
         <link id="sidebar-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-size/confortable.css">
         <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-opacity/90.css">
@@ -32,8 +34,12 @@
           </div>
       </div>
     </header>
-    <body id="body">
-        <div class="tab_area">
+    <body id="body" onload="resize();">
+        <div id="sb_ct" class="ta_o_button">
+          <button id="sb_mini_isClose" onclick="openSidebar();"><i class="fas fa-bars"></i> Open Sidebar</button>
+          <button id="sb_mini_isOpen" onclick="closeSidebar();"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="sb_mini" class="tab_area">
             <div class="tabs">
               <div class="lang_en">
                 <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> News</button>
@@ -65,11 +71,6 @@
                 <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">गेम पैनल</p> <p id="unload">गेम पै...</p></button>
                 <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins खनन</button>
               </div>
-                <!-- <button style="z-index: 5;" id="Zen" class="tab" onclick="openAddMenu();"><i class="fas fa-window-restore"></i> New Window</button> -->
-                <!-- <div style="display: none;" id="new_window_options" class="new_window_options">
-                    <button onclick="openAddMenu();"><a href="../../new-window/client.html" target="_blank" title="Open a new window display Client Panel"><i class="fas fa-id-card"></i> Client Panel</a></button>
-                    <button onclick="openAddMenu();"><a href="../../new-window/panel.html" target="_blank" title="Open a new window display Game Panel"><i class="fas fa-server"></i> Game Panel</a></button>
-                </div> -->
             </div>
             <div class="bottom_a">
               <div class="lang_en">
@@ -119,7 +120,7 @@
               </div>
             </div>
         </div>
-        <div class="content">
+        <div id="ct_mini" class="content">
             <div id="game_panel" class="tab_content">
                 <div id="unloaded" class="game_panel_unloaded">
                     <h1>
@@ -144,11 +145,13 @@
                       <p class="lang_hn">यह प्रदर्शन में मदद करने के लिए है।</p>
                     </p>
                     <div>
-                      <button id="load" class="lang_en" onclick="navigateTo('http:/panel.falixnodes.net/');">Load Panel</button>
-                      <button id="load" class="lang_es" onclick="navigateTo('http:/panel.falixnodes.net/');">Cargar el panel</button>
-                      <button id="load" class="lang_fr" onclick="navigateTo('http:/panel.falixnodes.net/');">Panneau de charge</button>
-                      <button id="load" class="lang_cn" onclick="navigateTo('http:/panel.falixnodes.net/');">负载面板</button>
-                      <button id="load" class="lang_hn" onclick="navigateTo('http:/panel.falixnodes.net/');">लोड पैनल</button>
+                      <button id="load" onclick="navigateTo('http:/panel.falixnodes.net/');">
+                        <p class="lang_en">Load Panel</p>
+                        <p class="lang_es">Cargar el panel</p>
+                        <p class="lang_fr">Panneau de charge</p>
+                        <p class="lang_cn">负载面板</p>
+                        <p class="lang_hn">लोड पैनल</p>
+                      </button>
                     </div>
                 </div>
                 <div id="loaded" class="game_panel_loaded">
@@ -440,67 +443,71 @@
                     <h2 class="lang_cn">强调色</h2>
                     <h2 class="lang_hn">एक्सेंट रंग</h2>
                   </h2>
-                    <div class="grid_icons">
-                      <div class="lang_en">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Default</button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Purple</button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">Red</button><span id="color_selected_red"></span>
-                      </div>
-                      <div class="lang_es">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Defecto</button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Morado</button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">Rojo</button><span id="color_selected_red"></span>
-                      </div>
-                      <div class="lang_fr">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">Défaut</button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">Violet</button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">rouge</button><span id="color_selected_red"></span>
-                      </div>
-                      <div class="lang_cn">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">默认</button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">紫色的</button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">红色的</button><span id="color_selected_red"></span>
-                      </div>
-                      <div class="lang_hn">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')">डिफ़ॉल्ट</button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')">नील लोहित रंग का</button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')">लाल</button><span id="color_selected_red"></span>
+                    <div style="height: 65px;" class="toggle">
+                      <p style="position: absolute; margin: 23px 23px 23px 4px;">
+                        <p style="margin: 23px 23px -57px 0px" class="lang_en">Select color</p>
+                        <p style="margin: 23px 23px -57px 0px" class="lang_es">Sélectionnez la couleur</p>
+                        <p style="margin: 23px 23px -57px 0px" class="lang_fr">Seleccionar color</p>
+                        <p style="margin: 23px 23px -57px 0px" class="lang_cn">选择颜色</p>
+                        <p style="margin: 23px 23px -57px 0px" class="lang_hn">रंग चुनो</p>
+                      </p>
+                      <div class="color_sel4">
+                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')"></button><span id="color_selected_default"></span>
+                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')"></button><span id="color_selected_purple"></span>
+                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')"></button><span id="color_selected_red"></span>
+                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')"></button><span id="color_selected_green"></span>
+                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')"></button><span id="color_selected_gray"></span>
                       </div>
                     </div>
-                    <div class="grid_icons">
-                      <div class="lang_en">
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">Green</button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Gray</button><span id="color_selected_gray"></span>
-                      </div>
-                      <div class="lang_es">
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">Verde</button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Rucio</button><span id="color_selected_gray"></span>
-                      </div>
-                      <div class="lang_fr">
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">Vert</button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Gris</button><span id="color_selected_gray"></span>
-                      </div>
-                      <div class="lang_cn">
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">绿色的</button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">灰色</button><span id="color_selected_gray"></span>
-                      </div>
-                      <div class="lang_hn">
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')">ग्रीन</button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')">Gray</button><span id="color_selected_gray"></span>
+                    <div class="rdc_set">
+                      <h2>
+                        <h2 class="lang_en">Other Options</h2>
+                        <h2 class="lang_es">Color de acento</h2>
+                        <h2 class="lang_fr">Couleur d'accent</h2>
+                        <h2 class="lang_cn">强调色</h2>
+                        <h2 class="lang_hn">एक्सेंट रंग</h2>
+                      </h2>
+                      <div class="toggles">
+                        <div onclick="swapRoundedCorners('./css/settings/rounded-corners/on.css')" id="rd-off" class="toggle">
+                          <p>
+                            <p class="lang_en">Rounded Corners</p>
+                            <p class="lang_fr">Coins arrondis</p>
+                            <p class="lang_es">Esquinas redondeadas</p>
+                            <p class="lang_cn">把角弄圆</p>
+                            <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                          <span class="toggle_span">
+                            <span id="rd-st"></span>
+                          </span>
+                        </div>
+                        <div onclick="swapRoundedCorners('./css/settings/rounded-corners/off.css')" id="rd-on" class="toggle">
+                          <p>
+                            <p class="lang_en">Rounded Corners</p>
+                            <p class="lang_fr">Coins arrondis</p>
+                            <p class="lang_es">Esquinas redondeadas</p>
+                            <p class="lang_cn">把角弄圆</p>
+                            <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                          <span class="toggle_span">
+                            <span id="rd-st"></span>
+                          </span>
+                        </div>
+                        <div style="opacity: 0.5; cursor: not-allowed;" class="toggle">
+                          <p style="pointer-events: none;" class="lang_en">Transparent Sidebar</p>
+                          <p style="pointer-events: none;" class="lang_fr">Barra lateral transparente</p>
+                          <p style="pointer-events: none;" class="lang_es">Transparent Sidebar</p>
+                          <p style="pointer-events: none;" class="lang_cn">透明侧边栏</p>
+                          <p style="pointer-events: none;" class="lang_hn">पारदर्शी साइडबार</p>
+                          <span class="toggle_span">
+                            <span id="trsd-st"></span>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
             </div>
         </div>
-        <script>
-          const electron = require('electron');
-          const ipcRenderer = electron.ipcRenderer;
-    
-          ipcRenderer.on('cpu',(event,data) => {
-            document.getElementById('cpu').innerHTML = data.toFixed(2);
-          });
-        </script>
         <script src="../node_modules/xterm/lib/xterm.js"></script>
 
         <script src="./js/require.js"></script>
@@ -510,7 +517,6 @@
 
         <script src="./js/network_detection.js"></script>
         <script src="./js/addMenu.js"></script>
-        <script src="./js/ui/slideshow.js"></script>
 
         <script src="./js/panel/controls.js"></script>
 
@@ -519,12 +525,14 @@
         <script src="./js/settings/sidebar.js"></script>
         <script src="./js/settings/sidebar-opacity.js"></script>
         <script src="./js/settings/accent-color.js"></script>
+        <script src="./js/settings/rounded-corners.js"></script>
 
 
         <script src="./js/first-boot.js"></script>
         <script src="./js/ui/dim.js"></script>
         <script src="./js/ui/include.js"></script>
         <script src="./js/ui/tabs.js"></script>
+        <script src="./js/ui/openSidebar.js"></script>
         <script>includeHTML();</script>
     </body>
 </html>

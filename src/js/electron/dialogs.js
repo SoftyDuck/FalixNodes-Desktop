@@ -1,6 +1,5 @@
 const { type } = require('os');
 const path = require('path');
-const dialog = electron.remote.dialog;
 var downloadMinerWinCPU = document.getElementById('windows-miner-cpu');
 var downloadMinerWinGPU = document.getElementById('windows-miner-gpu');
 var downloadMinerLinuxCPU = document.getElementById('linux-miner-cpu');
