@@ -1,0 +1,26 @@
+.tab_area {
+    border-radius: 7px 0px 0px 7px;
+}
+
+.content {
+    border-radius: 0px 7px 7px 0px;
+}
+
+div#close-button {
+    border-radius: 0px 7px 0px 0px;
+}
+
+div#rd-off {
+    display: none;
+}
+
+div#rd-on span#rd-st {
+    margin: 3px 0px 0px 25px;
+    transition: 0.4s margin;
+    filter: saturate(1);
+}
+div#rd-off span#rd-st {
+    margin: 3px 0px 0px 25px;
+    transition: 0.4s margin;
+    filter: saturate(1);
+}
