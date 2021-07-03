@@ -18,6 +18,10 @@ html.windows [data-for-os=mac] { /* Hide macOS adjustments if user is using Wind
     height: 100% !important;
 }
 
+@media only screen and (max-width:1034px){
+  span#cc {display: none;}
+}
+
 .box {
     position: fixed;
     z-index: 100;
@@ -176,9 +180,28 @@ button:focus{outline: none}
     100% {opacity: 0;}
 }
 
+
+.ta_o_button {
+  display: none;
+}
+.ta_o_button button {
+  position: fixed;
+  z-index: 1005;
+  color: white;
+  background: var(--accent);
+  border: none;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: -5px;
+  opacity: 1;
+  transition: 0.3s opacity;
+}
 .tab_area {
     background: rgba(11, 23, 37, var(--sidebar-opacity));
     cursor: default;
+    transition: 0.3s left;
 }
 .tab_area button {
     cursor: default;
@@ -197,6 +220,7 @@ button#help_external:hover {background: var(--accent);}
     background: #162230;
     overflow-x: hidden;
     overflow-y: scroll;
+    transition: 0.3s left;
 }
 div#settings {
     padding-left: 25px;
@@ -246,9 +270,21 @@ button#set_layout img {
 .grid_icons button {
     width: 40px !important;
     height: 40px !important;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: none !important;
     border-radius: 50px !important;
+}
+
+.color_sel4 button {
+  border: none !important;
+  height: 50px !important;
+  width: 50px !important;
+  padding: 0px;
+  margin: 0px;
+}
+.color_sel4 {
+  position: absolute;
+  left: 405px;
 }
 
 .color_default::before {
@@ -307,7 +343,7 @@ button#set_layout img {
 }
 
 .set_selection_color button {
-    width: 160px !important;
+    width: 0px !important;
     text-align: left;
     color: white;
     padding: 0px 0px 0px 45px;
@@ -325,7 +361,7 @@ div#unloaded button {
   background: var(--accent);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 0px 20px;
   border-radius: 10px;
   left: 50%;
   position: absolute;
@@ -608,4 +644,51 @@ div#linux-miner h1 {
 }
 div#linux-miner h2 {
   font-size: 18px;
+}
+
+
+
+
+.toggle {
+  margin-bottom: 30px;
+  background: #19293c;
+  width: 600px;
+  border-radius: 7px;
+  padding: 1px 20px;
+  cursor: pointer;
+}
+.toggle p {
+  pointer-events: none;
+}
+.toggle_span {
+  background: #0b1521;
+  width: 45px;
+  height: 22px;
+  position: absolute;
+  margin-top: -38px;
+  left: 600px;
+  border-radius: 50px;
+}
+
+span#rd-st {
+  content: "";
+  background: var(--accent);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 10;
+  border-radius: 50px;
+  margin: 3px 0px 0px 25px;
+  transition: 0.4s margin;
+}
+span#trsd-st {
+  content: "";
+  background: var(--accent);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 10;
+  border-radius: 50px;
+  margin: 3px 0px 0px 25px;
+  transition: 0.4s margin;
 }
