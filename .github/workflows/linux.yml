@@ -10,11 +10,11 @@ on:
 jobs:
   build-mac:
 
-    runs-on: macOS-10.15
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [14.x]
     steps:
     
     - uses: actions/checkout@v2
@@ -25,8 +25,3 @@ jobs:
     - run: npm install
     - run: npm run rebuild
     - run: npm run publish
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.2.3
-      with:
-        name: my-artifact
-        path: dist/
