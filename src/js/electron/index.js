@@ -4,6 +4,8 @@ const {app, BrowserWindow, Menu, protocol, ipcMain, ipcRenderer, globalShortcut,
 const isMac = process.platform === 'darwin' // Not required
 const path = require('path');
 const url = require('url');
+const log = require('electron-log');
+const { autoUpdater } = require("electron-updater");
 const { remote } = require('electron');
 const pty = require("node-pty");
 const os = require("os");
@@ -15,7 +17,7 @@ electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linu
 var osvar = process.platform; /* Detecting OS */
 if (osvar == 'darwin') {app.whenReady().then(() => {createWindowMac()})
 }else if(osvar == 'win32'){app.whenReady().then(() => {createWindowWin()})
-}else{app.whenReady().then(() => {setTimeout(() => {createWindowLinux()}, 400)})}
+}else{app.disableHardwareAcceleration(); app.whenReady().then(() => { setTimeout(() => {createWindowLinux()}, 1200)})}
  // Delayed for Linux, Electron has a bug where the background stays black instead of transparent on Linux.
  // Issue here: https://github.com/electron/electron/issues/28834
  // Old issue here: https://github.com/electron/electron/issues/15947
@@ -152,7 +154,6 @@ if (Pushy.isRegistered()) {
 
 function createWindowMac () { /* Linux */
   const mainWindow = new BrowserWindow({
-    backgroundColor: '#162230',
     width: 1200,
     height: 800,
     minWidth: 430,
@@ -163,8 +164,9 @@ function createWindowMac () { /* Linux */
     closable: true,
     maximizable: true,
     minimizable: true,
-    autoHideMenuBar: true,
     titleBarStyle: 'hiddenInset', // Set the titlebar controls(known as Traffic light buttons on macOS) into app
+		blur: true,
+		blurType: "blurbehind",
     webPreferences: {
       nativeWindowOpen: true,
       preload: path.join(__dirname, "preload.js"),
@@ -186,7 +188,7 @@ function createWindowMac () { /* Linux */
     height: 382,
     resizable: false,
 		blur: true,
-		blurType: "blurbehind", // Usually Acrylic, but mouse lag issue as of now, use Blur Behind for now
+		blurType: "blurbehind",
     webPreferences: {
       devTools: false
     }
@@ -281,18 +283,19 @@ if (Pushy.isRegistered()) {
 }
 function createWindowLinux () { /* Linux */
   const mainWindow = new BrowserWindow({
-    backgroundColor: '#162230',
     width: 1200,
     height: 800,
     minWidth: 430,
     minHeight: 520,
     frame: true,
     show: false,
-    transparent: false,
+    transparent: true,
     closable: true,
     maximizable: true,
     minimizable: true,
     autoHideMenuBar: true,
+		blur: true,
+		blurType: "blurbehind",
     webPreferences: {
       nativeWindowOpen: true,
       preload: path.join(__dirname, "preload.js"),
@@ -314,23 +317,25 @@ function createWindowLinux () { /* Linux */
     height: 382,
     resizable: false,
 		blur: true,
-		blurType: "blurbehind", // Usually Acrylic, but mouse lag issue as of now, use Blur Behind for now
+		blurType: "blurbehind",
     webPreferences: {
       devTools: false
     }
   })
+
+  autoUpdater.checkForUpdatesAndNotify();
   loadWindow.loadFile('src/html/splash/index.html');
   mainWindow.loadFile('src/index.html');
   mainWindow.setIcon(path.join(__dirname, '../../images/icons/app/256x256.png'));
   mainWindow.webContents.on('did-finish-load', function() {
-    mainWindow.webContents.insertCSS('#titlebar{display: none !important;} button#windows-miner-cpu, button#windows-miner-gpu, button#mac-miner-cpu {display: none !important;} span#beta::after {top: 10px !important;} div#windows-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
+    mainWindow.webContents.insertCSS('#titlebar{display: none !important;} div#rd-off, div#rd-on, button#windows-miner-cpu, button#windows-miner-gpu, button#mac-miner-cpu {display: none !important;} span#beta::after {top: 10px !important;} div#windows-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
  })
  setTimeout(() => {
   loadWindow.close();
-}, 7500);
+}, 6200);
 setTimeout(() => { // Show splash for 5 seconds (fixed time) then the main window
   mainWindow.show();
- }, 8000); 
+ }, 6300); 
  var ptyProcess = pty.spawn(shell, [], {
      name: "xterm-color",
      cols: 80,
