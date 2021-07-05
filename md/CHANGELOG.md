@@ -4,16 +4,18 @@
    - Chinese
    - Hindi
    - French
+ - Added rounded corners (Windows 11)
  - Added instructions to FalixCoins Mining
  - Added download button for CPU and GPU miner
- - Added Push Notifications
-   - Will only show if application is open
- - Snapstore support dropped
+ - Added Push Notifications thanks to Pushy
+ - Re-designed welcome screen
  - Converted to AppImage on Linux
- *Since this is a WIP changelog, the following below are plans, either haven't been added yet in developement and/or can't confirm*
- - Improvements for macOS Support [Can't confirm]
-   - Added auto update for macOS
-   - Signed DMG file for macOS
+ - Snapstore support dropped
+ - Support for Windows 7 and Windows 8.1 is back (Windows 7 not recommended)
+ - Deployment progress changed thanks to GitHub Actions
+ - Added Glasstron on top of splash window
+ - Increased loading time for Windows slightly for splash
+ - Settings slightly adjusted 
 
 # v3.0.0 Changelog - Vivify
  - Added new protocol `falix://falix`
