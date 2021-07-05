@@ -1,4 +1,4 @@
-# v3.1.0 Changelog (WIP) - Bonjour
+# v3.1.0 Changelog - Bonjour
  - Added language support
    - Spansih
    - Chinese
