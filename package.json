@@ -47,7 +47,7 @@
       "url": "https://updates.korbsstudio.com/falix-software/"
     },
     "win": {
-      "target": "zip",
+      "target": "nsis",
       "asar": "false"
     },
     "mac": {
