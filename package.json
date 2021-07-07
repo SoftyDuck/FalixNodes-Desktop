@@ -62,7 +62,8 @@
     },
     "nsis": {
       "deleteAppDataOnUninstall": true,
-      "shortcutName": "Falix Software"
+      "shortcutName": "Falix Software",
+      "displayLanguageSelector": true
     }
   }
 }
