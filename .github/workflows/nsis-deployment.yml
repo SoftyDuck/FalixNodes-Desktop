@@ -1,4 +1,4 @@
-name: Distribute to Linux (AppImage)
+name: Distribute to Windows (NSIS)
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
