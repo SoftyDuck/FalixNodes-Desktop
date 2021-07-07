@@ -42,6 +42,10 @@
         "falix"
       ]
     },
+    "publish": {
+      "provider": "generic",
+      "url": "https://updates.korbsstudio.com/falix-software/"
+    },
     "win": {
       "target": "zip",
       "asar": "false"
