@@ -194,6 +194,15 @@ This will show data and timing of Falix Software being ran on my machines. This 
  - DirectX: 12
  - Node Version: v14.17.1
 
+#### HP Omni-100 5050
+ - CPU: AMD Althon | 1.80Ghz | 2 Cores
+ - Memory: 8GB DDR3L
+ - Graphics Card: 
+ - Storage: 320GB HDD
+ - Operating System: Windows 10 v21H1
+ - DirectX: 12
+ - Node Version: v14.17.1
+
 ### Running
 Running software after intended install (Not building)
 
@@ -202,6 +211,9 @@ Running software after intended install (Not building)
 
 #### Dell Inspiron 15-3552
  - Start software             |        09s
+
+#### HP Omni-100 5050
+ - Start software             |        07s
 
 
 ### Building
@@ -224,6 +236,12 @@ Running commands from __package.json__ in order:
  - Rebuild Modules            |    2m  15s
  - Start software             |        09s
  - Build - Target: NSIS       |    10m 23s
+
+#### HP Omni-100 5050
+ - Installing node packges    |    3m  46s
+ - Rebuild Modules            |    1m  37s
+ - Start software             |        07s
+ - Build - Target: NSIS       |    9m  00s
  
    NSIS isn't used in production
 
