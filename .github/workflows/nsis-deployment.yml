@@ -21,24 +21,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    # - run: npm install
-    # - run: npm run rebuild
-    # - run: npm run build
-    - run: mkdir dist/
-    - run: touch falix-1.txt
-    - run: touch falix-2.txt
-    - run: touch falix-3.txt
-    - run: touch falix-4.txt
-    - run: touch falix-5.txt
-    - run: touch falix-6.txt
-    - run: touch not-falix-1.txt
-    - run: touch not-falix-2.txt
-    - run: touch not-falix-3.txt
-    - run: touch not-falix-4.txt
-    - run: touch not-falix-5.txt
-    - run: touch not-falix-6.txt
+    - run: npm install
+    - run: npm run rebuild
+    - run: npm run build
+    - run: rm -R dist/win-unpacked # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: falix
-        path: dist/falix*
+        name: my-artifact
+        path: dist/z
