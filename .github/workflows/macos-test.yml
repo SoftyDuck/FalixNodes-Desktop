@@ -1,4 +1,4 @@
-name: Deployment for macOS (DMG)
+name: Distribute for macOS (DMG)
 
 
 env:
@@ -22,7 +22,10 @@ jobs:
       uses: actions/setup-node@v2
     - run: npm install
     - run: npm run rebuild
-    - run: npm run publish
+    - run: rm build/license_zh.txt
+    - run: rm build/license_es.txt
+    - run: rm build/license_fr.txt
+    - run: npm run build
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
