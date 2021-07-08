@@ -24,9 +24,9 @@ jobs:
     - run: npm install
     - run: npm run rebuild
     - run: npm run build
-    - run: rm -R dist/win-unpacked # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
+    - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
         name: my-artifact
-        path: dist/z
+        path: dist/
