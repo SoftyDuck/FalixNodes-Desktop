@@ -67,6 +67,7 @@ function createWindowWin () { /* Windows */
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.webContents.insertCSS('button#linux-miner-cpu, button#linux-miner-gpu, button#mac-miner-cpu {display: none !important;} div#linux-miner {display: none !important} @media only screen and (max-width:880px){#titlebar {width: 100% !important;left: 112px !important;} .ta_o_button button:hover {background: rgba(0,0,0,0.5) !important;} .ta_o_button button {background: transparent !important;padding: 10px 12px !important;border-radius: 0px !important;margin: -8px !important;} .ta_o_button i {margin-right: 4px !important;}}') /* Remove Windows Titlebar if OS is Linux */
  })
+ autoUpdater.checkForUpdatesAndNotify();
   loadWindow.loadFile('src/html/splash/index.html')
   mainWindow.loadFile('src/index.html');
   setTimeout(() => {
