@@ -63,7 +63,11 @@
     "nsis": {
       "deleteAppDataOnUninstall": true,
       "shortcutName": "Falix Software",
-      "displayLanguageSelector": true
+      "displayLanguageSelector": true,
+      "oneClick": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": false
     }
   }
 }
