@@ -1,3 +1,9 @@
+### v3.1.1 Changelog
+ - Accent color, transparent sidebar, and rounded corners option was moved in Settings
+ - Sidebar layout pushed to bottom in Settings
+ - In the new welcome window, the option that is selected is now highlighed with accent color
+ - Rounded corners option removed on macOS
+
 # v3.1.0 Changelog - Bonjour
  - Added language support
    - Spansih
