@@ -5,3 +5,16 @@
 .sbo_90 {
     background: transparent !important;
 }
+
+div#trsd-on span#trsd-st {
+    margin: 3px 0px 0px 25px;
+    transition: 0.4s margin;
+    filter: saturate(1);
+}
+div#trsd-off span#trsd-st {
+    margin: 3px 0px 0px 25px;
+    transition: 0.4s margin;
+    filter: saturate(1);
+}
+
+div#trsd-on {display: none;}

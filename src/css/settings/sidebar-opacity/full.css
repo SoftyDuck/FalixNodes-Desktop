@@ -1,18 +1,21 @@
 :root {
-    --sidebar-opacity: 0.10;
+    --sidebar-opacity: 1;
 }
 
 .sbo_10 {
     background: #18283c !important;
 }
 
-div#ts-on span#trsd-st {
+div#trsd-on span#trsd-st {
     margin: 3px 0px 0px 4px;
     transition: 0.4s margin;
     filter: saturate(1);
 }
-div#ts-off span#trsd-st {
+div#trsd-off span#trsd-st {
     margin: 3px 0px 0px 4px;
     transition: 0.4s margin;
     filter: saturate(1);
 }
+
+div#trsd-off {display: none;}
+div#trsd-on {display: inherit;}
