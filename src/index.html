@@ -383,11 +383,11 @@
                 </h1>
                 <div class="about">
                     <p>
-                      <p class="lang_en">Software Version: 3.1.0</p>
-                      <p class="lang_es">Versión del software: 3.1.0</p>
-                      <p class="lang_fr">Version du logiciel: 3.1.0</p>
-                      <p class="lang_cn">软件版本: 3.1.0</p>
-                      <p class="lang_hn">सॉफ्टवेयर संस्करण: 3.1.0</p>
+                      <p class="lang_en">Software Version: 3.1.1</p>
+                      <p class="lang_es">Versión del software: 3.1.1</p>
+                      <p class="lang_fr">Version du logiciel: 3.1.1</p>
+                      <p class="lang_cn">软件版本: 3.1.1</p>
+                      <p class="lang_hn">सॉफ्टवेयर संस्करण: 3.1.1</p>
                     </p>
                 </div>
                 <div class="language">
@@ -404,6 +404,83 @@
                     <button id="lang_sel_do_fr" onclick="setLanguage('./css/settings/language/french.css'); navigateTo('https://software.falixnodes.net/blank/');">fançais</button>
                     <button id="lang_sel_do_cn" onclick="setLanguage('./css/settings/language/chinese.css'); navigateTo('https://software.falixnodes.net/blank/');">中国人</button>
                     <button id="lang_sel_do_hn" onclick="setLanguage('./css/settings/language/hindi.css'); navigateTo('https://software.falixnodes.net/blank/');">हिंदी</button>
+                  </div>
+                </div>
+                <div class="set_selection_color">
+                  <h2>
+                    <h2 class="lang_en">Accent Color</h2>
+                    <h2 class="lang_es">Color de acento</h2>
+                    <h2 class="lang_fr">Couleur d'accent</h2>
+                    <h2 class="lang_cn">强调色</h2>
+                    <h2 class="lang_hn">एक्सेंट रंग</h2>
+                  </h2>
+                    <div style="height: 50px;" class="toggle">
+                      <p style="position: absolute; margin: 23px 23px 23px 4px;">
+                        <p style="margin: 16px 23px -57px 0px" class="lang_en">Select color</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_es">Sélectionnez la couleur</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_fr">Seleccionar color</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_cn">选择颜色</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_hn">रंग चुनो</p>
+                      </p>
+                      <div class="color_sel4">
+                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')"></button><span id="color_selected_default"></span>
+                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')"></button><span id="color_selected_purple"></span>
+                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')"></button><span id="color_selected_red"></span>
+                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')"></button><span id="color_selected_green"></span>
+                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')"></button><span id="color_selected_gray"></span>
+                      </div>
+                    </div>
+                    <div class="toggles">
+                      <div onclick="swapRoundedCorners('./css/settings/rounded-corners/on.css')" id="rd-off" class="toggle">
+                        <p>
+                          <p class="lang_en">Rounded Corners</p>
+                          <p class="lang_fr">Coins arrondis</p>
+                          <p class="lang_es">Esquinas redondeadas</p>
+                          <p class="lang_cn">把角弄圆</p>
+                          <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                        <span class="toggle_span">
+                          <span id="rd-st"></span>
+                        </span>
+                      </div>
+                      <div onclick="swapRoundedCorners('./css/settings/rounded-corners/off.css')" id="rd-on" class="toggle">
+                        <p>
+                          <p class="lang_en">Rounded Corners</p>
+                          <p class="lang_fr">Coins arrondis</p>
+                          <p class="lang_es">Esquinas redondeadas</p>
+                          <p class="lang_cn">把角弄圆</p>
+                          <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                        <span class="toggle_span">
+                          <span id="rd-st"></span>
+                        </span>
+                      </div>
+                      <div class="toggles">
+                        <div onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/full.css')" id="trsd-off" class="toggle">
+                          <p>
+                            <p class="lang_en">Sidebar Transpancy</p>
+                            <p class="lang_fr">Barre latérale transparente</p>
+                            <p class="lang_es">Barra lateral transparente</p>
+                            <p class="lang_cn">侧边栏透明</p>
+                            <p class="lang_hn">साइडबार पारदर्शी</p>
+                          </p>
+                          <span class="toggle_span">
+                            <span id="trsd-st"></span>
+                          </span>
+                        </div>
+                        <div onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/90.css')" id="trsd-on" class="toggle">
+                          <p>
+                            <p class="lang_en">Sidebar Transpancy</p>
+                            <p class="lang_fr">Barre latérale transparente</p>
+                            <p class="lang_es">Barra lateral transparente</p>
+                            <p class="lang_cn">侧边栏透明</p>
+                            <p class="lang_hn">साइडबार पारदर्शी</p>
+                          </p>
+                          <span class="toggle_span">
+                            <span id="trsd-st"></span>
+                          </span>
+                        </div>
+                    </div>
                   </div>
                 </div>
                 <div id="remove_in_TabView" class="set_selection">
@@ -434,77 +511,6 @@
                       <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>आरामदायक</p> <img src="./images/Sidebar.png"></button>
                       <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>कॉम्पैक्ट</p> <img src="./images/SidebarCompact.png"></button>
                     </div>
-                </div>
-                <div class="set_selection_color">
-                  <h2>
-                    <h2 class="lang_en">Accent Color</h2>
-                    <h2 class="lang_es">Color de acento</h2>
-                    <h2 class="lang_fr">Couleur d'accent</h2>
-                    <h2 class="lang_cn">强调色</h2>
-                    <h2 class="lang_hn">एक्सेंट रंग</h2>
-                  </h2>
-                    <div style="height: 65px;" class="toggle">
-                      <p style="position: absolute; margin: 23px 23px 23px 4px;">
-                        <p style="margin: 23px 23px -57px 0px" class="lang_en">Select color</p>
-                        <p style="margin: 23px 23px -57px 0px" class="lang_es">Sélectionnez la couleur</p>
-                        <p style="margin: 23px 23px -57px 0px" class="lang_fr">Seleccionar color</p>
-                        <p style="margin: 23px 23px -57px 0px" class="lang_cn">选择颜色</p>
-                        <p style="margin: 23px 23px -57px 0px" class="lang_hn">रंग चुनो</p>
-                      </p>
-                      <div class="color_sel4">
-                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')"></button><span id="color_selected_default"></span>
-                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')"></button><span id="color_selected_purple"></span>
-                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')"></button><span id="color_selected_red"></span>
-                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')"></button><span id="color_selected_green"></span>
-                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')"></button><span id="color_selected_gray"></span>
-                      </div>
-                    </div>
-                    <div class="rdc_set">
-                      <h2>
-                        <h2 class="lang_en">Other Options</h2>
-                        <h2 class="lang_es">Color de acento</h2>
-                        <h2 class="lang_fr">Couleur d'accent</h2>
-                        <h2 class="lang_cn">强调色</h2>
-                        <h2 class="lang_hn">एक्सेंट रंग</h2>
-                      </h2>
-                      <div class="toggles">
-                        <div onclick="swapRoundedCorners('./css/settings/rounded-corners/on.css')" id="rd-off" class="toggle">
-                          <p>
-                            <p class="lang_en">Rounded Corners</p>
-                            <p class="lang_fr">Coins arrondis</p>
-                            <p class="lang_es">Esquinas redondeadas</p>
-                            <p class="lang_cn">把角弄圆</p>
-                            <p class="lang_hn">कोने पर गोलाकार आकृति</p>
-                        </p>
-                          <span class="toggle_span">
-                            <span id="rd-st"></span>
-                          </span>
-                        </div>
-                        <div onclick="swapRoundedCorners('./css/settings/rounded-corners/off.css')" id="rd-on" class="toggle">
-                          <p>
-                            <p class="lang_en">Rounded Corners</p>
-                            <p class="lang_fr">Coins arrondis</p>
-                            <p class="lang_es">Esquinas redondeadas</p>
-                            <p class="lang_cn">把角弄圆</p>
-                            <p class="lang_hn">कोने पर गोलाकार आकृति</p>
-                        </p>
-                          <span class="toggle_span">
-                            <span id="rd-st"></span>
-                          </span>
-                        </div>
-                        <div style="opacity: 0.5; cursor: not-allowed;" class="toggle">
-                          <p style="pointer-events: none;" class="lang_en">Transparent Sidebar</p>
-                          <p style="pointer-events: none;" class="lang_fr">Barra lateral transparente</p>
-                          <p style="pointer-events: none;" class="lang_es">Transparent Sidebar</p>
-                          <p style="pointer-events: none;" class="lang_cn">透明侧边栏</p>
-                          <p style="pointer-events: none;" class="lang_hn">पारदर्शी साइडबार</p>
-                          <span class="toggle_span">
-                            <span id="trsd-st"></span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
             </div>
         </div>

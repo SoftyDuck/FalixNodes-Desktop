@@ -11,7 +11,7 @@ const pty = require("node-pty");
 const os = require("os");
 const Pushy = require('pushy-electron');
 var shell = os.platform() === "win32" ? "powershell.exe" : "bash"; // Use Powershell instead of Command Prompt
-var macshell = os.platform() === "win32" ? "powershell.exe" : "zsh";
+var macshell = os.platform() === "win32" ? "powershell.exe" : "zsh"; // Use ZSH instead of Bash
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 
 var osvar = process.platform; /* Detecting OS */
@@ -198,7 +198,7 @@ function createWindowMac () { /* Linux */
   mainWindow.loadFile('src/index.html');
   mainWindow.setIcon(path.join(__dirname, '../../images/icons/app/256x256.png'));
   mainWindow.webContents.on('did-finish-load', function() {
-    mainWindow.webContents.insertCSS('#titlebar{display: none !important;} button#windows-miner-cpu, button#windows-miner-gpu, button#linux-miner-cpu, button#linux-miner-gpu {display: none !important;} span#beta::after {top: 10px !important;} div#windows-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
+    mainWindow.webContents.insertCSS('#titlebar{display: none !important;} div#rd-off, div#rd-on, button#windows-miner-cpu, button#windows-miner-gpu, button#linux-miner-cpu, button#linux-miner-gpu {display: none !important;} span#beta::after {top: 10px !important;} div#windows-miner {display: none !important}') /* Remove Windows Titlebar if OS is Linux */
  })
  setTimeout(() => {
   loadWindow.close();
@@ -323,7 +323,6 @@ function createWindowLinux () { /* Linux */
       devTools: false
     }
   })
-
   autoUpdater.checkForUpdatesAndNotify();
   loadWindow.loadFile('src/html/splash/index.html');
   mainWindow.loadFile('src/index.html');
