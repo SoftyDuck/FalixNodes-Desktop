@@ -36,11 +36,11 @@
                     </div>
                     <div class="wwfb-content_right">
                         <div class="wwfb-selection">
-                            <button onclick="setLanguage('./css/settings/language/english.css');">English</button>
-                            <button onclick="setLanguage('./css/settings/language/french.css');">French</button>
-                            <button onclick="setLanguage('./css/settings/language/spanish.css');">Spanish</button>
-                            <button onclick="setLanguage('./css/settings/language/chinese.css');">Chinese</button>
-                            <button onclick="setLanguage('./css/settings/language/hindi.css');">Hindi</button>
+                            <button id="lang_sel_do_en" onclick="setLanguage('./css/settings/language/english.css');">English</button>
+                            <button id="lang_sel_do_fr" onclick="setLanguage('./css/settings/language/french.css');">French</button>
+                            <button id="lang_sel_do_es" onclick="setLanguage('./css/settings/language/spanish.css');">Spanish</button>
+                            <button id="lang_sel_do_cn" onclick="setLanguage('./css/settings/language/chinese.css');">Chinese</button>
+                            <button id="lang_sel_do_hn" onclick="setLanguage('./css/settings/language/hindi.css');">Hindi</button>
                         </div>
                         <div class="wwfb-continue-btn">
                             <button class="lang_en" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; document.getElementById('wwfb-s2').style.display = 'none'; document.getElementById('wwfb-s3').style.display = 'inherit';">Next</button>
@@ -71,24 +71,24 @@
                     <div class="wwfb-content_right">
                         <div class="wwfb-selection">
                             <div class="lang_en">
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Comfortable</button>
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compact</button>
+                                <button id="sidebar_select_do_comfortable" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Comfortable</button>
+                                <button id="sidebar_select_do_compact" onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compact</button>
                             </div>
                             <div class="lang_fr">
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Confortable</button>
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compact</button>
+                                <button id="sidebar_select_do_comfortable" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Confortable</button>
+                                <button id="sidebar_select_do_compact" onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compact</button>
                             </div>
                             <div class="lang_es">
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Cómodo</button>
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compacto</button>
+                                <button id="sidebar_select_do_comfortable" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">Cómodo</button>
+                                <button id="sidebar_select_do_compact" onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">Compacto</button>
                             </div>
                             <div class="lang_cn">
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">舒适</button>
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">紧凑型</button>
+                                <button id="sidebar_select_do_comfortable" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">舒适</button>
+                                <button id="sidebar_select_do_compact" onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">紧凑型</button>
                             </div>
                             <div class="lang_hn">
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">आरामदायक</button>
-                                <button onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">कॉम्पैक्ट</button>
+                                <button id="sidebar_select_do_comfortable" onclick="document.getElementById('wwfb-filter').style.left = '250px'; document.getElementById('wwfb-bdy').style.left = '60%'; swapSidebarLayout('./css/settings/sidebar-size/comfortable.css')">आरामदायक</button>
+                                <button id="sidebar_select_do_compact" onclick="document.getElementById('wwfb-filter').style.left = '70px'; document.getElementById('wwfb-bdy').style.left = '55%'; swapSidebarLayout('./css/settings/sidebar-size/compact.css')">कॉम्पैक्ट</button>
                             </div>
                         </div>
                         <div class="wwfb-continue-btn">
@@ -208,12 +208,26 @@
                                   <span id="rd-st"></span>
                                 </span>
                               </div>
-                              <div style="margin-bottom: 10px;width: 162px; font-size: 12px; opacity: 0.5; cursor: not-allowed;" class="toggle">
-                                <p style="pointer-events: none;" class="lang_en">Transparent Sidebar</p>
-                                <p style="pointer-events: none;" class="lang_fr">Barra lateral transparente</p>
-                                <p style="pointer-events: none;" class="lang_es">Transparent Sidebar</p>
-                                <p style="pointer-events: none;" class="lang_cn">透明侧边栏</p>
-                                <p style="pointer-events: none;" class="lang_hn">पारदर्शी साइडबार</p>
+                              <div style="margin-bottom: 10px;width: 162px; font-size: 12px;" onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/full.css')" id="trsd-off" class="toggle">
+                                <p>
+                                  <p class="lang_en">Sidebar Transpancy</p>
+                                  <p class="lang_fr">Barre latérale transparente</p>
+                                  <p class="lang_es">Barra lateral transparente</p>
+                                  <p class="lang_cn">侧边栏透明</p>
+                                  <p class="lang_hn">साइडबार पारदर्शी</p>
+                                </p>
+                                <span style="left: 155px; margin-top: -28px;" class="toggle_span">
+                                  <span id="trsd-st"></span>
+                                </span>
+                              </div>
+                              <div style="margin-bottom: 10px;width: 162px; font-size: 12px;" onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/90.css')" id="trsd-on" class="toggle">
+                                <p>
+                                  <p class="lang_en">Sidebar Transpancy</p>
+                                  <p class="lang_fr">Barre latérale transparente</p>
+                                  <p class="lang_es">Barra lateral transparente</p>
+                                  <p class="lang_cn">侧边栏透明</p>
+                                  <p class="lang_hn">साइडबार पारदर्शी</p>
+                                </p>
                                 <span style="left: 155px; margin-top: -28px;" class="toggle_span">
                                   <span id="trsd-st"></span>
                                 </span>
@@ -238,19 +252,19 @@
                         <h1 class="lang_hn">आप तैयार हैं!</h1>
                     </h1>
                     <div class="lang_en">
-                        <button onclick="location.href = 'index.html'">Get Stared</button>
+                        <button onclick="localStorage.setItem('firstBoot','true');location.href = 'index.html'">Get Stared</button>
                     </div>
                     <div class="lang_fr">
-                        <button onclick="location.href = 'index.html'">démarrer</button>
+                        <button onclick="localStorage.setItem('firstBoot','true');location.href = 'index.html'">démarrer</button>
                     </div>
                     <div class="lang_es">
-                        <button onclick="location.href = 'index.html'">Empezar</button>
+                        <button onclick="localStorage.setItem('firstBoot','true');location.href = 'index.html'">Empezar</button>
                     </div>
                     <div class="lang_cn">
-                        <button onclick="location.href = 'index.html'">入门</button>
+                        <button onclick="localStorage.setItem('firstBoot','true');location.href = 'index.html'">入门</button>
                     </div>
                     <div class="lang_hn">
-                        <button onclick="location.href = 'index.html'">आरंभ करें</button>
+                        <button onclick="localStorage.setItem('firstBoot','true');location.href = 'index.html'">आरंभ करें</button>
                     </div>
                 </div>
             </div>

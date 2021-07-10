@@ -78,3 +78,5 @@ i.fas.fa-slash {
     opacity: 0.32;
     pointer-events: none;
 }
+
+button#sidebar_select_do_compact {background: var(--accent)}

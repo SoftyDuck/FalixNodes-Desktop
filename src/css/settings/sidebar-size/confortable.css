@@ -1,3 +1,5 @@
 .selection_sb_comf {
     background: #18283B !important;
 }
+
+button#sidebar_select_do_comfortable {background: var(--accent)}
