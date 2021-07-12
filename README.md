@@ -1,3 +1,13 @@
+![Latest Version of Falix Software](https://img.shields.io/badge/Version-v3.1.0-blue.svg)
+
+![Workflow for Distribution to Windows](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/nsis-deployment.yml/badge.svg)
+
+![Workflow for Distribution to macOS](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/dmg-deployment.yml/badge.svg)
+
+![Workflow for Distribution to Linux](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appimage-deployment.yml/badge.svg)
+
+![Workflow for Distribution to Windows 10/11](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appx-deployment.yml/badge.svg)
+
 # Falix Software (Formly FalixNodes Software)
 ![image](https://user-images.githubusercontent.com/51213244/121123903-fe27d080-c7f1-11eb-9aba-4102590265f7.png)
 
