@@ -1,6 +1,16 @@
 - name: Create Awesome Badge
-  uses: schneegans/dynamic-badges-action@v1.1.0
-  with:
-    label: Latest Version
-    message: v3.1.0
-    color: blue
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  generate-badge:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    uses: schneegans/dynamic-badges-action@v1.1.0
+    with:
+      label: Latest Version
+      message: v3.1.0
+      color: blue
