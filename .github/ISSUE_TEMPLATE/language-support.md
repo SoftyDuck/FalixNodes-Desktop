@@ -1,10 +1,9 @@
 ---
-name: Language Support
+name: Translation Corrections
 about: Correct wording and translations
 title: translation
-labels: ''
+labels: 'translation'
 assignees: KorbsStudio
-
 ---
 
 *NOTE: Google Translate was used to translate the entire application, we're aware that Google Translate isn't perfect.*
