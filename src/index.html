@@ -15,6 +15,7 @@
         <link id="layout-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/layout/sidebar.css">
         <link id="sidebar-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-size/confortable.css">
         <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-opacity/90.css">
+        <link id="dismissMinerDownload" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/miner-download/keep.css">
         <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.2-web/css/all.css">
     </head>
     <header data-for-os="windows" id="titlebar" class="titlebar">
@@ -251,21 +252,18 @@
                 <webview src="https://software.falixnodes.net/support.html"></webview>
             </div>
             <div id="terminal_mining" class="tab_content">
-              <span id="beta" class="lang_en"></span>
-              <span id="beta" class="lang_es"></span>
-              <span id="beta" class="lang_cn"></span>
-              <div id="terminal"></div>
               <div id="terminal"></div>
               <div class="term_content">
                 <div class="boxtmc">
-                  <p>
-                    <p id="download_52" class="lang_en">Don't have the miner software downloaded?</p>
-                  </p>
-                  <button id="windows-miner-cpu">Download CPU Miner</button> <br>
-                  <button id="windows-miner-gpu">Download GPU Miner</button>
-                  <button id="linux-miner-cpu">Download CPU Miner</button> <br>
-                  <button id="linux-miner-gpu">Download GPU Miner</button>
-                  <button id="mac-miner-cpu">Download CPU Miner</button>
+                  <div class="minerDownloader">
+                    <span onclick="dismissMinerDownload('./css/miner-download/dismiss.css');" id="close_fxmn"><i class="fas fa-times"></i></span>
+                    <p>
+                      <p id="download_52">Don't have the miner software downloaded?</p>
+                    </p>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="windows-miner-cpu">Download FalixCoins Miner</button> <br>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="linux-miner-cpu">Download FalixCoins Miner</button> <br>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="mac-miner-cpu">Download FalixCoins Miner</button>
+                  </div>
                 </div>
                 <div id="windows-miner" class="boxtmc">
                   <h1>
@@ -532,6 +530,7 @@
         <script src="./js/settings/sidebar-opacity.js"></script>
         <script src="./js/settings/accent-color.js"></script>
         <script src="./js/settings/rounded-corners.js"></script>
+        <script src="./js/settings/dismiss-miner-download.js"></script>
 
 
         <script src="./js/first-boot.js"></script>
