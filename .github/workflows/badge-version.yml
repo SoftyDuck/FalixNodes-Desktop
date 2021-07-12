@@ -1,0 +1,6 @@
+- name: Create Awesome Badge
+  uses: schneegans/dynamic-badges-action@v1.1.0
+  with:
+    label: Latest Version
+    message: v3.1.0
+    color: blue
