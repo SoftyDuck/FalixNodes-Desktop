@@ -2,9 +2,8 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: ''
-assignees: ''
-
+labels: 'bug'
+assignees: 'KorbsStudio'
 ---
 
 **Describe the bug**
@@ -25,5 +24,5 @@ If applicable, add screenshots to help explain your problem.
 ![image](ImageURLGoesHere)
 
 **Desktop:**
- - OS: [Windows, macOS, or Linux]
- - Version [2.0]
+ - OS: [Windows 11, macOS 12.0, or Linux]
+ - Version [3.1.0]
