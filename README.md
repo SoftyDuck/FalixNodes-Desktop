@@ -136,7 +136,42 @@ npm run build
 After installer is done building, check the `/dist/` folder.
 
 ### Other Modifications
-There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general.
+There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general. You also need to update other stuff like the update server provider and learn how it works if you do plan to include auto updating like we did.
+
+### Pushy Notifications
+To make sure your fork of the software doesn't recieve notifications for Falix Inc, you'll need to either remove Pushy all together or change the app ID of Pushy.
+
+If this isn't changed, your customers who'll use the software may recieve push notifications from the forked version of the software and may be confused.
+
+#### Auto Updates
+As seen here in the __[package.json](https://github.com/FalixNodes-Software/Desktop-App/blob/master/package.json#L47)__, there is a url "https://updates.korbsstudio.com/falix-software/", which is a self hosted update server. 
+
+The file structure is simply, you're required to have a "latest" file in there like `latest.yml`, `latest-mac.yml`, and a `latest-linux.yml` file along with a setup file for the software. 
+
+If you don't plan to self host your own update server, then GitHub Releases is recommended.
+Simply change the publish area of the package.json file to this:
+```
+...
+    "publish": {
+      "provider": "github",
+      "repo": "repo-name",
+      "owner": "owner-username",
+    },
+...
+```
+You're required to have your GitHub token to publish new releases with Electron Builder, so add the token to the environment.
+
+On Linux/macOS:
+``` 
+export GH_TOKEN="<YOUR_TOKEN_HERE>"
+```
+
+On Windows:
+```
+[Environment]::SetEnvironmentVariable("GH_TOKEN","<YOUR_TOKEN_HERE>","User")
+```
+
+Make sure to restart your terminal after doing the export command.
 
 #### NSIS Setup
 <img width="450" src="https://miro.medium.com/max/499/0*fMHZpJv5BjlmnJE4.png">
