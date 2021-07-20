@@ -1,20 +1,31 @@
+# Falix Software (Formly FalixNodes Software)
+![image](https://user-images.githubusercontent.com/51213244/121123903-fe27d080-c7f1-11eb-9aba-4102590265f7.png)
+
+Simple and easy to use. Access Falix services all from one place like your client and game panel, help center, status, and more.
+
+[Download](https://software.falixnodes.net/) from our official website.
+
+________________________
+
 ![Latest Version of Falix Software](https://img.shields.io/badge/Version-v3.1.0-blue.svg)
 
 ![Workflow for Distribution to Windows](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/nsis-deployment.yml/badge.svg)
-
 ![Workflow for Distribution to macOS](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/dmg-deployment.yml/badge.svg)
-
 ![Workflow for Distribution to Linux](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appimage-deployment.yml/badge.svg)
-
 ![Workflow for Distribution to Windows 10/11](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appx-deployment.yml/badge.svg)
-
-# Falix Software (Formly FalixNodes Software)
-![image](https://user-images.githubusercontent.com/51213244/121123903-fe27d080-c7f1-11eb-9aba-4102590265f7.png)
 
 ________________________
 
 ## ❔ Q&A for Developers
 ### Why is Font Awesome included offline? You could use a script instead.
+#### What is Font Awesome?
+Font Awesome is a font and icon toolkit based on CSS and Less.
+
+[Learn More](https://fontawesome.com/)
+
+[Learn to Upgrade](https://fontawesome.com/v5.15/how-to-use/on-the-desktop/setup/upgrading-from-version-4)
+
+#### Why include it offline?
 I understand that using one line of code, in this case a link to the Font Awesome script, will do the trick. Yes, you can do that, but the reason why I'm including Font Awesome locally with the software is for offline usage. 
 
 If the user is offline, the icons in the software won't load unless Font Awesome is included locally.
@@ -27,7 +38,7 @@ The reason why the software needs all these requirements like Python and Visual 
 Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologie. It combines the Chromium rendering engine and the Node.js runtime. - [Wikipedia](https://en.wikipedia.org/wiki/Electron_(software_framework))
 
 #### Why I use it
-I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. Cross-platform support was also shortened and easier for me to do.
+I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. The process of doing cross-platform support was also shortened and easier for me to do.
 
 There are tons of other good reasons why to use Electron, you can read more about that here on [Alibaba Cloud](https://www.alibabacloud.com/blog/what-is-electronjs-and-why-should-you-use-it_581971) (Article).
 
@@ -124,6 +135,27 @@ npm run build
 
 After installer is done building, check the `/dist/` folder.
 
+### Other Modifications
+There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general.
+
+#### NSIS Setup
+<img width="450" src="https://miro.medium.com/max/499/0*fMHZpJv5BjlmnJE4.png">
+
+As shown above, there is an image shown in the left sidebar of installer. This can be changed by updating the image in `/build/installerSidebar.bmp`. Image size has to be 164x314 pixels.
+
+Just download the [Figma file](https://github.com/FalixNodes-Software/Desktop-App/tree/master/build/assets/figma/Falix Software Resources.fig) for this and simply update the screenshots. Or if you want, you're allowed to create your own image for the sidebar.
+
+What's a BMP file? The BMP file format, also known as bitmap image file, device independent bitmap file format and bitmap, is a raster graphics image file format used to store bitmap digital images, independently of the display device, especially on Microsoft Windows and OS/2 operating systems. In this case, we're using NSIS, which requires the use of BMP.
+
+[PNG to BMP Converter](https://cloudconvert.com/png-to-bmp)
+
+#### DMG Setup
+<div>
+  <img width="450" src="https://cdn.discordapp.com/attachments/829662493533667339/862790846201331762/unknown.png">
+</div>
+
+As shown above, there is background image shown in the DMG installer. This can be changed by updating the image in `/build/background.png`. Image size has to be 540x380 pixels. The only objects in the image above that isn't part of the background image is the __falixnodes.app__ file and the Applications folder shown in the center.
+
 ________________________
 
 ## 📊 Benchmark Testing
@@ -205,6 +237,8 @@ ________________________
 
 ## 💡 Credits
 Developer/Maintainer: [Korbs Studio](https://github.com/KorbsStudio)
+
+Electron Titlebar OS Detection: [Korbs Studio](https://github.com/KorbsStudio/electron-titlebar-os-detection)
 
 Blur Composition Effect: [Glasstron by AryToNex](https://github.com/AryToNeX/Glasstron)
 
