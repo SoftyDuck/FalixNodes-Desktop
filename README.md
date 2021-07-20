@@ -110,11 +110,10 @@ If you don't have Git or GitHub CLI installed, you can download it manually from
 
 You can also download the source code manually and go from there.
 
-### Building
 ### Other Modifications
 There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general. You also need to update other stuff like the update server provider and learn how it works if you do plan to include auto updating like we did.
 
-### Pushy Notifications
+#### Pushy Notifications
 To make sure your fork of the software doesn't recieve notifications for Falix Inc, you'll need to either remove Pushy all together or change the app ID of Pushy.
 
 If this isn't changed, your customers who'll use the software may recieve push notifications from the forked version of the software and may be confused.
@@ -167,6 +166,7 @@ What's a BMP file? The BMP file format, also known as bitmap image file, device 
 
 As shown above, there is background image shown in the DMG installer. This can be changed by updating the image in `/build/background.png`. Image size has to be 540x380 pixels. The only objects in the image above that isn't part of the background image is the __falixnodes.app__ file and the Applications folder shown in the center.
 
+### Building
 #### Installing Dependencies
 FalixNodes Software uses Electron and other required packages to run the app and uses Electron Builder to package it up nicely. Run the following commands to install them:
 ```
