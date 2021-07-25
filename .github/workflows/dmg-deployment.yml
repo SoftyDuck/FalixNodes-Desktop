@@ -1,6 +1,5 @@
 name: Distribute for macOS (DMG)
 
-
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

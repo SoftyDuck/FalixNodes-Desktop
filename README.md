@@ -110,6 +110,62 @@ If you don't have Git or GitHub CLI installed, you can download it manually from
 
 You can also download the source code manually and go from there.
 
+### Other Modifications
+There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general. You also need to update other stuff like the update server provider and learn how it works if you do plan to include auto updating like we did.
+
+#### Pushy Notifications
+To make sure your fork of the software doesn't recieve notifications for Falix Inc, you'll need to either remove Pushy all together or change the app ID of Pushy.
+
+If this isn't changed, your customers who'll use the software may recieve push notifications from the forked version of the software and may be confused.
+
+#### Auto Updates
+As seen here in the __[package.json](https://github.com/FalixNodes-Software/Desktop-App/blob/master/package.json#L47)__, there is a url "https://updates.korbsstudio.com/falix-software/", which is a self hosted update server. 
+
+The file structure is simply, you're required to have a "latest" file in there like `latest.yml`, `latest-mac.yml`, and a `latest-linux.yml` file along with a setup file for the software. 
+
+If you don't plan to self host your own update server, then GitHub Releases is recommended.
+Simply change the publish area of the package.json file to this:
+```
+...
+    "publish": {
+      "provider": "github",
+      "repo": "repo-name",
+      "owner": "owner-username",
+    },
+...
+```
+You're required to have your GitHub token to publish new releases with Electron Builder, so add the token to the environment.
+
+On Linux/macOS:
+``` 
+export GH_TOKEN="<YOUR_TOKEN_HERE>"
+```
+
+On Windows:
+```
+[Environment]::SetEnvironmentVariable("GH_TOKEN","<YOUR_TOKEN_HERE>","User")
+```
+
+Make sure to restart your terminal after doing the export command.
+
+#### NSIS Setup
+<img width="450" src="https://miro.medium.com/max/499/0*fMHZpJv5BjlmnJE4.png">
+
+As shown above, there is an image shown in the left sidebar of installer. This can be changed by updating the image in `/build/installerSidebar.bmp`. Image size has to be 164x314 pixels.
+
+Just download the [Figma file](https://github.com/FalixNodes-Software/Desktop-App/tree/master/build/assets/figma/Falix Software Resources.fig) for this and simply update the screenshots. Or if you want, you're allowed to create your own image for the sidebar.
+
+What's a BMP file? The BMP file format, also known as bitmap image file, device independent bitmap file format and bitmap, is a raster graphics image file format used to store bitmap digital images, independently of the display device, especially on Microsoft Windows and OS/2 operating systems. In this case, we're using NSIS, which requires the use of BMP.
+
+[PNG to BMP Converter](https://cloudconvert.com/png-to-bmp)
+
+#### DMG Setup
+<div>
+  <img width="450" src="https://cdn.discordapp.com/attachments/829662493533667339/862790846201331762/unknown.png">
+</div>
+
+As shown above, there is background image shown in the DMG installer. This can be changed by updating the image in `/build/background.png`. Image size has to be 540x380 pixels. The only objects in the image above that isn't part of the background image is the __falixnodes.app__ file and the Applications folder shown in the center.
+
 ### Building
 #### Installing Dependencies
 FalixNodes Software uses Electron and other required packages to run the app and uses Electron Builder to package it up nicely. Run the following commands to install them:
@@ -134,27 +190,6 @@ npm run build
 ```
 
 After installer is done building, check the `/dist/` folder.
-
-### Other Modifications
-There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general.
-
-#### NSIS Setup
-<img width="450" src="https://miro.medium.com/max/499/0*fMHZpJv5BjlmnJE4.png">
-
-As shown above, there is an image shown in the left sidebar of installer. This can be changed by updating the image in `/build/installerSidebar.bmp`. Image size has to be 164x314 pixels.
-
-Just download the [Figma file](https://github.com/FalixNodes-Software/Desktop-App/tree/master/build/assets/figma/Falix Software Resources.fig) for this and simply update the screenshots. Or if you want, you're allowed to create your own image for the sidebar.
-
-What's a BMP file? The BMP file format, also known as bitmap image file, device independent bitmap file format and bitmap, is a raster graphics image file format used to store bitmap digital images, independently of the display device, especially on Microsoft Windows and OS/2 operating systems. In this case, we're using NSIS, which requires the use of BMP.
-
-[PNG to BMP Converter](https://cloudconvert.com/png-to-bmp)
-
-#### DMG Setup
-<div>
-  <img width="450" src="https://cdn.discordapp.com/attachments/829662493533667339/862790846201331762/unknown.png">
-</div>
-
-As shown above, there is background image shown in the DMG installer. This can be changed by updating the image in `/build/background.png`. Image size has to be 540x380 pixels. The only objects in the image above that isn't part of the background image is the __falixnodes.app__ file and the Applications folder shown in the center.
 
 ________________________
 
