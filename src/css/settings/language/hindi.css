@@ -1,3 +1,63 @@
-.lang_es, .lang_cn, .lang_en, .lang_fr {display: none;}
-.lang_hn {display: inherit !important;}
-button#lang_sel_do_hn {background: var(--accent)} 
+/* Content */
+t2p#page-news::before {content: "समाचार";}
+t2p#page-client_panel::before {content: "ग्राहक पैनल";}
+t2p#page-game_panel::before {content: "गेम पैनल";}
+t2p#page-falixcoins_mining::before {content: "फ़ैलिक्सकॉइन्स माइनिंग";}
+t2p#page-support::before {content: "समर्थन";}
+t2p#page-help_center::before {content: "सहायता केंद्र";}
+t2p#page-settings::before {content: "सेटिंग्स";}
+
+t2p#notify-internet-lost::before {content: "Connection Lost";}
+t2p#notify-internet-restored::before {content: "Connection Restored";}
+
+t2p#h1-settings::before {content: "सेटिंग्स";}
+t2p#h2-app::before {content: "आवेदन";}
+t2p#fs-language::before {content: "भाषा";}
+t2p#fs-devMode::before {content: "डेवलपर मोड";}
+t2p#fs-appearance::before {content: "दिखावे";}
+tp2#fs-ac::before {content: "एक्सेंट रंग";}
+tp2#fs-oo::before {content: "दूसरे विकल्प";}
+t2p#tog-devMode::before {content: "डेवलपर मोड सक्षम करें";}
+t2p#tog-rc::before {content: "गोल कोनें";}
+t2p#tog-ts::before {content: "साइडबार पारदर्शिता";}
+
+t2p#gp_unl-h1::before {content: "गेम पैनल";}
+tp2#gp_unl-p::before {content: "खेल पैनल Falix सॉफ्टवेयर में डिफ़ॉल्ट रूप से उतार दिया है इस्तेमाल किया संसाधनों की मात्रा को कम करने के लिए। यह प्रदर्शन में मदद करता है।";}
+tp2#gp_unl-button::before {content: "लोड पैनल";}
+
+/* Front-End, show that the option for the language was selected in the settings */
+button#lang_sel_do_en {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+button#lang_sel_do_es {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+button#lang_sel_do_fr {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+button#lang_sel_do_cn {
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px transparent solid;
+}
+button#lang_sel_do_hn {
+    background: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px white solid;
+}
