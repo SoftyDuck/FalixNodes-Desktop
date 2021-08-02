@@ -1,0 +1,543 @@
+<html>
+    <head>
+        <title>Falix Software</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/smallWindow.css">
+        <link rel="stylesheet" href="./css/splash.css">
+        <link rel="stylesheet" href="./css/terminal.css">
+        <link id="first-boot-slideshow" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/first-boot/slideshow-on.css">
+        <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
+        <link id="accent-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/accent-color/default.css">
+        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/rounded-corners/off.css">
+        <link id="layout-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/layout/sidebar.css">
+        <link id="sidebar-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-size/confortable.css">
+        <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-opacity/90.css">
+        <link id="dismissMinerDownload" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/miner-download/keep.css">
+        <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.2-web/css/all.css">
+    </head>
+    <header data-for-os="windows" id="titlebar" class="titlebar">
+      <div>
+        <div id="window-controls">
+          <div class="button" id="min-button">
+            <img class="icon" srcset="./images/icons/titlebar/min-w-10.png 1x, ./images/icons/titlebar/min-w-12.png 1.25x, ./images/icons/titlebar/min-w-15.png 1.5x, ./images/icons/titlebar/min-w-15.png 1.75x, ./images/icons/titlebar/min-w-20.png 2x, ./images/icons/titlebar/min-w-20.png 2.25x, ./images/icons/titlebar/min-w-24.png 2.5x, ./images/icons/titlebar/min-w-30.png 3x, ./images/icons/titlebar/min-w-30.png 3.5x" draggable="false" />
+          </div>
+          <div class="button" id="max-button">
+            <img class="icon" srcset="./images/icons/titlebar/max-w-10.png 1x, ./images/icons/titlebar/max-w-12.png 1.25x, ./images/icons/titlebar/max-w-15.png 1.5x, ./images/icons/titlebar/max-w-15.png 1.75x, ./images/icons/titlebar/max-w-20.png 2x, ./images/icons/titlebar/max-w-20.png 2.25x, ./images/icons/titlebar/max-w-24.png 2.5x, ./images/icons/titlebar/max-w-30.png 3x, ./images/icons/titlebar/max-w-30.png 3.5x" draggable="false" />
+          </div>
+          <div class="button" id="restore-button">
+            <img class="icon" srcset="./images/icons/titlebar/restore-w-10.png 1x, ./images/icons/titlebar/restore-w-12.png 1.25x, ./images/icons/titlebar/restore-w-15.png 1.5x, ./images/icons/titlebar/restore-w-15.png 1.75x, ./images/icons/titlebar/restore-w-20.png 2x, ./images/icons/titlebar/restore-w-20.png 2.25x, ./images/icons/titlebar/restore-w-24.png 2.5x, ./images/icons/titlebar/restore-w-30.png 3x, ./images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" />
+          </div>
+          <div class="button" id="close-button">
+            <img class="icon" srcset="./images/icons/titlebar/close-w-10.png 1x, ./images/icons/titlebar/close-w-12.png 1.25x, ./images/icons/titlebar/close-w-15.png 1.5x, ./images/icons/titlebar/close-w-15.png 1.75x, ./images/icons/titlebar/close-w-20.png 2x, ./images/icons/titlebar/close-w-20.png 2.25x, ./images/icons/titlebar/close-w-24.png 2.5x, ./images/icons/titlebar/close-w-30.png 3x, ./images/icons/titlebar/close-w-30.png 3.5x" draggable="false" />
+          </div>
+      </div>
+    </header>
+    <body id="body" onload="resize();">
+        <div id="sb_ct" class="ta_o_button">
+          <button id="sb_mini_isClose" onclick="openSidebar();"><i class="fas fa-bars"></i> Open Sidebar</button>
+          <button id="sb_mini_isOpen" onclick="closeSidebar();"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="sb_mini" class="tab_area">
+            <div class="tabs">
+              <div class="lang_en">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> News</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Client Panel</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Game Panel</p> <p id="unload">Ga...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins Mining</button>
+              </div>
+              <div class="lang_fr">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> Des nouvelles</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Panneau Client</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Panneau de jeu</p> <p id="unload">Ga...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins Minière</button>
+              </div>
+              <div class="lang_es">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> Noticias</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> Panel de cliente</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">Panel de juego</p> <p id="unload">Pa...</p></button>
+                <button class="tab" style="font-size: 12px;" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> Minería de monedas Falix</button>
+              </div>
+              <div class="lang_cn">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> 新闻</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> 客户端面板</button>
+                <button id="gp_tab" style="width: 100%;" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">游戏面板</p> <p id="unload">游戏...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> Falix硬币矿业</button>
+              </div>
+              <div class="lang_hn">
+                <button class="tab" onclick="openTab('news', this, 'var(--accent)')" id="default_selection"><i class="fas fa-newspaper"></i> समाचार</button>
+                <button class="tab" onclick="openTab('client_panel', this, 'var(--accent)')"><i class="fas fa-id-card"></i> ग्राहक पैनल</button>
+                <button id="gp_tab" class="tab" onclick="openTab('game_panel', this, 'var(--accent)')"><i class="fas fa-server"></i> <p id="unload">गेम पैनल</p> <p id="unload">गेम पै...</p></button>
+                <button class="tab" onclick="openTab('terminal_mining', this, 'var(--accent)')"><i class="fas fa-coins"></i> FalixCoins खनन</button>
+              </div>
+            </div>
+            <div class="bottom_a">
+              <div class="lang_en">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Connection lost</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Connection restored</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Help Center</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Support</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Settings</button>
+              </div>
+              <div class="lang_es">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Conexión perdida</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Conexión restaurada</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Centro de asistencia</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Respaldar</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Configuraciones</button>
+              </div>
+              <div class="lang_fr">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> Connexion perdue</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> Connexion rétablie</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> Centre d'aide</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> Supporté</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> Paramètres</button>
+              </div>
+              <div class="lang_cn">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> 连接丢失</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> 连接已恢复</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> 帮助中心</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> 支持</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> 设置</button>
+              </div>
+              <div class="lang_hn">
+                <div class="notify">
+                    <button class="unwired alert alert-danger"><i class="fas fa-wifi"></i> कनेक्शन टूट गया</button>
+                    <button class="wired alert alert-success"><i class="fas fa-exclamation-triangle"></i> कनेक्शन बहाल</button>
+                </div>
+                <button class="tab" onclick="openTab('help_center', this, 'var(--accent)')"><i class="fas fa-question-circle"></i> सहायता केंद्र</button>
+                <button class="tab" onclick="openTab('support', this, 'var(--accent)')"><i class="fas fa-headset"></i> समर्थन</button>
+                <button class="tab" onclick="openTab('settings', this, 'var(--accent)')"><i class="fas fa-cogs"></i> सेटिंग्स</button>
+              </div>
+            </div>
+        </div>
+        <div id="ct_mini" class="content">
+            <div id="game_panel" class="tab_content">
+                <div id="unloaded" class="game_panel_unloaded">
+                    <h1>
+                      <h1 class="lang_en">Game Panel is Unloaded</h1>
+                      <h1 class="lang_es">Panel de juego no está cargado</h1>
+                      <h1 class="lang_fr">Le panneau de jeu est déchargé</h1>
+                      <h1 class="lang_cn">游戏面板未加载</h1>
+                      <h1 class="lang_hn">गेम पैनल अनलोड है</h1>
+                    </h1>
+                    <p>
+                      <p class="lang_en">The Game Panel is unloaded by default when starting up Falix Software.</p>
+                      <p class="lang_es">El panel de juego no se carga por defecto cuando se inicia Falix software.</p>
+                      <p class="lang_fr">Le panneau de jeu est déchargé par défaut lors du démarrage Falix Software.</p>
+                      <p class="lang_cn">启动 Falix 软件 时，默认情况下不加载游戏面板。</p>
+                      <p class="lang_hn">खेल पैनल डिफ़ॉल्ट रूप से उतार दिया जब Falix सॉफ्टवेयर शुरू कर रहा है।</p>
+                    </p>
+                    <p>
+                      <p class="lang_en">This is to help with performance.</p>
+                      <p class="lang_es">Esto es para ayudar con el rendimiento.</p>
+                      <p class="lang_fr">C'est pour aider à la performance.</p>
+                      <p class="lang_cn">这是为了帮助提高性能。</p>
+                      <p class="lang_hn">यह प्रदर्शन में मदद करने के लिए है।</p>
+                    </p>
+                    <div>
+                      <button id="load" onclick="navigateTo('http:/panel.falixnodes.net/');">
+                        <p class="lang_en">Load Panel</p>
+                        <p class="lang_es">Cargar el panel</p>
+                        <p class="lang_fr">Panneau de charge</p>
+                        <p class="lang_cn">负载面板</p>
+                        <p class="lang_hn">लोड पैनल</p>
+                      </button>
+                    </div>
+                </div>
+                <div id="loaded" class="game_panel_loaded">
+                    <div id="controls">
+                        
+                        <button id="back" title="Go Back" disabled="true"><i class="fas fa-arrow-left"></i></button>
+                        <button id="forward" title="Go Forward" disabled="true"><i class="fas fa-arrow-right"></i></button>
+                        <button id="reload" title="Reload"><i class="fas fa-redo"></i></button>
+                        <button id="home" title="Unload Game Panel"><i class="fas fa-times-circle"></i></button>
+                        <button id="viewAddress"><i class="fas fa-slash"></i></button>
+                  
+                        <form id="location-form">
+                          <div id="center-column">
+                            <input readonly id="location" type="text" value="https://software.falixnodes.net/blank/">
+                          </div>
+                          <input type="submit" value="Go">
+                        </form>
+
+                        <!-- Find and zoom box are currently not setup to be used in Falix Software -->
+                        <button id="zoom" title="Change Zoom">&#128270;</button>
+                        <button id="find" title="Find in Page">&#128294;</button>
+                  
+                      </div>
+                  
+                      <div id="zoom-box">
+                        <form id="zoom-form">
+                          <input id="zoom-text" type="text">
+                          <input type="submit" value="&#128270;">
+                          <button id="zoom-in">&#10133;</button>
+                          <button id="zoom-out">&#10134;</button>
+                        </form>
+                      </div>
+                  
+                      <div id="find-box">
+                        <form id="find-form">
+                          <input id="find-text" type="text">
+                          <div id="find-results"></div>
+                          <input type="submit" style="position:absolute; visibility:hidden">
+                          <button id="match-case">aA</button>
+                          <button id="find-backward">&#60;</button>
+                          <button id="find-forward">&#62;</button>
+                        </form>
+                      </div>
+                  
+                      <webview src="https://software.falixnodes.net/blank/" style="width:640px; height:480px"></webview>
+                      
+                      <div id="game_panel_loading" class="panel_stillLoading">
+                        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                      </div>
+                      <div id="sad-webview">
+                        <div id="sad-webview-icon">&#9762;</div>
+                        <h2>
+                          <h2 id="crashed-label" class="lang_en">Aw, Snap!</h2>
+                          <h2 id="crashed-label" class="lang_es">Aw chasquido!</h2>
+                          <h2 id="crashed-label" class="lang_fr">Oh non</h2>
+                          <h2 id="crashed-label" class="lang_cn">哦不!</h2>
+                          <h2 id="crashed-label" class="lang_hn">अरे नहीं</h2>
+                        </h2>
+                        <h2>
+                          <h2 id="killed-label" class="lang_en">Something may of went wrong.</h2>
+                          <h2 id="killed-label" class="lang_es">Es posible que algo haya salido mal.</h2>
+                          <h2 id="killed-label" class="lang_fr">Quelque chose peut bien qui a mal tourné.</h2>
+                          <h2 id="killed-label" class="lang_cn">可能出了点问题。</h2>
+                          <h2 id="killed-label" class="lang_hn">कुछ गलत हो गया था की हो सकती है।</h2>
+                        </h2>
+                  
+                        <p>
+                          <div class="lang_en">The page is taking too long to load or it has crashed.</div>
+                          <div class="lang_es">La página está tardando demasiado en cargarse o se ha bloqueado.</div>
+                          <div class="lang_fr">La page met trop de temps à se charger ou elle a planté.</div>
+                          <div class="lang_cn">该页面正在载入时间太长或页面有崩溃。</div>
+                          <div class="lang_hn">पृष्ठ लोड होने में बहुत अधिक समय ले रहा है या यह क्रैश हो गया है।</div>
+                        </p>
+                        <p>
+                          <p class="lang_en">Try to unload the panel and load again.</p>
+                          <p class="lang_es">Intente descargar el panel y vuelva a cargar.</p>
+                          <p class="lang_fr">Essayez de décharger le panneau et de le charger à nouveau.</p>
+                          <p class="lang_cn">尝试卸载面板并再次加载。</p>
+                          <p class="lang_hn">पैनल को उतारने और फिर से लोड करने का प्रयास करें।</p>
+                        </p>
+                      </div>
+                </div>
+            </div>
+            <div id="news" class="tab_content">
+              <div include-html="https://software.falixnodes.net/posts/grab-posts"></div>
+              <div id="nL" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              <!-- <div include-html="http://localhost:5500"></div> -->
+            </div>
+            <div id="client_panel" class="tab_content">
+                <webview src="https://client.falixnodes.net"></webview>
+            </div>
+            <div id="help_center" class="tab_content">
+                <webview src="https://help.falixnodes.net"></webview>
+                <span id="cc"></span>
+            </div>
+            <div id="support" class="tab_content">
+                <webview src="https://software.falixnodes.net/support.html"></webview>
+            </div>
+            <div id="terminal_mining" class="tab_content">
+              <div id="terminal"></div>
+              <div class="term_content">
+                <div class="boxtmc">
+                  <div class="minerDownloader">
+                    <span onclick="dismissMinerDownload('./css/miner-download/dismiss.css');" id="close_fxmn"><i class="fas fa-times"></i></span>
+                    <p>
+                      <p id="download_52">Don't have the miner software downloaded?</p>
+                    </p>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="windows-miner-cpu">Download FalixCoins Miner</button> <br>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="linux-miner-cpu">Download FalixCoins Miner</button> <br>
+                    <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/FalixInc/FalixCoins-Miner/releases');"  style="margin: 6px 140px 0px 17px; height: 40px;" id="mac-miner-cpu">Download FalixCoins Miner</button>
+                  </div>
+                </div>
+                <div id="windows-miner" class="boxtmc">
+                  <h1>
+                    <h1 class="lang_en">Instructions</h1>
+                  </h1>
+                  <p>
+                    <div class="lang_en">
+                      <li>Download the miner, if you haven't yet, and save it to a new folder to your desktop.</li>
+                      <li>Before continuing, it is recommended that Powershell has be open as admin, please open Falix Software as admin.</li>
+                      <li>In Powershell above, type <code>cd Desktop\FolderName</code>, replace <code>FolderName</code> with the name of the folder you made.</li>
+                      <h2>For CPU Mining:</h2>
+                      <li>In Powershell above, type <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, replace <code>YourUserIDHere</code> with your Discord ID and replace <code>Threads</code> with the number of threads you want to allocate for mining.</li>
+                      <h2>For GPU Mining:</h2>
+                      <li>In Powershell above, type <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, replace <code>YourUserIDHere</code> with your Discord ID and replace <code>MaxGPUUsage</code> with the max percentage of GPU usage you want from 1 to 100.</li>
+                    </div>
+                    <div class="lang_es">
+                      <li>Descargue el minero, si aún no lo ha hecho, y guárdelo en una nueva carpeta en su escritorio.</li>
+                      <li>Antes de continuar, se recomienda que Powershell tiene estar abierto como administrador, abra Falix software como administrador.</li>
+                      <li>En Powershell arriba, tipear <code>cd Desktop\FolderName</code>, reemplazar <code>FolderName</code> con el nombre de la carpeta que creaste.</li>
+                      <h2>Xa CPU Minería:</h2>
+                      <li>En Powershell arriba, tipear <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, reemplazar <code>YourUserIDHere</code> con tu Discordia ID y reemplazar <code>Threads</code> con la cantidad de subprocesos que desea asignar para la minería.</li>
+                      <h2>Xa GPU Minería:</h2>
+                      <li>En Powershell arriba, tipear <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, reemplazar <code>YourUserIDHere</code> con tu Discordia ID y reemplazar <code>MaxGPUUsage</code> con el porcentaje máximo de uso de GPU que desea de 1 a 100.</li>
+                    </div>
+                    <div class="lang_cn">
+                      <li>下载矿工（如果您还没有），并将其保存到桌面的新文件夹中。</li>
+                      <li>在继续之前，建议PowerShell有开放作为管理员，请打开Falix软件为管理员。</li>
+                      <li>在Powershell的上面，类型 <code>cd Desktop\FolderName</code>, 更换 <code>FolderName</code> 与你做的文件夹的名称。</li>
+                      <h2>对于CPU矿业:</h2>
+                      <li>在Powershell的上面，类型 <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, 更换 <code>YourUserIDHere</code> 与您的不和谐ID和替换 <code>Threads</code> 与线程的数量要分配的开采。</li>
+                      <h2>对于GPU矿业:</h2>
+                      <li>在Powershell的上面，类型 <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, 更换 <code>YourUserIDHere</code> 与您的不和谐ID和替换 <code>MaxGPUUsage</code> 与GPU使用的最大百分比你想从1到100。</li>
+                    </div>
+                    <div class="lang_hn">
+                      <li>माइनर डाउनलोड करें, यदि आपने अभी तक नहीं किया है, और इसे अपने डेस्कटॉप पर एक नए फ़ोल्डर में सहेजें।</li>
+                      <li>आगे बढ़ने से पहले, यह अनुशंसित है कि Powershell खुला होना व्यवस्थापक के रूप में, कृपया व्यवस्थापक के रूप में Falix सॉफ्टवेयर को खोलने की है।</li>
+                      <li>ऊपर Powershell में, टाइप करें <code>cd Desktop\FolderName</code>, बदलें <code>FolderName</code> with the name of the folder you made.</li>
+                      <h2>सीपीयू खनन के लिए:</h2>
+                      <li>ऊपर Powershell में, टाइप करें <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, बदलें <code>YourUserIDHere</code> अपने कलह आईडी और की जगह के साथ <code>Threads</code> खनन के लिए आप जितने धागे आवंटित करना चाहते हैं, उसके साथ।</li>
+                      <h2>GPU खनन के लिए:</h2>
+                      <li>ऊपर Powershell में, टाइप करें <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, बदलें <code>YourUserIDHere</code> अपने कलह आईडी और की जगह के साथ <code>MaxGPUUsage</code> GPU उपयोग के अधिकतम प्रतिशत के साथ आप 1 से 100 तक चाहते हैं।</li>
+                    </div>
+                    <div class="lang_fr">
+                      <li>Télécharger le mineur, si vous avez pas encore, et enregistrez-le dans un nouveau dossier sur votre bureau.</li>
+                      <li>Avant de continuer, il est recommandé que Powershell a être ouvert en tant qu'administrateur, s'il vous plaît ouvrir Falix Software en tant qu'administrateur.</li>
+                      <li>Dans Powershell ci-dessus, tapez <code>cd Desktop\FolderName</code>, remplacer <code>FolderName</code> avec le nom du dossier que vous avez fait.</li>
+                      <h2>Pour CPU Mining:</h2>
+                      <li>Dans Powershell ci-dessus, tapez <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, remplacer <code>YourUserIDHere</code> avec votre ID Discorde et remplacer <code>Threads</code> avec le nombre de threads que vous souhaitez allouer pour l'exploitation minière.</li>
+                      <h2>Pour GPU Mining:</h2>
+                      <li>Dans Powershell ci-dessus, tapez <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, remplacer <code>YourUserIDHere</code> avec votre ID Discorde et remplacer <code>MaxGPUUsage</code> avec le pourcentage maximum de l'utilisation que vous voulez GPU de 1 à 100.</li>
+                    </div>
+                  </p>
+                </div>
+                <div id="linux-miner" class="boxtmc">
+                  <h1>
+                    <h1 class="lang_en">Instructions</h1>
+                  </h1>
+                  <p>
+                    <div class="lang_en">
+                      <li>Download the miner, if you haven't yet, and save it to a new folder to your desktop.</li>
+                      <li>In terminal above, type <code>cd Desktop\FolderName</code>, replace <code>FolderName</code> with the name of the folder you made.</li>
+                      <h2>For CPU Mining:</h2>
+                      <li>In terminal above, type <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, replace <code>YourUserIDHere</code> with your Discord ID and replace <code>Threads</code> with the number of threads you want to allocate for mining.</li>
+                      <h2>For GPU Mining:</h2>
+                      <li>In terminal above, type <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, replace <code>YourUserIDHere</code> with your Discord ID and replace <code>MaxGPUUsage</code> with the max percentage of GPU usage you want from 1 to 100.</li>
+                      <p>NOTE: If you are using macOS, replace 'linux' with 'macos'. GPU mining isn't supported for macOS.</p>
+                    </div>
+                    <div class="lang_es">
+                      <li>Descargue el minero, si aún no lo ha hecho, y guárdelo en una nueva carpeta en su escritorio.</li>
+                      <li>En terminal arriba, tipear <code>cd Desktop\FolderName</code>, reemplazar <code>FolderName</code> con el nombre de la carpeta que creaste.</li>
+                      <h2>Xa CPU Minería:</h2>
+                      <li>En terminal arriba, tipear <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, reemplazar <code>YourUserIDHere</code> con tu Discordia ID y reemplazar <code>Threads</code> con la cantidad de subprocesos que desea asignar para la minería.</li>
+                      <h2>Xa GPU Minería:</h2>
+                      <li>En terminal arriba, tipear <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, reemplazar <code>YourUserIDHere</code> con tu Discordia ID y reemplazar <code>MaxGPUUsage</code> con el porcentaje máximo de uso de GPU que desea de 1 a 100.</li>
+                      <p>NOTA: Si está utilizando macOS, reemplace 'linux' por 'macos'. La minería de GPU no es compatible con macOS.</p>
+                    </div>
+                    <div class="lang_cn">
+                      <li>下载矿工（如果您还没有），并将其保存到桌面的新文件夹中。</li>
+                      <li>在terminal的上面，类型 <code>cd Desktop\FolderName</code>, 更换 <code>FolderName</code> 与你做的文件夹的名称。</li>
+                      <h2>对于CPU矿业:</h2>
+                      <li>在terminal的上面，类型 <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, 更换 <code>YourUserIDHere</code> 与您的不和谐ID和替换 <code>Threads</code> 与线程的数量要分配的开采。</li>
+                      <h2>对于GPU矿业:</h2>
+                      <li>在terminal的上面，类型 <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, 更换 <code>YourUserIDHere</code> 与您的不和谐ID和替换 <code>MaxGPUUsage</code> 与GPU使用的最大百分比你想从1到100。</li>
+                      <p>注意：如果您使用的是 macOS，请将“linux”替换为“macos”。 macOS 不支持 GPU 挖掘。</p>
+                    </div>
+                    <div class="lang_hn">
+                      <li>माइनर डाउनलोड करें, यदि आपने अभी तक नहीं किया है, और इसे अपने डेस्कटॉप पर एक नए फ़ोल्डर में सहेजें।</li>
+                      <li>ऊपर terminal में, टाइप करें <code>cd Desktop\FolderName</code>, बदलें <code>FolderName</code> with the name of the folder you made.</li>
+                      <h2>सीपीयू खनन के लिए:</h2>
+                      <li>ऊपर terminal में, टाइप करें <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, बदलें <code>YourUserIDHere</code> अपने कलह आईडी और की जगह के साथ <code>Threads</code> खनन के लिए आप जितने धागे आवंटित करना चाहते हैं, उसके साथ।</li>
+                      <h2>GPU खनन के लिए:</h2>
+                      <li>ऊपर terminal में, टाइप करें <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, बदलें <code>YourUserIDHere</code> अपने कलह आईडी और की जगह के साथ <code>MaxGPUUsage</code> GPU उपयोग के अधिकतम प्रतिशत के साथ आप 1 से 100 तक चाहते हैं।</li>
+                      <p>नोट: यदि आप macOS का उपयोग कर रहे हैं, तो 'linux' को 'macos' से बदलें। macOS के लिए GPU माइनिंग समर्थित नहीं है।</p>
+                    </div>
+                    <div class="lang_fr">
+                      <li>Télécharger le mineur, si vous avez pas encore, et enregistrez-le dans un nouveau dossier sur votre bureau.</li>
+                      <li>Dans terminal ci-dessus, tapez <code>cd Desktop\FolderName</code>, remplacer <code>FolderName</code> avec le nom du dossier que vous avez fait.</li>
+                      <h2>Pour CPU Mining:</h2>
+                      <li>Dans terminal ci-dessus, tapez <code>falixnodes_miner-win.exe YourUserIDHere Threads</code>, remplacer <code>YourUserIDHere</code> avec votre ID Discorde et remplacer <code>Threads</code> avec le nombre de threads que vous souhaitez allouer pour l'exploitation minière.</li>
+                      <h2>Pour GPU Mining:</h2>
+                      <li>Dans terminal ci-dessus, tapez <code>falixnodes_gpu_miner-win.exe YourUserIDHere MaxGPUUsage</code>, remplacer <code>YourUserIDHere</code> avec votre ID Discorde et remplacer <code>MaxGPUUsage</code> avec le pourcentage maximum de l'utilisation que vous voulez GPU de 1 à 100.</li>
+                      <p>REMARQUE : si vous utilisez macOS, remplacez « linux » par « macos ». L'extraction de GPU n'est pas prise en charge pour macOS.</p>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="settings" class="tab_content">
+                <h1>
+                  <h1 class="lang_en">Settings</h1>
+                  <h1 class="lang_es">Configuraciones</h1>
+                  <h1 class="lang_fr">Paramètres</h1>
+                  <h1 class="lang_cn">设置</h1>
+                  <h1 class="lang_hn">सेटिंग्स</h1>
+                </h1>
+                <div class="about">
+                    <p>
+                      <p class="lang_en">Software Version: 3.1.1</p>
+                      <p class="lang_es">Versión del software: 3.1.1</p>
+                      <p class="lang_fr">Version du logiciel: 3.1.1</p>
+                      <p class="lang_cn">软件版本: 3.1.1</p>
+                      <p class="lang_hn">सॉफ्टवेयर संस्करण: 3.1.1</p>
+                    </p>
+                </div>
+                <div class="language">
+                  <h2>
+                    <h2 class="lang_en">Language</h2>
+                    <h2 class="lang_es">Lenguaje</h2>
+                    <h2 class="lang_fr">Langue</h2>
+                    <h2 class="lang_cn">语言</h2>
+                    <h2 class="lang_hn">भाषा</h2>
+                  </h2>
+                  <div class="lang_sel_st">
+                    <button id="lang_sel_do_en" onclick="setLanguage('./css/settings/language/english.css'); navigateTo('https://software.falixnodes.net/blank/');">English</button>
+                    <button id="lang_sel_do_es" onclick="setLanguage('./css/settings/language/spanish.css'); navigateTo('https://software.falixnodes.net/blank/');">Español</button>
+                    <button id="lang_sel_do_fr" onclick="setLanguage('./css/settings/language/french.css'); navigateTo('https://software.falixnodes.net/blank/');">fançais</button>
+                    <button id="lang_sel_do_cn" onclick="setLanguage('./css/settings/language/chinese.css'); navigateTo('https://software.falixnodes.net/blank/');">中国人</button>
+                    <button id="lang_sel_do_hn" onclick="setLanguage('./css/settings/language/hindi.css'); navigateTo('https://software.falixnodes.net/blank/');">हिंदी</button>
+                  </div>
+                </div>
+                <div class="set_selection_color">
+                  <h2>
+                    <h2 class="lang_en">Accent Color</h2>
+                    <h2 class="lang_es">Apariciones</h2>
+                    <h2 class="lang_fr">Les apparences</h2>
+                    <h2 class="lang_cn">出场次数</h2>
+                    <h2 class="lang_hn">दिखावे</h2>
+                  </h2>
+                    <div style="height: 50px;" class="toggle">
+                      <p style="position: absolute; margin: 23px 23px 23px 4px;">
+                        <p style="margin: 16px 23px -57px 0px" class="lang_en">Accent Color</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_es">Color de acento</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_fr">Couleur d'accent</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_cn">强调色</p>
+                        <p style="margin: 16px 23px -57px 0px" class="lang_hn">एक्सेंट रंग</p>
+                      </p>
+                      <div class="color_sel4">
+                        <button id="set_layout" class="color_default" onclick="swapAccentColor('./css/settings/accent-color/default.css')"></button><span id="color_selected_default"></span>
+                        <button id="set_layout" class="color_purple" onclick="swapAccentColor('./css/settings/accent-color/purple.css')"></button><span id="color_selected_purple"></span>
+                        <button id="set_layout" class="color_red" onclick="swapAccentColor('./css/settings/accent-color/red.css')"></button><span id="color_selected_red"></span>
+                        <button id="set_layout" class="color_green" onclick="swapAccentColor('./css/settings/accent-color/green.css')"></button><span id="color_selected_green"></span>
+                        <button id="set_layout" class="color_gray" onclick="swapAccentColor('./css/settings/accent-color/gray.css')"></button><span id="color_selected_gray"></span>
+                      </div>
+                    </div>
+                    <div class="toggles">
+                      <div onclick="swapRoundedCorners('./css/settings/rounded-corners/on.css')" id="rd-off" class="toggle">
+                        <p>
+                          <p class="lang_en">Rounded Corners</p>
+                          <p class="lang_fr">Coins arrondis</p>
+                          <p class="lang_es">Esquinas redondeadas</p>
+                          <p class="lang_cn">把角弄圆</p>
+                          <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                        <span class="toggle_span">
+                          <span id="rd-st"></span>
+                        </span>
+                      </div>
+                      <div onclick="swapRoundedCorners('./css/settings/rounded-corners/off.css')" id="rd-on" class="toggle">
+                        <p>
+                          <p class="lang_en">Rounded Corners</p>
+                          <p class="lang_fr">Coins arrondis</p>
+                          <p class="lang_es">Esquinas redondeadas</p>
+                          <p class="lang_cn">把角弄圆</p>
+                          <p class="lang_hn">कोने पर गोलाकार आकृति</p>
+                        </p>
+                        <span class="toggle_span">
+                          <span id="rd-st"></span>
+                        </span>
+                      </div>
+                      <div class="toggles">
+                        <div onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/full.css')" id="trsd-off" class="toggle">
+                          <p>
+                            <p class="lang_en">Sidebar Transpancy</p>
+                            <p class="lang_fr">Barre latérale transparente</p>
+                            <p class="lang_es">Barra lateral transparente</p>
+                            <p class="lang_cn">侧边栏透明</p>
+                            <p class="lang_hn">साइडबार पारदर्शी</p>
+                          </p>
+                          <span class="toggle_span">
+                            <span id="trsd-st"></span>
+                          </span>
+                        </div>
+                        <div onclick="swapSidebarOpacity('./css/settings/sidebar-opacity/90.css')" id="trsd-on" class="toggle">
+                          <p>
+                            <p class="lang_en">Sidebar Transpancy</p>
+                            <p class="lang_fr">Barre latérale transparente</p>
+                            <p class="lang_es">Barra lateral transparente</p>
+                            <p class="lang_cn">侧边栏透明</p>
+                            <p class="lang_hn">साइडबार पारदर्शी</p>
+                          </p>
+                          <span class="toggle_span">
+                            <span id="trsd-st"></span>
+                          </span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="remove_in_TabView" class="set_selection">
+                    <h2>
+                      <h2 class="lang_en">Sidebar Layout</h2>
+                      <h2 class="lang_es">Diseño de la barra lateral</h2>
+                      <h2 class="lang_fr">Disposition de la barre latérale</h2>
+                      <h2 class="lang_cn">边栏布局</h2>
+                      <h2 class="lang_hn">साइडबार लेआउट</h2>
+                    </h2>
+                    <div class="lang_en">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Confortable</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compact</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                    <div class="lang_es">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Cómodo</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compacto</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                    <div class="lang_fr">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>Confortable</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>Compact</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                    <div class="lang_cn">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>舒适</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>紧凑型</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                    <div class="lang_hn">
+                      <button id="set_layout" class="selection_sb_comf" onclick="swapSidebarLayout('./css/settings/sidebar-size/confortable.css')"><p>आरामदायक</p> <img src="./images/Sidebar.png"></button>
+                      <button id="set_layout" class="selection_sb_comp" onclick="swapSidebarLayout('./css/settings/sidebar-size/compact.css')"><p>कॉम्पैक्ट</p> <img src="./images/SidebarCompact.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../node_modules/xterm/lib/xterm.js"></script>
+
+        <script src="./js/require.js"></script>
+        <script src="./js/electron/terminal.js"></script>
+        <script src="./js/newTerm.js"></script>
+        <script src="./js/electron/dialogs.js"></script>
+
+        <script src="./js/network_detection.js"></script>
+        <script src="./js/addMenu.js"></script>
+
+        <script src="./js/panel/controls.js"></script>
+
+        <script src="./js/settings/language.js"></script>
+        <script src="./js/settings/layout.js"></script>
+        <script src="./js/settings/sidebar.js"></script>
+        <script src="./js/settings/sidebar-opacity.js"></script>
+        <script src="./js/settings/accent-color.js"></script>
+        <script src="./js/settings/rounded-corners.js"></script>
+        <script src="./js/settings/dismiss-miner-download.js"></script>
+
+
+        <script src="./js/first-boot.js"></script>
+        <script src="./js/ui/dim.js"></script>
+        <script src="./js/ui/include.js"></script>
+        <script src="./js/ui/tabs.js"></script>
+        <script src="./js/ui/openSidebar.js"></script>
+        <script>includeHTML();</script>
+    </body>
+</html>
