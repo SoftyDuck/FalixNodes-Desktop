@@ -1,3 +1,17 @@
+### v3.2.0 Changelog - More Control
+ - Sidebar is slightly smaller now
+ - Controls have finally been added to the Client Panel
+ - New developer mode added, allowing users to access the developer tools to webviews like Game Panel and Client Panel.
+ - Keyboard shortcuts
+   - `ctrl` + `o` - Open Client Panel
+   - `ctrl` + `p` - Open Game Panel
+   - `ctrl`  + `.` - Open Help Center
+   - `ctrl` + `,` - Open Settings
+ - Updated translation
+ - A lot of scripts were cleaned up like controls, network detection, os detection, etc.
+ - The main file at `/src/js/electron/index.js` no longer shows duplicated code and more simple to understand
+ - Each page is now injected into the software with the "include" function.
+
 ### v3.1.1 Changelog
  - Accent color, transparent sidebar, and rounded corners option was moved in Settings
  - Sidebar layout pushed to bottom in Settings
