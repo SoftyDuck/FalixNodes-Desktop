@@ -1,14 +1,17 @@
-function openTab(pageName,elmnt,color) {
+function openPage(pageName,elmnt,color) {
     var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tab_content");
+    tabcontent = document.getElementsByClassName("page_content");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tab");
+    tablinks = document.getElementsByClassName("nav-page");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].style.backgroundColor = "";
     }
     document.getElementById(pageName).style.display = "block";
     elmnt.style.backgroundColor = color;
-  }
-document.getElementById("default_selection").click();
+}
+
+setTimeout(() => {
+  document.getElementById("default_selection").click();
+}, 500);
