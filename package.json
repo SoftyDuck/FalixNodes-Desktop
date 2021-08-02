@@ -1,20 +1,17 @@
 {
   "name": "falixnodes",
-  "version": "4.50.1",
+  "version": "4.50.2",
   "description": "",
   "main": "src/js/electron/index.js",
   "scripts": {
     "start": "electron --enable-transparent-visuals --disable-gpu .",
     "build": "electron-builder build",
-    "publish": "electron-builder build -p always",
-    "package": "electron-packager . Falix --overwrite=true --platform=win32 --arch=x64 --icon=./build/icons/256x256.ico",
     "rebuild": "electron-rebuild"
   },
   "author": "KorbsStudio",
   "license": "MIT",
   "dependencies": {
     "electron-log": "^4.3.5",
-    "electron-packager": "^15.3.0",
     "electron-tools": "^2.4.2",
     "electron-updater": "^4.3.9",
     "glasstron": "^0.0.7",
