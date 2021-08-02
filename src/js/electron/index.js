@@ -48,7 +48,7 @@ else{ //Linux
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 1200,
+    width: 1250,
     height: 800,
     minWidth: 430,
     minHeight: 520,
@@ -63,7 +63,7 @@ function createWindow() {
         preload: path.join(__dirname, "../../js/electron/preload.js"),
         nodeIntegration: true,
         webviewTag: true,
-        devTools: false,
+        devTools: true,
         enableRemoteModule: true,
         contextIsolation: false
     }
@@ -96,51 +96,49 @@ function createWindow() {
     mainWindow.show();
    }, 8000);
 
-   // Terminal (aka XTerm)
-   var ptyProcess = pty.spawn(global.terminal, [], {
-        name: "xterm-color",
-        cols: 80,
-        rows: 30,
-        cwd: process.env.HOME,
-        env: process.env
-    });
-    ptyProcess.on('data', function(data) {  
-        mainWindow.webContents.send("terminal.incomingData", data);
-    });
-    ipcMain.on("terminal.keystroke", (event, key) => {
-        ptyProcess.write(key);
-    });
+  // Terminal (aka XTerm)
+  var ptyProcess = pty.spawn(global.terminal, [], {
+      name: "xterm-color",
+      cwd: process.env.HOME,
+      env: process.env
+  });
+  ptyProcess.on('data', function(data) {  
+      mainWindow.webContents.send("terminal.incomingData", data);
+  });
+  ipcMain.on("terminal.keystroke", (event, key) => {
+      ptyProcess.write(key);
+  });
 
-    // Pushy - Push Notifcations
-    mainWindow.webContents.on('did-finish-load', () => {
-        Pushy.listen();
-    });
-      
-    Pushy.register({ appId: '60c3b90e8abb33b02f642ccf' }).then((deviceToken) => {}).catch((err) => {});
-      
-    Pushy.setNotificationListener((data) => {
-        notification = new Notification ({
-            title: `${data.title}`,
-            body: `${data.message}`
-        });
-        notification.show();
-        notification.on('click', (event, arg)=>{
-        const notiWindow = new BrowserWindow({
-            show: false,
-            webPreferences: {
-                nodeIntegration: true,
-                enableRemoteModule: true,
-                contextIsolation: false
-            }
-        })
-        notiWindow.loadURL(`${data.url}`)})
-    });
+  // Pushy - Push Notifcations
+  mainWindow.webContents.on('did-finish-load', () => {
+      Pushy.listen();
+  });
+    
+  Pushy.register({ appId: '60c3b90e8abb33b02f642ccf' }).then((deviceToken) => {}).catch((err) => {});
+    
+  Pushy.setNotificationListener((data) => {
+      notification = new Notification ({
+          title: `${data.title}`,
+          body: `${data.message}`
+      });
+      notification.show();
+      notification.on('click', (event, arg)=>{
+      const notiWindow = new BrowserWindow({
+          show: false,
+          webPreferences: {
+              nodeIntegration: true,
+              enableRemoteModule: true,
+              contextIsolation: false
+          }
+      })
+      notiWindow.loadURL(`${data.url}`)})
+  });
 
-    if (Pushy.isRegistered()) {
-    Pushy.subscribe('push').then(() => {}).catch((err) => {console.error(err);});}
+  if (Pushy.isRegistered()) {
+  Pushy.subscribe('push').then(() => {}).catch((err) => {console.error(err);});}
 
-    // Auto Updater
-    autoUpdater.checkForUpdatesAndNotify();
+  // Auto Updater
+  autoUpdater.checkForUpdatesAndNotify();
 }
 
 app.whenReady().then(() => {setTimeout(() => {createWindow()}, 1200)}) // The "setTimeout" function is used due to a transparency bug with Electron on Linux
