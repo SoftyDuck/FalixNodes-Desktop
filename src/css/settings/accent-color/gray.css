@@ -2,18 +2,38 @@
     --accent: #abacae;
 }
 
-span#color_selected_gray {
-    border: 4px var(--accent) solid;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    margin: 9px 0px 0px -47px;
+button#default {
+    background: #2970CC;
+    width: 28px;
+    height: 28px;
     border-radius: 50px;
-    z-index: 1;
-    pointer-events: none;
+    border: 2px transparent solid;
 }
-
-button#set_layout img {
-    filter: grayscale(1);
+button#purple {
+    background: #6B5FD3;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    border: 2px transparent solid;
 }
-button#Gray-sel {background: var(--accent)}
+button#red {
+    background: #c6262e;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    border: 2px transparent solid;
+}
+button#green {
+    background: #28bca3;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    border: 2px transparent solid;
+}
+button#gray {
+    background: #abacae;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    border: 2px white solid;
+}
