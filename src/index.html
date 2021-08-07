@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/windows-titlebar.css">
         <link rel="stylesheet" href="./css/terminal.css">
-        <link id="first-boot-slideshow" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/first-boot/slideshow-on.css">
+        
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/accent-color/default.css">
         <link id="rounded-corners-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/rounded-corners/off.css">
@@ -58,7 +58,7 @@
             </div>
 
             <div id="support" class="page_content">
-                <div include-html="./html/include/support.html"></div>
+                <webview id="support_wv" src="https://support.falixnodes.net/"></webview>
             </div>
             <div id="help_center" class="page_content">
                 <div include-html="./html/include/help-center.html"></div>
@@ -72,7 +72,6 @@
         <script src="./js/require.js"></script>
         <script src="./js/newTerm.js"></script>
         <script src="./js/hotkeys.js"></script>
-        <script src="./js/first-boot.js"></script>
 
         <script src="./js/panel/controls.js"></script>
         

@@ -15,6 +15,7 @@ html.windows .topNav {margin-top: 40px;}
 ::-webkit-scrollbar {width: 0px;}
 webview#fullSize {height: 100%;width: 100%;display: inline-flex;}
 webview#client_panel_wv {height: 100%;width: 100%;display: inline-flex;}
+webview#support_wv {height: 100%;width: 100%;display: inline-flex;}
 .nav_area {
     position: fixed;
     top: 0px;
