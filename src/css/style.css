@@ -3,7 +3,10 @@
     --bg-accent-two: #162230;
 }
 
-body {background: transparent}
+body {
+    background: transparent;
+    font-family: Poppins;
+}
 html.windows [data-for-os=mac] {display: none !important}
 html.mac [data-for-os=windows] {display: none !important}
 .linux #titlebar {display: none !important}
@@ -76,7 +79,6 @@ button.nav-page {
     height: 100%;
     background: var(--bg-accent-two);
     color: white;
-    font-family: arial;
     overflow-y: auto;
 }
 
