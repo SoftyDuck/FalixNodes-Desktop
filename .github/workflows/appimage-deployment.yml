@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  build-mac:
+  build-linux:
 
     runs-on: ubuntu-latest
 
@@ -23,4 +23,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run rebuild
-    - run: npm run publish
+    - run: npm run build
