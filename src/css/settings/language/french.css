@@ -17,6 +17,8 @@ t2p#fs-devMode::before {content: "Mode développeur";}
 t2p#fs-appearance::before {content: "Les apparences";}
 tp2#fs-ac::before {content: "Couleur d'accent";}
 tp2#fs-oo::before {content: "Autres options";}
+tp2#fs-adv::before {content: "Avance";}
+tp2#fs-reset::before {content: "Réinitialiser";}
 t2p#tog-devMode::before {content: "Activer le mode développeur";}
 t2p#tog-rc::before {content: "Coins arrondis";}
 t2p#tog-ts::before {content: "Transparence de la barre latérale";}

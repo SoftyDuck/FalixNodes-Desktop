@@ -17,6 +17,8 @@ t2p#fs-devMode::before {content: "开发者模式";}
 t2p#fs-appearance::before {content: "出场次数";}
 tp2#fs-ac::before {content: "强调色";}
 tp2#fs-oo::before {content: "其他选项";}
+tp2#fs-adv::before {content: "推进";}
+tp2#fs-reset::before {content: "重置";}
 t2p#tog-devMode::before {content: "启用开发者模式";}
 t2p#tog-rc::before {content: "回合 角落";}
 t2p#tog-ts::before {content: "侧边栏透明度";}
