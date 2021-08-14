@@ -152,3 +152,11 @@ canvas.xterm-cursor-layer {
     width: 100% !important;
     height: 100% !important;
 }
+
+button#imoo {
+    background: #ff4545;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+}
