@@ -47,7 +47,7 @@ else{ //Linux
 })}
 
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  const mainWindow = new glasstron.BrowserWindow({
     width: 1250,
     height: 800,
     minWidth: 430,
@@ -63,7 +63,7 @@ function createWindow() {
         preload: path.join(__dirname, "../../js/electron/preload.js"),
         nodeIntegration: true,
         webviewTag: true,
-        devTools: true,
+        devTools: false,
         enableRemoteModule: true,
         contextIsolation: false
     }
