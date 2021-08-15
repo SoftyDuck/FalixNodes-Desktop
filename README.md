@@ -213,7 +213,17 @@ This will show data and timing of Falix Software being ran on my machines. This 
  - Memory: 4GB DDR3L
  - Graphics Card: Intel HD (Unknown model)
  - Storage: 320GB HDD
- - Operating System: Windows 10 v1909
+ - Operating System: Windows 10 v20H2
+ - DirectX: 12
+ - Node Version: v14.17.1
+
+#### HP HQ-TRE 71025
+ Note: This low end laptop appears to have no fans.
+ - CPU: Intel Pentium N3060 | 2.16GHz | 2 Cores
+ - Memory: 4GB DDR3L
+ - Graphics Card: Intel HD (Unknown model)
+ - Storage: 160GB HDD
+ - Operating System: Windows 10 v20H2
  - DirectX: 12
  - Node Version: v14.17.1
 
@@ -255,10 +265,16 @@ Running commands from __package.json__ in the following order:
  AppImage file is smaller than NSIS
 
 #### Dell Inspiron 15-3552
- - Installing node packges    |    4m  31s
- - Rebuild Modules            |    2m  15s
- - Start software             |        09s
- - Build - Target: NSIS       |    10m 23s
+ - Installing node packges    |    2m  59s
+ - Rebuild Modules            |    1m  54s
+ - Start software             |        04s
+ - Build - Target: AppImage   |    2m 15s
+
+#### HP HQ-TRE 71025
+ - Installing node packges    |    6m  05s
+ - Rebuild Modules            |    2m  45s
+ - Start software             |        07s
+ - Build - Target: NSIS       |    12m 00s
 
 #### HP Omni-100 5050
  - Installing node packges    |    3m  46s
@@ -278,5 +294,3 @@ Electron Titlebar OS Detection: [Korbs Studio](https://github.com/KorbsStudio/el
 Blur Composition Effect: [Glasstron by AryToNex](https://github.com/AryToNeX/Glasstron)
 
 Built-in Terminal: [XTerm](https://xtermjs.org/)
-
-Game Panel Controls: [/webview/browser/ in Electron Sample Apps by Hokein](https://github.com/hokein/electron-sample-apps/tree/master/webview/browser)
