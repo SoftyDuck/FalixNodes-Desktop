@@ -1,3 +1,11 @@
+### v3.2.3 Changelog
+ - Pushy service was removed
+ - Left over files for terminal was removed
+ - Notification system has been revamped
+ - Setting now has a sidebar
+ - License is now shown in Settings about page
+ - More information now shown in Settings like package version, Electron version, Node version, and Chromium version if developer mode is enabled
+
 ### v3.2.0 Changelog - More Control
  - Sidebar is slightly smaller now
  - Controls have finally been added to the Client Panel
