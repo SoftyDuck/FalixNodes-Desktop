@@ -42,43 +42,11 @@ I, Korbs, am mostly comfortable and knowledgeable with web coding languages such
 
 There are tons of other good reasons why to use Electron, you can read more about that here on [Alibaba Cloud](https://www.alibabacloud.com/blog/what-is-electronjs-and-why-should-you-use-it_581971) (Article).
 
-________________________
+<!-- ________________________
 
 ## Push Notification
 ### What is it?
-A push notification works simiar to a native notification, where it pops up like any other notification. With push notifcations, the developer can send a notification at any time he or she wants. Since we're doing this in Electron, the app has to be opened to see the notification. I could let the app run in the background after it closes, but I refuse to, as that could have an impact on performance.
-
-### How to use it?
-Falix Software is using a service called [Pushy](https://pushy.me/), which is a reliable push notification delivery system. It's also cross-platform and supports [Electron](https://pushy.me/docs/additional-platforms/electron) application, meaning we can use Pushy API in the main file of Falix Software.
-
-Everything is already setup in the main file, I've had it setup where can you send the title, message, and url for the push notification. You just need to use it right.
-
-In the notification data, when sending a notification, it should look like this:
-```
-{
-  "title": "Title of Notification",
-  "message": "This is a message, with a brief explanation or a short description.",
-  "url": "https://example.com/"
-}
-```
-
-In Pushy's API, the data is set out like this:
-
-`title` - `${data.title}`
-
-`message` - `${data.message}`
-
-`url` - `${data.url}`
-
-You can see these used in the main file.
-
-A notification is clicked, a invisible window will open and will trigger the `shell.openExternal('')` command. The reason why we use a URL that has this command seperately, is because using `shell.openExternal` doesn't seem to work in the main file on the Linux platform, but has been tested to work fine on Windows 10.
-
-If a URL isn't used in the notification, you'll be fine. The invisible window will load nothing at all, making it a dummy window.
-
-If a message or title isn't used, it will default to `undefined`.
-
-If you want, you can read [Pushy's Docs](https://pushy.me/docs).
+A push notification works simiar to a native notification, where it pops up like any other notification. With push notifcations, the developer can send a notification at any time he or she wants. Since we're doing this in Electron, the app has to be opened to see the notification. I could let the app run in the background after it closes, but I refuse to, as that could have an impact on performance. -->
 
 ________________________
 
