@@ -24,9 +24,6 @@
         left: 21px !important;
         width: calc(100% - 21px) !important;
     }
-    div#terminal {
-        transform: scale(0.8) translate(-84px, -50px);
-    }
     div#client_panel_CC {
         left: 26px;
         top: 5px;

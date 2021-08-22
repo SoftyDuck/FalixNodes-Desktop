@@ -1,4 +1,5 @@
 button#wvDev {display: none;}
+div#techincal-details {display: none;}
 span#toggle-dm-cm::before {
     content: "";
     position: absolute;

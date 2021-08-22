@@ -4,22 +4,50 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css">
+        <link rel="stylesheet" href="https://software.falixnodes.net/src/css/fallback.css">
         <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.2-web/css/all.css">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/fonts.css">
         <link rel="stylesheet" href="./css/windows-titlebar.css">
         <link rel="stylesheet" href="./css/smallWindow.css">
-        <link rel="stylesheet" href="./css/terminal.css">
         
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
-        <link id="accent-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/accent-color/default.css">
-        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/rounded-corners/off.css">
-        <link id="layout-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/layout/sidebar.css">
-        <link id="sidebar-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-size/confortable.css">
-        <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/sidebar-opacity/90.css">
-        <link id="dismissMinerDownload" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/miner-download/keep.css">
-        <link id="developer-mode" rel="stylesheet" type="text/css" rel="stylesheet" href="./css/settings/developer-mode/off.css">
+        <link id="accent-setting" rel="stylesheet" type="text/css" href="./css/settings/accent-color/default.css">
+        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" href="./css/settings/rounded-corners/off.css">
+        <link id="layout-setting" rel="stylesheet" type="text/css" href="./css/settings/layout/sidebar.css">
+        <link id="sidebar-setting" rel="stylesheet" type="text/css" href="./css/settings/sidebar-size/confortable.css">
+        <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" href="./css/settings/sidebar-opacity/90.css">
+        <link id="developer-mode" rel="stylesheet" type="text/css" href="./css/settings/developer-mode/off.css">
+        <link id="noti_1" rel="stylesheet" type="text/css" href="./css/blank.css"> <!-- For future notifications only, will remove 1 - 20 once we get to the 25th notification and add 31 - 60 -->
+        <link id="noti_2" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_3" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_4" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_5" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_6" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_7" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_8" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_9" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_10" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_11" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_12" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_13" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_14" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_15" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_16" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_17" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_18" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_19" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_20" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_21" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_22" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_23" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_24" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_25" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_26" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_27" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_28" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_29" rel="stylesheet" type="text/css" href="./css/blank.css">
+        <link id="noti_30" rel="stylesheet" type="text/css" href="./css/blank.css">
     </head>
     <header data-for-os="windows" id="titlebar" class="titlebar">
         <div>
@@ -38,13 +66,17 @@
             </div>
         </div>
     </header>
-    <body onload="unloadGamePanel();">
+    <body onload="const { shell } = require('electron'); setTimeout (() => {unloadGamePanel();}, 2500)">
+        <div id="app-loading">
+            <p>Falix Software is loading...</p>
+            <div id="nR" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         <div class="nav_area">
             <div include-html="./html/include/nav.html"></div>
         </div>
         <div class="content">
             <div id="news" class="page_content">
-                <div include-html="https://software.falixnodes.net/posts/grab-posts"></div>
+                <div include-html="https://software.falixnodes.net/posts/"></div>
                 <div id="nL" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
             <div id="client_panel" class="page_content">
@@ -55,9 +87,6 @@
                 <div include-html="./html/include/game-panel.html"></div>
                 <webview id="game_panel_wv" src="https://software.falixnodes.net/blank/" nodeintegration></webview>
             </div>
-            <div id="terminal_mining" class="page_content">
-                <div id="terminal"></div>
-            </div>
 
             <div id="support" class="page_content">
                 <webview id="support_wv" src="https://support.falixnodes.net/"></webview>
@@ -66,25 +95,25 @@
                 <div include-html="./html/include/help-center.html"></div>
             </div>
             <div id="settings" class="page_content">
+                <div id="st-id-uptime" class="st-tab">
+                    <webview id="uptime" src="https://uptime.falixnodes.net/"></webview>
+                </div>
                 <div include-html="./html/include/settings.html"></div>
             </div>
         </div>
-        <script src="../node_modules/xterm/lib/xterm.js"></script>
-
         <script src="./js/require.js"></script>
         <script src="./js/newTerm.js"></script>
         <script src="./js/hotkeys.js"></script>
         <script src="./js/controls.js"></script>
 
-        
+        <script src="./js/notifications/dismissal.js"></script>
+
         <script src="./js/ui/dim.js"></script>
         <script src="./js/ui/nav.js"></script>
+        <script src="./js/ui/notify.js"></script>
         <script src="./js/ui/include.js"></script>
 
-        <script src="./js/electron/terminal.js"></script>
-
         <script src="./js/detection/os.js"></script>
-        <script src="./js/detection/network_detection.js"></script>
 
         <script src="./js/settings/layout.js"></script>
         <script src="./js/settings/sidebar.js"></script>
@@ -93,7 +122,6 @@
         <script src="./js/settings/developer-mode.js"></script>
         <script src="./js/settings/rounded-corners.js"></script>
         <script src="./js/settings/sidebar-opacity.js"></script>
-        <script src="./js/settings/dismiss-miner-download.js"></script>
         <script>includeHTML();</script>
     </body>
 </html>

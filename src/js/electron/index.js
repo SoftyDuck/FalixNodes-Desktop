@@ -1,49 +1,37 @@
-const {app, BrowserWindow, Menu, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, remote} = require('electron');
+const {app, BrowserWindow, dialog, Menu, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, remote} = require('electron');
 const { autoUpdater } = require("electron-updater");
 const glasstron = require('glasstron');
 const electron = require('electron');
-const pty = require("node-pty");
 const os = require("os");
-const Pushy = require('pushy-electron');
 const path = require('path');
 const url = require('url');
 const log = require('electron-log');
+const appV = app.getVersion();
+autoUpdater.logger = log;
 
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 
-var shell = os.platform() === "win32" ? "powershell.exe" : "bash"; // Windows - Use Powershell instead of Command Prompt
-var macshell = os.platform() === "win32" ? "powershell.exe" : "zsh"; // macOS - Use ZSH instead of Bash
 var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
 
 if (osvar == 'darwin') { // macOS
   app.whenReady().then(() => {
     global.blur = "blurbehind";
     global.frame = false;
-    global.titleBarStyle = 'hiddenInset'; // Use native titlebar buttons in the software
-
-    global.terminal = macshell;
-
-    console.log('OS: macOS');
+    global.titleBarStyle = 'hiddenInset'; // Use native titlebar buttons instead
 })}
 else if(osvar == 'win32'){ // Windows
   app.whenReady().then(() => {
     global.blur = "blurbehind";
-    global.frame = false;
+    global.frame = false; // Use custom titlebar
     global.titleBarStyle = 'hidden';
-
-    global.terminal = shell;
-
-    console.log('OS: Windows');
 })}
 else{ //Linux
   app.whenReady().then(() => {
     global.blur = "blurbehind";
     global.frame = true; // Use native titlebar instead
     global.titleBarStyle = 'hidden';
-
-    global.terminal = shell;
-
-    console.log('OS: Linux');
+    app.disableHardwareAcceleration
+    app.commandLine.appendSwitch
 })}
 
 function createWindow() {
@@ -60,12 +48,12 @@ function createWindow() {
     blur: true,
     blurType: global.blur,
     webPreferences: {
-        preload: path.join(__dirname, "../../js/electron/preload.js"),
-        nodeIntegration: true,
-        webviewTag: true,
-        devTools: false,
-        enableRemoteModule: true,
-        contextIsolation: false
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+      nodeIntegration: true,
+      webviewTag: true,
+      devTools: true,
+      enableRemoteModule: true,
+      contextIsolation: false
     }
   })
 
@@ -96,49 +84,43 @@ function createWindow() {
     mainWindow.show();
    }, 8000);
 
-  // Terminal (aka XTerm)
-  var ptyProcess = pty.spawn(global.terminal, [], {
-      name: "xterm-color",
-      cwd: process.env.HOME,
-      env: process.env
-  });
-  ptyProcess.on('data', function(data) {  
-      mainWindow.webContents.send("terminal.incomingData", data);
-  });
-  ipcMain.on("terminal.keystroke", (event, key) => {
-      ptyProcess.write(key);
-  });
-
-  // Pushy - Push Notifcations
-  mainWindow.webContents.on('did-finish-load', () => {
-      Pushy.listen();
-  });
-    
-  Pushy.register({ appId: '60c3b90e8abb33b02f642ccf' }).then((deviceToken) => {}).catch((err) => {});
-    
-  Pushy.setNotificationListener((data) => {
-      notification = new Notification ({
-          title: `${data.title}`,
-          body: `${data.message}`
-      });
-      notification.show();
-      notification.on('click', (event, arg)=>{
-      const notiWindow = new BrowserWindow({
-          show: false,
-          webPreferences: {
-              nodeIntegration: true,
-              enableRemoteModule: true,
-              contextIsolation: false
-          }
-      })
-      notiWindow.loadURL(`${data.url}`)})
-  });
-
-  if (Pushy.isRegistered()) {
-  Pushy.subscribe('push').then(() => {}).catch((err) => {console.error(err);});}
-
   // Auto Updater
-  autoUpdater.checkForUpdatesAndNotify();
+  autoUpdater.on('update-available', (info) => {
+    showNotification();
+  })
+  autoUpdater.on('error', (err) => {
+    showNotificationFailed();
+  })
+  autoUpdater.checkForUpdates()
+
+  function showNotification() {
+    new Notification({ title: "Falix Software", body: 'A new updating is downloading in the background...' }).show()
+  }
+  function showNotificationFailed() {
+    new Notification({ title: "Falix Software", body: 'Update failed to download.' }).show()
+  }
+
+  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+    setTimeout(() => {
+      const dialogOpts = {
+        type: 'question',
+        buttons: ['Restart Now', 'Later'],
+        title: 'Falix Software Updater',
+        message: process.platform === 'win32' ? releaseNotes : releaseName,
+        detail: 'A new update is ready!'
+      }
+      dialog.showMessageBox(dialogOpts).then((returnValue) => {if (returnValue.response === 0) autoUpdater.quitAndInstall(false)})
+    }, 4000)
+  })
+
+  // Extra information, mostly for debugging purposes
+  console.log('OS Type: ' + os.type());
+  console.log('OS Version: ' + os.release());
+  console.log('OS Platform: ' + os.platform());
+  console.log('Application Version: ' + appV)
+  console.log('Electron Version: ' + process.versions.electron);
+  console.log('Node Version: ' + process.versions.node);
+  console.log('Chromium Version: ' + process.versions.chrome);
 }
 
-app.whenReady().then(() => {setTimeout(() => {createWindow()}, 1200)}) // The "setTimeout" function is used due to a transparency bug with Electron on Linux
+app.whenReady().then(() => {setTimeout(() => {createWindow()}, 1200)})
