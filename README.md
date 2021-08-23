@@ -22,11 +22,11 @@ ________________________
 - ~~Add dynamic timing to splash screen, instead of fixed timing being 5 seconds~~
 - Improve performance
 - Add more language support:
-   - [ ] German
+   - [x] German
    - [x] Latvian
-   - [ ] Português
+   - [x] Português
    - [ ] Arabic
-   - [ ] Bengali
+   - [x] Bengali
    - [x] Russian
 
 ________________________
