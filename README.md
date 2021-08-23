@@ -23,7 +23,7 @@ ________________________
 - Improve performance
 - Add more language support:
    - [ ] German
-   - [ ] Latvian
+   - [x] Latvian
    - [ ] Português
    - [ ] Arabic
    - [ ] Bengali
