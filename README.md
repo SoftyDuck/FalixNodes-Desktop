@@ -27,7 +27,7 @@ ________________________
    - [ ] Português
    - [ ] Arabic
    - [ ] Bengali
-   - [ ] Russian
+   - [x] Russian
 
 ________________________
 
