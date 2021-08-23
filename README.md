@@ -21,13 +21,13 @@ ________________________
  - ~~With the removal of the remote module, switch to using ipcRenderer and ipcMain, as suggested by Electron's Documentation~~
 - ~~Add dynamic timing to splash screen, instead of fixed timing being 5 seconds~~
 - Improve performance
-- Add more language support:
-   - [x] German
-   - [x] Latvian
-   - [x] Português
-   - [ ] Arabic
-   - [x] Bengali
-   - [x] Russian
+- ~~Add more language support:~~
+   - ~~[x] German~~
+   - ~~[x] Latvian~~
+   - ~~[x] Português~~
+   - ~~[x] Arabic~~
+   - ~~[x] Bengali~~
+   - ~~[x] Russian~~
 
 ________________________
 
