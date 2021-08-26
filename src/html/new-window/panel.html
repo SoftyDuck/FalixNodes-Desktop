@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Falix Software - Client Panel</title>
-    <link rel="stylesheet" href="../src/css/new-window.css">
-    <script src="../src/js/browser.js"></script>
+    <title>Falix Software - Game Panel</title>
+    <link rel="stylesheet" href="../../css/new-window.css">
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.2-web/css/all.css">
+    <script src="controls.js"></script>
+    <script src="panel.js"></script>
+  </head>
   <body>
     <div id="controls">
 
-      <button id="back" title="Go Back" disabled="true">&#9664;</button>
-      <button id="forward" title="Go Forward" disabled="true">&#9654;</button>
-      <button id="home" title="Go Home">&#8962;</button>
-      <button id="reload" title="Reload">&#10227;</button>
-      <button onclick="setTimeout (window.close, 0);" id="close">X</button>
+      <button id="back" title="Go Back" disabled="true"><i class="fas fa-long-arrow-alt-left"></i></button>
+      <button id="forward" title="Go Forward" disabled="true"><i class="fas fa-long-arrow-alt-right"></i></button>
+      <button id="home" title="Go Home"><i class="fas fa-home"></i></button>
+      <button id="reload" title="Reload"><i class="fas fa-redo-alt"></i></button>
 
       <form id="location-form">
         <div id="center-column">
-          <input id="location" type="text" value="https://panel.falixnodes.net">
+          <input id="location" type="text" value="https://panel.falixnodes.net/">
         </div>
-        <input type="submit" value="Go">
-      </form>
-
-      <button id="zoom" title="Change Zoom">&#128270;</button>
-      <button id="find" title="Find in Page">&#128294;</button>
-
-    </div>
-
-    <div id="zoom-box">
-      <form id="zoom-form">
-        <input id="zoom-text" type="text">
-        <input type="submit" value="&#128270;">
-        <button id="zoom-in">&#10133;</button>
-        <button id="zoom-out">&#10134;</button>
       </form>
     </div>
 
-    <div id="find-box">
-      <form id="find-form">
-        <input id="find-text" type="text">
-        <div id="find-results"></div>
-        <input type="submit" style="position:absolute; visibility:hidden">
-        <button id="match-case">aA</button>
-        <button id="find-backward">&#60;</button>
-        <button id="find-forward">&#62;</button>
-      </form>
-    </div>
-
-    <webview src="https://panel.falixnodes.net" style="width:640px; height:480px"></webview>
-
-    <div id="sad-webview">
-      <div id="sad-webview-icon">&#9762;</div>
-      <h2 id="crashed-label">Aw, Snap!</h2>
-      <h2 id="killed-label">He's Dead, Jim!</h2>
-
-      <p>Something went wrong while displaying this webpage.
-      To continue, reload or go to another page.</p>
-    </div>
+    <webview src="https://panel.falixnodes.net/" style="width:640px; height:480px"></webview>
   </body>
 </html>

@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: black;
+}
+
+::selection {
+    background: #2970CC;
+    color: white;
+}

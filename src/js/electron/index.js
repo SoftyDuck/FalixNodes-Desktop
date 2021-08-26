@@ -8,6 +8,26 @@ const url = require('url');
 const log = require('electron-log');
 const appV = app.getVersion();
 autoUpdater.logger = log;
+const { fork } = require('child_process')
+const ps = fork(`${__dirname}/server.js`)
+const { menubar } = require('menubar');
+
+const mb = menubar({
+  browserWindow: {
+    transparent: true,
+    width: 395,
+    webPreferences: {
+      webviewTag: true,
+      contextIsolation: false,
+      nodeIntegration: true
+    }
+  },
+  tooltip: 'Falix Software Quick Access',
+  index: path.join('file://', __dirname, '../../tray.html'),
+  icon: path.join(`${__dirname}../../../images/icons/app/256x256.png`)
+});
+
+mb.on('ready', () => {console.log('Tray is ready');});
 
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 
@@ -47,12 +67,14 @@ function createWindow() {
     titleBarStyle: global.titleBarStyle,
     blur: true,
     blurType: global.blur,
+    nativeWindowOpen: true,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
       nodeIntegration: true,
+      nodeIntegrationInSubFrames: true,
       webviewTag: true,
       devTools: true,
-      enableRemoteModule: true,
+      enableRemoteModule: false, // The remote module is deprecated by Electron: https://www.electronjs.org/docs/api/remote. Now being set to false in Falix Software v3.3.0
       contextIsolation: false
     }
   })
@@ -70,19 +92,26 @@ function createWindow() {
     blur: true,
     blurType: global.blur,
     webPreferences: {
-        devTools: false
+        devTools: true
     }
   })
 
   splashWindow.loadFile('src/html/splash/index.html')
   mainWindow.loadFile('src/index.html');
 
-  setTimeout(() => {
-   splashWindow.close();
-  }, 7500);
-  setTimeout(() => {
-    mainWindow.show();
-   }, 8000);
+  ipcMain.on('minimize', () => {mainWindow.minimize()})
+  ipcMain.on('maximize', () => {mainWindow.maximize()})
+  ipcMain.on('restore', () => {mainWindow.restore()})
+  ipcMain.on('close', () => {mainWindow.close()})
+  ipcMain.on('openCP', () => {newCP()})
+  ipcMain.on('openGP', () => {newGP()})
+  ipcMain.on('updateChecker', () => {autoUpdater.checkForUpdates()})
+  ipcMain.on('quit', () => {quitApp()})
+
+  // mainWindow.once('ready-to-show', () => {
+  //   splashWindow.destroy();
+  //   mainWindow.show();
+  // });
 
   // Auto Updater
   autoUpdater.on('update-available', (info) => {
@@ -121,6 +150,62 @@ function createWindow() {
   console.log('Electron Version: ' + process.versions.electron);
   console.log('Node Version: ' + process.versions.node);
   console.log('Chromium Version: ' + process.versions.chrome);
+}
+
+function newCP() {
+  const newCP = new BrowserWindow({
+    width: 800,
+    height: 600,
+    minWidth: 400,
+    minHeight: 320,
+    frame: global.frame,
+    transparent: true,
+    autoHideMenuBar: true,
+    titleBarStyle: global.titleBarStyle,
+    webPreferences: {
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+      nodeIntegration: true,
+      nodeIntegrationInSubFrames: true,
+      webviewTag: true,
+      devTools: true,
+      contextIsolation: false
+    }
+  })
+  newCP.loadFile('./src/html/new-window/client.html')
+}
+
+function newGP() {
+  const newCP = new BrowserWindow({
+    width: 800,
+    height: 600,
+    minWidth: 400,
+    minHeight: 320,
+    frame: global.frame,
+    transparent: true,
+    autoHideMenuBar: true,
+    titleBarStyle: global.titleBarStyle,
+    webPreferences: {
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+      nodeIntegration: true,
+      nodeIntegrationInSubFrames: true,
+      webviewTag: true,
+      devTools: true,
+      contextIsolation: false
+    }
+  })
+  newCP.loadFile('./src/html/new-window/panel.html')
+}
+
+function quitApp() {
+  dialog.showMessageBox({
+    title: 'Falix Software',
+    message: 'Trying to quit?',
+    detail: 'Press Ctrl + Q to quit the app entirely.',
+  }).then(box => {
+    console.log('Button Clicked Index - ', box.response);
+    }).catch(err => {
+    console.log(err)
+  })
 }
 
 app.whenReady().then(() => {setTimeout(() => {createWindow()}, 1200)})

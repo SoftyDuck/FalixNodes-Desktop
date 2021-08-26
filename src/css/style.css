@@ -364,3 +364,6 @@ webview#uptime {
   position: fixed;
   top: 0px;
 }
+
+.settings-slec p {margin-left: 40px;}
+.lang-se {cursor: pointer;}
