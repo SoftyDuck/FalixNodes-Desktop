@@ -28,38 +28,102 @@ tp2#gp_unl-p::before {content: "Falix Software 默认不加载游戏面板，以
 tp2#gp_unl-button::before {content: "负载面板";}
 
 /* Front-End, show that the option for the language was selected in the settings */
-button#lang_sel_do_en {
-    background: transparent;
-    color: white;
-    padding: 10px 20px;
+span#lang_sel_do_en::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
     border-radius: 4px;
-    border: 1px transparent solid;
 }
-button#lang_sel_do_es {
-    background: transparent;
-    color: white;
-    padding: 10px 20px;
+span#lang_sel_do_es::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
     border-radius: 4px;
-    border: 1px transparent solid;
 }
-button#lang_sel_do_fr {
-    background: transparent;
-    color: white;
-    padding: 10px 20px;
+span#lang_sel_do_fr::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
     border-radius: 4px;
-    border: 1px transparent solid;
 }
-button#lang_sel_do_cn {
+span#lang_sel_do_cn::before {
+    content: "";
+    position: absolute;
     background: var(--accent);
-    color: white;
-    padding: 10px 20px;
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
     border-radius: 4px;
-    border: 1px white solid;
 }
-button#lang_sel_do_hn {
-    background: transparent;
-    color: white;
-    padding: 10px 20px;
+span#lang_sel_do_hn::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
     border-radius: 4px;
-    border: 1px transparent solid;
+}
+span#lang_sel_do_gm::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ab::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_be::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_ru::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_pt::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#lang_sel_do_lv::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: 6px 0px 0px 5px;
+    border-radius: 4px;
 }

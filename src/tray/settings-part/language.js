@@ -1,7 +1,7 @@
 var setTheme = localStorage.getItem('language')
 console.log('Language:', setTheme)
 if (setTheme == null){
-  setLanguage('./css/settings/language/english.css')
+  setLanguage('../css/settings/language/english.css')
 }else{
   setLanguage(setTheme)
 }

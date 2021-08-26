@@ -1,31 +1,31 @@
 /* Content */
-t2p#page-news::before {content: "Noticias";}
-t2p#page-client_panel::before {content: "Panel de cliente";}
-t2p#page-game_panel::before {content: "Panel de juego";}
-t2p#page-falixcoins_mining::before {content: "Minería FalixCoins";}
-t2p#page-support::before {content: "Apoyar";}
-t2p#page-help_center::before {content: "Centro de ayuda";}
-t2p#page-settings::before {content: "Ajustes";}
+t2p#page-news::before {content: "Новости";}
+t2p#page-client_panel::before {content: "Клиентская панель";}
+t2p#page-game_panel::before {content: "Игровая панель";}
+t2p#page-support::before {content: "Служба поддержки";}
+t2p#page-help_center::before {content: "Центр помощи";}
+t2p#page-settings::before {content: "Настройки ";}
 
-t2p#notify-internet-lost::before {content: "Connection Lost";}
-t2p#notify-internet-restored::before {content: "Connection Restored";}
+t2p#nd-Opening-in-brower::before {content: "Открытие в браузере";}
+t2p#netork_connection-lost::before {content: "Соединение потеряно";}
+t2p#netork_connection-restored::before {content: "Соединение восстановлено";}
 
-t2p#h1-settings::before {content: "Ajustes";}
-t2p#h2-app::before {content: "Aplicación";}
-t2p#fs-language::before {content: "Lenguaje";}
-t2p#fs-devMode::before {content: "Modo desarrollador";}
-t2p#fs-appearance::before {content: "Apariciones";}
-tp2#fs-ac::before {content: "Acentuar el color";}
-tp2#fs-oo::before {content: "Otras opciones";}
-tp2#fs-adv::before {content: "Adelantar";}
-tp2#fs-reset::before {content: "Reajustar";}
-t2p#tog-devMode::before {content: "Habilitar el modo de desarrollador";}
-t2p#tog-rc::before {content: "Esquinas redondeadas";}
-t2p#tog-ts::before {content: "Transparencia de la barra lateral";}
+t2p#h1-settings::before {content: "Настройки";}
+t2p#h2-app::before {content: "Приложение";}
+t2p#fs-language::before {content: "Язык";}
+t2p#fs-devMode::before {content: "Режим разработчика";}
+t2p#fs-appearance::before {content: "Появления";}
+tp2#fs-ac::before {content: "Акцентный цвет";}
+tp2#fs-oo::before {content: "Другие варианты";}
+tp2#fs-adv::before {content: "Передовой";}
+tp2#fs-reset::before {content: "Сброс настроек";}
+t2p#tog-devMode::before {content: "Включить режим разработчика";}
+t2p#tog-rc::before {content: "Закругленные углы";}
+t2p#tog-ts::before {content: "Прозрачность боковой панели ";}
 
-t2p#gp_unl-h1::before {content: "Panel de juego";}
-tp2#gp_unl-p::before {content: "El panel del juego no se carga de forma predeterminada en Falix Software para reducir la cantidad de recursos utilizados. Esto ayuda con el rendimiento.";}
-tp2#gp_unl-button::before {content: "Panel de carga";}
+t2p#gp_unl-h1::before {content: "Игровая панель"}
+tp2#gp_unl-p::before {content: "Игра панель не загружаются по умолчанию в Falix Software, чтобы уменьшить количество используемых ресурсов. Это помогает с производительностью.";}
+tp2#gp_unl-button::before {content: "Панель нагрузки";}
 
 /* Front-End, show that the option for the language was selected in the settings */
 span#lang_sel_do_en::before {
@@ -40,7 +40,7 @@ span#lang_sel_do_en::before {
 span#lang_sel_do_es::before {
     content: "";
     position: absolute;
-    background: var(--accent);
+    background: var(--bg-accent-one);
     width: 15px;
     height: 15px;
     margin: 6px 0px 0px 5px;
@@ -103,7 +103,7 @@ span#lang_sel_do_be::before {
 span#lang_sel_do_ru::before {
     content: "";
     position: absolute;
-    background: var(--bg-accent-one);
+    background: var(--accent);
     width: 15px;
     height: 15px;
     margin: 6px 0px 0px 5px;

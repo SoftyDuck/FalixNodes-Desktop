@@ -1,31 +1,31 @@
 /* Content */
-t2p#page-news::before {content: "Noticias";}
-t2p#page-client_panel::before {content: "Panel de cliente";}
-t2p#page-game_panel::before {content: "Panel de juego";}
-t2p#page-falixcoins_mining::before {content: "Minería FalixCoins";}
-t2p#page-support::before {content: "Apoyar";}
-t2p#page-help_center::before {content: "Centro de ayuda";}
-t2p#page-settings::before {content: "Ajustes";}
+t2p#page-news::before {content: "Nachrichten";}
+t2p#page-client_panel::before {content: "Kunden-Panel";}
+t2p#page-game_panel::before {content: "Spielfeld";}
+t2p#page-support::before {content: "Unterstützen";}
+t2p#page-help_center::before {content: "Hilfezentrum";}
+t2p#page-settings::before {content: "Einstellungen";}
 
-t2p#notify-internet-lost::before {content: "Connection Lost";}
-t2p#notify-internet-restored::before {content: "Connection Restored";}
+t2p#nd-Opening-in-brower::before {content: "Im Browser öffnen";}
+t2p#netork_connection-lost::before {content: "Verbindung verloren";}
+t2p#netork_connection-restored::before {content: "Verbindung wiederhergestellt";}
 
-t2p#h1-settings::before {content: "Ajustes";}
-t2p#h2-app::before {content: "Aplicación";}
-t2p#fs-language::before {content: "Lenguaje";}
-t2p#fs-devMode::before {content: "Modo desarrollador";}
-t2p#fs-appearance::before {content: "Apariciones";}
-tp2#fs-ac::before {content: "Acentuar el color";}
-tp2#fs-oo::before {content: "Otras opciones";}
-tp2#fs-adv::before {content: "Adelantar";}
-tp2#fs-reset::before {content: "Reajustar";}
-t2p#tog-devMode::before {content: "Habilitar el modo de desarrollador";}
-t2p#tog-rc::before {content: "Esquinas redondeadas";}
-t2p#tog-ts::before {content: "Transparencia de la barra lateral";}
+t2p#h1-settings::before {content: "Einstellungen";}
+t2p#h2-app::before {content: "Antrag";}
+t2p#fs-language::before {content: "Sprache";}
+t2p#fs-devMode::before {content: "Entwicklermodus";}
+t2p#fs-appearance::before {content: "Auftritte";}
+tp2#fs-ac::before {content: "Akzentfarbe";}
+tp2#fs-oo::before {content: "Andere Optionen";}
+tp2#fs-adv::before {content: "Vorschuss";}
+tp2#fs-reset::before {content: "Zurückgesetzt";}
+t2p#tog-devMode::before {content: "Entwicklermodus aktivieren";}
+t2p#tog-rc::before {content: "Abgerundete Ecken";}
+t2p#tog-ts::before {content: "Transparenz der Seitenleiste ";}
 
-t2p#gp_unl-h1::before {content: "Panel de juego";}
-tp2#gp_unl-p::before {content: "El panel del juego no se carga de forma predeterminada en Falix Software para reducir la cantidad de recursos utilizados. Esto ayuda con el rendimiento.";}
-tp2#gp_unl-button::before {content: "Panel de carga";}
+t2p#gp_unl-h1::before {content: "Spielfeld";}
+tp2#gp_unl-p::before {content: "Die Spielkonsole ist standardmäßig in Falix Software entladen verwendet, um die Menge an Ressourcen zu reduzieren. Das hilft bei der Leistung.";}
+tp2#gp_unl-button::before {content: "Panel laden";}
 
 /* Front-End, show that the option for the language was selected in the settings */
 span#lang_sel_do_en::before {
@@ -40,7 +40,7 @@ span#lang_sel_do_en::before {
 span#lang_sel_do_es::before {
     content: "";
     position: absolute;
-    background: var(--accent);
+    background: var(--bg-accent-one);
     width: 15px;
     height: 15px;
     margin: 6px 0px 0px 5px;
@@ -76,7 +76,7 @@ span#lang_sel_do_hn::before {
 span#lang_sel_do_gm::before {
     content: "";
     position: absolute;
-    background: var(--bg-accent-one);
+    background: var(--accent);
     width: 15px;
     height: 15px;
     margin: 6px 0px 0px 5px;
