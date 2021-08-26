@@ -1,9 +1,0 @@
-span#toggle-ts-cm::before {
-    content: "";
-    position: absolute;
-    background: var(--accent);
-    width: 15px;
-    height: 15px;
-    margin: -34px 0px 0px 5px;
-    border-radius: 4px;
-}
