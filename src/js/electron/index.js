@@ -12,15 +12,19 @@ const { fork } = require('child_process')
 const ps = fork(`${__dirname}/server.js`)
 const { menubar } = require('menubar');
 
+global.devMode = false;
+
 const mb = menubar({
   browserWindow: {
     transparent: true,
     width: 395,
+    resizable: false,
     webPreferences: {
       webviewTag: true,
       contextIsolation: false,
       nodeIntegration: true,
-      devTools: global.devMode
+      devTools: global.devMode,
+      nativeWindowOpen: true
     }
   },
   tooltip: 'Falix Software Quick Access',
@@ -33,8 +37,6 @@ mb.on('ready', () => {console.log('Tray is ready');});
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 
 var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
-
-global.devMode = false;
 
 if (osvar == 'darwin') { // macOS
   app.whenReady().then(() => {
@@ -78,7 +80,8 @@ function createWindow() {
       webviewTag: true,
       devTools: global.devMode,
       enableRemoteModule: false, // The remote module is deprecated by Electron: https://www.electronjs.org/docs/api/remote. Now being set to false in Falix Software v3.3.0
-      contextIsolation: false
+      contextIsolation: false,
+      nativeWindowOpen: true
     }
   })
 
@@ -95,7 +98,8 @@ function createWindow() {
     blur: true,
     blurType: global.blur,
     webPreferences: {
-        devTools: global.devMode
+        devTools: global.devMode,
+        nativeWindowOpen: true
     }
   })
 
@@ -171,7 +175,8 @@ function newCP() {
       nodeIntegrationInSubFrames: true,
       webviewTag: true,
       devTools: global.devMode,
-      contextIsolation: false
+      contextIsolation: false,
+      nativeWindowOpen: true
     }
   })
   newCP.loadFile('./src/html/new-window/client.html')
@@ -193,7 +198,8 @@ function newGP() {
       nodeIntegrationInSubFrames: true,
       webviewTag: true,
       devTools: global.devMode,
-      contextIsolation: false
+      contextIsolation: false,
+      nativeWindowOpen: true
     }
   })
   newCP.loadFile('./src/html/new-window/panel.html')

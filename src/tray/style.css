@@ -59,9 +59,9 @@ div#update webview {
     border: none;
     background: transparent;
     color: white;
-    border-radius: 4px;
-    padding: 7px 15px;
-    margin: 4px -15px 0px 20px;
+    border-radius: 0px;
+    padding: 12px 17px;
+    margin: 0px -4px 0px 0px;
     cursor: pointer;
 }
 
@@ -70,7 +70,7 @@ div#update webview {
     top: 40px;
     left: 0px;
     width: 100%;
-    background: #424242;
+    background: rgb(66 66 66 / 90%);
     height: calc(100% - 80px);
     border-radius: 0px 0px 7px 7px;
     padding: 0px 0px 0px 25px;
@@ -85,17 +85,6 @@ div#update webview {
     cursor: pointer;
 }
 
-p#beta {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    margin: 0px;
-    background: black;
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 5px 0px;
-    font-size: 14px;
-    border-radius: 0px 0px 7px 7px;
-    pointer-events: none;
+div#app {
+    margin: -10px;
 }
