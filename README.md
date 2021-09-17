@@ -16,21 +16,6 @@ ________________________
 
 ________________________
 
-## To Do List for Falix Software v3.3.0
- - ~~Remove the remote module, as it's been [deprecated](https://www.electronjs.org/docs/latest/api/remote/#:~:text=%E2%9A%A0%EF%B8%8F%20WARNING%20%E2%9A%A0%EF%B8%8F%20The%20remote%20module%20is%20deprecated)~~
- - ~~With the removal of the remote module, switch to using ipcRenderer and ipcMain, as suggested by Electron's Documentation~~
-- ~~Add dynamic timing to splash screen, instead of fixed timing being 5 seconds~~
-- Improve performance
-- ~~Add more language support:~~
-   - ~~[x] German~~
-   - ~~[x] Latvian~~
-   - ~~[x] Português~~
-   - ~~[x] Arabic~~
-   - ~~[x] Bengali~~
-   - ~~[x] Russian~~
-
-________________________
-
 ## ❔ Q&A for Developers
 ### Why is Font Awesome included offline? You could use a script instead.
 #### What is Font Awesome?
