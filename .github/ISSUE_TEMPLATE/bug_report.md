@@ -6,6 +6,8 @@ labels: 'bug'
 assignees: 'KorbsStudio'
 ---
 
+<!-- NOTE: This is for the desktop application only, this is not a support area to help with your Falix account, servers, or anything else. -->
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -24,5 +26,5 @@ If applicable, add screenshots to help explain your problem.
 ![image](ImageURLGoesHere)
 
 **Desktop:**
- - OS: [Windows 11, macOS 12.0, or Linux]
- - Version [3.1.0]
+ - OS: [Windows 11, macOS 12.0, or Linux(name the distro)]
+ - Version [3.3.0]
