@@ -12,7 +12,7 @@ const { fork } = require('child_process')
 const ps = fork(`${__dirname}/server.js`)
 const { menubar } = require('menubar');
 
-global.devMode = false;
+global.devMode = true;
 
 const mb = menubar({
   browserWindow: {

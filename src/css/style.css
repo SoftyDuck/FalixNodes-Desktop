@@ -353,11 +353,18 @@ span#divider {
   background: #162230;
   border-radius: 10px;
   position: absolute;
-  top: 70px;
+  top: 117px;
   width: 210px;
   left: 20px;
 }
 webview#uptime {
+  width: calc(100% - 473px);
+  height: calc(100% - 0px);
+  margin-left: 219px;
+  position: fixed;
+  top: 0px;
+}
+webview#account_wv {
   width: calc(100% - 473px);
   height: calc(100% - 0px);
   margin-left: 219px;

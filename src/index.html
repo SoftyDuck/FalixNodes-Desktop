@@ -87,6 +87,9 @@
                 <div id="st-id-uptime" class="st-tab">
                     <webview id="uptime" src="https://uptime.falixnodes.net/"></webview>
                 </div>
+                <div id="st-id-account" class="st-tab">
+                    <webview id="account_wv" preload='./js/settings/account.js' src="https://client.falixnodes.net/"></webview>
+                </div>
                 <div include-html="./html/include/settings.html"></div>
             </div>
         </div>
@@ -114,5 +117,11 @@
         <script src="./js/settings/rounded-corners.js"></script>
         <script src="./js/settings/sidebar-opacity.js"></script>
         <script>includeHTML();</script>
+        <script>
+            var webview_account = document.getElementById('account_wv');
+            webview_account.addEventListener('dom-ready', function () {
+                webview_account.insertCSS('nav.navbar.navbar-light.navbar-glass.navbar-top.navbar-expand {display: none !important;}.card-body.position-relative {display: none !important;}div#adngin-bottom_leaderboard_client_panel-0 {display: none !important;}')
+            });
+        </script>
     </body>
 </html>

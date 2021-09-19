@@ -2,12 +2,13 @@ webview = document.querySelector('webview')
 var webviewCP = document.getElementById('client_panel_wv');
 var webviewGP = document.getElementById('game_panel_wv');
 var webviewSP = document.getElementById('support_wv')
-var webviewPF = document.getElementById('profile-settings')
+var webviewAC = document.getElementById('account_wv')
 
 // For Developers
 function CP_wvDevTools(){webviewCP.openDevTools()}
 function wvDevTools(){webviewGP.openDevTools()}
 function SP_wvDevTools(){webviewSP.openDevTools()}
+function webviewAC(){webviewAC.openDevTools()}
 
 // General Controls
 function CP_wvGoBack(){webviewCP.goBack()}
