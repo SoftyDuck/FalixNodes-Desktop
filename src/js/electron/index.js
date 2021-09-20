@@ -94,7 +94,7 @@ function createWindow() {
   });
 
   tray = new Tray('./build/icons/icon.png')
-  tray.setToolTip('Chirp')
+  tray.setToolTip('Falix Software')
   tray.on('click', () => {
     mainWindow.show();
   });
@@ -215,4 +215,4 @@ function quitApp() {
   })
 }
 
-app.whenReady().then(() => {setTimeout(() => {createWindow()}, 1200)})
+app.whenReady().then(() => {setTimeout(() => {createWindow()}, 50)})
