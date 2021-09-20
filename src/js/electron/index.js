@@ -1,15 +1,16 @@
-const {app, BrowserWindow, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, remote, Tray} = require('electron');
+const {app, BrowserWindow, contextBridge, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, remote, Tray, shell} = require('electron');
 const { autoUpdater } = require("electron-updater");
-const glasstron = require('glasstron');
-const electron = require('electron');
-const os = require("os");
-const path = require('path');
-const url = require('url');
-const log = require('electron-log');
-const appV = app.getVersion();
-autoUpdater.logger = log;
 const { fork } = require('child_process')
 const ps = fork(`${__dirname}/server.js`)
+const glasstron = require('glasstron');
+const electron = require('electron');
+const log = require('electron-log');
+const appV = app.getVersion();
+const path = require('path');
+const url = require('url');
+const os = require("os");
+const fs = require("fs");
+autoUpdater.logger = log;
 
 global.devMode = true;
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
@@ -52,15 +53,17 @@ function createWindow() {
     nativeWindowOpen: true,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: true,
-      nodeIntegrationInSubFrames: true,
+      nodeIntegration: false,
+      nodeIntegrationInSubFrames: false,
       webviewTag: true,
       devTools: global.devMode,
       enableRemoteModule: false,
-      contextIsolation: false,
+      contextIsolation: true,
       nativeWindowOpen: true
     }
   })
+
+
 
   const splashWindow = new glasstron.BrowserWindow({
     frame: false,
@@ -87,6 +90,11 @@ function createWindow() {
   ipcMain.on('maximize', () => {mainWindow.maximize()})
   ipcMain.on('restore', () => {mainWindow.restore()})
   ipcMain.on('close', () => {mainWindow.close()})
+
+  ipcMain.on('open_post-one', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/one.html')})
+  ipcMain.on('open_post-two', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/two.html')})
+  ipcMain.on('open_post-three', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/three.html')})
+  ipcMain.on('open_post-four', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/four.html')})
 
   mainWindow.once('ready-to-show', () => {
     splashWindow.destroy();
@@ -169,11 +177,11 @@ function newCP() {
     titleBarStyle: global.titleBarStyle,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: true,
-      nodeIntegrationInSubFrames: true,
+      nodeIntegration: false,
+      nodeIntegrationInSubFrames: false,
       webviewTag: true,
       devTools: global.devMode,
-      contextIsolation: false,
+      contextIsolation: true,
       nativeWindowOpen: true
     }
   })
@@ -192,11 +200,11 @@ function newGP() {
     titleBarStyle: global.titleBarStyle,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: true,
-      nodeIntegrationInSubFrames: true,
+      nodeIntegration: false,
+      nodeIntegrationInSubFrames: false,
       webviewTag: true,
       devTools: global.devMode,
-      contextIsolation: false,
+      contextIsolation: true,
       nativeWindowOpen: true
     }
   })
@@ -213,6 +221,10 @@ function quitApp() {
     }).catch(err => {
     console.log(err)
   })
+}
+
+function demoOnly() {
+  shell.openExternal('https://example.com/index.html')
 }
 
 app.whenReady().then(() => {setTimeout(() => {createWindow()}, 50)})
