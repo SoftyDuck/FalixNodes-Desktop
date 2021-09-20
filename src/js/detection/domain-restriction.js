@@ -8,5 +8,6 @@ if(url.startsWith("https://falixnodes.net/")
 || url.startsWith("https://software.falixnodes.net/")
 || url.startsWith("https://discord.com/")
 || url.startsWith("http://localhost:9999/domain-access.html")
+|| url.startsWith("https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/")
 )
 {} else {setTimeout(() => {location.href = 'http://localhost:9999/domain-access.html'}, 500);}

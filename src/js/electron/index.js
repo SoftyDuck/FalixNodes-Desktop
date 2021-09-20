@@ -1,4 +1,4 @@
-const {app, BrowserWindow, dialog, Menu, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, remote} = require('electron');
+const {app, BrowserWindow, dialog, Menu, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, remote, session} = require('electron');
 const { autoUpdater } = require("electron-updater");
 const glasstron = require('glasstron');
 const electron = require('electron');
@@ -79,7 +79,7 @@ function createWindow() {
       nodeIntegrationInSubFrames: true,
       webviewTag: true,
       devTools: global.devMode,
-      enableRemoteModule: false, // The remote module is deprecated by Electron: https://www.electronjs.org/docs/api/remote. Now being set to false in Falix Software v3.3.0
+      enableRemoteModule: false,
       contextIsolation: false,
       nativeWindowOpen: true
     }
