@@ -3,12 +3,14 @@ var webviewCP = document.getElementById('client_panel_wv');
 var webviewGP = document.getElementById('game_panel_wv');
 var webviewSP = document.getElementById('support_wv')
 var webviewAC = document.getElementById('account_wv')
+var webviewHC = document.getElementById('help_wv')
 
 // For Developers
 function CP_wvDevTools(){webviewCP.openDevTools()}
 function wvDevTools(){webviewGP.openDevTools()}
 function SP_wvDevTools(){webviewSP.openDevTools()}
 function webviewAC(){webviewAC.openDevTools()}
+function webviewHC(){webviewHC.openDevTools()}
 
 // General Controls
 function CP_wvGoBack(){webviewCP.goBack()}
