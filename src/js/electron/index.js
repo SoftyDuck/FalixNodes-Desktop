@@ -12,7 +12,7 @@ const os = require("os");
 const fs = require("fs");
 autoUpdater.logger = log;
 
-global.devMode = true;
+global.devMode = false;
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
 
@@ -50,7 +50,6 @@ function createWindow() {
     titleBarStyle: global.titleBarStyle,
     blur: true,
     blurType: global.blur,
-    nativeWindowOpen: true,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
       nodeIntegration: false,
