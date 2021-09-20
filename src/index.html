@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Falix Software</title>
@@ -67,19 +68,18 @@
             </div>
             <div id="client_panel" class="page_content">
                 <div include-html="./html/include/client-panel.html"></div>
-                <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://client.falixnodes.net/" nodeintegration></webview>
-                <!-- <webview id="client_panel_wv" src="https://client.falixnodes.net/" nodeintegration></webview> -->
+                <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://client.falixnodes.net/"></webview>
             </div>
             <div id="game_panel" class="page_content">
                 <div include-html="./html/include/game-panel.html"></div>
-                <webview id="game_panel_wv" preload='./js/detection/domain-restriction.js' src="https://software.falixnodes.net/blank/" nodeintegration></webview>
+                <webview id="game_panel_wv" preload='./js/detection/domain-restriction.js' src="https://software.falixnodes.net/blank/"></webview>
             </div>
 
             <div id="support" class="page_content">
                 <webview id="support_wv" preload='./js/detection/domain-restriction.js' src="https://support.falixnodes.net/"></webview>
             </div>
             <div id="help_center" class="page_content">
-                <div include-html="./html/include/help-center.html"></div>
+                <webview id="help_wv" preload='./js/detection/domain-restriction.js' src="https://help.falixnodes.net/"></webview>
             </div>
             <div id="settings" class="page_content">
                 <div id="st-id-uptime" class="st-tab">
