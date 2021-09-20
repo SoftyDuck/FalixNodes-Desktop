@@ -14,9 +14,6 @@
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" href="./css/settings/accent-color/default.css">
         <link id="rounded-corners-setting" rel="stylesheet" type="text/css" href="./css/settings/rounded-corners/off.css">
-        <link id="layout-setting" rel="stylesheet" type="text/css" href="./css/settings/layout/sidebar.css">
-        <link id="sidebar-setting" rel="stylesheet" type="text/css" href="./css/settings/sidebar-size/confortable.css">
-        <link id="sidebar-opacity-setting" rel="stylesheet" type="text/css" href="./css/settings/sidebar-opacity/90.css">
         <link id="developer-mode" rel="stylesheet" type="text/css" href="./css/settings/developer-mode/off.css">
         
         <link id="noti_1" rel="stylesheet" type="text/css" href="./css/blank.css"> <!-- For future notifications only, will remove 1 - 20 once we get to the 25th notification and add 31 - 60 -->
@@ -70,7 +67,8 @@
             </div>
             <div id="client_panel" class="page_content">
                 <div include-html="./html/include/client-panel.html"></div>
-                <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://client.falixnodes.net/" nodeintegration></webview>
+                <!-- <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://client.falixnodes.net/" nodeintegration></webview> -->
+                <webview id="client_panel_wv" src="https://client.falixnodes.net/" nodeintegration></webview>
             </div>
             <div id="game_panel" class="page_content">
                 <div include-html="./html/include/game-panel.html"></div>
@@ -85,7 +83,7 @@
             </div>
             <div id="settings" class="page_content">
                 <div id="st-id-uptime" class="st-tab">
-                    <webview id="uptime" preload='./js/detection/domain-restriction.js' src="https://uptime.falixnodes.net/"></webview>
+                    <webview id="uptime" preload='./js/detection/domain-restriction.js' src="https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/"></webview>
                 </div>
                 <div id="st-id-account" class="st-tab">
                     <webview id="account_wv" preload='./js/settings/account.js' src="https://client.falixnodes.net/"></webview>
@@ -94,7 +92,6 @@
             </div>
         </div>
         <script src="./js/require.js"></script>
-        <script src="./js/newTerm.js"></script>
         <script src="./js/hotkeys.js"></script>
         <script src="./js/controls.js"></script>
         
@@ -109,13 +106,10 @@
 
         <script src="./js/detection/os.js"></script>
 
-        <script src="./js/settings/layout.js"></script>
-        <script src="./js/settings/sidebar.js"></script>
         <script src="./js/settings/language.js"></script>
         <script src="./js/settings/accent-color.js"></script>
         <script src="./js/settings/developer-mode.js"></script>
         <script src="./js/settings/rounded-corners.js"></script>
-        <script src="./js/settings/sidebar-opacity.js"></script>
         <script>includeHTML();</script>
         <script>
             var webview_account = document.getElementById('account_wv');
