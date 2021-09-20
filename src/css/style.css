@@ -17,9 +17,9 @@ html.windows .topNav {margin-top: 40px;}
 *:focus {outline: none;}
 ::-webkit-scrollbar {width: 10px;height: 5px;background: #0e1a27;}
 ::-webkit-scrollbar-thumb {background: #2970cc;}
-webview#fullSize {height: 100%;width: 100%;display: inline-flex;}
-webview#client_panel_wv {height: 100%;width: 100%;display: inline-flex;}
-webview#support_wv {height: 100%;width: 100%;display: inline-flex;}
+webview#fullSize {height: 100%;width: 100%;display: inline-flex; position: absolute;}
+webview#client_panel_wv {height: 100%;width: 100%;display: inline-flex; position: absolute;}
+webview#support_wv {height: 100%;width: 100%;display: inline-flex; position: absolute;}
 .nav_area {
     position: fixed;
     top: 0px;
@@ -353,7 +353,7 @@ span#divider {
   background: #162230;
   border-radius: 10px;
   position: absolute;
-  top: 70px;
+  top: 117px;
   width: 210px;
   left: 20px;
 }
@@ -363,6 +363,18 @@ webview#uptime {
   margin-left: 219px;
   position: fixed;
   top: 0px;
+}
+webview#account_wv {
+  width: calc(100% - 473px);
+  height: calc(100% - 0px);
+  margin-left: 219px;
+  position: fixed;
+  top: 0px;
+}
+webview#help_wv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .settings-slec p {margin-left: 40px;}

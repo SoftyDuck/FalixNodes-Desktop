@@ -1,5 +1,6 @@
 <div class="st-tabs">
-    <button class="st-nav-page" onclick="openStPage('st-id-uptime', this, 'var(--accent)')" style="margin-bottom: 20px;"><i class="fas fa-business-time"></i> Uptime</button>
+    <button class="st-nav-page" onclick="openStPage('st-id-uptime', this, 'var(--accent)')"><i class="fas fa-business-time"></i> Uptime</button>
+    <button class="st-nav-page" onclick="openStPage('st-id-account', this, 'var(--accent)')" style="margin-bottom: 20px;"><i class="fas fa-user-circle"></i> Account</button>
     <span id="divider"></span>
     <button class="st-nav-page" onclick="openStPage('st-id-about', this, 'var(--accent)')" id="st-sc-default_selection"><i class="fas fa-info-circle"></i> About</button>
     <!-- <button class="st-nav-page" onclick="openStPage('st-id-account', this, 'var(--accent)')">Account</button> -->
@@ -12,7 +13,7 @@
 <div class="st-tab-content">
     <div id="st-id-about" class="st-tab">
         <h1>Falix Software</h1>
-        <p>Version: 3.3.0</p>
+        <p>Version: 3.4.0</p>
         <p>Package Version: <span id="version"></span></p>
         <h2>License</h2>
         <div class="scrollable-ta">
@@ -114,6 +115,10 @@
                 <div class="lang-se" onclick="setLanguage('./css/settings/language/latvian.css'); navigateTo('https://software.falixnodes.net/blank/');">
                     <span id="lang_sel_do_lv"></span>
                     <p>Latvian</p>
+                </div>
+                <div class="lang-se" onclick="setLanguage('./css/settings/language/turkish.css'); navigateTo('https://software.falixnodes.net/blank/');">
+                    <span id="lang_sel_do_tr"></span>
+                    <p>Turkish</p>
                 </div>
             </div>
         </div>

@@ -1,3 +1,29 @@
+const { contextBridge, ipcRenderer} = require("electron");
+
+contextBridge.exposeInMainWorld(
+  "api", {
+      send: (channel, data) => {
+          let validChannels = ["minimize",
+                               "maximize",
+                               "restore",
+                               "close",
+                               "open_post-one",
+                               "open_post-two",
+                               "open_post-three",
+                               "open_post-four",
+                               "open_post-five",
+                               "open_post-six",
+                               "open_post-seven",
+                               "open_post-eight",
+                               "open_post-nine",
+                               "open_post-ten"];
+          if (validChannels.includes(channel)) {
+              ipcRenderer.send(channel, data);
+          }
+      }
+  }
+);
+
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
     const element = document.getElementById(selector)
