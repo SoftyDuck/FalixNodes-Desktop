@@ -14,7 +14,6 @@
     "electron-log": "^4.3.5",
     "electron-updater": "^4.3.9",
     "glasstron": "^0.0.7",
-    "menubar": "^9.0.5",
     "node-abi": "^3.0.0",
     "node-static": "^0.7.11",
     "os-utils": "^0.0.14"

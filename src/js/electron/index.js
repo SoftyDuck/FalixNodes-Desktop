@@ -1,4 +1,4 @@
-const {app, BrowserWindow, dialog, Menu, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, remote, session} = require('electron');
+const {app, BrowserWindow, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, remote, Tray} = require('electron');
 const { autoUpdater } = require("electron-updater");
 const glasstron = require('glasstron');
 const electron = require('electron');
@@ -10,32 +10,9 @@ const appV = app.getVersion();
 autoUpdater.logger = log;
 const { fork } = require('child_process')
 const ps = fork(`${__dirname}/server.js`)
-const { menubar } = require('menubar');
 
 global.devMode = true;
-
-const mb = menubar({
-  browserWindow: {
-    transparent: true,
-    width: 395,
-    resizable: false,
-    webPreferences: {
-      webviewTag: true,
-      contextIsolation: false,
-      nodeIntegration: true,
-      devTools: global.devMode,
-      nativeWindowOpen: true
-    }
-  },
-  tooltip: 'Falix Software Quick Access',
-  index: path.join('file://', __dirname, '../../tray.html'),
-  icon: path.join(`${__dirname}../../../images/icons/app/256x256.png`)
-});
-
-mb.on('ready', () => {console.log('Tray is ready');});
-
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
-
 var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
 
 if (osvar == 'darwin') { // macOS
@@ -110,15 +87,36 @@ function createWindow() {
   ipcMain.on('maximize', () => {mainWindow.maximize()})
   ipcMain.on('restore', () => {mainWindow.restore()})
   ipcMain.on('close', () => {mainWindow.close()})
-  ipcMain.on('openCP', () => {newCP()})
-  ipcMain.on('openGP', () => {newGP()})
-  ipcMain.on('updateChecker', () => {autoUpdater.checkForUpdates()})
-  ipcMain.on('quit', () => {quitApp()})
 
   mainWindow.once('ready-to-show', () => {
     splashWindow.destroy();
     mainWindow.show();
   });
+
+  tray = new Tray('./build/icons/icon.png')
+  tray.setToolTip('Chirp')
+  tray.on('click', () => {
+    mainWindow.show();
+  });
+  const contextMenu = Menu.buildFromTemplate([
+    { 
+      label: 'New Client Window',
+      click: async() => {newCP()}
+    },
+    { 
+      label: 'New Game Window',
+      click: async() => {newGP()}
+    },
+    { 
+      label: 'Check for Updates',
+      click: async() => {autoUpdater.checkForUpdates()}
+    },
+    { 
+      label: 'Quit',
+      click: async() => {quitApp()}
+    }
+  ])
+  tray.setContextMenu(contextMenu)
 
   // Auto Updater
   autoUpdater.on('update-available', (info) => {
