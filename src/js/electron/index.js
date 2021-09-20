@@ -94,36 +94,42 @@ function createWindow() {
   ipcMain.on('open_post-two', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/two.html')})
   ipcMain.on('open_post-three', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/three.html')})
   ipcMain.on('open_post-four', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/four.html')})
+  ipcMain.on('open_post-five', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/five.html')})
+  ipcMain.on('open_post-six', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/six.html')})
+  ipcMain.on('open_post-seven', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/seven.html')})
+  ipcMain.on('open_post-eight', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/eight.html')})
+  ipcMain.on('open_post-nine', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/nine.html')})
+  ipcMain.on('open_post-ten', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/ten.html')})
 
   mainWindow.once('ready-to-show', () => {
     splashWindow.destroy();
     mainWindow.show();
   });
 
-  tray = new Tray('./build/icons/icon.png')
-  tray.setToolTip('Falix Software')
-  tray.on('click', () => {
-    mainWindow.show();
-  });
-  const contextMenu = Menu.buildFromTemplate([
-    { 
-      label: 'New Client Window',
-      click: async() => {newCP()}
-    },
-    { 
-      label: 'New Game Window',
-      click: async() => {newGP()}
-    },
-    { 
-      label: 'Check for Updates',
-      click: async() => {autoUpdater.checkForUpdates()}
-    },
-    { 
-      label: 'Quit',
-      click: async() => {quitApp()}
-    }
-  ])
-  tray.setContextMenu(contextMenu)
+  // tray = new Tray('./src/images/icons/app/256x256.png')
+  // tray.setToolTip('Falix Software')
+  // tray.on('click', () => {
+  //   mainWindow.show();
+  // });
+  // const contextMenu = Menu.buildFromTemplate([
+  //   { 
+  //     label: 'New Client Window',
+  //     click: async() => {newCP()}
+  //   },
+  //   { 
+  //     label: 'New Game Window',
+  //     click: async() => {newGP()}
+  //   },
+  //   { 
+  //     label: 'Check for Updates',
+  //     click: async() => {autoUpdater.checkForUpdates()}
+  //   },
+  //   { 
+  //     label: 'Quit',
+  //     click: async() => {quitApp()}
+  //   }
+  // ])
+  // tray.setContextMenu(contextMenu)
 
   // Auto Updater
   autoUpdater.on('update-available', (info) => {
