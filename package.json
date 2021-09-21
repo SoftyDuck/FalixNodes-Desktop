@@ -5,7 +5,7 @@
   "main": "src/js/electron/index.js",
   "scripts": {
     "start": "electron --enable-transparent-visuals --disable-gpu .",
-    "build": "electron-builder build --win --linux"
+    "build": "electron-builder build"
   },
   "author": "KorbsStudio",
   "license": "MIT",
