@@ -20,7 +20,6 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
     - run: npm install
-    - run: npm run rebuild
     - run: rm build/license_zh.txt
     - run: rm build/license_es.txt
     - run: rm build/license_fr.txt
@@ -28,5 +27,5 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: my-artifact
+        name: mac-dmg
         path: dist/
