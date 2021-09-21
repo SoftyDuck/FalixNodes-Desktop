@@ -1,4 +1,4 @@
-const {app, BrowserWindow, contextBridge, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, remote, Tray, shell} = require('electron');
+const {app, BrowserWindow, contextBridge, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, Tray, shell} = require('electron');
 const { autoUpdater } = require("electron-updater");
 const { fork } = require('child_process')
 const ps = fork(`${__dirname}/server.js`)
@@ -11,6 +11,15 @@ const url = require('url');
 const os = require("os");
 const fs = require("fs");
 autoUpdater.logger = log;
+
+// Extra information, mostly for debugging purposes
+console.log('OS Type: ' + os.type());
+console.log('OS Version: ' + os.release());
+console.log('OS Platform: ' + os.platform());
+console.log('Application Version: ' + appV)
+console.log('Electron Version: ' + process.versions.electron);
+console.log('Node Version: ' + process.versions.node);
+console.log('Chromium Version: ' + process.versions.chrome);
 
 global.devMode = false;
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
@@ -106,7 +115,7 @@ function createWindow() {
     mainWindow.show();
   });
 
-  // tray = new Tray('./src/images/icons/app/256x256.png')
+  // tray = new Tray('./src/images/icons/app/32x32.png')
   // tray.setToolTip('Falix Software')
   // tray.on('click', () => {
   //   mainWindow.show();
@@ -159,15 +168,6 @@ function createWindow() {
       dialog.showMessageBox(dialogOpts).then((returnValue) => {if (returnValue.response === 0) autoUpdater.quitAndInstall(false)})
     }, 4000)
   })
-
-  // Extra information, mostly for debugging purposes
-  console.log('OS Type: ' + os.type());
-  console.log('OS Version: ' + os.release());
-  console.log('OS Platform: ' + os.platform());
-  console.log('Application Version: ' + appV)
-  console.log('Electron Version: ' + process.versions.electron);
-  console.log('Node Version: ' + process.versions.node);
-  console.log('Chromium Version: ' + process.versions.chrome);
 }
 
 function newCP() {
@@ -232,4 +232,4 @@ function demoOnly() {
   shell.openExternal('https://example.com/index.html')
 }
 
-app.whenReady().then(() => {setTimeout(() => {createWindow()}, 50)})
+app.whenReady().then(() => {createWindow()})

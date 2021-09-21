@@ -4,9 +4,8 @@
   "description": "",
   "main": "src/js/electron/index.js",
   "scripts": {
-    "start": "electron --enable-transparent-visuals --disable-gpu --disable-software-rasterizer .",
-    "build": "electron-builder build",
-    "rebuild": "electron-rebuild"
+    "start": "electron --enable-transparent-visuals --disable-gpu .",
+    "build": "electron-builder build --win --linux"
   },
   "author": "KorbsStudio",
   "license": "MIT",
@@ -14,14 +13,11 @@
     "electron-log": "^4.3.5",
     "electron-updater": "^4.3.9",
     "glasstron": "^0.0.7",
-    "node-abi": "^3.0.0",
-    "node-static": "^0.7.11",
-    "os-utils": "^0.0.14"
+    "node-static": "^0.7.11"
   },
   "devDependencies": {
     "electron": "^14.0.1",
     "electron-builder": "^22.11.7",
-    "electron-nightly": "^16.0.0-nightly.20210917",
     "electron-rebuild": "^3.2.0"
   },
   "build": {
