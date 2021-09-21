@@ -13,7 +13,27 @@ ________________________
 ![Workflow for Distribution to macOS](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/dmg-deployment.yml/badge.svg)
 ![Workflow for Distribution to Linux](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appimage-deployment.yml/badge.svg)
 ![Workflow for Distribution to Windows 10/11](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appx-deployment.yml/badge.svg)
+_______________________
 
+## Channels
+### Stable
+The stable channel is the production build of Falix Software, includes final changes in each new version.
+
+ - [Download](https://software.falixnodes.net/)
+
+### Beta (Not Available)
+The dev build of falix Software will usually introduce improvements made of the past 7 days, mostly stable probably known bugs.
+
+ <!-- - [Download for Windows]() -->
+ <!-- - [Download for macOS]() -->
+ <!-- - [Download for Linux]() -->
+
+### Alpha (Not Available)
+The alpha build of Falix Software usually shows what was done within the last hour or two, or what was done last night, the alpha channel is expected to be the most buggiest and may crash or break the software. You may have to re-install the alpha channel if the software does break.
+
+ <!-- - [Download for Windows]() -->
+ <!-- - [Download for macOS]() -->
+ <!-- - [Download for Linux]() -->
 ________________________
 
 ## ❔ Q&A for Developers
@@ -260,5 +280,3 @@ Developer/Maintainer: [Korbs Studio](https://github.com/KorbsStudio)
 Electron Titlebar OS Detection: [Korbs Studio](https://github.com/KorbsStudio/electron-titlebar-os-detection)
 
 Blur Composition Effect: [Glasstron by AryToNex](https://github.com/AryToNeX/Glasstron)
-
-Built-in Terminal: [XTerm](https://xtermjs.org/)
