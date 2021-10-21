@@ -1,4 +1,4 @@
-# Falix Software (Formly FalixNodes Software)
+# FalixNodes Software (renaming to "FalixNodes Desktop" in December)
 ![image](https://i.imgur.com/KmuEe1z.png)
 
 Simple and easy to use. Access Falix services all from one place like your client and game panel, help center, status, and more.
