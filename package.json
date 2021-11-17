@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.50.9",
+  "version": "4.50.91",
   "description": "",
   "main": "src/js/electron/index.js",
   "scripts": {
