@@ -1,5 +1,5 @@
 /* If you're familiar with "php include()", this script does the same thing, but uses JS instead */
-/* This is use to grab new posts from https://software.falixnodes.net/grab-posts.html that way the news area in the dashboard isn't completely static */
+/* This is use to grab new posts from https://desktop.falixnodes.net/grab-posts.html that way the news area in the dashboard isn't completely static */
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     z = document.getElementsByTagName("*");

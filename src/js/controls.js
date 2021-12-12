@@ -15,12 +15,12 @@ function webviewHC(){webviewHC.openDevTools()}
 // General Controls
 function CP_wvGoBack(){webviewCP.goBack()}
 function CP_wvGoForward(){webviewCP.goForward()}
-function CP_mvBlank(){webviewCP.loadURL('https://software.falixnodes.net/blank/')}
+function CP_mvBlank(){webviewCP.loadURL('https://desktop.falixnodes.net/blank/')}
 function mvClientPanel(){webviewCP.loadURL('https://client.falixnodes.net/')}
 
 function wvGoBack(){webviewGP.goBack()}
 function wvGoForward(){webviewGP.goForward()}
-function mvBlank(){webviewGP.loadURL('https://software.falixnodes.net/blank/')}
+function mvBlank(){webviewGP.loadURL('https://desktop.falixnodes.net/blank/')}
 function mvGamePanel(){webviewGP.loadURL('https://panel.falixnodes.net/')}
 
 // Other Functions
