@@ -45,4 +45,4 @@ setTimeout(function(){
 
 delete process.env.ELECTRON_ENABLE_SECURITY_WARNINGS;
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
-console.log('%c Note from Developer of Falix Software: About "Update failed to download." notification. The update feature in Falix Software does not work while in developer mode, aka "npm start". The update feature will work just fine in production mode. So this is nothing to worry about.', 'background: #222; color: #bada55')
+console.log('%c Note from Developer of FalixNodes Desktop: About "Update failed to download." notification. The update feature in FalixNodes Desktop does not work while in developer mode, aka "npm start". The update feature will work just fine in production mode. So this is nothing to worry about.', 'background: #222; color: #bada55')

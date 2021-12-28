@@ -150,10 +150,10 @@ function createWindow() {
   autoUpdater.checkForUpdates()
 
   function showNotification() {
-    new Notification({ title: "Falix Software", body: 'A new updating is downloading in the background...' }).show()
+    new Notification({ title: "FalixNodes Desktop", body: 'A new updating is downloading in the background...' }).show()
   }
   function showNotificationFailed() {
-    new Notification({ title: "Falix Software", body: 'Update failed to download.' }).show()
+    new Notification({ title: "FalixNodes Desktop", body: 'Update failed to download.' }).show()
   }
 
   autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
@@ -161,7 +161,7 @@ function createWindow() {
       const dialogOpts = {
         type: 'question',
         buttons: ['Restart Now', 'Later'],
-        title: 'Falix Software Updater',
+        title: 'FalixNodes Desktop Updater',
         message: process.platform === 'win32' ? releaseNotes : releaseName,
         detail: 'A new update is ready!'
       }
@@ -218,7 +218,7 @@ function newGP() {
 
 function quitApp() {
   dialog.showMessageBox({
-    title: 'Falix Software',
+    title: 'FalixNodes Desktop',
     message: 'Trying to quit?',
     detail: 'Press Ctrl + Q to quit the app entirely.',
   }).then(box => {
@@ -226,10 +226,6 @@ function quitApp() {
     }).catch(err => {
     console.log(err)
   })
-}
-
-function demoOnly() {
-  shell.openExternal('https://example.com/index.html')
 }
 
 app.whenReady().then(() => {createWindow()})
