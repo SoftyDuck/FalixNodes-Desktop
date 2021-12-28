@@ -2,6 +2,7 @@
 t2p#page-news::before {content: "খবর";}
 t2p#page-client_panel::before {content: "ক্লায়েন্ট প্যানেল";}
 t2p#page-game_panel::before {content: "গেম প্যানেল";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "সমর্থন";}
 t2p#page-help_center::before {content: "সাহায্য কেন্দ্র";}
 t2p#page-settings::before {content: "সেটিংস";}

@@ -2,7 +2,7 @@
 t2p#page-news::before {content: "समाचार";}
 t2p#page-client_panel::before {content: "ग्राहक पैनल";}
 t2p#page-game_panel::before {content: "गेम पैनल";}
-t2p#page-falixcoins_mining::before {content: "फ़ैलिक्सकॉइन्स माइनिंग";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "समर्थन";}
 t2p#page-help_center::before {content: "सहायता केंद्र";}
 t2p#page-settings::before {content: "सेटिंग्स";}

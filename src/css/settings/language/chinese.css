@@ -2,7 +2,7 @@
 t2p#page-news::before {content: "新闻";}
 t2p#page-client_panel::before {content: "客户端面板";}
 t2p#page-game_panel::before {content: "游戏面板";}
-t2p#page-falixcoins_mining::before {content: "矿业";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "支持";}
 t2p#page-help_center::before {content: "帮助中心";}
 t2p#page-settings::before {content: "设置";}

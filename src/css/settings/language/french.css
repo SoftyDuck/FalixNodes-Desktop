@@ -2,7 +2,7 @@
 t2p#page-news::before {content: "Des nouvelles";}
 t2p#page-client_panel::before {content: "Panneau Client";}
 t2p#page-game_panel::before {content: "Panneau de jeu";}
-t2p#page-falixcoins_mining::before {content: "Exploitation minière de FalixCoins";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Support";}
 t2p#page-help_center::before {content: "Centre d'aide";}
 t2p#page-settings::before {content: "Paramètres";}

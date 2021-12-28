@@ -2,7 +2,7 @@
 t2p#page-news::before {content: "Haberler";}
 t2p#page-client_panel::before {content: "Müsteri Paneli";}
 t2p#page-game_panel::before {content: "Oyun Paneli";}
-t2p#page-falixcoins_mining::before {content: "FalixCoin Kazma";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Destek";}
 t2p#page-help_center::before {content: "Yardım Merkezi";}
 t2p#page-settings::before {content: "Ayarlar";}

@@ -2,6 +2,7 @@
 t2p#page-news::before {content: "Новости";}
 t2p#page-client_panel::before {content: "Клиентская панель";}
 t2p#page-game_panel::before {content: "Игровая панель";}
+t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Служба поддержки";}
 t2p#page-help_center::before {content: "Центр помощи";}
 t2p#page-settings::before {content: "Настройки ";}

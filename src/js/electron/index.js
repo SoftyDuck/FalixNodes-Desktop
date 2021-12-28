@@ -21,7 +21,7 @@ console.log('Electron Version: ' + process.versions.electron);
 console.log('Node Version: ' + process.versions.node);
 console.log('Chromium Version: ' + process.versions.chrome);
 
-global.devMode = false;
+global.devMode = true;
 electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
 var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
 

@@ -4,6 +4,7 @@ var webviewGP = document.getElementById('game_panel_wv');
 var webviewSP = document.getElementById('support_wv')
 var webviewAC = document.getElementById('account_wv')
 var webviewHC = document.getElementById('help_wv')
+var webviewPHP = document.getElementById('webviewPHP')
 
 // For Developers
 function CP_wvDevTools(){webviewCP.openDevTools()}
@@ -17,6 +18,11 @@ function CP_wvGoBack(){webviewCP.goBack()}
 function CP_wvGoForward(){webviewCP.goForward()}
 function CP_mvBlank(){webviewCP.loadURL('https://desktop.falixnodes.net/blank/')}
 function mvClientPanel(){webviewCP.loadURL('https://client.falixnodes.net/')}
+
+function phpma_wvGoBack(){webviewPHP.goBack()}
+function phpma_wvGoForward(){webviewPHP.goForward()}
+function phpma_mvBlank(){webviewPHP.loadURL('https://desktop.falixnodes.net/blank/')}
+function mvphpmyadmin(){webviewPHP.loadURL('https://phpmyadmin.falixnodes.net/')}
 
 function wvGoBack(){webviewGP.goBack()}
 function wvGoForward(){webviewGP.goForward()}
