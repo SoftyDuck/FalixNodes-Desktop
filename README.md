@@ -1,5 +1,5 @@
 # FalixNodes Desktop
-![image](https://i.imgur.com/KmuEe1z.png)
+![image](https://i.imgur.com/7yzQ8u1.png)
 
 Simple and easy to use. Access Falix services all from one place like your client and game panel, help center, status, and more.
 
