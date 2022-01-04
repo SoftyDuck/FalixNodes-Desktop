@@ -1,3 +1,11 @@
+### To Do List 
+ - Create an automation update system
+   - When running Actions, they should automatically upload all required files to the custom update server, without user action from the admin
+ - Prevent auto update from being triggered on the macOS platform
+ - Revamp domain whitelist system
+ - AIO Settings
+ - Workflow improvements
+
 # FalixNodes Desktop
 ![image](https://i.imgur.com/7yzQ8u1.png)
 
