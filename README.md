@@ -5,6 +5,8 @@
  - Revamp domain whitelist system
  - AIO Settings
  - Workflow improvements
+ - CSS rewrite for client arae for a native look (0%)
+ - CSS rewrite for game panel for a native look (0%)
 
 # FalixNodes Desktop
 ![image](https://i.imgur.com/7yzQ8u1.png)
