@@ -17,7 +17,7 @@ Simple and easy to use. Access Falix services all from one place like your clien
 
 ________________________
 
-![Latest Version of Falix Software](https://img.shields.io/badge/Version-v3.4.0-blue.svg)
+![Latest Version of Falix Software](https://img.shields.io/badge/Version-v3.4.2-blue.svg)
 
 ![Workflow for Distribution to Windows](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/nsis-deployment.yml/badge.svg)
 ![Workflow for Distribution to macOS](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/dmg-deployment.yml/badge.svg)
