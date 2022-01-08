@@ -1,0 +1,76 @@
+name: Distribute for all Platforms
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build-win:
+
+    runs-on: windows-2022
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - run: Remove-Item -path .\dist\win-unpacked\ -recurse  # This will make sure that Build Artifact doesn't take a butt load of time to zip up the dist folder I need
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: win-nsis
+        path: dist/
+
+  build-mac:
+
+    runs-on: macOS-11
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+    steps:
+    
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+    - run: npm install
+    - run: rm build/license_zh.txt
+    - run: rm build/license_es.txt
+    - run: rm build/license_fr.txt
+    - run: npm run build
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: mac-dmg
+        path: dist/
+
+  build-linux:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: appimage-linux
+        path: dist/
