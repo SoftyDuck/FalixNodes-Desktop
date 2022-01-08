@@ -18,6 +18,7 @@ if (process.platform == 'darwin') {
       global.blur = "vibrancy"
       global.frame = false
       global.titleBarStyle = 'hiddenInset'
+      global.update = console.log('Auto update not supported on this platform.');
     }
   )
 }
@@ -25,6 +26,7 @@ if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "acrylic"
       global.frame = false
+      global.update = autoUpdater.checkForUpdates();
     }
   )
 }
@@ -32,6 +34,7 @@ if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "blurbehind"
       global.frame = true
+      global.update = autoUpdater.checkForUpdates();
     }
   )
 }
@@ -102,7 +105,7 @@ function createWindow() {
 
   autoUpdater.on('update-available', (info) => {mainWindow.webContents.insertCSS('button#up_downloading {display: inherit !important;}')})
   autoUpdater.on('error', (err) => {mainWindow.webContents.insertCSS('button#up_failed {display: inherit !important;}')})
-  autoUpdater.checkForUpdates()
+  global.update;
   autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     setTimeout(() => {
       newDialogUpdateAvailable();
@@ -221,7 +224,9 @@ function demoCache() {session.clearCache()}
 
 app.whenReady().then(() => {createWindow();})
 app.allowRendererProcessReuse = true
-setInterval(() => {autoUpdater.checkForUpdates();}, 300000);
+setInterval(() => {
+  global.updateLoop
+}, 300000);
 app.on("web-contents-created", (e, contents) => {
   contextMenu({
      window: contents,
