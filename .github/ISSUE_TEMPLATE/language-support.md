@@ -1,7 +1,7 @@
 ---
 name: Translation Corrections
 about: Correct wording and translations
-title: translation
+title: 'Translation: '
 labels: 'translation'
 assignees: KorbsStudio
 ---
