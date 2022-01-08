@@ -1,14 +1,18 @@
 /* Content */
-t2p#page-news::before {content: "新闻";}
+t2p#page-news::before {content: "博客文章";}
 t2p#page-client_panel::before {content: "客户端面板";}
 t2p#page-game_panel::before {content: "游戏面板";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-falixcoins_mining::before {content: "矿业";}
 t2p#page-support::before {content: "支持";}
 t2p#page-help_center::before {content: "帮助中心";}
 t2p#page-settings::before {content: "设置";}
 
 t2p#notify-internet-lost::before {content: "Connection Lost";}
+t2p#update_downloading::before {content: "更新可用";}
+t2p#update_failed::before {content: "更新失败";}
 t2p#notify-internet-restored::before {content: "Connection Restored";}
+
+tp2#page-taking-too-long-too-load::before {content: "加载此页面的时间比平时要长。";}
 
 t2p#h1-settings::before {content: "设置";}
 t2p#h2-app::before {content: "应用";}
@@ -24,7 +28,7 @@ t2p#tog-rc::before {content: "回合 角落";}
 t2p#tog-ts::before {content: "侧边栏透明度";}
 
 t2p#gp_unl-h1::before {content: "游戏面板";}
-tp2#gp_unl-p::before {content: "Falix Software 默认不加载游戏面板，以减少使用的资源量。 这有助于提高性能。";}
+tp2#gp_unl-p::before {content: "FalixNodes Desktop 默认不加载游戏面板，以减少使用的资源量。 这有助于提高性能。";}
 tp2#gp_unl-button::before {content: "负载面板";}
 
 /* Front-End, show that the option for the language was selected in the settings */

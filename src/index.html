@@ -4,16 +4,14 @@
         <title>FalixNodes Desktop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
 
-        <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.2-web/css/all.css">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/fonts.css">
         <link rel="stylesheet" href="./css/windows-titlebar.css">
-        <link rel="stylesheet" href="./css/smallWindow.css">
         
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" href="./css/settings/accent-color/default.css">
-        <link id="rounded-corners-setting" rel="stylesheet" type="text/css" href="./css/settings/rounded-corners/off.css">
         <link id="developer-mode" rel="stylesheet" type="text/css" href="./css/settings/developer-mode/off.css">
     </head>
     <header data-for-os="windows" id="titlebar" class="titlebar">
@@ -25,47 +23,57 @@
             <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./images/icons/titlebar/close-w-10.png 1x, ./images/icons/titlebar/close-w-12.png 1.25x, ./images/icons/titlebar/close-w-15.png 1.5x, ./images/icons/titlebar/close-w-15.png 1.75x, ./images/icons/titlebar/close-w-20.png 2x, ./images/icons/titlebar/close-w-20.png 2.25x, ./images/icons/titlebar/close-w-24.png 2.5x, ./images/icons/titlebar/close-w-30.png 3x, ./images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
         </div>
     </header>
-    <body onload="setTimeout (() => {unloadGamePanel();}, 2500)">
+    <body id="tools" onload="setTimeout (() => {unloadGamePanel();}, 280)">
         <div class="nav_area">
             <div include-html="./html/include/nav.html"></div>
+            <!-- <div include-html="./html/include/new-window.html"></div> -->
+            <div class="loadingIndicators">
+              <i id="IndicatorCP" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+              <i id="IndicatorGP" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+              <i id="IndicatorHC" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+              <i id="IndicatorAV" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+              <i id="IndicatorSE" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+            </div>
         </div>
         <div class="content">
             <div id="news" class="page_content">
                 <div include-html="https://falixnodes.net/blog-desktop/"></div>
-                <div id="nL" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <webview id="postview" src="https://desktop.falixnodes.net/blank/"></webview>
+                <button id="news-back" onclick="closeArticle()"><i class="fas fa-long-arrow-alt-left"></i></button>
+                <i id="nL" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
+                <p id="nLTD"><tp2 id="page-taking-too-long-too-load"></tp2></p>
             </div>
             <div id="client_panel" class="page_content">
                 <div include-html="./html/include/client-panel.html"></div>
-                <webview id="client_panel_wv" preload='./js/detection/domain-restriction.js' src="https://client.falixnodes.net/"></webview>
+                <webview id="client_panel_wv" preload='./js/detection/domain-restrictions/client-panel.js' src="https://client.falixnodes.net/"></webview>
             </div>
             <div id="game_panel" class="page_content">
                 <div include-html="./html/include/game-panel.html"></div>
-                <webview id="game_panel_wv" preload='./js/detection/domain-restriction.js' src="https://desktop.falixnodes.net/blank/"></webview>
+                <webview id="game_panel_wv" preload='./js/detection/domain-restrictions/game-panel.js' src="https://desktop.falixnodes.net/blank/"></webview>
             </div>
             <div id="phpmyadmin" class="page_content">
-                <div include-html="./html/include/phpmyadmin.html"></div>
-                <webview id="webviewPHP" preload='./js/detection/domain-restriction.js' src="https://phpmyadmin.falixnodes.net/"></webview>
+                <webview id="phpmyadmin_wv" preload='./js/detection/domain-restrictions/phpmyadmin.js' src="https://phpmyadmin.falixnodes.net/"></webview>
             </div>
+
             <div id="help_center" class="page_content">
-                <webview id="help_wv" preload='./js/detection/domain-restriction.js' src="https://help.falixnodes.net/"></webview>
+                <webview id="help_wv" preload='./js/detection/domain-restrictions/help-center.js' src="https://help.falixnodes.net/"></webview>
             </div>
             <div id="settings" class="page_content">
                 <div id="st-id-uptime" class="st-tab">
-                    <webview id="uptime" preload='./js/detection/domain-restriction.js' src="https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/"></webview>
+                    <webview id="uptime" preload='./js/detection/domain-restrictions/uptime-monitor.js' src="https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/"></webview>
                 </div>
                 <div id="st-id-account" class="st-tab">
-                    <webview id="account_wv" preload='./js/settings/account.js' src="https://client.falixnodes.net/"></webview>
+                    <webview id="account_wv" preload='./js/detection/domain-restrictions/account.js' src="https://client.falixnodes.net/"></webview>
                 </div>
                 <div include-html="./html/include/settings.html"></div>
             </div>
         </div>
-        <script src="./js/require.js"></script>
         <script src="./js/hotkeys.js"></script>
+        <script src="./js/ui/check-platform.js"></script>
         <script src="./js/controls.js"></script>
+        <script src="./fonts/fontawesome-pro-6.0.0-beta3-web/js/all.js"></script>
         
-        <script src="./js/notifications/dismissal.js"></script>
-
-        <script src="./js/ui/dim.js"></script>
+        <script src="./js/ui/article.js"></script>
         <script src="./js/ui/nav.js"></script>
         <script src="./js/ui/notify.js"></script>
         <script src="./js/ui/include.js"></script>
@@ -75,13 +83,9 @@
         <script src="./js/settings/language.js"></script>
         <script src="./js/settings/accent-color.js"></script>
         <script src="./js/settings/developer-mode.js"></script>
-        <script src="./js/settings/rounded-corners.js"></script>
+        <script src="./js/settings/blur-window.js"></script>
+        <script src="./js/settings/blur-type.js"></script>
+
         <script>includeHTML();</script>
-        <script>
-            var webview_account = document.getElementById('account_wv');
-            webview_account.addEventListener('dom-ready', function () {
-                webview_account.insertCSS('nav.navbar.navbar-light.navbar-glass.navbar-top.navbar-expand {display: none !important;}.card-body.position-relative {display: none !important;}div#adngin-bottom_leaderboard_client_panel-0 {display: none !important;}')
-            });
-        </script>
     </body>
 </html>

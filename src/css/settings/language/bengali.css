@@ -1,15 +1,17 @@
 /* Content */
-t2p#page-news::before {content: "খবর";}
+t2p#page-news::before {content: "ব্লগ এর লেখাগুলো";}
 t2p#page-client_panel::before {content: "ক্লায়েন্ট প্যানেল";}
 t2p#page-game_panel::before {content: "গেম প্যানেল";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "সমর্থন";}
 t2p#page-help_center::before {content: "সাহায্য কেন্দ্র";}
 t2p#page-settings::before {content: "সেটিংস";}
 
-t2p#nd-Opening-in-brower::before {content: "ব্রাউজারে খোলা";}
+t2p#update_downloading::before {content: "ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ";}
+t2p#update_failed::before {content: "ਅਪਡੇਟ ਅਸਫਲ";}
 t2p#netork_connection-lost::before {content: "সংযোগ বিচ্ছিন্ন";}
 t2p#netork_connection-restored::before {content: "সংযোগ পুনঃস্থাপিত";}
+
+tp2#page-taking-too-long-too-load::before {content: "এই পৃষ্ঠাটি লোড হতে স্বাভাবিকের চেয়ে বেশি সময় নিচ্ছে৷";}
 
 t2p#h1-settings::before {content: "সেটিংস";}
 t2p#h2-app::before {content: "আবেদন";}

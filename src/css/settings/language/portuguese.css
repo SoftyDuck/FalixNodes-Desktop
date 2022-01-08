@@ -1,15 +1,17 @@
 /* Content */
-t2p#page-news::before {content: "Notícia";}
+t2p#page-news::before {content: "Postagens no blog";}
 t2p#page-client_panel::before {content: "Painel de Cliente";}
 t2p#page-game_panel::before {content: "Painel de Jogo";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Suporte";}
 t2p#page-help_center::before {content: "Centro de ajuda";}
 t2p#page-settings::before {content: "Configurações";}
 
-t2p#nd-Opening-in-brower::before {content: "Abrindo em brower";}
+t2p#update_downloading::before {content: "Atualização disponível";}
+t2p#update_failed::before {content: "Atualização falhou";}
 t2p#netork_connection-lost::before {content: "Conexão perdida";}
 t2p#netork_connection-restored::before {content: "Connection Restaurado";}
+
+tp2#page-taking-too-long-too-load::before {content: "O carregamento desta página está demorando mais do que o normal.";}
 
 t2p#h1-settings::before {content: "Configurações";}
 t2p#h2-app::before {content: "Aplicativo";}

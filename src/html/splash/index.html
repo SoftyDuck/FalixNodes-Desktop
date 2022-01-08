@@ -1,100 +1,81 @@
 <html>
     <head>
-      <title>Falix Software</title>
+      <title>FalixNodes Desktop</title>
+      <link rel="stylesheet" href="../../css/fonts.css">
     </head>
     <body>
+      <button style="display: none;" id="blurToggleOn"></button>
+      <button style="display: none;" id="blurToggleOff"></button>
       <img id="logo" src="../../images/icons/app/128x128.png">
-      <img id="dots" src="../../images/dots.png">
+      <h1>FalixNodes Desktop</h1>
+      <div class="check">
+        <p style="display: none;" id="checklist-one">Checking internet connection...</p>
+        <p style="display: none;" id="checklist-one-failing">Please connect to the internet...</p>
+        <p style="display: none;" id="checklist-two">Checking update server...</p>
+        <p style="display: none;" id="checklist-two-failed">Update server offline...moving on anyway!</p>
+        <p style="display: none;" id="checklist-three">Waiting on main window...</p>
+      </div>
       <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </body>
+    <script src="../../js/settings/blur-window.js"></script>
+    <script src="../../js/settings/blur-type.js"></script>
+    <script src="./check-first.js"></script>
 </html>
 <style>
 body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(19, 36, 56, 0.9);
-    border-radius: 7px;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(19, 36, 56, 0.5);
+  border-radius: 7px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 body {
-    background: transparent !important;
-    overflow: hidden;
-    pointer-events: none;
+  background: transparent !important;
+  overflow: hidden;
+  font-family: Poppins;
+  color: white;
+  pointer-events: none;
 }
-::selection {background: transparent; color: transparent;}
-
-img#dots {
-    opacity: 0.1;
-    position: fixed;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    width: 150%;
-    height: 140%;
-    object-fit: cover;
-    border-radius: 20px;
-    animation: 10s spin linear infinite;
-}
+::selection {background: inherit; color: inherit;}
 
 img#logo {
+    background: #00000030;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 198px;
+    height: 100px;
+    border-radius: 7px 0px 0px 7px;
+    object-fit: contain;
+    padding: 42px 0px;
+}
+
+h1 {
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    pointer-events: none;
-    animation: 1s fadeUp ease;
-    z-index: 5;
+    left: 240px;
+    transform: translate(0px, -50%) translateY(-27px);
 }
 
-@keyframes spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@keyframes fadeUp {
-    from {
-        margin-top: 200px;
-        opacity: 0;
-    }
-    to {
-        margin-top: 0px;
-        opacity: 1;
-    }
-}
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.check {
+    position: fixed;
+    top: 50%;
+    left: 240px;
+    opacity: 0.4;
 }
 
 .lds-spinner {
-    color: official;
-    display: inline-block;
+    transform: scale(0.3) translate(0px, -50%);
     position: fixed;
-    width: 80px;
-    height: 80px;
-    z-index: 10;
-    bottom: 40px;
-    left: 50%;
-    transform: translate(-50%) scale(0.4);
-    animation: 0.8s fadeIn linear;
+    top: 50%;
+    left: 610px;
 }
+
 .lds-spinner div {
   transform-origin: 40px 40px;
   animation: lds-spinner 1.2s linear infinite;

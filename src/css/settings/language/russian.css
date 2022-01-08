@@ -1,15 +1,17 @@
 /* Content */
-t2p#page-news::before {content: "Новости";}
+t2p#page-news::before {content: "Сообщения в блоге";}
 t2p#page-client_panel::before {content: "Клиентская панель";}
 t2p#page-game_panel::before {content: "Игровая панель";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Служба поддержки";}
 t2p#page-help_center::before {content: "Центр помощи";}
 t2p#page-settings::before {content: "Настройки ";}
 
-t2p#nd-Opening-in-brower::before {content: "Открытие в браузере";}
+t2p#update_downloading::before {content: "Обновление Скачивание";}
+t2p#update_failed::before {content: "Не удалось обновить";}
 t2p#netork_connection-lost::before {content: "Соединение потеряно";}
 t2p#netork_connection-restored::before {content: "Соединение восстановлено";}
+
+tp2#page-taking-too-long-too-load::before {content: "Загрузка этой страницы занимает больше времени, чем обычно.";}
 
 t2p#h1-settings::before {content: "Настройки";}
 t2p#h2-app::before {content: "Приложение";}
@@ -25,7 +27,7 @@ t2p#tog-rc::before {content: "Закругленные углы";}
 t2p#tog-ts::before {content: "Прозрачность боковой панели ";}
 
 t2p#gp_unl-h1::before {content: "Игровая панель"}
-tp2#gp_unl-p::before {content: "Игра панель не загружаются по умолчанию в Falix Software, чтобы уменьшить количество используемых ресурсов. Это помогает с производительностью.";}
+tp2#gp_unl-p::before {content: "Игра панель не загружаются по умолчанию в FalixNodes Desktop, чтобы уменьшить количество используемых ресурсов. Это помогает с производительностью.";}
 tp2#gp_unl-button::before {content: "Панель нагрузки";}
 
 /* Front-End, show that the option for the language was selected in the settings */

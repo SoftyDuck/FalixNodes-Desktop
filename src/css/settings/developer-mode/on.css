@@ -1,5 +1,6 @@
 button#wvDev {display: initial;}
 div#techincal-details {display: initial;}
+button#devMode-Sandbox, div#st-id-sandbox {display: initial;}
 span#toggle-dm-cm::before {
     content: "";
     position: absolute;

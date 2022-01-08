@@ -1,15 +1,18 @@
 /* Content */
-t2p#page-news::before {content: "Haberler";}
+t2p#page-news::before {content: "Blog Yazıları";}
 t2p#page-client_panel::before {content: "Müsteri Paneli";}
 t2p#page-game_panel::before {content: "Oyun Paneli";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
+t2p#page-falixcoins_mining::before {content: "FalixCoin Kazma";}
 t2p#page-support::before {content: "Destek";}
 t2p#page-help_center::before {content: "Yardım Merkezi";}
 t2p#page-settings::before {content: "Ayarlar";}
 
-t2p#nd-Opening-in-brower::before {content: "Tarayıcıda aç";}
+t2p#update_downloading::before {content: "Güncelleme İndirme";}
+t2p#update_failed::before {content: "Güncelleştirme başarısız";}
 t2p#netork_connection-lost::before {content: "Bağlantı Koptu";}
 t2p#netork_connection-restored::before {content: "Tekrar Bağlanıldı";}
+
+tp2#page-taking-too-long-too-load::before {content: "Bu sayfanın yüklenmesi normalden uzun sürüyor.";}
 
 t2p#h1-settings::before {content: "Tercihler";}
 t2p#h2-app::before {content: "Uygulama";}

@@ -1,17 +1,20 @@
 /* Content */
-t2p#page-news::before {content: "News";}
+t2p#page-news::before {content: "Blog Posts";}
 t2p#page-client_panel::before {content: "Client Panel";}
 t2p#page-game_panel::before {content: "Game Panel";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Support";}
 t2p#page-help_center::before {content: "Help Center";}
 t2p#page-settings::before {content: "Settings";}
 
-t2p#nd-Opening-in-brower::before {content: "Opening in brower";}
+t2p#update_downloading::before {content: "Update downloading";}
+t2p#update_failed::before {content: "Update failed";}
 t2p#netork_connection-lost::before {content: "Connection lost";}
 t2p#netork_connection-restored::before {content: "Connection Restored";}
 
+tp2#page-taking-too-long-too-load::before {content: "It's taking longer than usual to load this page.";}
+
 t2p#h1-settings::before {content: "Settings";}
+tp2#loe::before {content: "Log Everything Out";}
 t2p#h2-app::before {content: "Application";}
 t2p#fs-language::before {content: "Language";}
 t2p#fs-devMode::before {content: "Developer Mode";}
@@ -25,7 +28,7 @@ t2p#tog-rc::before {content: "Rounded Corners";}
 t2p#tog-ts::before {content: "Sidebar Transparency";}
 
 t2p#gp_unl-h1::before {content: "Game Panel";}
-tp2#gp_unl-p::before {content: "The game panel is unloaded by default in Falix Software to reduce the amount of resources used. This helps with performance.";}
+tp2#gp_unl-p::before {content: "The game panel is unloaded by default in FalixNodes Desktop to reduce the amount of resources used. This helps with performance.";}
 tp2#gp_unl-button::before {content: "Load Panel";}
 
 /* Front-End, show that the option for the language was selected in the settings */

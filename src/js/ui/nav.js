@@ -14,7 +14,7 @@ function openPage(pageName,elmnt,color) {
 
 setTimeout(() => {
   document.getElementById("default_selection").click();
-}, 0);
+}, 50);
 
 function openStPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;

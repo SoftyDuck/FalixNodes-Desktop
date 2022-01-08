@@ -1,0 +1,73 @@
+:root {
+    --bg-accent-one: #0b1725;
+    --bg-accent-two: #162230;
+}
+
+body {
+    background: transparent;
+    color: white;
+    font-family: Poppins;
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background: #162230;
+    z-index: -1;
+    border-radius: 7px;
+    border: 4px #2970cc solid;
+}
+
+html.windows [data-for-os=mac] {display: none !important}
+html.mac [data-for-os=windows] {display: none !important}
+.linux #titlebar {display: none !important}
+html.mac .topNav {margin-top: 40px}
+html.windows .topNav {margin-top: 40px;}
+
+*:focus {outline: none;}
+::-webkit-scrollbar {width: 10px;height: 5px;background: #0e1a27;}
+::-webkit-scrollbar-thumb {background: #2970cc;}
+
+.content {
+    position: absolute;
+    top: 20px;
+    left: 120px;
+    pointer-events: none;
+}
+.content h1 {
+    font-size: 24px;
+    line-height: 20px;
+}
+.content p {
+    font-size: 16px;
+    line-height: 16px;
+}
+span#icon {
+    position: fixed;
+    top: 55px;
+    left: 40px;
+}
+span#icon i {
+    font-size: 30px;
+}
+
+
+.actions {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin: 20px;
+}
+.actions button {
+    color: white;
+    background: #2970cc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+.actions button:hover {
+    filter: brightness(0.8);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FalixNodes Desktop - Update Available</title>
+
+        <link rel="stylesheet" href="../../css/dialog.css">
+        <link rel="stylesheet" href="../../css/fonts.css">
+        <link rel="stylesheet" href="../../css/windows-titlebar.css">
+        <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.2-web/css/all.css">
+    </head>
+    <body>
+        <!-- <audio src="../../sounds/notification/update-available.mp3" autoplay></audio> -->
+        <div class="content">
+            <span style="left: 50px" id="icon"><i class="fas fa-solid fa-exclamation-circle"></i></span>
+            <h1>Update Failed</h1>
+            <p>There are several reasons why the update may of failed.</p>
+            <ui>
+                <li>The update server is down, check <u>https://updates.korbsstudio.com/</u> to see if it's up.</li>
+                <li>The update server timed out.</li>
+                <li>You're not connected the internet connection.</li>
+            </ui>
+        </div>
+        <div class="actions">
+            <button onclick="window.close()">Close</button>
+        </div>
+    </body>
+</html>

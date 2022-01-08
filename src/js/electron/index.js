@@ -1,50 +1,40 @@
-const {app, BrowserWindow, contextBridge, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, Tray, shell} = require('electron');
-const { autoUpdater } = require("electron-updater");
-const { fork } = require('child_process')
-const ps = fork(`${__dirname}/server.js`)
-const glasstron = require('glasstron');
-const electron = require('electron');
-const log = require('electron-log');
-const appV = app.getVersion();
-const path = require('path');
-const url = require('url');
-const os = require("os");
-const fs = require("fs");
-autoUpdater.logger = log;
+const {app, BrowserView, BrowserWindow, contextBridge, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, session, shell, webContents} = require('electron')
+const contextMenu = require('electron-context-menu')
+const { autoUpdater } = require("electron-updater")
+const glasstron = require('glasstron')
+const electron = require('electron')
+const log = require('electron-log')
+const path = require('path')
+const url = require('url')
+const os = require("os")
 
-// Extra information, mostly for debugging purposes
-console.log('OS Type: ' + os.type());
-console.log('OS Version: ' + os.release());
-console.log('OS Platform: ' + os.platform());
-console.log('Application Version: ' + appV)
-console.log('Electron Version: ' + process.versions.electron);
-console.log('Node Version: ' + process.versions.node);
-console.log('Chromium Version: ' + process.versions.chrome);
+autoUpdater.logger = log
+let mainWindow;
+let dialogUpdateAvailable;
 
-global.devMode = true;
-electron.app.commandLine.appendSwitch("enable-transparent-visuals"); // For Linux, not required for Windows or macOS. If removed, please remove "--enable-transparent-visuals" from start command in package.json file.
-var osvar = process.platform; // For OS Detections, also look at https://github.com/KorbsStudio/electron-titlebar-os-detection
-
-if (osvar == 'darwin') { // macOS
-  app.whenReady().then(() => {
-    global.blur = "blurbehind";
-    global.frame = false;
-    global.titleBarStyle = 'hiddenInset'; // Use native titlebar buttons instead
-})}
-else if(osvar == 'win32'){ // Windows
-  app.whenReady().then(() => {
-    global.blur = "blurbehind";
-    global.frame = false; // Use custom titlebar
-    global.titleBarStyle = 'hidden';
-})}
-else{ //Linux
-  app.whenReady().then(() => {
-    global.blur = "blurbehind";
-    global.frame = true; // Use native titlebar instead
-    global.titleBarStyle = 'hidden';
-    app.disableHardwareAcceleration
-    app.commandLine.appendSwitch
-})}
+global.devMode = false
+if (process.platform == 'darwin') {
+    app.whenReady().then(() => {
+      global.blur = "vibrancy"
+      global.frame = false
+      global.titleBarStyle = 'hiddenInset'
+    }
+  )
+}
+  else if(process.platform == 'win32'){
+    app.whenReady().then(() => {
+      global.blur = "acrylic"
+      global.frame = false
+    }
+  )
+}
+  else{ 
+    app.whenReady().then(() => {
+      global.blur = "blurbehind"
+      global.frame = true
+    }
+  )
+}
 
 function createWindow() {
   const mainWindow = new glasstron.BrowserWindow({
@@ -53,121 +43,142 @@ function createWindow() {
     minWidth: 430,
     minHeight: 520,
     frame: global.frame,
-    transparent: true,
     show: false,
     autoHideMenuBar: true,
     titleBarStyle: global.titleBarStyle,
+    trafficLightPosition: {
+      x: 20,
+      y: 13,
+    },
     blur: true,
     blurType: global.blur,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: false,
-      nodeIntegrationInSubFrames: false,
       webviewTag: true,
-      devTools: global.devMode,
-      enableRemoteModule: false,
-      contextIsolation: true,
-      nativeWindowOpen: true
+      devTools: global.devMode
     }
   })
-
-
 
   const splashWindow = new glasstron.BrowserWindow({
     frame: false,
     minimizable: false,
     maximizable: false,
-    transparent: true,
     skipTaskbar: true,
     center: true,
-    width: 382,
-    height: 382,
-    resizable: false,
+    width: 700,
+    height: 184,
+    resizable: true,
     blur: true,
     blurType: global.blur,
     webPreferences: {
-        devTools: global.devMode,
-        nativeWindowOpen: true
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+      devTools: global.devMode
     }
   })
 
+  mainWindow.loadFile('src/index.html')
   splashWindow.loadFile('src/html/splash/index.html')
-  mainWindow.loadFile('src/index.html');
 
-  ipcMain.on('minimize', () => {mainWindow.minimize()})
-  ipcMain.on('maximize', () => {mainWindow.maximize()})
-  ipcMain.on('restore', () => {mainWindow.restore()})
-  ipcMain.on('close', () => {mainWindow.close()})
+  ipcMain.on('minimize',  () => {mainWindow.minimize()})
+  ipcMain.on('maximize',  () => {mainWindow.maximize()})
+  ipcMain.on('restore',   () => {mainWindow.restore()})
+  ipcMain.on('close',     () => {mainWindow.close()})
+  
+  ipcMain.on("blurToggleOn", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(true))}});
+  ipcMain.on("blurToggleOff", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(false))}});
 
-  ipcMain.on('open_post-one', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/one.html')})
-  ipcMain.on('open_post-two', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/two.html')})
-  ipcMain.on('open_post-three', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/three.html')})
-  ipcMain.on('open_post-four', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/four.html')})
-  ipcMain.on('open_post-five', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/five.html')})
-  ipcMain.on('open_post-six', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/six.html')})
-  ipcMain.on('open_post-seven', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/seven.html')})
-  ipcMain.on('open_post-eight', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/eight.html')})
-  ipcMain.on('open_post-nine', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/nine.html')})
-  ipcMain.on('open_post-ten', () => {shell.openExternal('https://scripts.korbsstudio.com/falix-software/news/ten.html')})
+  ipcMain.on("btBH", () => {mainWindow.blurType = 'blurbehind';});
+  ipcMain.on("btTP", () => {mainWindow.blurType = 'transparent';});
+  ipcMain.on("btAY", () => {mainWindow.blurType = 'acrylic';});
+  ipcMain.on("btVB", () => {mainWindow.blurType = 'vibrancy';});
+  
+  ipcMain.on('open-sample-dialog',      () => {(newDialogSample())})
+  ipcMain.on('open-update-dialog',      () => {(newDialogUpdateAvailable())})
+  ipcMain.on('open-failed-dialog',      () => {(newDialogUpdateFailed())})
 
-  mainWindow.once('ready-to-show', () => {
-    splashWindow.destroy();
-    mainWindow.show();
-  });
+  ipcMain.on('open-glasstron-api-demo', () => {(glasstronAPIDemo())})
 
-  // tray = new Tray('./src/images/icons/app/32x32.png')
-  // tray.setToolTip('Falix Software')
-  // tray.on('click', () => {
-  //   mainWindow.show();
-  // });
-  // const contextMenu = Menu.buildFromTemplate([
-  //   { 
-  //     label: 'New Client Window',
-  //     click: async() => {newCP()}
-  //   },
-  //   { 
-  //     label: 'New Game Window',
-  //     click: async() => {newGP()}
-  //   },
-  //   { 
-  //     label: 'Check for Updates',
-  //     click: async() => {autoUpdater.checkForUpdates()}
-  //   },
-  //   { 
-  //     label: 'Quit',
-  //     click: async() => {quitApp()}
-  //   }
-  // ])
-  // tray.setContextMenu(contextMenu)
+  ipcMain.on('launch', () => {splashWindow.close(); mainWindow.show()})
 
-  // Auto Updater
-  autoUpdater.on('update-available', (info) => {
-    showNotification();
-  })
-  autoUpdater.on('error', (err) => {
-    showNotificationFailed();
-  })
+  autoUpdater.on('update-available', (info) => {mainWindow.webContents.insertCSS('button#up_downloading {display: inherit !important;}')})
+  autoUpdater.on('error', (err) => {mainWindow.webContents.insertCSS('button#up_failed {display: inherit !important;}')})
   autoUpdater.checkForUpdates()
-
-  function showNotification() {
-    new Notification({ title: "FalixNodes Desktop", body: 'A new updating is downloading in the background...' }).show()
-  }
-  function showNotificationFailed() {
-    new Notification({ title: "FalixNodes Desktop", body: 'Update failed to download.' }).show()
-  }
-
   autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
     setTimeout(() => {
-      const dialogOpts = {
-        type: 'question',
-        buttons: ['Restart Now', 'Later'],
-        title: 'FalixNodes Desktop Updater',
-        message: process.platform === 'win32' ? releaseNotes : releaseName,
-        detail: 'A new update is ready!'
-      }
-      dialog.showMessageBox(dialogOpts).then((returnValue) => {if (returnValue.response === 0) autoUpdater.quitAndInstall(false)})
-    }, 4000)
+      newDialogUpdateAvailable();
+      mainWindow.webContents.insertCSS('button#up_downloading {display: none !important;}')
+    }, 6000)
   })
+}
+
+function newDialogSample() {
+  const dialogSample = new BrowserWindow({
+    width: 600,
+    height: 250,
+    frame: false,
+    resizable: false,
+    maximizable: false,
+    autoHideMenuBar: true,
+    transparent: true,
+    webPreferences: {
+      devTools: global.devMode,
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+    }
+  })
+  dialogSample.loadFile('./src/html/dialogs/sample.html')
+
+  ipcMain.on('minimize',  () => {dialogSample.minimize()})
+  ipcMain.on('maximize',  () => {dialogSample.maximize()})
+  ipcMain.on('restore',   () => {dialogSample.restore()})
+  ipcMain.on('close',     () => {dialogSample.close()})
+
+  ipcMain.on('dismiss',   () => {dialogSample.close();})
+}
+
+function newDialogUpdateAvailable() {
+  const dialogUpdateAvailable = new BrowserWindow({
+    width: 600,
+    height: 250,
+    frame: false,
+    resizable: false,
+    maximizable: false,
+    autoHideMenuBar: true,
+    transparent: true,
+    webPreferences: {
+      devTools: global.devMode,
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+    }
+  })
+  dialogUpdateAvailable.loadFile('./src/html/dialogs/update-available.html')
+
+  ipcMain.on('minimize',  () => {dialogUpdateAvailable.minimize()})
+  ipcMain.on('maximize',  () => {dialogUpdateAvailable.maximize()})
+  ipcMain.on('restore',   () => {dialogUpdateAvailable.restore()})
+  ipcMain.on('close',     () => {dialogUpdateAvailable.close()})
+
+  ipcMain.on('update',    () => {autoUpdater.quitAndInstall()})
+}
+
+function newDialogUpdateFailed() {
+  const dialogUpdateAvailable = new BrowserWindow({
+    width: 600,
+    height: 300,
+    frame: false,
+    resizable: false,
+    maximizable: false,
+    autoHideMenuBar: true,
+    transparent: true,
+    webPreferences: {
+      devTools: global.devMode,
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+    }
+  })
+  dialogUpdateAvailable.loadFile('./src/html/dialogs/update-failed.html')
+
+  ipcMain.on('minimize',  () => {dialogUpdateAvailable.minimize()})
+  ipcMain.on('maximize',  () => {dialogUpdateAvailable.maximize()})
+  ipcMain.on('restore',   () => {dialogUpdateAvailable.restore()})
+  ipcMain.on('close',     () => {dialogUpdateAvailable.close()})
 }
 
 function newCP() {
@@ -177,17 +188,12 @@ function newCP() {
     minWidth: 400,
     minHeight: 320,
     frame: global.frame,
-    transparent: true,
     autoHideMenuBar: true,
     titleBarStyle: global.titleBarStyle,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: false,
-      nodeIntegrationInSubFrames: false,
       webviewTag: true,
-      devTools: global.devMode,
-      contextIsolation: true,
-      nativeWindowOpen: true
+      devTools: global.devMode
     }
   })
   newCP.loadFile('./src/html/new-window/client.html')
@@ -200,32 +206,31 @@ function newGP() {
     minWidth: 400,
     minHeight: 320,
     frame: global.frame,
-    transparent: true,
     autoHideMenuBar: true,
     titleBarStyle: global.titleBarStyle,
     webPreferences: {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
-      nodeIntegration: false,
-      nodeIntegrationInSubFrames: false,
       webviewTag: true,
-      devTools: global.devMode,
-      contextIsolation: true,
-      nativeWindowOpen: true
+      devTools: global.devMode
     }
   })
   newCP.loadFile('./src/html/new-window/panel.html')
 }
 
-function quitApp() {
-  dialog.showMessageBox({
-    title: 'FalixNodes Desktop',
-    message: 'Trying to quit?',
-    detail: 'Press Ctrl + Q to quit the app entirely.',
-  }).then(box => {
-    console.log('Button Clicked Index - ', box.response);
-    }).catch(err => {
-    console.log(err)
-  })
-}
+function demoCache() {session.clearCache()}
 
-app.whenReady().then(() => {createWindow()})
+app.whenReady().then(() => {createWindow();})
+app.allowRendererProcessReuse = true
+setInterval(() => {autoUpdater.checkForUpdates();}, 300000);
+app.on("web-contents-created", (e, contents) => {
+  contextMenu({
+     window: contents,
+     showSaveImageAs: false,
+     showCopyImageAddress: false,
+     showCopyImage: false,
+     copyLink: true,
+     searchWithGoogle: false,
+     showSearchWithGoogle: false,
+     showInspectElement: false
+  });
+})

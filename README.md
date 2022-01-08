@@ -1,271 +1,113 @@
-### To Do List 
- - Create an automation update system
-   - When running Actions, they should automatically upload all required files to the custom update server, without user action from the admin
- - Prevent auto update from being triggered on the macOS platform
- - Revamp domain whitelist system
- - AIO Settings
- - Workflow improvements
- - CSS rewrite for client arae for a native look (0%)
- - CSS rewrite for game panel for a native look (0%)
-
-# FalixNodes Desktop
 ![image](https://i.imgur.com/7yzQ8u1.png)
 
-Simple and easy to use. Access Falix services all from one place like your client and game panel, help center, status, and more.
+Simple and stylish to use! Access FalixNodes features such as your client and game panel, help center, phpMyAdmin, status, and more all from a centralized place.
 
-[Download](https://software.falixnodes.net/) from our official website.
+[Download Now](https://desktop.falixnodes.net/)  
+[View on Electron Apps](https://www.electronjs.org/apps/falix-software)
 
-________________________
+___
 
-![Latest Version of Falix Software](https://img.shields.io/badge/Version-v3.4.2-blue.svg)
+## FAQ
+Q: Why and what's the point of this software?
 
-![Workflow for Distribution to Windows](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/nsis-deployment.yml/badge.svg)
-![Workflow for Distribution to macOS](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/dmg-deployment.yml/badge.svg)
-![Workflow for Distribution to Linux](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appimage-deployment.yml/badge.svg)
-![Workflow for Distribution to Windows 10/11](https://github.com/FalixNodes-Software/Desktop-App/actions/workflows/appx-deployment.yml/badge.svg)
-_______________________
+A: Originally, the software was created by a member of the community to avoid having to use their web browser to access FalixNodes. FalixNodes Desktop served as a fast and intuitive way to access FalixNodes’ services, and it continues to do so today.  
 
-## ❔ Q&A for Developers
-### Why is Font Awesome included offline? You could use a script instead.
-#### What is Font Awesome?
-Font Awesome is a font and icon toolkit based on CSS and Less.
+<br/>
 
-[Learn More](https://fontawesome.com/)
+Q: Who is the developer of FalixNodes Desktop?
 
-[Learn to Upgrade](https://fontawesome.com/v5.15/how-to-use/on-the-desktop/setup/upgrading-from-version-4)
+A: FalixNodes Desktop is developed and owned by Korbs Studio. To be clear, Korbs Studio owns the code to ONLY FalixNodes Desktop for desktop and does NOT have ownership over FalixNodes itself.    
 
-#### Why include it offline?
-I understand that using one line of code, in this case a link to the Font Awesome script, will do the trick. Yes, you can do that, but the reason why I'm including Font Awesome locally with the software is for offline usage. 
+<br/>
 
-If the user is offline, the icons in the software won't load unless Font Awesome is included locally.
+Q: Can I use FalixNodes Desktop?
 
-### Why all these requirements to just build it?
-The reason why the software needs all these requirements like Python and Visual Studio(Desktop Development with C++) is because of technology that was coded into the software like [Glasstron](https://www.npmjs.com/package/glasstron) for visual appeal and [XTerm](https://xtermjs.org/) for the built-in terminal to use FalixCoins Miner with.
+A: It supports Windows 7/8/10/11, macOS Yosemite and up, and Linux. You may be able to run FalixNodes Desktop on a chromebook as well.
 
-### Why Electron?
-#### What is it?
-Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologie. It combines the Chromium rendering engine and the Node.js runtime. - [Wikipedia](https://en.wikipedia.org/wiki/Electron_(software_framework))
+As for mobile, you can try out our mobile app, which serves the same purpose as our desktop software.   
 
-#### Why I use it
-I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. The process of doing cross-platform support was also shortened and easier for me to do.
+<br/>
 
-There are tons of other good reasons why to use Electron, you can read more about that here on [Alibaba Cloud](https://www.alibabacloud.com/blog/what-is-electronjs-and-why-should-you-use-it_581971) (Article).
+Q: Is this official software by FalixNodes?
 
-<!-- ________________________
+A: Yes, FalixNodes Desktop has been approved official software for FalixNodes.
 
-## Push Notification
-### What is it?
-A push notification works simiar to a native notification, where it pops up like any other notification. With push notifcations, the developer can send a notification at any time he or she wants. Since we're doing this in Electron, the app has to be opened to see the notification. I could let the app run in the background after it closes, but I refuse to, as that could have an impact on performance. -->
+<br/>
 
-________________________
+Q: How do I update it?
 
-## 🔧 Preparing to Build
-### Requirements
- - [NodeJS](https://nodejs.org/en/) 14.16.0 or above
- - [Python](https://www.python.org/) 3.9 or above
- - G++ (Linux)
-    - Debian/Ubuntu: `apt install g++`
-    - Fedora: `dnf install g++`
- - [Visual Studio Community](https://visualstudio.microsoft.com/) (Install Desktop Development with C++) (on Windows)
- - [Visual C++ Redistributable](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) (on Windows)
+A: This is done automatically on Windows and Linux. We recommend that you wait at least 1 - 2 minutes for the update to download in the background, or depending on your internet speed.
+
+On macOS, you must manually install each update. You don’t have to do this every time; if you want the latest version in general, you may update. This is due to the fact that we need to sign our DMG file in order for updates to function; we are still working on signing the DMG file with our Apple Certificate.
+
+<br/>
+
+## FAQ - For Developers
+Q: Why is Font Awesome included offline? Just use a script instead.
+
+A: I understand that using one line of code, in this case a link to the Font Awesome script, will do the trick. Yes, you can do that, but the reason why I'm including Font Awesome locally with the software is for offline usage.
+
+If the user is not connected to the internet, the software's icons will not load unless Font Awesome is installed locally. 
+
+<br/>
+
+Q: Why Electron and what is it?
+
+A.1 (Why): I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. The process of doing cross-platform support was also shortened and easier for me to do.
+
+A.2 (What): Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologie. It combines the Chromium rendering engine and the Node.js runtime. - [Wikipedia](https://en.wikipedia.org/wiki/Electron_(software_framework))
+
+___
+
+## Development and Building
+## Checklist
+ - Using latest version of ElectronJS
+ - Using latest version of Electron Builder
+ - Using latest version of Glasstron
+ - Update server is pointed to correct source
+ - FalixNodes Desktop starts up with no errors on all platforms
+   - Windows
+   - macOS
+   - Linux (Bad Atom error allowed if on GNOME(X11) Desktop)
+
+### Preparing to Develop FalixNodes Desktop
+#### Requirements
+To run FalixNodes Desktop in development mode and later build it, you must have the following installed on your workstation:
+ - NodeJS 16 and up
+ - Pyton 3.10 and up
+ - g++ (Linux)
+ - Visual Studio (Windows)
+   - Development with C++
+ - Visual C++ Redistributable (Windows)
  - At least 8GB of storage
 
-### Downloading Source Code
-#### Using Git
-If you have Git already installed, run the following command to download and automatically extract the source code from our GitHub:
-```
-git clone https://github.com/FalixNodes-Software/Desktop-App/
-```
+It's also a good idea to have a capable code editor and be familiar with the fundamentals of the ElectronJS framework.
 
-#### Using GitHub CLI
-If you have GitHub CLI already installed, run the following command to download and automatically extract the source code from our GitHub:
-```
-gh repo clone FalixNodes-Software/Desktop-App
-```
+### Building FalixNodes Desktop
+#### Electron Builder Environment
+You should probably adjust a few additional things for Electron Builder before building. 
 
-If you don't have Git or GitHub CLI installed, you can download it manually from our [GitHub](https://github.com/FalixNodes-Software/Desktop-App/) or install [Git](https://git-scm.com/) or install [GitHub CLI](https://cli.github.com/).
+First off, what is Electron Builder?
 
-You can also download the source code manually and go from there.
+We can easily distribute FalixNodes Desktop cross-platform using Electron Builder, which has auto-update support out of the box. We can also distribute our software in other formats if we wanted to like Snap, MSI, PKG, etc.
 
-### Other Modifications
-There are some other assets you may need to change if you're forking this repo for another host or for a simliar project. Assets for the background images, names, etc need to be changed as they may contain resources from Falix or the name "Falix" in general. You also need to update other stuff like the update server provider and learn how it works if you do plan to include auto updating like we did.
+<br/>
 
-#### Pushy Notifications
-To make sure your fork of the software doesn't recieve notifications for Falix Inc, you'll need to either remove Pushy all together or change the app ID of Pushy.
+What needs to be changed?
 
-If this isn't changed, your customers who'll use the software may recieve push notifications from the forked version of the software and may be confused.
+We include assets with our setup files like banners, backgrounds, and licenes. If you're planning on building your software on top of a fork of FalixNodes Desktop, it's best you change these to not confuse users who will use your fork. 
 
-#### Auto Updates
-As seen here in the __[package.json](https://github.com/FalixNodes-Software/Desktop-App/blob/master/package.json#L47)__, there is a url "https://updates.korbsstudio.com/falix-software/", which is a self hosted update server. 
+Everything you need to change is located in the `/build` folder, also note that any files in this folder won't be distrbuted as part of the software itself. So if you were to set the software icon, and point to the icon file in the build folder, it won't work in production. The build folder is for Electron Builder only.
 
-The file structure is simply, you're required to have a "latest" file in there like `latest.yml`, `latest-mac.yml`, and a `latest-linux.yml` file along with a setup file for the software. 
+You need to change the following files as they may include the name "FalixNodes" or include screenshots of previous versions of FalixNodes Desktop:
+ - `/build/background.png` - Background of the DMG installer (macOS)
+ - `/build/installSidebar.bmp` - Sidebar banner of the NSIS installer (Windows)
+ - `/build/license_*.txt` - All license files
+ - `/build/icons`/ - Obviously the icon, the icon included is trademark of FalixNodes Limited
 
-If you don't plan to self host your own update server, then GitHub Releases is recommended.
-Simply change the publish area of the package.json file to this:
-```
-...
-    "publish": {
-      "provider": "github",
-      "repo": "repo-name",
-      "owner": "owner-username",
-    },
-...
-```
-You're required to have your GitHub token to publish new releases with Electron Builder, so add the token to the environment.
+ A Figma file is included if you want to the same layout for the background and banner.
 
-On Linux/macOS:
-``` 
-export GH_TOKEN="<YOUR_TOKEN_HERE>"
-```
-
-On Windows:
-```
-[Environment]::SetEnvironmentVariable("GH_TOKEN","<YOUR_TOKEN_HERE>","User")
-```
-
-Make sure to restart your terminal after doing the export command.
-
-#### NSIS Setup
-<img width="450" src="https://miro.medium.com/max/499/0*fMHZpJv5BjlmnJE4.png">
-
-As shown above, there is an image shown in the left sidebar of installer. This can be changed by updating the image in `/build/installerSidebar.bmp`. Image size has to be 164x314 pixels.
-
-Just download the [Figma file](https://github.com/FalixNodes-Software/Desktop-App/tree/master/build/assets/figma/Falix Software Resources.fig) for this and simply update the screenshots. Or if you want, you're allowed to create your own image for the sidebar.
-
-What's a BMP file? The BMP file format, also known as bitmap image file, device independent bitmap file format and bitmap, is a raster graphics image file format used to store bitmap digital images, independently of the display device, especially on Microsoft Windows and OS/2 operating systems. In this case, we're using NSIS, which requires the use of BMP.
-
-[PNG to BMP Converter](https://cloudconvert.com/png-to-bmp)
-
-#### DMG Setup
-<div>
-  <img width="450" src="https://cdn.discordapp.com/attachments/829662493533667339/862790846201331762/unknown.png">
-</div>
-
-As shown above, there is background image shown in the DMG installer. This can be changed by updating the image in `/build/background.png`. Image size has to be 540x380 pixels. The only objects in the image above that isn't part of the background image is the __falixnodes.app__ file and the Applications folder shown in the center.
-
-### Building
-#### Installing Dependencies
-FalixNodes Software uses Electron and other required packages to run the app and uses Electron Builder to package it up nicely. Run the following commands to install them:
-```
-npm install install
-```
-
-### Running
-After all required dependencies are installed, you should be able to run the software with the start command provided in __package.json__.
-
-To run the start command, simply run the following command:
-```
-npm start
-```
-
-### Create a Package
-Wanna create an installer? You can do this with Electron Builder, there is already a build command ready which is provided in __package.json__.
-
-To start building the installer, run the following command: 
-```
-npm run build
-```
-
-After installer is done building, check the `/dist/` folder.
-
-________________________
-
-## 📊 Benchmark Testing
-### What is this?
-This will show data and timing of Falix Software being ran on my machines. This will show how well the computer performs running the software, as we're still improving performance in v3.
-
-### Machines
-#### HP All In One 24-e014
- - CPU: Intel Core i3 7100u | 2.24GHz | 4 Cores
- - Memory: 16GB DDR4
- - Graphics Card: Intel HD 620 Kaby Lake GT2
- - Storage: 120GB SSD
- - Operating System: Fedora 34
- - Desktop Environment: GNOME 40 Wayland
- - Node Version: v14.17.1
-
-#### Dell Inspiron 15-3552
- Note: This low end laptop appears to have no fans.
- - CPU: Intel Celeron N3060 | 1.60GHz | 2 Cores
- - Memory: 4GB DDR3L
- - Graphics Card: Intel HD (Unknown model)
- - Storage: 320GB HDD
- - Operating System: Windows 10 v20H2
- - DirectX: 12
- - Node Version: v14.17.1
-
-#### HP HQ-TRE 71025
- Note: This low end laptop appears to have no fans.
- - CPU: Intel Pentium N3060 | 2.16GHz | 2 Cores
- - Memory: 4GB DDR3L
- - Graphics Card: Intel HD (Unknown model)
- - Storage: 160GB HDD
- - Operating System: Windows 10 v20H2
- - DirectX: 12
- - Node Version: v14.17.1
-
-#### HP Omni-100 5050
- - CPU: AMD Althon | 1.80Ghz | 2 Cores
- - Memory: 8GB DDR3L
- - Graphics Card: 
- - Storage: 320GB HDD
- - Operating System: Windows 10 v21H1
- - DirectX: 12
- - Node Version: v14.17.1
-
-### Running
-Running software after intended install (Not building)
-
-#### HP All In One 24-e014
- - Start software             |        01s
-
-#### Dell Inspiron 15-3552
- - Start software             |        09s
-
-#### HP Omni-100 5050
- - Start software             |        07s
-
-
-### Building
-Running commands from __package.json__ in the following order:
- - Install node packages: `npm i`
- - Rebuild modules like node-pty and Glasstron: `npm run rebuild`
- - Start software: `npm start`
- - Build setup files: `npm run build`
-
-#### HP All In One 24-e014
- - Installing node packges    |        50s
- - Rebuild Modules            |        12s
- - Start software             |        02s
- - Build - Target: AppImage   |     1m 49s
- 
- AppImage file is smaller than NSIS
-
-#### Dell Inspiron 15-3552
- - Installing node packges    |    2m  59s
- - Rebuild Modules            |    1m  54s
- - Start software             |        04s
- - Build - Target: AppImage   |    2m 15s
-
-#### HP HQ-TRE 71025
- - Installing node packges    |    6m  05s
- - Rebuild Modules            |    2m  45s
- - Start software             |        07s
- - Build - Target: NSIS       |    12m 00s
-
-#### HP Omni-100 5050
- - Installing node packges    |    3m  46s
- - Rebuild Modules            |    1m  37s
- - Start software             |        07s
- - Build - Target: NSIS       |    9m  00s
-
- NOTE: We also build .appx files with [`electron-windows-store`](https://www.npmjs.com/package/electron-windows-store) for the Microsoft Store
-
-________________________
-
-## 💡 Credits
-Developer/Maintainer: [Korbs Studio](https://github.com/KorbsStudio)
-
-Electron Titlebar OS Detection: [Korbs Studio](https://github.com/KorbsStudio/electron-titlebar-os-detection)
-
-Blur Composition Effect: [Glasstron by AryToNex](https://github.com/AryToNeX/Glasstron)
+## Credits
+ - Developer: [Korbs Studio](https://github.com/KorbsStudio/)
+ - Framework: [Electron](https://electronjs.org/)
+ - Blur Composition Effect: [Glasstron](https://github.com/NyaomiDEV/Glasstron/)

@@ -1,15 +1,17 @@
 /* Content */
-t2p#page-news::before {content: "Jaunumi";}
+t2p#page-news::before {content: "Emuāra ziņas";}
 t2p#page-client_panel::before {content: "Klienta panelis";}
 t2p#page-game_panel::before {content: "Spēļu panelis";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Atbalsts";}
 t2p#page-help_center::before {content: "Palīdzības centrs";}
 t2p#page-settings::before {content: "Iestatījumi";}
 
-t2p#nd-Opening-in-brower::before {content: "Atvēršana pārlūkā";}
+t2p#update_downloading::before {content: "Atjaunināt lejupielādi";}
+t2p#update_failed::before {content: "Atjaunināšana neizdevās";}
 t2p#netork_connection-lost::before {content: "Savienojums zaudēts";}
 t2p#netork_connection-restored::before {content: "Savienojums atjaunots";}
+
+tp2#page-taking-too-long-too-load::before {content: "Šīs lapas ielāde aizņem ilgāku laiku nekā parasti.";}
 
 t2p#h1-settings::before {content: "Iestatījumi";}
 t2p#h2-app::before {content: "Pieteikums";}
@@ -25,7 +27,7 @@ t2p#tog-rc::before {content: "Noapaļoti stūri";}
 t2p#tog-ts::before {content: "Sānjoslas caurspīdīgums";}
 
 t2p#gp_unl-h1::before {content: "Spēļu panelis";}
-tp2#gp_unl-p::before {content: "Spēle panelis izkrauj pēc noklusējuma Falix Software, lai samazinātu izmantoto resursu. Tas palīdz ar veiktspēju.";}
+tp2#gp_unl-p::before {content: "Spēle panelis izkrauj pēc noklusējuma FalixNodes Desktop, lai samazinātu izmantoto resursu. Tas palīdz ar veiktspēju.";}
 tp2#gp_unl-button::before {content: "Ielādēt paneli";}
 
 /* Front-End, show that the option for the language was selected in the settings */

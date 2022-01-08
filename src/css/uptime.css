@@ -1,3 +1,9 @@
+* {
+    border: none !important;
+}
+
+::-webkit-scrollbar {width: 0px !important;}
+
 .page-header, .page-prefooter {
     display: none !important;
 }
@@ -32,3 +38,22 @@ div#twitterport_md {
     border-bottom: none !important;
 }
 
+#bulkreportcontainer .table-bordered>tbody>tr[role="row"] {
+    border: none !important;
+    background: #0b1725 !important;
+}
+#bulkreportcontainer .table-bordered>tbody>tr>td, #bulkreportcontainer .table-bordered>tbody>tr>th, #bulkreportcontainer .table-bordered>tfoot>tr>td, #bulkreportcontainer .table-bordered>tfoot>tr>th, #bulkreportcontainer .table-bordered>thead>tr>td, #bulkreportcontainer .table-bordered>thead>tr>th {
+    border: none !important;
+}
+.portlet.light {
+    margin-top: -40px !important;
+}
+div#bulkreportcontainer {
+    background: #162230 !important;
+}
+.row.reglnk {
+    text-align: left !important;
+    position: absolute !important;
+    margin: -25px 0px 0px 22px !important;
+    pointer-events: none !important;
+}

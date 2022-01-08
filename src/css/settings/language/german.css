@@ -1,15 +1,17 @@
 /* Content */
-t2p#page-news::before {content: "Nachrichten";}
+t2p#page-news::before {content: "Blogeinträge";}
 t2p#page-client_panel::before {content: "Kunden-Panel";}
 t2p#page-game_panel::before {content: "Spielfeld";}
-t2p#page-phpmyadmin::before {content: "phpMyAdmin";}
 t2p#page-support::before {content: "Unterstützen";}
 t2p#page-help_center::before {content: "Hilfezentrum";}
 t2p#page-settings::before {content: "Einstellungen";}
 
-t2p#nd-Opening-in-brower::before {content: "Im Browser öffnen";}
+t2p#update_downloading::before {content: "Update verfügbar";}
+t2p#update_failed::before {content: "Update fehlgeschlagen";}
 t2p#netork_connection-lost::before {content: "Verbindung verloren";}
 t2p#netork_connection-restored::before {content: "Verbindung wiederhergestellt";}
+
+tp2#page-taking-too-long-too-load::before {content: "Das Laden dieser Seite dauert länger als üblich.";}
 
 t2p#h1-settings::before {content: "Einstellungen";}
 t2p#h2-app::before {content: "Antrag";}
@@ -25,7 +27,7 @@ t2p#tog-rc::before {content: "Abgerundete Ecken";}
 t2p#tog-ts::before {content: "Transparenz der Seitenleiste ";}
 
 t2p#gp_unl-h1::before {content: "Spielfeld";}
-tp2#gp_unl-p::before {content: "Die Spielkonsole ist standardmäßig in Falix Software entladen verwendet, um die Menge an Ressourcen zu reduzieren. Das hilft bei der Leistung.";}
+tp2#gp_unl-p::before {content: "Die Spielkonsole ist standardmäßig in FalixNodes Desktop entladen verwendet, um die Menge an Ressourcen zu reduzieren. Das hilft bei der Leistung.";}
 tp2#gp_unl-button::before {content: "Panel laden";}
 
 /* Front-End, show that the option for the language was selected in the settings */

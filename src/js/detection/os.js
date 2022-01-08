@@ -1,4 +1,4 @@
-(function() { // Detect weather that the user is using either a Windows operating system or a Mac operating system
+(function() {
 
     var htmlElement = document.documentElement;
   
