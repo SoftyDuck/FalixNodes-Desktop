@@ -15,6 +15,7 @@ t2p#notify-internet-restored::before {content: "Connection Restored";}
 tp2#page-taking-too-long-too-load::before {content: "Le chargement de cette page prend plus de temps que d'habitude.";}
 
 t2p#h1-settings::before {content: "Paramètres";}
+tp2#loe::before {content: "Déconnectez-vous de tout";}
 t2p#h2-app::before {content: "Application";}
 t2p#fs-language::before {content: "Langue";}
 t2p#fs-devMode::before {content: "Mode développeur";}

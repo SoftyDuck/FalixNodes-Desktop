@@ -15,6 +15,7 @@ t2p#notify-internet-restored::before {content: "Connection Restored";}
 tp2#page-taking-too-long-too-load::before {content: "加载此页面的时间比平时要长。";}
 
 t2p#h1-settings::before {content: "设置";}
+tp2#loe::before {content: "注销一切";}
 t2p#h2-app::before {content: "应用";}
 t2p#fs-language::before {content: "语";}
 t2p#fs-devMode::before {content: "开发者模式";}

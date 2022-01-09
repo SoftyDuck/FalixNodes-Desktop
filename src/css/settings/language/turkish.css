@@ -15,6 +15,7 @@ t2p#netork_connection-restored::before {content: "Tekrar Bağlanıldı";}
 tp2#page-taking-too-long-too-load::before {content: "Bu sayfanın yüklenmesi normalden uzun sürüyor.";}
 
 t2p#h1-settings::before {content: "Tercihler";}
+tp2#loe::before {content: "Her Şeyden Çıkış Yap";}
 t2p#h2-app::before {content: "Uygulama";}
 t2p#fs-language::before {content: "Dil";}
 t2p#fs-devMode::before {content: "Geliştirici Modu";}

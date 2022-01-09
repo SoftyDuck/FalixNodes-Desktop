@@ -14,6 +14,7 @@ t2p#netork_connection-restored::before {content: "Savienojums atjaunots";}
 tp2#page-taking-too-long-too-load::before {content: "Šīs lapas ielāde aizņem ilgāku laiku nekā parasti.";}
 
 t2p#h1-settings::before {content: "Iestatījumi";}
+tp2#loe::before {content: "Izrakstīt visu";}
 t2p#h2-app::before {content: "Pieteikums";}
 t2p#fs-language::before {content: "Valoda";}
 t2p#fs-devMode::before {content: "Izstrādātāja režīms";}

@@ -15,6 +15,7 @@ t2p#notify-internet-restored::before {content: "Connection Restored";}
 tp2#page-taking-too-long-too-load::before {content: "इस पृष्ठ को लोड होने में सामान्य से अधिक समय लग रहा है.";}
 
 t2p#h1-settings::before {content: "सेटिंग्स";}
+tp2#loe::before {content: "सब कुछ लॉग आउट करें";}
 t2p#h2-app::before {content: "आवेदन";}
 t2p#fs-language::before {content: "भाषा";}
 t2p#fs-devMode::before {content: "डेवलपर मोड";}

@@ -14,6 +14,7 @@ t2p#netork_connection-restored::before {content: "Connection Restaurado";}
 tp2#page-taking-too-long-too-load::before {content: "O carregamento desta página está demorando mais do que o normal.";}
 
 t2p#h1-settings::before {content: "Configurações";}
+tp2#loe::before {content: "Log tudo fora";}
 t2p#h2-app::before {content: "Aplicativo";}
 t2p#fs-language::before {content: "Idioma";}
 t2p#fs-devMode::before {content: "Modo de desenvolvedor";}

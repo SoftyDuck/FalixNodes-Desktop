@@ -14,6 +14,7 @@ t2p#netork_connection-restored::before {content: "Соединение восс�
 tp2#page-taking-too-long-too-load::before {content: "Загрузка этой страницы занимает больше времени, чем обычно.";}
 
 t2p#h1-settings::before {content: "Настройки";}
+tp2#loe::before {content: "Выйти из системы";}
 t2p#h2-app::before {content: "Приложение";}
 t2p#fs-language::before {content: "Язык";}
 t2p#fs-devMode::before {content: "Режим разработчика";}

@@ -14,6 +14,7 @@ t2p#netork_connection-restored::before {content: "সংযোগ পুনঃ�
 tp2#page-taking-too-long-too-load::before {content: "এই পৃষ্ঠাটি লোড হতে স্বাভাবিকের চেয়ে বেশি সময় নিচ্ছে৷";}
 
 t2p#h1-settings::before {content: "সেটিংস";}
+tp2#loe::before {content: "লগ আউট সবকিছু";}
 t2p#h2-app::before {content: "আবেদন";}
 t2p#fs-language::before {content: "ভাষা";}
 t2p#fs-devMode::before {content: "বিকাশকারী মোড";}
