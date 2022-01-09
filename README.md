@@ -10,7 +10,7 @@ ___
 ## FAQ
 Q: Why and what's the point of this software?
 
-A: Originally, the software was created by a member of the community to avoid having to use their web browser to access FalixNodes. FalixNodes Desktop served as a fast and intuitive way to access FalixNodes’ services, and it continues to do so today.  
+A: Originally, a member of the community developed the software to avoid having to use their web browser to access FalixNodes. FalixNodes Desktop was designed to be a simple and quick method to access FalixNodes' services, and it still is. 
 
 <br/>
 
@@ -24,7 +24,7 @@ Q: Can I use FalixNodes Desktop?
 
 A: It supports Windows 7/8/10/11, macOS Yosemite and up, and Linux. You may be able to run FalixNodes Desktop on a chromebook as well.
 
-As for mobile, you can try out our mobile app, which serves the same purpose as our desktop software.   
+As for mobile, you can try out our mobile app, which serves the same purpose as our desktop software.
 
 <br/>
 
@@ -38,7 +38,7 @@ Q: How do I update it?
 
 A: This is done automatically on Windows and Linux. We recommend that you wait at least 1 - 2 minutes for the update to download in the background, or depending on your internet speed.
 
-On macOS, you must manually install each update. You don’t have to do this every time; if you want the latest version in general, you may update. This is due to the fact that we need to sign our DMG file in order for updates to function; we are still working on signing the DMG file with our Apple Certificate.
+On macOS, each update must be installed manually by the user. No, you are not required to do this on a regular basis; nevertheless, upgrading is recommended if you want the most up-to-date version in general. Given the fact that updates need the signing of the DMG file, we are already working on certifying the DMG file using our Apple Certificate. 
 
 <br/>
 
@@ -105,7 +105,34 @@ You need to change the following files as they may include the name "FalixNodes"
  - `/build/license_*.txt` - All license files
  - `/build/icons`/ - Obviously the icon, the icon included is trademark of FalixNodes Limited
 
- A Figma file is included if you want to the same layout for the background and banner.
+ A Figma file is included if you want to the same layout for the background and banner, Figma is a free tool to use.
+
+#### Metadata
+Another thing to change is the metadata of FalixNodes Desktop like the ID, name, versions, update server location, and more.
+
+The following should be changed in <u>package.json</u>:
+ - Name
+ - Under build config:
+    - url
+      - This tells the software where to pull new updates from
+    - maintainer
+      - Example: <u>com.electron.app</u>
+    - shortcutName
+    - description
+
+Also if you plan to leave the settings page mostly as is, make sure to update the version number manually in there.
+
+#### Building
+Now to build the actual software, this process has been made more simple over time during the development of FalixNodes Desktop, all thanks to GitHub Actions and Electron Builder. 
+
+With Electron Builder, you can simply run:
+```
+npm run build
+```
+
+Then Electron builder will start building for your operating system.
+
+If you desire to, or are required to, create the software for multiple operating systems, you may leverage GitHub Actions. Using GitHub Actions, you can write software on many operating systems without having to use them. You can build a DMG file for macOS, for example, without owning or having access to a Mac. Workflow files have been added and are ready to be deployed.
 
 ## Credits
  - Developer: [Korbs Studio](https://github.com/KorbsStudio/)
