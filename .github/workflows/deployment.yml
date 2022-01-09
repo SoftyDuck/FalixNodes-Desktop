@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
     steps:
     
     - uses: actions/checkout@v2
@@ -36,16 +36,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [16.x]
     steps:
     
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
     - run: npm install
-    - run: rm build/license_zh.txt
-    - run: rm build/license_es.txt
-    - run: rm build/license_fr.txt
     - run: npm run build
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
@@ -59,7 +56,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
     steps:
     
     - uses: actions/checkout@v2
