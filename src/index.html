@@ -25,8 +25,8 @@
     </header>
     <body id="tools" onload="setTimeout (() => {unloadGamePanel();}, 280)">
         <div class="nav_area">
-            <div include-html="./html/include/nav.html"></div>
-            <!-- <div include-html="./html/include/new-window.html"></div> -->
+            <div insert="./html/components/nav.html"></div>
+            <!-- <div insert="./html/components/new-window.html"></div> -->
             <div class="loadingIndicators">
               <i id="IndicatorCP" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
               <i id="IndicatorGP" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
@@ -37,18 +37,18 @@
         </div>
         <div class="content">
             <div id="news" class="page_content">
-                <div include-html="https://falixnodes.net/blog-desktop/"></div>
+                <div insert="https://falixnodes.net/blog-desktop/"></div>
                 <webview id="postview" src="https://desktop.falixnodes.net/blank/"></webview>
                 <button id="news-back" onclick="closeArticle()"><i class="fas fa-long-arrow-alt-left"></i></button>
                 <i id="nL" class="fa-solid fa-spinner-third fa-spin" style="--fa-animation-duration: 0.5s;"></i>
                 <p id="nLTD"><tp2 id="page-taking-too-long-too-load"></tp2></p>
             </div>
             <div id="client_panel" class="page_content">
-                <div include-html="./html/include/client-panel.html"></div>
+                <div insert="./html/components/client-panel.html"></div>
                 <webview id="client_panel_wv" preload='./js/detection/domain-restrictions/client-panel.js' src="https://client.falixnodes.net/"></webview>
             </div>
             <div id="game_panel" class="page_content">
-                <div include-html="./html/include/game-panel.html"></div>
+                <div insert="./html/components/game-panel.html"></div>
                 <webview id="game_panel_wv" preload='./js/detection/domain-restrictions/game-panel.js' src="https://desktop.falixnodes.net/blank/"></webview>
             </div>
             <div id="phpmyadmin" class="page_content">
@@ -65,7 +65,7 @@
                 <div id="st-id-account" class="st-tab">
                     <webview id="account_wv" preload='./js/detection/domain-restrictions/account.js' src="https://client.falixnodes.net/"></webview>
                 </div>
-                <div include-html="./html/include/settings.html"></div>
+                <div insert="./html/components/settings.html"></div>
             </div>
         </div>
         <script src="./js/hotkeys.js"></script>
@@ -76,7 +76,7 @@
         <script src="./js/ui/article.js"></script>
         <script src="./js/ui/nav.js"></script>
         <script src="./js/ui/notify.js"></script>
-        <script src="./js/ui/include.js"></script>
+        <script src="./js/ui/insert.js"></script>
 
         <script src="./js/detection/os.js"></script>
 
@@ -86,6 +86,6 @@
         <script src="./js/settings/blur-window.js"></script>
         <script src="./js/settings/blur-type.js"></script>
 
-        <script>includeHTML();</script>
+        <script>insert();</script>
     </body>
 </html>
