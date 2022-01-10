@@ -29,6 +29,7 @@ jobs:
       with:
         host: ${{ secrets.SFTP_IP }}
         port: 22
+        excludeMode: ignore
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
@@ -54,6 +55,7 @@ jobs:
       with:
         host: ${{ secrets.SFTP_IP }}
         port: 22
+        excludeMode: ignore
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
@@ -81,6 +83,7 @@ jobs:
       with:
         host: ${{ secrets.SFTP_IP }}
         port: 22
+        excludeMode: ignore
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
