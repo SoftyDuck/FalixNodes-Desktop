@@ -33,7 +33,7 @@ jobs:
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
-        remoteDir: /usr/share/nginx/updates/demo/
+        remoteDir: /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/
 
   build-mac:
 
@@ -59,7 +59,7 @@ jobs:
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
-        remoteDir: /usr/share/nginx/updates/demo/
+        remoteDir: /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/
 
   build-linux:
 
@@ -87,4 +87,10 @@ jobs:
         username: ${{ secrets.SFTP_USERNAME }}
         password: ${{ secrets.SFTP_PASSWORD }}
         localDir: ./dist/
-        remoteDir: /usr/share/nginx/updates/demo/
+        remoteDir: /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/
+
+  release-update:
+    runs-on: self-runner
+    steps:
+    - name: Release Update
+    - run: echo "Hello, internet!"
