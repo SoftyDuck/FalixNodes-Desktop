@@ -44,8 +44,7 @@ jobs:
       uses: actions/setup-node@v2
     - run: npm install
     - run: npm run build
-    - run: ls
-    - run: ls dist/
+    - run: sudo rm -R ./dist/mac/ #? It's just called "mac"? Pardon me?
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
@@ -68,8 +67,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build
-    - run: ls
-    - run: ls dist/
+    - run: sudo rm -R ./dist/linux-unpacked/
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
