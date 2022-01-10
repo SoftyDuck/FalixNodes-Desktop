@@ -90,7 +90,10 @@ jobs:
         remoteDir: /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/
 
   release-update:
-    runs-on: self-runner
+    runs-on: self-hosted
     steps:
     - name: Release Update
-    - run: echo "Hello, internet!"
+    - run: cd /usr/share/nginx/updates/.prepare/falixnodes-desktop/
+    - run: sudo cp windows/* /usr/share/nginx/updates/demo/
+    - run: sudo cp mac/* /usr/share/nginx/updates/demo/
+    - run: sudo cp linux/* /usr/share/nginx/updates/demo/
