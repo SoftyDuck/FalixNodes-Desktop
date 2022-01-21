@@ -19,7 +19,7 @@ if (process.platform == 'darwin') {
       global.blur = "vibrancy"
       global.frame = false
       global.titleBarStyle = 'hiddenInset'
-      global.update = console.log('Auto update not supported on this platform.');
+      global.update = console.log('Auto update not supported on this platform, skipping...');
     }
   )
 }
