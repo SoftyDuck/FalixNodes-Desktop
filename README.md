@@ -138,4 +138,3 @@ If you desire to, or are required to, create the software for multiple operating
  - Developer: [Korbs Studio](https://github.com/KorbsStudio/)
  - Framework: [Electron](https://electronjs.org/)
  - Blur Composition Effect: [Glasstron](https://github.com/NyaomiDEV/Glasstron/)
- - SFTP Client: [Mandrews6975](https://github.com/mandrews6975/SFTP-Client)

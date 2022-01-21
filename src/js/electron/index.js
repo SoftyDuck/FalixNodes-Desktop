@@ -1,4 +1,4 @@
-const {app, BrowserView, BrowserWindow, contextBridge, dialog, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, session, shell, webContents} = require('electron')
+const {app, BrowserView, BrowserWindow, contextBridge, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, session, shell, webContents} = require('electron')
 const contextMenu = require('electron-context-menu')
 const { autoUpdater } = require("electron-updater")
 const glasstron = require('glasstron')
@@ -7,19 +7,18 @@ const log = require('electron-log')
 const path = require('path')
 const url = require('url')
 const os = require("os")
-const SFTP = require('./sftp')
 
 autoUpdater.logger = log
 let mainWindow;
 let dialogUpdateAvailable;
 
-global.devMode = true
+global.devMode = false
 if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "vibrancy"
       global.frame = false
       global.titleBarStyle = 'hiddenInset'
-      global.update = console.log('Auto update not supported on this platform, skipping...');
+      global.update = console.log('Auto update not supported on this platform.');
     }
   )
 }
@@ -80,32 +79,8 @@ function createWindow() {
     }
   })
 
-  const sftpWindow = new glasstron.BrowserWindow({
-    title: 'FalixNodes Desktop | SFTP',
-    width: 1250,
-    height: 800,
-    minWidth: 430,
-    minHeight: 520,
-    frame: global.frame,
-    show: false,
-    autoHideMenuBar: true,
-    // titleBarStyle: global.titleBarStyle,
-    // trafficLightPosition: {
-    //   x: 20,
-    //   y: 13,
-    // },
-    blur: true,
-    blurType: global.blur,
-    webPreferences: {
-      devTools: global.devMode,
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  })
-
   mainWindow.loadFile('src/index.html')
   splashWindow.loadFile('src/html/splash/index.html')
-  sftpWindow.loadFile('src/sftp/index.html')
 
   ipcMain.on('minimize',  () => {mainWindow.minimize()})
   ipcMain.on('maximize',  () => {mainWindow.maximize()})
@@ -126,8 +101,7 @@ function createWindow() {
 
   ipcMain.on('open-glasstron-api-demo', () => {(glasstronAPIDemo())})
 
-  ipcMain.on('launch', ()  => {splashWindow.close(); mainWindow.show()})
-  ipcMain.on('openSFTP', () => {sftpWindow.show()})
+  ipcMain.on('launch', () => {splashWindow.close(); mainWindow.show()})
 
   autoUpdater.on('update-available', (info) => {mainWindow.webContents.insertCSS('button#up_downloading {display: inherit !important;}')})
   autoUpdater.on('error', (err) => {mainWindow.webContents.insertCSS('button#up_failed {display: inherit !important;}')})
@@ -250,7 +224,9 @@ function demoCache() {session.clearCache()}
 
 app.whenReady().then(() => {createWindow();})
 app.allowRendererProcessReuse = true
-setInterval(() => {global.updateLoop}, 300000);
+setInterval(() => {
+  global.updateLoop
+}, 300000);
 app.on("web-contents-created", (e, contents) => {
   contextMenu({
      window: contents,
