@@ -1,9 +1,4 @@
-### The Almighty To Do List
- - Convert the entire application to ReactJS
- - Add proper i18n support
- - Add built-in SFTP client
- - Add built-in RCON client
- - Add built-in SSH client
+() Converting to ReactjS > Follow progress here: https://github.com/FalixNodes-Software/FalixNodes-Desktop/tree/reactjs-revamp
 
 ![image](https://i.imgur.com/7yzQ8u1.png)
 
