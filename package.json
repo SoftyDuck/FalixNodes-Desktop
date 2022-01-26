@@ -13,6 +13,7 @@
     "electron-context-menu": "^3.1.1",
     "electron-log": "^4.4.4",
     "electron-updater": "^4.6.1",
+    "electrino": "^0.0.0",
     "glasstron": "^0.1.1"
   },
   "devDependencies": {
