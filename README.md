@@ -1,5 +1,3 @@
-() Converting to ReactjS > Follow progress here: https://github.com/FalixNodes-Software/FalixNodes-Desktop/tree/reactjs-revamp
-
 ![image](https://i.imgur.com/7yzQ8u1.png)
 
 Simple and stylish to use! Access FalixNodes features such as your client and game panel, help center, phpMyAdmin, status, and more all from a centralized place.
