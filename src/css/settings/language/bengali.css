@@ -24,6 +24,7 @@ tp2#fs-oo::before {content: "অন্যান্য অপশন";}
 tp2#fs-adv::before {content: "অগ্রিম";}
 tp2#fs-reset::before {content: "রিসেট";}
 t2p#tog-devMode::before {content: "বিকাশকারী মোড সক্ষম করুন";}
+t2p#tog-gpls::before {content: "ডিফল্টরূপে গেম প্যানেল লোড করুন";}
 t2p#tog-rc::before {content: "বৃত্তাকার কোণ";}
 t2p#tog-ts::before {content: "সাইডবার স্বচ্ছতা";}
 
