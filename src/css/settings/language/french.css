@@ -25,6 +25,7 @@ tp2#fs-oo::before {content: "Autres options";}
 tp2#fs-adv::before {content: "Avance";}
 tp2#fs-reset::before {content: "Réinitialiser";}
 t2p#tog-devMode::before {content: "Activer le mode développeur";}
+t2p#tog-gpls::before {content: "Charger le panneau de jeu par défaut";}
 t2p#tog-rc::before {content: "Coins arrondis";}
 t2p#tog-ts::before {content: "Transparence de la barre latérale";}
 

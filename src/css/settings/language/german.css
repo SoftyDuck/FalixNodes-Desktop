@@ -24,6 +24,7 @@ tp2#fs-oo::before {content: "Andere Optionen";}
 tp2#fs-adv::before {content: "Vorschuss";}
 tp2#fs-reset::before {content: "Zurückgesetzt";}
 t2p#tog-devMode::before {content: "Entwicklermodus aktivieren";}
+t2p#tog-gpls::before {content: "Laden Sie das Game Panel standardmäßig";}
 t2p#tog-rc::before {content: "Abgerundete Ecken";}
 t2p#tog-ts::before {content: "Transparenz der Seitenleiste ";}
 

@@ -25,6 +25,7 @@ tp2#fs-oo::before {content: "Diğer Seçenekler";}
 tp2#fs-adv::before {content: "Gelişmiş";}
 tp2#fs-reset::before {content: "Sıfırla";}
 t2p#tog-devMode::before {content: "Geliştirici Modunu DevreyeAal";}
+t2p#tog-gpls::before {content: "Oyun Panelini varsayılan olarak yükleyin";}
 t2p#tog-rc::before {content: "Yuvarlatılmış Köşeler";}
 t2p#tog-ts::before {content: "Yan Menü Opaklığı";}
 

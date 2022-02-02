@@ -25,6 +25,7 @@ tp2#fs-oo::before {content: "दूसरे विकल्प";}
 tp2#fs-adv::before {content: "उन्नत";}
 tp2#fs-reset::before {content: "रीसेट";}
 t2p#tog-devMode::before {content: "डेवलपर मोड सक्षम करें";}
+t2p#tog-gpls::before {content: "डिफ़ॉल्ट रूप से लोड गेम पैनल";}
 t2p#tog-rc::before {content: "गोल कोनें";}
 t2p#tog-ts::before {content: "साइडबार पारदर्शिता";}
 
