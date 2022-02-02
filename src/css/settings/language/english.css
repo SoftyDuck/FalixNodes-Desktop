@@ -24,6 +24,7 @@ tp2#fs-oo::before {content: "Other Options";}
 tp2#fs-adv::before {content: "Advance";}
 tp2#fs-reset::before {content: "Reset";}
 t2p#tog-devMode::before {content: "Enable Developer Mode";}
+t2p#tog-gpls::before {content: "Load Game Panel by default";}
 t2p#tog-rc::before {content: "Rounded Corners";}
 t2p#tog-ts::before {content: "Sidebar Transparency";}
 

@@ -12,7 +12,7 @@
 <div class="st-tab-content">
     <div id="st-id-about" class="st-tab">
         <h1>FalixNodes Desktop</h1>
-        <p>Version: 3.5.01</p>
+        <p>Version: 3.5.1</p>
         <h2>License</h2>
         <div class="scrollable-ta">
             <div insert="./html/components/license.html"></div>
@@ -108,6 +108,14 @@
                     <p><t2p id="tog-devMode"></t2p></p>
             
                     <span id="toggle-dm-cm"></span>
+                </div>
+                <div class="toggle-fs">
+                    <span title="WARNING: May use more resources on startup of application." onclick="GPLS('Off'); setGPLS('./css/settings/game-panel-load-state/off.css')" id="gpls-toggle-play_off"></span>
+                    <span title="WARNING: May use more resources on startup of application." onclick="GPLS('On'); setGPLS('./css/settings/game-panel-load-state/on.css')" id="gpls-toggle-play_on"></span>
+            
+                    <p><t2p id="tog-gpls"></t2p></p>
+            
+                    <span id="toggle-gpls-cm"></span>
                 </div>
                 <div>
                     <button id="imoo" onclick="logOutEverywhere(); document.getElementById('imoo').style.opacity = '0.4'; document.getElementById('imoo').style.pointerEvents = 'none'; "><tp2 id="loe"></tp2></button>
