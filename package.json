@@ -12,14 +12,14 @@
   "dependencies": {
     "ansi-regex": "^6.0.1",
     "electrino": "^0.0.0",
-    "electron-context-menu": "^3.1.1",
-    "electron-log": "^4.4.4",
-    "electron-updater": "^4.6.1",
+    "electron-context-menu": "^3.1.2",
+    "electron-log": "^4.4.6",
+    "electron-updater": "^4.6.5",
     "glasstron": "^0.1.1"
   },
   "devDependencies": {
-    "electron": "^16.0.6",
-    "electron-builder": "^22.11.7"
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13"
   },
   "build": {
     "publish": {
