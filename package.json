@@ -1,10 +1,10 @@
 {
   "name": "falixnodes",
   "version": "4.52.2",
-  "description": "",
+  "description": "Accessing Falix, all from one place",
   "main": "src/js/electron/index.js",
   "scripts": {
-    "start": "electron  .",
+    "start": "electron  . > /tmp/falixnodes-desktop.log",
     "build": "electron-builder build"
   },
   "author": "KorbsStudio",
@@ -18,10 +18,12 @@
     "glasstron": "^0.1.1"
   },
   "devDependencies": {
-    "electron": "^17.0.1",
+    "electron": "^17.1.0",
     "electron-builder": "^22.14.13"
   },
   "build": {
+    "appId": "com.korbsstudio.falixnodes-desktop",
+    "productName": "FalixNodes Desktop",
     "publish": {
       "provider": "generic",
       "url": "https://updates.korbsstudio.com/falix-software/"
@@ -31,10 +33,15 @@
       "asar": "false"
     },
     "mac": {
-      "target": "dmg"
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "darkModeSupport": true,
+      "category": "public.app-category.utilities"
     },
     "linux": {
-      "target": "AppImage",
+      "target": "snap",
       "maintainer": "package.korbsstudio.falixnodes",
       "category": "Network",
       "vendor": "Korbs Studio",
