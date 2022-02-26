@@ -1,4 +1,4 @@
-const {app, BrowserView, BrowserWindow, contextBridge, protocol, ipcMain, ipcRenderer, globalShortcut, Notification, session, shell, webContents} = require('electron')
+const {app, BrowserView, BrowserWindow, contextBridge, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, session, shell, webContents} = require('electron')
 const contextMenu = require('electron-context-menu')
 const { autoUpdater } = require("electron-updater")
 const glasstron = require('glasstron')
@@ -8,17 +8,18 @@ const path = require('path')
 const url = require('url')
 const os = require("os")
 
+const isMac = process.platform === 'darwin'
 autoUpdater.logger = log
 let mainWindow;
 let dialogUpdateAvailable;
 
-global.devMode = false
+global.devMode = true
 if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "vibrancy"
       global.frame = false
       global.titleBarStyle = 'hiddenInset'
-      global.update = console.log('Auto update not supported on this platform.');
+      global.update = console.log('Auto update not supported on this platform. Sorry!');
     }
   )
 }
@@ -47,7 +48,7 @@ function createWindow() {
     minHeight: 520,
     frame: global.frame,
     show: false,
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
     titleBarStyle: global.titleBarStyle,
     trafficLightPosition: {
       x: 20,
@@ -112,7 +113,162 @@ function createWindow() {
       mainWindow.webContents.insertCSS('button#up_downloading {display: none !important;}')
     }, 6000)
   })
+
+  const template = [
+    ...(isMac ? [{
+      label: app.name,
+      submenu: [
+        { role: 'about' },
+        { role: 'quit' }
+      ]
+    }] : []),
+    {
+      label: 'File',
+      submenu: [
+        {
+            label: 'About',
+            accelerator: 'Alt+.',
+            click: () => {mainWindow.webContents.executeJavaScript(`openPage('settings', this, 'var(--accent)'); openStPage('st-id-about', this, 'var(--accent)');`)}
+        },
+        isMac ? { role: 'close' } : { role: 'quit' },
+      ]
+    },
+    {
+      label: 'Edit',
+      submenu: [
+        { role: 'undo' },
+        { role: 'redo' },
+        { type: 'separator' },
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        ...(isMac ? [
+          { role: 'pasteAndMatchStyle' },
+          { role: 'delete' },
+          { role: 'selectAll' },
+          { type: 'separator' },
+          {
+            label: 'Speech',
+            submenu: [
+              { role: 'startSpeaking' },
+              { role: 'stopSpeaking' }
+            ]
+          }
+        ] : [
+          { role: 'delete' },
+          { type: 'separator' },
+          { role: 'selectAll' }
+        ])
+      ]
+    },
+    {
+      label: 'View',
+      submenu: [
+        { role: 'reload' },
+        { role: 'toggleDevTools' },
+        { type: 'separator' },
+        { role: 'resetZoom' },
+        { role: 'zoomIn' },
+        { role: 'zoomOut' },
+        // { type: 'separator' },
+        // {
+        //   label: 'Blog Posts',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('news', this, 'var(--accent)')`)}
+        // },
+        // {
+        //   label: 'Client Panel',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('client_panel', this, 'var(--accent)')`)}
+        // },
+        // {
+        //   label: 'Game Panel',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('game_panel', this, 'var(--accent)')`)}
+        // },
+        // {
+        //   label: 'phpMyAdmin',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('phpmyadmin', this, 'var(--accent)')`)}
+        // },
+        // {
+        //   label: 'Help Center',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('help_center', this, 'var(--accent)')`)}
+        // },
+        // {
+        //   label: 'Settings',
+        //   click: () => {mainWindow.webContents.executeJavaScript(`openPage('settings', this, 'var(--accent)')`)}
+        // },
+      ]
+    },
+    {
+      label: 'Window',
+      submenu: [
+        { role: 'minimize' },
+        { role: 'zoom' },
+        ...(isMac ? [
+          { type: 'separator' },
+          { role: 'front' },
+          { type: 'separator' },
+          { role: 'window' }
+        ] : [
+          { role: 'close' }
+        ])
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+          // {
+          //   label: 'Getting Started',
+          //   click: async () => {
+          //       const { shell } = require('electron')
+          //       await console.log('Demo')
+          //   }
+          // },
+          {
+            label: 'Release Note',
+            click: async () => {shell.openExternal('https://desktop.falixnodes.net/release-notes/')}
+          },
+          {
+            label: 'View License',
+            click: async () => {shell.openExternal('https://desktop.falixnodes.net/LICENSE')}
+          },
+          { type: 'separator' },
+          // {
+          //   label: 'View Keyboard Shortcuts',
+          //   click: async () => {
+          //       const { shell } = require('electron')
+          //       await console.log('Demo')
+          //   }
+          // },
+          { type: 'separator' },
+          {
+              label: 'Help Center',
+              accelerator: 'Alt+/',
+              click: () => {mainWindow.webContents.executeJavaScript(`openPage('help_center', this, 'var(--accent)')`)}
+          },
+          {
+              label: 'Report Bug',
+              click: () => {newDialogReportBug()}
+          },
+          {
+            label: 'Troubleshooting',
+            'submenu': [
+                {
+                  'label': 'Open Logs',
+                  click: async () => {shell.openExternal('file:///tmp/falixnodes-desktop.log')}
+                },
+                {
+                  'label': 'Reset Cache',
+                  click: async () => {mainWindow.webContents.session.clearStorageData()}
+                }
+              ]
+          }
+      ],
+    }
+  ]
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 }
+
+
 
 function newDialogSample() {
   const dialogSample = new BrowserWindow({
@@ -163,7 +319,7 @@ function newDialogUpdateAvailable() {
 }
 
 function newDialogUpdateFailed() {
-  const dialogUpdateAvailable = new BrowserWindow({
+  const dialogUpdateFailed = new BrowserWindow({
     width: 600,
     height: 300,
     frame: false,
@@ -176,12 +332,34 @@ function newDialogUpdateFailed() {
       preload: path.join(__dirname, "../../js/electron/preload.js"),
     }
   })
-  dialogUpdateAvailable.loadFile('./src/html/dialogs/update-failed.html')
+  dialogUpdateFailed.loadFile('./src/html/dialogs/update-failed.html')
 
-  ipcMain.on('minimize',  () => {dialogUpdateAvailable.minimize()})
-  ipcMain.on('maximize',  () => {dialogUpdateAvailable.maximize()})
-  ipcMain.on('restore',   () => {dialogUpdateAvailable.restore()})
-  ipcMain.on('close',     () => {dialogUpdateAvailable.close()})
+  ipcMain.on('minimize',  () => {dialogUpdateFailed.minimize()})
+  ipcMain.on('maximize',  () => {dialogUpdateFailed.maximize()})
+  ipcMain.on('restore',   () => {dialogUpdateFailed.restore()})
+  ipcMain.on('close',     () => {dialogUpdateFailed.close()})
+}
+
+function newDialogReportBug() {
+  const dialogUpdateReportBug = new BrowserWindow({
+    width: 414,
+    height: 414,
+    frame: false,
+    resizable: false,
+    maximizable: false,
+    autoHideMenuBar: true,
+    transparent: true,
+    webPreferences: {
+      devTools: global.devMode,
+      preload: path.join(__dirname, "../../js/electron/preload.js"),
+    }
+  })
+  dialogUpdateReportBug.loadFile('./src/html/dialogs/report-bug.html')
+
+  ipcMain.on('minimize',  () => {dialogUpdateReportBug.minimize()})
+  ipcMain.on('maximize',  () => {dialogUpdateReportBug.maximize()})
+  ipcMain.on('restore',   () => {dialogUpdateReportBug.restore()})
+  ipcMain.on('close',     () => {dialogUpdateReportBug.close()})
 }
 
 function newCP() {
