@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FalixNodes Desktop - Report Bug</title>
+
+        <link rel="stylesheet" href="../../css/dialog.css">
+        <link rel="stylesheet" href="../../css/fonts.css">
+        <link rel="stylesheet" href="../../css/windows-titlebar.css">
+        <link rel="stylesheet" href="../../fonts/fontawesome-pro-6.0.0-beta3-web/">
+        <script src="../../fonts/fontawesome-pro-6.0.0-beta3-web/js/all.js"></script>
+        <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+    </head>
+    <body>
+        <form action="https://submit-form.com/66QgNkUH">
+            <div class="content">
+                <span style="left: 50px" id="icon"><i class="fas fa-solid fa-exclamation-circle"></i></span>
+                <h1>Report Bug</h1>
+                <div style="display: grid;" id="form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_email.replyto" placeholder="Email" required="" />
+                    <label>Subject</label>
+                    <input type="subject" name="_subject" placeholder="Subject" required="" />
+                    <label>Message</label>
+                    <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    required=""
+                    ></textarea>
+                    <label for="screenshot">Screenshot</label>
+                    <input
+                    type="hidden"
+                    id="screenshot"
+                    name="screenshot"
+                    role="uploadcare-uploader"
+                    data-public-key="820003f8cb46bb29c7cb"
+                    />
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit" onclick="setTimeout(() => {window.close()}, 1000);">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
+<style>
+.uploadcare--dialog {
+    position: absolute;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 72px;
+    border-radius: 7px;
+    background: #263342;
+}
+.uploadcare--panel {
+    background: transparent;
+}
+.uploadcare--panel__powered-by {
+    border-radius: 10px;
+    margin: 10px;
+    background: #263342;
+}
+.content {
+    pointer-events: inherit !important;
+}
+</style>
