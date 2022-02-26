@@ -74,7 +74,7 @@ ___
 #### Requirements
 To run FalixNodes Desktop in development mode and later build it, you must have the following installed on your workstation:
  - NodeJS 14 or 16 (17 will cause a build issue)
- - Python 3.10 and up
+ - Python 3.9 and up
  - g++ (Linux)
  - Visual Studio (Windows)
    - Development with C++
