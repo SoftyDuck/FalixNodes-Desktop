@@ -50,7 +50,7 @@ span#icon {
     top: 55px;
     left: 40px;
 }
-span#icon i {
+span#icon svg {
     font-size: 30px;
 }
 
