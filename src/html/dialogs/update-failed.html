@@ -11,17 +11,33 @@
     <body>
         <!-- <audio src="../../sounds/notification/update-available.mp3" autoplay></audio> -->
         <div class="content">
-            <span style="left: 50px" id="icon"><i class="fas fa-solid fa-exclamation-circle"></i></span>
-            <h1>Update Failed</h1>
-            <p>There are several reasons why the update may of failed.</p>
-            <ui>
-                <li>The update server is down, check <u>https://updates.korbsstudio.com/</u> to see if it's up.</li>
-                <li>The update server timed out.</li>
-                <li>You're not connected the internet connection.</li>
-            </ui>
+            <div class="header">
+                <span id="icon"><i class="fa-light fa-cloud-slash"></i></span>
+                <h1>Update Failed</h1>
+            </div>
+            <div class="message">
+                <p>FalixNodes Desktop was unable to update, there a few reasons why this may of happened</p>
+                <ui>
+                    <li><i class="fa-light fa-server"></i> The update has went down, temporary.</li>
+                    <li><i class="fa-light fa-wifi-exclamation"></i> The update timed out.</li>
+                    <li><i class="fa-light fa-wifi-slash"></i> You're not connected to the internet.</li>
+                </ui>
+            </div>
+            <div class="options">
+                <button onclick="window.api.send('open-release-notes')" id="optional-button">
+                    <i class="fa-light fa-server"></i>
+                    <p>Check Update Server</p>
+                </button>
+                <button onclick="window.api.send('open-release-notes')" id="optional-button">
+                    <i class="fa-light fa-router"></i>
+                    <p>Check Internet Connection</p>
+                </button>
+            </div>
         </div>
         <div class="actions">
-            <button onclick="window.close()">Close</button>
+            <button onclick="window.close()" style="background: transparent;">Dismiss</button>
+            <button onclick="window.api.send('update')">Check Again</button>
         </div>
     </body>
 </html>
+<style>body::after {border: 4px #fe6263 solid}</style>

@@ -19,7 +19,7 @@ if (process.platform == 'darwin') {
       global.blur = "vibrancy"
       global.frame = false
       global.titleBarStyle = 'hiddenInset'
-      global.update = console.log('Auto update not supported on this platform. Sorry!');
+      global.update = console.log('Auto update not supported on this platform.');
     }
   )
 }
@@ -48,7 +48,7 @@ function createWindow() {
     minHeight: 520,
     frame: global.frame,
     show: false,
-    autoHideMenuBar: false,
+    autoHideMenuBar: true,
     titleBarStyle: global.titleBarStyle,
     trafficLightPosition: {
       x: 20,
@@ -296,10 +296,10 @@ function newDialogSample() {
 
 function newDialogUpdateAvailable() {
   const dialogUpdateAvailable = new BrowserWindow({
-    width: 600,
-    height: 250,
+    width: 575,
+    height: 305,
     frame: false,
-    resizable: false,
+    resizable: true,
     maximizable: false,
     autoHideMenuBar: true,
     transparent: true,
@@ -315,15 +315,16 @@ function newDialogUpdateAvailable() {
   ipcMain.on('restore',   () => {dialogUpdateAvailable.restore()})
   ipcMain.on('close',     () => {dialogUpdateAvailable.close()})
 
+  ipcMain.on('open-release-notes',    () => {shell.openExternal('https://desktop.falixnodes.net/release-notes/')})
   ipcMain.on('update',    () => {autoUpdater.quitAndInstall()})
 }
 
 function newDialogUpdateFailed() {
   const dialogUpdateFailed = new BrowserWindow({
-    width: 600,
-    height: 300,
+    width: 575,
+    height: 400,
     frame: false,
-    resizable: false,
+    resizable: true,
     maximizable: false,
     autoHideMenuBar: true,
     transparent: true,
@@ -343,7 +344,7 @@ function newDialogUpdateFailed() {
 function newDialogReportBug() {
   const dialogUpdateReportBug = new BrowserWindow({
     width: 414,
-    height: 414,
+    height: 475,
     frame: false,
     resizable: false,
     maximizable: false,

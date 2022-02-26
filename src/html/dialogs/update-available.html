@@ -11,12 +11,22 @@
     <body>
         <audio src="../../sounds/notification/update-available.mp3" autoplay></audio>
         <div class="content">
-            <span style="left: 50px" id="icon"><i class="fas fa-solid fa-file-download"></i></span>
-            <h1>A new update is available</h1>
-            <p>You can update now or later, also make sure to check out the release notes.</p>
+            <div class="header">
+                <span id="icon"><i class="fa-light fa-cloud-check"></i></span>
+                <h1>Update Available</h1>
+            </div>
+            <div class="message">
+                <p>An update for FalixNodes Desktop is ready! You can either update now or continue using the app.</p>
+            </div>
+            <div class="options">
+                <button onclick="window.api.send('open-release-notes')" id="optional-button">
+                    <i class="fa-light fa-bookmark"></i>
+                    <p>See What's New!</p>
+                </button>
+            </div>
         </div>
         <div class="actions">
-            <button onclick="window.close()" style="background: #2970cc24;">Update Later</button>
+            <button onclick="window.close()" style="background: transparent;">Later</button>
             <button onclick="window.api.send('update')">Update Now</button>
         </div>
     </body>
