@@ -42,7 +42,10 @@
       "category": "public.app-category.utilities"
     },
     "linux": {
-      "target": "snap",
+      "target": [
+        "snap",
+        "AppImage"
+      ],
       "maintainer": "package.korbsstudio.falixnodes",
       "category": "Network",
       "vendor": "Korbs Studio",
