@@ -10,7 +10,7 @@ ___
 ## FAQ
 Q: Why and what's the point of this software?
 
-A: Originally, a member of the community developed the software to avoid having to use their web browser to access FalixNodes. FalixNodes Desktop was designed to be a simple and quick method to access FalixNodes' services, and it still is. 
+A: Originally, a member of the community developed the software to avoid having to use their web browser to access FalixNodes. Eventfully this 'community' software became official, and that member being Korbs. FalixNodes Desktop was designed to be a simple and quick method to access FalixNodes' services, and it still is. The software has improved greatly over the years and get better in each update.
 
 <br/>
 
@@ -22,7 +22,9 @@ A: FalixNodes Desktop is developed and owned by Korbs Studio. To be clear, Korbs
 
 Q: Can I use FalixNodes Desktop?
 
-A: It supports Windows 7/8/10/11, macOS Yosemite and up, and Linux. You may be able to run FalixNodes Desktop on a chromebook as well.
+A: It supports Windows 8/10/11, macOS Yosemite and up, and Linux. You may be able to run FalixNodes Desktop on a chromebook as well by enabling Linux.
+
+The software can run on Windows 7, but will not be supported if something goes wrong.
 
 As for mobile, you can try out our mobile app, which serves the same purpose as our desktop software.
 
@@ -30,7 +32,7 @@ As for mobile, you can try out our mobile app, which serves the same purpose as 
 
 Q: Is this official software by FalixNodes?
 
-A: Yes, FalixNodes Desktop has been approved official software for FalixNodes.
+A: Yes, FalixNodes Desktop has been approved official software for FalixNodes back in mid-2020.
 
 <br/>
 
@@ -38,7 +40,7 @@ Q: How do I update it?
 
 A: This is done automatically on Windows and Linux. We recommend that you wait at least 1 - 2 minutes for the update to download in the background, or depending on your internet speed.
 
-On macOS, each update must be installed manually by the user. No, you are not required to do this on a regular basis; nevertheless, upgrading is recommended if you want the most up-to-date version in general. Given the fact that updates need the signing of the DMG file, we are already working on certifying the DMG file using our Apple Certificate. 
+On macOS, each update must be installed manually by the user. No, you are not required to do this on a regular basis; nevertheless, upgrading is recommended if you want the most up-to-date version in general. Given the fact that updates need the signing of the DMG file, we are already working on certifying the DMG file using our Apple Certificate. We're getting close ;)
 
 <br/>
 
@@ -53,7 +55,7 @@ If the user is not connected to the internet, the software's icons will not load
 
 Q: Why Electron and what is it?
 
-A.1 (Why): I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. The process of doing cross-platform support was also shortened and easier for me to do.
+A.1 (Why): I, Korbs, am mostly comfortable and knowledgeable with web coding languages such as HTML, CSS, and JavaScript. Using Electron was the right approach for me, and I've acquired a huge amount of experience with it over the last three years. The process of doing cross-platform support was also shortened and easier for me to do. I've also gotten very attach to Electron and am also most comfortable using technology built specifically for the framework like Electron Builder, Glasstron, and more.
 
 A.2 (What): Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologie. It combines the Chromium rendering engine and the Node.js runtime. - [Wikipedia](https://en.wikipedia.org/wiki/Electron_(software_framework))
 
@@ -68,7 +70,7 @@ ___
  - FalixNodes Desktop starts up with no errors on all platforms
    - Windows
    - macOS
-   - Linux (Bad Atom error allowed if on GNOME(X11) Desktop)
+   - Linux (Bad Atom error allowed)
 
 ### Preparing to Develop FalixNodes Desktop
 #### Requirements
@@ -79,7 +81,8 @@ To run FalixNodes Desktop in development mode and later build it, you must have 
  - Visual Studio (Windows)
    - Development with C++
  - Visual C++ Redistributable (Windows)
- - At least 8GB of storage
+ - At least 2GB of storage (macOS/Linux/Other)
+ - At least 8GB of storage (Windows)
 
 It's also a good idea to have a capable code editor and be familiar with the fundamentals of the ElectronJS framework.
 
