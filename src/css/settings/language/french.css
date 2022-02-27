@@ -7,6 +7,14 @@ t2p#page-support::before {content: "Support";}
 t2p#page-help_center::before {content: "Centre d'aide";}
 t2p#page-settings::before {content: "Paramètres";}
 
+t2p#st-uptime::before {content: "Temps de disponibilité";}
+t2p#st-account::before {content: "Compte";}
+t2p#st-about::before {content: "À propos";}
+t2p#st-language::before {content: "Langue";}
+t2p#st-appearance::before {content: "Apparence";}
+t2p#st-advanced::before {content: "Avancé";}
+
+
 t2p#update_downloading::before {content: "Update downloading";}
 t2p#update_failed::before {content: "Mise à jour disponible";}
 t2p#notify-internet-lost::before {content: "Mise à jour a échoué";}

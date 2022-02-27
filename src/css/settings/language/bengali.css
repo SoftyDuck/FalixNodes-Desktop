@@ -6,6 +6,13 @@ t2p#page-support::before {content: "সমর্থন";}
 t2p#page-help_center::before {content: "সাহায্য কেন্দ্র";}
 t2p#page-settings::before {content: "সেটিংস";}
 
+t2p#st-uptime::before {content: "আপটাইম";}
+t2p#st-account::before {content: "হিসাব";}
+t2p#st-about::before {content: "সম্বন্ধে";}
+t2p#st-language::before {content: "ভাষা";}
+t2p#st-appearance::before {content: "চেহারা";}
+t2p#st-advanced::before {content: "অ্যাডভান্সড";}
+
 t2p#update_downloading::before {content: "ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ";}
 t2p#update_failed::before {content: "ਅਪਡੇਟ ਅਸਫਲ";}
 t2p#netork_connection-lost::before {content: "সংযোগ বিচ্ছিন্ন";}

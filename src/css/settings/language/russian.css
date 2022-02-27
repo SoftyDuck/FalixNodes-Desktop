@@ -6,6 +6,13 @@ t2p#page-support::before {content: "Служба поддержки";}
 t2p#page-help_center::before {content: "Центр помощи";}
 t2p#page-settings::before {content: "Настройки ";}
 
+t2p#st-uptime::before {content: "Время безотказной работы";}
+t2p#st-account::before {content: "Аккаунт";}
+t2p#st-about::before {content: "Около";}
+t2p#st-language::before {content: "Язык";}
+t2p#st-appearance::before {content: "Появление";}
+t2p#st-advanced::before {content: "Передовой";}
+
 t2p#update_downloading::before {content: "Обновление Скачивание";}
 t2p#update_failed::before {content: "Не удалось обновить";}
 t2p#netork_connection-lost::before {content: "Соединение потеряно";}
