@@ -1,4 +1,5 @@
 const {app, BrowserView, BrowserWindow, contextBridge, protocol, ipcMain, ipcRenderer, globalShortcut, Menu, Notification, session, shell, webContents} = require('electron')
+const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
 const contextMenu = require('electron-context-menu')
 const { autoUpdater } = require("electron-updater")
 const glasstron = require('glasstron')
@@ -7,6 +8,8 @@ const log = require('electron-log')
 const path = require('path')
 const url = require('url')
 const os = require("os")
+
+setupTitlebar();
 
 const isMac = process.platform === 'darwin'
 autoUpdater.logger = log

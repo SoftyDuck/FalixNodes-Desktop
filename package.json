@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "ansi-regex": "^6.0.1",
+    "custom-electron-titlebar": "^4.1.0",
     "electrino": "^0.0.0",
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",

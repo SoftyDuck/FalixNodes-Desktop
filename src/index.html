@@ -8,20 +8,25 @@
 
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/fonts.css">
-        <link rel="stylesheet" href="./css/windows-titlebar.css">
+        <link rel="stylesheet" href="./css/platforms/windows/titlebar.css">
+        <link rel="stylesheet" href="./css/platforms/windows/menubar.css">
 
         <link id="language" rel="stylesheet" href="./css/settings/language/english.css">
         <link id="accent-setting" rel="stylesheet" type="text/css" href="./css/settings/accent-color/default.css">
         <link id="developer-mode" rel="stylesheet" type="text/css" href="./css/settings/developer-mode/off.css">
         <link id="game-panel-load-state" rel="stylesheet" type="text/css" href="./css/settings/game-panel-load-state/off.css">
+        <link id="auto-login-discord-setting" rel="stylesheet" type="text/css" href="./css/settings/auto-login/discord/off.css">
+        <link id="auto-login-google-setting" rel="stylesheet" type="text/css" href="./css/settings/auto-login/google/off.css">
     </head>
     <header data-for-os="windows" id="titlebar" class="titlebar">
         <div>
             <div id="window-controls">
-            <div onclick="window.api.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./images/icons/titlebar/min-w-10.png 1x, ./images/icons/titlebar/min-w-12.png 1.25x, ./images/icons/titlebar/min-w-15.png 1.5x, ./images/icons/titlebar/min-w-15.png 1.75x, ./images/icons/titlebar/min-w-20.png 2x, ./images/icons/titlebar/min-w-20.png 2.25x, ./images/icons/titlebar/min-w-24.png 2.5x, ./images/icons/titlebar/min-w-30.png 3x, ./images/icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
-            <div onclick="window.api.send('maximize')" class="button" id="max-button"><img class="icon" srcset="./images/icons/titlebar/max-w-10.png 1x, ./images/icons/titlebar/max-w-12.png 1.25x, ./images/icons/titlebar/max-w-15.png 1.5x, ./images/icons/titlebar/max-w-15.png 1.75x, ./images/icons/titlebar/max-w-20.png 2x, ./images/icons/titlebar/max-w-20.png 2.25x, ./images/icons/titlebar/max-w-24.png 2.5x, ./images/icons/titlebar/max-w-30.png 3x, ./images/icons/titlebar/max-w-30.png 3.5x" draggable="false" /></div>
-            <div onclick="window.api.send('restore')" class="button" id="restore-button"><img class="icon" srcset="./images/icons/titlebar/restore-w-10.png 1x, ./images/icons/titlebar/restore-w-12.png 1.25x, ./images/icons/titlebar/restore-w-15.png 1.5x, ./images/icons/titlebar/restore-w-15.png 1.75x, ./images/icons/titlebar/restore-w-20.png 2x, ./images/icons/titlebar/restore-w-20.png 2.25x, ./images/icons/titlebar/restore-w-24.png 2.5x, ./images/icons/titlebar/restore-w-30.png 3x, ./images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" /></div>
-            <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./images/icons/titlebar/close-w-10.png 1x, ./images/icons/titlebar/close-w-12.png 1.25x, ./images/icons/titlebar/close-w-15.png 1.5x, ./images/icons/titlebar/close-w-15.png 1.75x, ./images/icons/titlebar/close-w-20.png 2x, ./images/icons/titlebar/close-w-20.png 2.25x, ./images/icons/titlebar/close-w-24.png 2.5x, ./images/icons/titlebar/close-w-30.png 3x, ./images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
+                <div onclick="document.getElementsByClassName('cet-titlebar')[0].style.display = 'inherit';" class="button" id="alt-button"><i class="fa-light fa-bars"></i></div>
+                <div onclick="window.api.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./images/icons/titlebar/min-w-10.png 1x, ./images/icons/titlebar/min-w-12.png 1.25x, ./images/icons/titlebar/min-w-15.png 1.5x, ./images/icons/titlebar/min-w-15.png 1.75x, ./images/icons/titlebar/min-w-20.png 2x, ./images/icons/titlebar/min-w-20.png 2.25x, ./images/icons/titlebar/min-w-24.png 2.5x, ./images/icons/titlebar/min-w-30.png 3x, ./images/icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
+                <div onclick="window.api.send('maximize')" class="button" id="max-button"><img class="icon" srcset="./images/icons/titlebar/max-w-10.png 1x, ./images/icons/titlebar/max-w-12.png 1.25x, ./images/icons/titlebar/max-w-15.png 1.5x, ./images/icons/titlebar/max-w-15.png 1.75x, ./images/icons/titlebar/max-w-20.png 2x, ./images/icons/titlebar/max-w-20.png 2.25x, ./images/icons/titlebar/max-w-24.png 2.5x, ./images/icons/titlebar/max-w-30.png 3x, ./images/icons/titlebar/max-w-30.png 3.5x" draggable="false" /></div>
+                <div onclick="window.api.send('restore')" class="button" id="restore-button"><img class="icon" srcset="./images/icons/titlebar/restore-w-10.png 1x, ./images/icons/titlebar/restore-w-12.png 1.25x, ./images/icons/titlebar/restore-w-15.png 1.5x, ./images/icons/titlebar/restore-w-15.png 1.75x, ./images/icons/titlebar/restore-w-20.png 2x, ./images/icons/titlebar/restore-w-20.png 2.25x, ./images/icons/titlebar/restore-w-24.png 2.5x, ./images/icons/titlebar/restore-w-30.png 3x, ./images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" /></div>
+                <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./images/icons/titlebar/close-w-10.png 1x, ./images/icons/titlebar/close-w-12.png 1.25x, ./images/icons/titlebar/close-w-15.png 1.5x, ./images/icons/titlebar/close-w-15.png 1.75x, ./images/icons/titlebar/close-w-20.png 2x, ./images/icons/titlebar/close-w-20.png 2.25x, ./images/icons/titlebar/close-w-24.png 2.5x, ./images/icons/titlebar/close-w-30.png 3x, ./images/icons/titlebar/close-w-30.png 3.5x" draggable="false" />
+            </div>
         </div>
     </header>
     <body id="tools" onload="setTimeout (() => {unloadGamePanel();}, 280)">
@@ -88,7 +93,11 @@
         <script src="./js/settings/game-panel-load-state-toggle.js"></script>
         <script src="./js/settings/blur-window.js"></script>
         <script src="./js/settings/blur-type.js"></script>
+        <script src="./js/settings/al-discord.js"></script>
+        <script src="./js/settings/al-google.js"></script>
+        <script src="./js/settings/al-discord-toggle.js"></script>
+        <script src="./js/settings/al-google-toggle.js"></script>
 
-        <script>insert();</script>
+        <script>insert(); setTimeout(() => {document.getElementsByClassName('cet-titlebar')[0].style.display = 'none'}, 0900);</script>
     </body>
 </html>

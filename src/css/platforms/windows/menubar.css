@@ -1,0 +1,32 @@
+.cet-controls-container, .cet-window-title.cet-center, .cet-window-icon {
+    display: none !important;
+}
+.cet-titlebar {
+    background: rgb(23 35 49 / 90%) !important;
+    border-radius: 3px;
+    margin: 1px 3px;
+}
+.cet-titlebar {
+    left: inherit !important;
+    right: 184px !important;
+    justify-content: right !important;
+}
+.cet-titlebar {
+    width: fit-content !important;
+}
+ul.cet-menubar-menu-container {
+    left: 0px !important;
+    background: var(--bg-accent-one) !important;
+    border-radius: 0px !important;
+    backdrop-filter: inherit !important;
+    top: 30px !important;
+}
+ul.cet-submenu.cet-menubar-menu-container {
+    left: -150px !important;
+    top: 0px !important;
+}
+.cet-menubar .cet-menubar-menu-container .cet-action-menu-item:hover {
+    background-color: hsl(212deg 34% 19% / 74%) !important;
+    border-radius: 2px !important;
+}
+.cet-menubar {display: none;}
