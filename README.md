@@ -42,12 +42,14 @@ ___
  - Add built-in SFTP client (Already tested back in January, confirmed working)
  - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
  - (?) Pop-out console from Game Panel
+ - Remove most icons from Font Awesome folder (At least brands)
  - Security
    - Add PIN/Fingerprint Reader option
    - If user uses PIN, then set automatic lock(25 minutes default)
    - (?) VPN (For certain countries only)
    - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
    - Improved security warnings
+   - Prevent tamper of FalixNodes Desktop
  - Utility Settings Tab, will include:
    - Internet Speed Test
    - Internet Ping Test
@@ -63,6 +65,10 @@ ___
    - Loading Performance
    - ~~Auto-login for email(Probably no chance of this not happening since we use Captcha)~~
    - (?) Optimize internet usage
+ - Installer
+   - Warn if user is using Windows 7
+   - Custom UI (Windows)
+   - Command-line install script (Linux)
 
 Anything with (?) means it may not happen, but is kept in mind.
 
