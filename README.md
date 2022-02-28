@@ -1,78 +1,11 @@
+[View Summer Update](https://github.com/FalixNodes-Software/FalixNodes-Desktop/tree/summer-update)
+
 ![image](https://i.imgur.com/7yzQ8u1.png)
 
 Simple and stylish to use! Access FalixNodes features such as your client and game panel, help center, phpMyAdmin, status, and more all from a centralized place.
 
 [Download Now](https://desktop.falixnodes.net/)  
 [View on Electron Apps](https://www.electronjs.org/apps/falix-software)
-
-___
-
-### To Do List
- - More customization
-   - (?) Toggle native titlebar for Windows and macOS
-   - Sidebar wallpaper (Disables blur)
-   - Run on startup (Windows)
-   - Return compact sidebar (Control alternative style needed)
-   - Custom color
-   - Toggle tabs
-   - On start tab
-   - Splash [Disable, Simple, Default, Show in App]
- - Create custom sounds for the software
-   - Boot (can be toggled)
-   - Update downloading (Must be very settle)
-   - Update available
-   - Update failed
-   - Notification
-   - Server started (must stay in console)
-   - Server stopped (must stay in console)
- - Support tab with following options: 
-   - Contact Form
-   - Report Bug Form
-   - Discord link (Use protocol)
-   - Live Chat
- - New Welcome Back tab
- - Re-design blog posts
- - Convert Settings into a pop-up modal
- - Convert all dialogs into pop-ups modal
- - Add transitions between tabs
- - Add start animation when main window opens
- - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
- - Add warning if user tries to open FalixNodes Desktop twice, give user option to 'Run Anyway...'
- - Remove dialog for 'Update Available'
- - Add built-in SFTP client (Already tested back in January, confirmed working)
- - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
- - (?) Pop-out console from Game Panel
- - Remove most icons from Font Awesome folder (At least brands)
- - Security
-   - Add PIN/Fingerprint Reader option
-   - If user uses PIN, then set automatic lock(25 minutes default)
-   - (?) VPN (For certain countries only)
-   - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
-   - Improved security warnings
-   - Prevent tamper of FalixNodes Desktop
- - Utility Settings Tab, will include:
-   - Internet Speed Test
-   - Internet Ping Test
-   - Update Server Check
-   - IsItUp Test(See if other services a user may rely on like Discord/Google login, etc)
- - Enhancements
-   - Settings toggle design
-   - Battery saver
-   - Notifications area
-     - Actions
-     - Rich content
-     - Dynamic
-   - Loading Performance
-   - ~~Auto-login for email(Probably no chance of this not happening since we use Captcha)~~
-   - (?) Optimize internet usage
- - Installer
-   - Warn if user is using Windows 7
-   - Custom UI (Windows)
-   - Command-line install script (Linux)
-
-Anything with (?) means it may not happen, but is kept in mind.
-
-___
 
 ## FAQ
 Q: Why and what's the point of this software?
