@@ -4,24 +4,21 @@
 ### Summer Update To Do List
  - More customization
    - (?) Toggle native titlebar for Windows and macOS
-   - Sidebar wallpaper (Disables blur)
+   - Sidebar wallpaper (Disables blur) 🔵
    - Run on startup (Windows)
    - Return compact sidebar (Control alternative style needed)
    - Custom color
-   - Toggle tabs
+   - Toggle tabs 🔵
    - On start tab
    - Splash [Disable, Simple, Default, Show in App]
  - Create custom sounds for the software
-   - Boot (can be toggled)
-   - Update downloading (Must be very settle)
-   - Update available
-   - Update failed
-   - Notification
-   - Server started (must stay in console)
-   - Server stopped (must stay in console)
+   - Update available 🔵
+   - Update failed 🔵
+   - Server started (must stay in console) 🔵
+   - Server stopped (must stay in console) 🔵
  - Support tab with following options: 
-   - Contact Form
-   - Report Bug Form
+   - Contact Form 🔵
+   - Report Bug Form 🔵
    - Discord link (Use protocol)
    - Live Chat
  - New Welcome Back tab
@@ -33,7 +30,7 @@
  - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
  - Add warning if user tries to open FalixNodes Desktop twice, give user option to 'Run Anyway...'
  - Remove dialog for 'Update Available'
- - Add built-in SFTP client (Already tested back in January, confirmed working)
+ - Add built-in SFTP client (Already tested back in January, confirmed working) 🔵
  - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
  - (?) Pop-out console from Game Panel
  - Remove most icons from Font Awesome folder (At least brands)
@@ -61,8 +58,9 @@
    - (?) Optimize internet usage
  - Make release automation build .zip file for Windows
  - Installer
-   - Warn if user is using Windows 7
+   - Warn if user is using Windows 7 🔵
    - Custom UI (Windows)
    - Command-line install script (Linux)
 
 Anything with (?) means it may not happen, but is kept in mind.
+🔵 Means that it has been tested already else where or it's ready to be implemented into the app.
