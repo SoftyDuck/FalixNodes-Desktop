@@ -39,7 +39,7 @@
  - Remove most icons from Font Awesome folder (At least brands)
  - Security
    - Add PIN/Fingerprint Reader option
-   - If user uses PIN, then set automatic lock(25 minutes default)
+   - If user uses PIN, then set automatic lock(25 minutes default) (or use 2FA)
    - (?) VPN (For certain countries only)
    - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
    - Improved security warnings
