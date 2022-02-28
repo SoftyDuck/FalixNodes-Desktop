@@ -1,3 +1,6 @@
+# FalixNodes Desktop v4
+![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
+
 ### Summer Update To Do List
  - More customization
    - (?) Toggle native titlebar for Windows and macOS
@@ -56,6 +59,7 @@
    - Loading Performance
    - ~~Auto-login for email(Probably no chance of this not happening since we use Captcha)~~
    - (?) Optimize internet usage
+ - Make release automation build .zip file for Windows
  - Installer
    - Warn if user is using Windows 7
    - Custom UI (Windows)
