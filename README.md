@@ -12,21 +12,35 @@ ___
    - (?) Toggle native titlebar for Windows and macOS
    - Sidebar wallpaper (Disables blur)
    - Run on startup (Windows)
-   - Return compact sidebar
+   - Return compact sidebar (Control alternative style needed)
    - Custom color
    - Toggle tabs
-   - Start tab
-   - Splash [Disable, Simple, Default]
+   - On start tab
+   - Splash [Disable, Simple, Default, Show in App]
+ - Create custom sounds for the software
+   - Boot (can be toggled)
+   - Update downloading (Must be very settle)
+   - Update available
+   - Update failed
+   - Notification
+   - Server started (must stay in console)
+   - Server stopped (must stay in console)
+ - Support tab with following options: 
+   - Contact Form
+   - Report Bug Form
+   - Discord link (Use protocol)
+   - Live Chat
  - New Welcome Back tab
  - Re-design blog posts
- - Convert Settings into a pop-up
- - Convert all dialogs into pop-ups
+ - Convert Settings into a pop-up modal
+ - Convert all dialogs into pop-ups modal
  - Add transitions between tabs
  - Add start animation when main window opens
  - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
  - Add warning if user tries to open FalixNodes Desktop twice, give user option to 'Run Anyway...'
  - Remove dialog for 'Update Available'
  - Add built-in SFTP client (Already tested back in January, confirmed working)
+ - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
  - (?) Pop-out console from Game Panel
  - Security
    - Add PIN/Fingerprint Reader option
@@ -34,6 +48,11 @@ ___
    - (?) VPN (For certain countries only)
    - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
    - Improved security warnings
+ - Utility Settings Tab, will include:
+   - Internet Speed Test
+   - Internet Ping Test
+   - Update Server Check
+   - IsItUp Test(See if other services a user may rely on like Discord/Google login, etc)
  - Enhancements
    - Settings toggle design
    - Battery saver
