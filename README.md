@@ -35,12 +35,14 @@ ___
    - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
    - Improved security warnings
  - Enhancements
+   - Settings toggle design
    - Battery saver
    - Notifications area
      - Actions
      - Rich content
      - Dynamic
    - Loading Performance
+   - ~~Auto-login for email(Probably no chance of this not happening since we use Captcha)~~
    - (?) Optimize internet usage
 
 Anything with (?) means it may not happen, but is kept in mind.
