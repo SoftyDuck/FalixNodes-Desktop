@@ -7,6 +7,46 @@ Simple and stylish to use! Access FalixNodes features such as your client and ga
 
 ___
 
+### To Do List
+ - More customization
+   - (?) Toggle native titlebar for Windows and macOS
+   - Sidebar wallpaper (Disables blur)
+   - Run on startup (Windows)
+   - Return compact sidebar
+   - Custom color
+   - Toggle tabs
+   - Start tab
+   - Splash [Disable, Simple, Default]
+ - New Welcome Back tab
+ - Re-design blog posts
+ - Convert Settings into a pop-up
+ - Convert all dialogs into pop-ups
+ - Add transitions between tabs
+ - Add start animation when main window opens
+ - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
+ - Add warning if user tries to open FalixNodes Desktop twice, give user option to 'Run Anyway...'
+ - Remove dialog for 'Update Available'
+ - Add built-in SFTP client (Already tested back in January, confirmed working)
+ - (?) Pop-out console from Game Panel
+ - Security
+   - Add PIN/Fingerprint Reader option
+   - If user uses PIN, then set automatic lock(25 minutes default)
+   - (?) VPN (For certain countries only)
+   - (?) Full-isolation mode (Revoke permission for FalixNodes Desktop to access anything including internet and file acccess) (Experimental ONLY)
+   - Improved security warnings
+ - Enhancements
+   - Battery saver
+   - Notifications area
+     - Actions
+     - Rich content
+     - Dynamic
+   - Loading Performance
+   - (?) Optimize internet usage
+
+Anything with (?) means it may not happen, but is kept in mind.
+
+___
+
 ## FAQ
 Q: Why and what's the point of this software?
 
