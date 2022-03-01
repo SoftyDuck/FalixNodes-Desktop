@@ -61,7 +61,6 @@
    - Warn if user is using Windows 7 🔵
    - Custom UI (Windows)
    - Command-line install script (Linux)
-   - Switch to Electron Forge
  - Revamp Entire Auto Update System
 
 Anything with (?) means it may not happen, but is kept in mind.
