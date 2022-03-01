@@ -34,3 +34,4 @@ webview {
     width: 100% !important;
     height: calc(100% - 42px) !important;
 }
+.cet-titlebar {display: none !important;}

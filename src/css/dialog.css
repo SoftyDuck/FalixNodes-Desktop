@@ -3,6 +3,7 @@
     --bg-accent-two: #162230;
 }
 
+.cet-titlebar {display: none !important;}
 body {
     background: transparent;
     color: white;
