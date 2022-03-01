@@ -4,7 +4,7 @@
   "description": "Accessing Falix, all from one place",
   "main": "src/js/electron/index.js",
   "scripts": {
-    "start": "electron  . > /tmp/falixnodes-desktop.log",
+    "start": "electron  .",
     "build": "electron-builder build"
   },
   "author": "KorbsStudio",
