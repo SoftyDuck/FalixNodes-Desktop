@@ -59,7 +59,7 @@
  - Make release automation build .zip file for Windows
  - Installer
    - Warn if user is using Windows 7 🔵
-   - Custom UI (Windows)
+   - Update banner
    - Command-line install script (Linux)
  - Revamp Entire Auto Update System
 
