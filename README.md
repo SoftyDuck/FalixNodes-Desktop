@@ -61,7 +61,6 @@
    - Warn if user is using Windows 7 🔵
    - Update banner
    - Command-line install script (Linux)
- - Revamp Entire Auto Update System
 
 Anything with (?) means it may not happen, but is kept in mind.
 🔵 Means that it has been tested already else where or it's ready to be implemented into the app.
