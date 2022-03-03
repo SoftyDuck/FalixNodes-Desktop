@@ -5,7 +5,7 @@
  - ⌘ Command Menu 🔵
    - Keyboard Navigation
    - Show following content:
-     - Tab Switcher
+     - Tab Switcher 🔵
      - Help Center Articles
      - Quick Settings Toggle
  - More customization

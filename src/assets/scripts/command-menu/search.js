@@ -10,13 +10,15 @@ const hitTemplate = function(hit) {
   const icon = hit._highlightResult.symbol.value;
   const command = hit._highlightResult.command.value;
   return `
-    <div onclick="${command}" class="post-item">
+  <button onclick="${command}">
+    <div class="post-item">
       <i class="fa-light fa-${icon}"></i>
       <div>
         <h2>${name}</h2>
         <p>${description}</p>
       </div>
     </div>
+  </button>
   `;
 }
 
