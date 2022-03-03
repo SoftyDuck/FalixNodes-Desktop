@@ -2,6 +2,12 @@
 ![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
 
 ### Summer Update To Do List
+ - ⌘ Command Menu 🔵
+   - Keyboard Navigation
+   - Show following content:
+     - Tab Switcher
+     - Help Center Articles
+     - Quick Settings Toggle
  - More customization
    - (?) Toggle native titlebar for Windows and macOS
    - Sidebar wallpaper (Disables blur) 🔵
@@ -29,7 +35,6 @@
  - Add start animation when main window opens
  - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
  - Add warning if user tries to open FalixNodes Desktop twice, give user option to 'Run Anyway...'
- - Remove dialog for 'Update Available'
  - Add built-in SFTP client (Already tested back in January, confirmed working) 🔵
  - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
  - (?) Pop-out console from Game Panel
