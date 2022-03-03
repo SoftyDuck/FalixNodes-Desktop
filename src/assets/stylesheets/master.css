@@ -141,3 +141,66 @@ cdemo {
     transform: translate(-50%, -50%);
     font-size: 32px;
 }
+
+/* Notifications - Large */
+notification#large {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: calc(100% - 90px);
+    width: calc(100% - 600px);
+    background: rgb(34 34 34 / 95%);
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+.notification-header-update {
+    width: calc(100% - 40px);
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50px auto auto;
+    grid-gap: 30px;
+    margin: 10px 20px 20px 20px;
+    font-size: 12px;
+    line-height: 10px;
+    align-items: center;
+}
+.notification-header-update button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.notification-header-update img {
+    width: 60px;
+}
+.notification-header-update h2 {
+    font-weight: normal;
+}
+.notification-content {
+    position: absolute;
+    margin: 20px;
+    top: 80px;
+    font-size: smaller;
+    overflow: scroll;
+    height: calc(100% - 85px);
+}
+.notification-content a {
+    color: var(--accent);
+}
+.notification-content img {
+    width: 100%;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+notification#dismiss {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgb(12 12 12 / 75%);
+}

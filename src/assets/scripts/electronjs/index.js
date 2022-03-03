@@ -9,6 +9,8 @@ function Launch() {
     const primaryWindow = new glasstron.BrowserWindow({
         width: 1200,
         height: 800,
+        minHeight: 590,
+        minWidth: 720,
         autoHideMenuBar: true,
         frame: true,
         blue: true,
