@@ -17,22 +17,17 @@ setTimeout(() => {
 }, 0400);
 
 function toNotifications() {
+  document.querySelector('.tabs#dashboard').style.display = 'none'
   document.querySelector('.tabs#notifications').style.display = 'block'
-  document.querySelector('.tabs#dashboard').style.animation = '0.6s sidebarOut ease-in-out'
-  document.querySelector('.tabs#notifications').style.animation = '0.6s sidebarIn ease-in-out'
-  setTimeout(() => {
-    document.querySelector('.tabs#dashboard').style.display = 'none'
-    document.querySelector('.tabs#dashboard').style.transform = 'translate(-100px)'
-    document.querySelector('.tabs#notifications').style.transform = 'translate(0px)'
-  }, 0600);
+  document.querySelector('.tabs#settings').style.display = 'none'
+}
+function toSettings() {
+  document.querySelector('.tabs#dashboard').style.display = 'none'
+  document.querySelector('.tabs#notifications').style.display = 'none'
+  document.querySelector('.tabs#settings').style.display = 'grid'
 }
 function toDashboard() {
   document.querySelector('.tabs#dashboard').style.display = 'grid'
-  document.querySelector('.tabs#notifications').style.animation = '0.6s sidebarOut ease-in-out'
-  document.querySelector('.tabs#dashboard').style.animation = '0.6s sidebarIn ease-in-out'
-  setTimeout(() => {
-    document.querySelector('.tabs#notifications').style.display = 'none'
-    document.querySelector('.tabs#notifications').style.transform = 'translate(100px)'
-    document.querySelector('.tabs#dashboard').style.transform = 'translate(0px)'
-  }, 0600);
+  document.querySelector('.tabs#notifications').style.display = 'none'
+  document.querySelector('.tabs#settings').style.display = 'none'
 }
