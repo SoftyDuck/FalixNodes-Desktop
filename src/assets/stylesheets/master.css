@@ -1,0 +1,139 @@
+/* Master */
+:root {
+    --accent: #2970CC;
+}
+
+body {
+    overflow: hidden;
+    background: rgb(0 0 0 / 75%);
+    color: white;
+    font-family: Poppins;
+}
+
+::-webkit-scrollbar {width: 0px;}
+hr {width: 100%;}
+
+/* Sidebar */
+sidebar {
+    padding: 10px 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 210px;
+    height: 100%;
+    background: rgb(60 60 60 / 25%);
+}
+sidebar .header {
+    display: grid;
+    grid-template-columns: calc(100% - 65px) auto auto;
+    margin: 4px 0px 12px 0px;
+}
+sidebar .header button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+
+sidebar .top, sidebar .bottom {
+    display: block;
+}
+sidebar .bottom {
+    align-self: end;
+}
+sidebar .tab {
+    text-align: left;
+    padding: 12px 14px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    margin: 5px 0px;
+    display: grid;
+    grid-template-columns: 32px auto;
+}
+sidebar .tab:hover {background: rgb(255 255 255 / 10%);}
+sidebar .tab-menu {grid-template-columns: 32px auto 10px;}
+sidebar .tab i {
+    justify-self: center;
+    margin-right: 14px;
+}
+sidebar .tabs {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    height: calc(100% - 94px);
+    transition: 1s transform, 0.8s opacity;
+}
+
+/* button#fxdk3::before, button#fxdk4::before, button#fxdk5::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 0px);
+    height: 44px;
+    background: #2970cc;
+    opacity: 0.1;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: -15px;
+} */
+
+/** Sidebar - Notifications **/
+notification {
+    background: #2a2a2abd;
+    display: grid;
+    grid-template-columns: 30px auto;
+    border-radius: 4px;
+    padding: 0px 10px;
+    margin-bottom: 12px;
+    height: fit-content;
+}
+notification i {
+    align-self: center;
+}
+notification .header {
+    display: inherit !important;
+    margin: 0px !important;
+}
+sidebar notification .header i {
+    align-self: center;
+    font-size: 16px;
+}
+notification .header h1 {
+    font-size: 14px;
+    margin: 10px 0px -10px 10px;
+}
+.tabs#notifications {
+    overflow: scroll;
+    display: block;
+}
+.actions {
+    text-align-last: start;
+    padding: 10px 0px;
+}
+.actions button {
+    color: white;
+    background: transparent;
+    padding: 8px 10px;
+    margin-bottom: 0px;
+    border: none;
+}
+.actions button:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 250px);
+}
+
+cdemo {
+    position: fixed;
+    top: 50%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+}

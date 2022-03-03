@@ -1,0 +1,29 @@
+span#toggle-gpls-cm::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-accent-one);
+    width: 15px;
+    height: 15px;
+    margin: -34px 0px 0px 5px;
+    border-radius: 4px;
+}
+span#gpls-toggle-play_on {
+    background: transparent;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin: -7px 0px 0px 0px;
+    z-index: 5;
+    cursor: pointer;
+    display: inherit;
+}
+span#gpls-toggle-play_off {
+    background: transparent;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin: -7px 0px 0px 0px;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}

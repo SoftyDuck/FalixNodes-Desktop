@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Dashboard",
+        "command": "document.getElementById('fxdk1').click(); closeCommandModal();",
+        "description": "See updates on your account and more.",
+        "symbol": "grid-horizontal",
+        "tag": "dash welcome first start"
+    },
+    {
+        "name": "Blog Posts",
+        "command": "document.getElementById('fxdk2').click(); closeCommandModal();",
+        "description": "Stay up to date on what's new!",
+        "symbol": "circle-bookmark",
+        "tag": "news"
+    },
+    {
+        "name": "Client Area",
+        "command": "document.getElementById('fxdk3').click(); closeCommandModal();",
+        "description": "Manage your servers and account.",
+        "symbol": "user",
+        "tag": "panel password email store coins"
+    },
+    {
+        "name": "Game Panel",
+        "command": "document.getElementById('fxdk4').click(); closeCommandModal();",
+        "description": "Access your server(s) console, files, and more.",
+        "symbol": "server",
+        "tag": "schedules startup database"
+    },
+    {
+        "name": "Database Management",
+        "command": "document.getElementById('fxdk5').click(); closeCommandModal();",
+        "description": "Management database for each of your servers.",
+        "symbol": "database",
+        "tag": "php my admin namele"
+    },
+    {
+        "name": "SFTP",
+        "command": "document.getElementById('fxdk6').click(); closeCommandModal();",
+        "description": "Manage your server files with more controls.",
+        "symbol": "folder",
+        "tag": "files transfers"
+    },
+    {
+        "name": "Help Center",
+        "command": "document.getElementById('fxdk7').click(); closeCommandModal();",
+        "description": "Find articles on certain topics like plugins and more.",
+        "symbol": "comments-question-check",
+        "tag": "support"
+    },
+    {
+        "name": "Support",
+        "command": "document.getElementById('fxdk8').click(); closeCommandModal();",
+        "description": "Talk with a support member via live chat.",
+        "symbol": "headset",
+        "tag": "live chat help"
+    },
+    {
+        "name": "View Notifications",
+        "command": "document.getElementById('fxdk9').click(); closeCommandModal();",
+        "description": "View your notifications,",
+        "symbol": "bell",
+        "tag": "updates"
+    },
+    {
+        "name": "Settings",
+        "command": "document.getElementById('fxdk10').click(); closeCommandModal();",
+        "description": "Configure the functions, appearance, and more of FalixNodes Desktop.",
+        "symbol": "gears",
+        "tag": "about account appearance status uptime advanced language tools configuration options"
+    }
+]

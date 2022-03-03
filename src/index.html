@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FalixNodes Desktop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+
+        <link rel="stylesheet" href="./assets/stylesheets/master.css">
+        <link rel="stylesheet" href="./assets/stylesheets/fonts.css">
+        <link rel="stylesheet" href="./assets/stylesheets/search.css">
+        <link rel="stylesheet" href="./assets/stylesheets/animation.css">
+        <link rel="stylesheet" href="./assets/stylesheets/platforms/windows/menubar.css">
+        <link rel="stylesheet" href="./assets/fonts/fontawesome-pro-6.0.0-web/css/all.css">
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+    </head>
+    <body onload="addComponent()">
+        <modals>
+            <div add-component="./components/modals/search.html"></div>
+        </modals>
+        <div add-component="./components/sidebar.html"></div>
+        <div add-component="./components/content.html"></div>
+    </body>
+    <script src="./assets/scripts/interface/add-component.js"></script>
+    <script src="./assets/scripts/interface/navigation.js"></script>
+    <script src="./assets/scripts/modals/command-menu.js"></script>
+    
+    <script src="./assets/scripts/system/platform.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="./assets/scripts/command-menu/search.js"></script>
+</html>
+<script>
+function doc_keyUp(e) {if (e.ctrlKey && e.key === 'k') {openCommandModal(); search.start();}}document.addEventListener('keyup', doc_keyUp, false);
+</script>
