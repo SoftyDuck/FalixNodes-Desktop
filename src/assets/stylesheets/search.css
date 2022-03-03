@@ -10,7 +10,7 @@
   grid-template-columns: 0% 100%;
   cursor: pointer;
 }
-.post-item:hover {
+.post-item:hover, .post-item:focus-visible {
   background: #121212;
 }
 .post-list {
@@ -92,4 +92,11 @@ input.ais-search-box--input {
 }
 .ais-search-box {
   max-width: 100% !important;
+}
+.master-search button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: white;
+  border: none;
 }

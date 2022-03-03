@@ -18,7 +18,7 @@
             <button onclick="toTab('Help', this, 'var(--accent)')" class="tab" id="fxdk7"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
             <button onclick="toTab('Support', this, 'var(--accent)')" class="tab" id="fxdk8"><i class="fa-light fa-headset"></i> Support</button>
             <button onclick="toNotifications()" class="tab tab-menu" id="fxdk9"><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-angle-right"></i></button>
-            <button onclick="toTab('Settings', this, 'var(--accent)')" class="tab tab-menu" id="fxdk10"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-angle-right"></i></button>
+            <button onclick="toSettings()" class="tab tab-menu" id="fxdk10"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-angle-right"></i></button>
         </div>
     </div>
     <div style="display: none;" class="tabs" id="notifications">
@@ -51,19 +51,20 @@
     </div>
     <div style="display: none;" class="tabs" id="settings">
         <div class="top">
-            <button class="tab"><i class="fa-light fa-chevron-left"></i> Back</button>
+            <button onclick="toDashboard()" class="tab"><i class="fa-light fa-chevron-left"></i> Back</button>
             <hr>
-            <button class="tab"><i class="fa-light fa-circle-info"></i> About</button>
-            <button class="tab"><i class="fa-light fa-language"></i> Language</button>
-            <button class="tab"><i class="fa-light fa-palette"></i> Appearance</button>
-            <button class="tab"><i class="fa-light fa-bells"></i> Notifications</button>
-            <button class="tab"><i class="fa-light fa-shield-check"></i> Security</button>
-            <button class="tab"><i class="fa-light fa-computer-classic"></i> System</button>
-            <button class="tab"><i class="fa-light fa-toolbox"></i> Utitlity Tools</button>
+            <button onclick="toTab('About', this, 'var(--accent)')" class="tab"><i class="fa-light fa-circle-info"></i> About</button>
+            <button onclick="toTab('Language', this, 'var(--accent)')" class="tab"><i class="fa-light fa-language"></i> Language</button>
+            <button onclick="toTab('Appearance', this, 'var(--accent)')" class="tab"><i class="fa-light fa-palette"></i> Appearance</button>
+            <button onclick="toTab('Notifications', this, 'var(--accent)')" class="tab"><i class="fa-light fa-bells"></i> Notifications</button>
+            <button onclick="toTab('Security', this, 'var(--accent)')" class="tab"><i class="fa-light fa-shield-check"></i> Security</button>
+            <button onclick="toTab('System', this, 'var(--accent)')" class="tab"><i class="fa-light fa-computer-classic"></i> System</button>
+            <button onclick="toTab('Utitlity', this, 'var(--accent)')" class="tab"><i class="fa-light fa-toolbox"></i> Utitlity Tools</button>
             <hr>
-            <button class="tab"><i class="fa-light fa-circle-user"></i> Account</button>
-            <button class="tab"><i class="fa-light fa-hourglass-clock"></i> Uptime Status</button>
+            <button onclick="toTab('Account', this, 'var(--accent)')" class="tab"><i class="fa-light fa-circle-user"></i> Account</button>
+            <button onclick="toTab('Uptime', this, 'var(--accent)')" class="tab"><i class="fa-light fa-hourglass-clock"></i> Uptime Status</button>
         </div>
+        <tabspacer></tabspacer>
         <div class="bottom">
             <button id="logout" class="tab"><i class="fa-light fa-arrow-right-from-bracket"></i> Log Out</button>
         </div>
