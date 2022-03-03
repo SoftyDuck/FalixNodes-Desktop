@@ -12,6 +12,7 @@ body {
 
 ::-webkit-scrollbar {width: 0px;}
 hr {width: 100%;}
+i.fa-light.fa-angle-right, i.fa-light.fa-chevron-left {opacity: 0.5;}
 
 /* Sidebar */
 sidebar {
@@ -54,14 +55,17 @@ sidebar .tab {
     grid-template-columns: 32px auto;
 }
 sidebar .tab:hover {background: rgb(255 255 255 / 10%);}
+sidebar button#logout:hover {background: rgb(255 120 120 / 30%);}
 sidebar .tab-menu {grid-template-columns: 32px auto 10px;}
 sidebar .tab i {
     justify-self: center;
     margin-right: 14px;
 }
 sidebar .tabs {
+    position: absolute;
     display: grid;
     grid-template-rows: auto auto auto;
+    width: 210px;
     height: calc(100% - 94px);
     transition: 1s transform, 0.8s opacity;
 }
