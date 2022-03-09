@@ -100,7 +100,35 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
-    - run: sleep 300 # Wait 5 minutes for builds to complete first, then run...
+    - run: sleep 600 # Wait 10 minutes for builds to complete first, then run...
+    # Copy new update to the update server
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/* /usr/share/nginx/updates/falix-software/
+    
+    
+    # For FalixNodes Desktop Website
+    - run: cd /usr/share/nginx/cdn/falix/desktop/windows/
+    - run: sudo rm *
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/* /usr/share/nginx/cdn/falix/desktop/windows/
+    - run: sudo mv FalixNodes* falixnodes-desktop-setup.exe
+    
+    - run: cd /usr/share/nginx/cdn/falix/desktop/mac/
+    - run: sudo rm *
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/* /usr/share/nginx/cdn/falix/desktop/mac/
+    - run: sudo mv FalixNodes* falixnodes-desktop.dmg
+
+    
+    - run: cd /usr/share/nginx/cdn/falix/desktop/linux/
+    - run: sudo rm *
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/* /usr/share/nginx/cdn/falix/desktop/linux/
+    - run: sudo mv FalixNodes* falixnodes-desktop.AppImage
+    
+    # Clean Up
+    - run: cd /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/
+    - run: sudo rm *
+    - run: cd /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/
+    - run: sudo rm *
+    - run: cd /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/
+    - run: sudo rm *
+    
