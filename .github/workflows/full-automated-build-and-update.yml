@@ -100,7 +100,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
-    - run: sleep 300 # Wait 5 minutes for builds to complete first, then run...
+    - run: sleep 550
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/* /usr/share/nginx/updates/falix-software/
