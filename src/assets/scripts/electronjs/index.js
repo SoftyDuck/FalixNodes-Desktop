@@ -1,9 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, nativeTheme, protocol, powerMonitor, session } = require('electron')
 const glasstron = require('glasstron')
 const path = require('path');
-const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
-
-setupTitlebar();
 
 function Launch() {
     const primaryWindow = new glasstron.BrowserWindow({
@@ -13,17 +10,37 @@ function Launch() {
         minWidth: 720,
         autoHideMenuBar: true,
         frame: true,
-        blue: true,
-        blueType: 'blurbehind',
+        titleBarStyle: 'hidden',
+        titleBarOverlay: {
+            color: '#121212',
+            symbolColor: 'white'
+        },
+        blur: true,
+        blurType: 'blurbehind',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             webviewTag: true,
             contextIsolation: true,
-            nodeIntegration: false
+            nodeIntegration: false,
         }
     })
     primaryWindow.loadFile('src/index.html')
-    attachTitlebarToWindow(primaryWindow);
+
+    if (nativeTheme.shouldUseDarkColors) {
+        console.log('Yes')
+    } else {
+        console.log('No')
+    }
+
+    if (process.windowsStore) {
+        console.log('App Type: Windows Store')
+    }
+    else {
+        console.log('App Type: Non-Windows Store')
+    }
 }
 
-app.whenReady().then(() => {Launch()})
+app.enableSandbox()
+app.whenReady().then(() => {
+    Launch()
+})
