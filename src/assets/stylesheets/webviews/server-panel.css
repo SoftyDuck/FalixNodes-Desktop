@@ -1,0 +1,62 @@
+.fhnXAb,
+.cgXlJi,
+.duHJKB,
+.ebtnLL {
+    display: none !important;
+}
+
+.cZTZeB {
+    position: fixed !important;
+    top: 0px !important;
+    left: 0px !important;
+    margin: 0px !important;
+}
+
+body {
+    background: transparent !important;
+}
+
+.jqQFoq {
+    background: rgb(28 28 28 / 75%) !important;
+    border-radius: 4px !important;
+    padding-left: 120px !important;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto !important;
+}
+.cFJOIm {
+    display: grid !important;
+    width: 100% !important;
+    text-align: left !important;
+    justify-content: left !important;
+}
+.cFJOIm {
+    display: grid !important;
+    width: 100% !important;
+    text-align: left !important;
+    justify-content: left !important;
+    grid-template-columns: auto auto auto !important;
+    grid-gap: 30px !important;
+}
+.kHuGmn .icon {
+    position: absolute !important;
+    font-size: 40px !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    margin: 56px 0px 0px -105px !important;
+    background: rgb(255 255 255 / 10%) !important;
+}
+.lemNvn {
+    position: fixed !important;
+    top: 40px !important;
+    left: 0px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-width: 2px !important;
+}
+#app::before {
+    content: "Server panel login is required to view your servers";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

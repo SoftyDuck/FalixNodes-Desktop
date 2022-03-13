@@ -13,6 +13,13 @@ body {
 ::-webkit-scrollbar {width: 0px;}
 hr {width: 100%;}
 i.fa-light.fa-angle-right, i.fa-light.fa-chevron-left {opacity: 0.5;}
+webview.fullSize {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 250px);
+    height: 100%;
+}
 
 /* Sidebar */
 sidebar {
@@ -203,4 +210,25 @@ notification#dismiss {
     height: 100%;
     z-index: 1;
     background: rgb(12 12 12 / 75%);
+}
+
+/* Dashboard */
+span#username {
+    color: var(--accent);
+    text-decoration: underline;
+}
+dashboard {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    width: 100%;
+}
+.welcome {
+    margin: 42px 0px;
+}
+dashboard h1 {
+    font-size: 24px;
+}
+webview#glace-servers {
+    height: 160px;
 }
