@@ -39,6 +39,11 @@
  - Add option to open Help Center has pinned sidebar(right-side) or as a pop-up window
  - (?) Pop-out console from Game Panel
  - Remove most icons from Font Awesome folder (At least brands)
+ - Respect the System Preference
+   - Theme
+   - Animations
+   - Blur
+   - Color
  - Security
    - Add PIN/Fingerprint Reader option
    - If user uses PIN, then set automatic lock(25 minutes default) (or use 2FA)
