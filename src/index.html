@@ -6,6 +6,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+        
+        <link rel="manifest" href="../manifest.webmanifest">
+
+        <link rel="stylesheet" href="./assets/stylesheets/platforms/windows/titlebar.css">
 
         <link rel="stylesheet" href="./assets/stylesheets/master.css">
         <link rel="stylesheet" href="./assets/stylesheets/search.css">
@@ -35,6 +39,8 @@
     <script src="./assets/scripts/modals/command-menu.js"></script>
     
     <script src="./assets/scripts/system/platform.js"></script>
+
+    <script src="./assets/scripts/webviews/id.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
@@ -42,4 +48,12 @@
 </html>
 <script>
 function doc_keyUp(e) {if (e.ctrlKey && e.key === 'k') {openCommandModal(); search.start();}}document.addEventListener('keyup', doc_keyUp, false);
+
+webview = document.querySelector('webview')
+setTimeout(() => {
+    var webviewGS = document.getElementById('glace-servers')
+    webviewGS.addEventListener('dom-ready', function () {
+        webviewGS.insertCSS('.cgXlJi,.duHJKB,.ebtnLL,.fhnXAb{display:none !important}.cZTZeB{position:fixed !important;top:0 !important;left:0 !important;margin:0 !important}body{background:transparent !important}.jqQFoq{background:rgb(28 28 28 / 75%) !important;border-radius:4px !important;padding-left:120px !important;grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto !important}.cFJOIm{display:grid !important;width:100% !important;text-align:left !important;justify-content:left !important}.cFJOIm{display:grid !important;width:100% !important;text-align:left !important;justify-content:left !important;grid-template-columns:auto auto auto !important;grid-gap:30px !important}.kHuGmn .icon{position:absolute !important;font-size:40px !important;padding:20px !important;border-radius:5px !important;margin:56px 0 0 -105px !important;background:rgb(255 255 255 / 10%) !important}.lemNvn{position:fixed !important;top:40px !important;left:0 !important;width:40px !important;height:40px !important;border-width:2px !important} #falix-desktop-glace{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);display:none; width: fit-content;}')
+    });
+}, 0500);
 </script>
