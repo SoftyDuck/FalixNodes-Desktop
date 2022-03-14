@@ -29,7 +29,7 @@ setTimeout(() => {
     poweredBy: false
   })
 );
-}, 0500);
+}, 2500);
 
 setTimeout(() => {
   search.addWidget(instantsearch.widgets.hits({
@@ -39,4 +39,4 @@ setTimeout(() => {
     }
   })
 );
-}, 0900);
+}, 2600);
