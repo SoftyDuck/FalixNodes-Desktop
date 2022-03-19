@@ -4,10 +4,22 @@
 }
 
 body {
-    overflow: hidden;
     background: rgb(0 0 0 / 75%);
     color: white;
     font-family: Poppins;
+    overflow-x: hidden;
+}
+
+content #master {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: black;
+    cursor: default;
 }
 
 ::-webkit-scrollbar {width: 0px;}
@@ -224,11 +236,124 @@ dashboard {
     width: 100%;
 }
 .welcome {
-    margin: 42px 0px;
+    margin: 0px 20px 10px -25px;
+    padding: 14px 25px;
 }
 dashboard h1 {
     font-size: 24px;
+    margin: 0px;
 }
 webview#glace-servers {
     height: 160px;
+}
+
+/* Controls */
+controls {
+    position: absolute;
+    right: 0px;
+    margin: -23px 0px 0px 0px;
+    padding-right: 4px;
+}
+controls button {
+    width: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+controls button:hover {
+    background: rgb(255 255 255 / 10%);
+}
+
+button#blogBack {display: none;}
+
+/* Blog */
+.posts {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 20px;
+    transition: 0.7s opacity, 0.7s transform;
+}
+
+.post {
+    background: rgb(255 255 255 / 8%);
+    border: 2px #363636 solid;
+    cursor: pointer;
+}
+.post:hover {
+    filter: brightness(1.2)
+}
+.post img {
+    width: 100%;
+}
+
+.metadata {
+    padding: 0px 20px;
+}
+.metadata-left {
+    display: grid;
+    grid-template-rows: 40px 45px 130px 60px;
+}
+.metadata-text {
+    display: block;
+    height: min-content !important;
+    line-height: 20px;
+}
+.metadata-text h1, .metadata-text button, .metadata-text h2, .metadata-text blockquote {
+    display: none;
+}
+.metadata-left h1 {
+    font-size: 16px;
+}
+.metadata-text p {
+    margin: 0px;
+    padding: 0px;
+}
+
+p#category {
+    background: #363636;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 3px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+}
+p#date {
+    font-size: 12px;
+    opacity: 0.4;
+    font-weight: bold;
+}
+
+.metadata-right {
+    text-align: right;
+    margin-top: -48px;
+    margin-bottom: 16px;
+}
+.post-dropdown button {
+    font-size: 0px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+.post-dropdown button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.post-dropdown i {
+    font-size: 14px;
+    color: white;
+}
+
+webview#article-viewer {
+    position: absolute;
+    top: 0px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1.2s opacity, 1.2s right;
 }

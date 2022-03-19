@@ -13,8 +13,8 @@ function toTab(pageName,elmnt,color) {
 }
 
 setTimeout(() => {
-    document.getElementById("fxdk1").click();
-}, 0400);
+    document.querySelector("button#fxdk1").click();
+}, 3690);
 
 function toNotifications() {
   document.querySelector('.tabs#dashboard').style.display = 'none'

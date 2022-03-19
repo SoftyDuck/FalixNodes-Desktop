@@ -13,7 +13,11 @@
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
-    "glasstron": "^0.1.1"
+    "glasstron": "^0.1.1",
+    "jquery": "^3.5.0",
+    "popper.js": "^1.16.0",
+    "ssh2": "^0.8.5",
+    "es6-promise-pool": "^2.5.0"
   },
   "devDependencies": {
     "electron": "^17.1.2",
