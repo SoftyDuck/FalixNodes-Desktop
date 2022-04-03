@@ -16,6 +16,13 @@ autoUpdater.logger = log
 let mainWindow;
 let dialogUpdateAvailable;
 
+if (process.windowsStore) {
+  global.update = console.log('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
+}
+else if(process.platform == 'win32'){
+  global.update = autoUpdater.checkForUpdates();
+}
+
 global.devMode = true
 if (process.platform == 'darwin') {
     app.whenReady().then(() => {
@@ -30,7 +37,6 @@ if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "acrylic"
       global.frame = false
-      global.update = autoUpdater.checkForUpdates();
     }
   )
 }
@@ -42,6 +48,8 @@ if (process.platform == 'darwin') {
     }
   )
 }
+
+
 
 function createWindow() {
   const mainWindow = new glasstron.BrowserWindow({
