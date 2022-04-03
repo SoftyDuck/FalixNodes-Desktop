@@ -32,6 +32,13 @@ webview.fullSize {
     width: calc(100% - 250px);
     height: 100%;
 }
+webview#sftp {
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: calc(100% - 250px);
+}
 
 /* Sidebar */
 sidebar {

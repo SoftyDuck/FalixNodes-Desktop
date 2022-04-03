@@ -3,6 +3,10 @@ const { ipcRenderer } = require('electron');
 const util = require('util');
 const cons = require('./renderer/console.js');
 
+function wC() {
+  ipcRenderer.send('sftpClose');
+}
+
 function displayLocalDirListing(path){
   ipcRenderer.send('change_local_dir', path);
   fs.readdir(path, (error, files) => {

@@ -33,8 +33,6 @@ const createMainWindow = () => {
     sftp = new BrowserWindow({
         width: 1200,
         height: 800,
-        minHeight: 590,
-        minWidth: 720,
         modal: true,
         frame: false,
         show: false,
@@ -44,14 +42,11 @@ const createMainWindow = () => {
           preload: path.join(__dirname, 'sftp.js'),
             contextIsolation: false,
             nodeIntegration: true,
-            
         }
     })
 
     primaryWindow.loadFile('src/index.html')
     sftp.loadFile('src/components/content/SFTP/mainWindow.html')
-
-
 
     ipcMain.on('sftpOpen',  () => {
         sftp.show();

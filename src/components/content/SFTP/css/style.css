@@ -5,6 +5,15 @@ body {
     position: fixed;
 }
 
+.sidebar-close {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    z-index: 1000;
+}
+
 td {
     display: grid;
     grid-template-columns: 100% 22px 30px 30px;
@@ -71,7 +80,7 @@ h6.modal-title {
     margin: 4px 0px 0px 0px;
 }
 button#button_connect {
-    width: calc(100% - 50px);
+    width: 100%;
     background: #009f00;
     color: white;
     border: none;
@@ -79,6 +88,7 @@ button#button_connect {
     border-radius: 34px;
     height: fit-content;
     margin-top: 22px;
+    cursor: pointer;
 }
 button#button_remote_disconnect {
     background: #f94040;
@@ -93,6 +103,7 @@ button#button_remote_disconnect {
     right: 30px;
     display: none;
     width: 110px;
+    cursor: pointer;
 }
 .login-input {
     display: grid;
@@ -149,6 +160,7 @@ button#button_remote_disconnect {
     display: grid;
     grid-template-columns: 50% 50%;
     background: rgb(56 56 56 / 50%);
+    height: calc(100% - 390px);
 }
 
 

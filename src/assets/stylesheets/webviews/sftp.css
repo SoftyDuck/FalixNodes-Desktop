@@ -1,0 +1,58 @@
+.buttons.box[role="navigation"],
+.component_forkme {
+    display: none;
+}
+
+body {
+    background: transparent !important;
+}
+.dark-mode .component_page_connect {
+    background: transparent;
+}
+.dark-mode .component_thing:hover .box {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 7px;
+}
+.component_menubar, .dark-mode .component_thing .box.highlight,
+.dark-mode .component_frequently-access .frequent_wrapper a {
+    background: rgb(255 255 255 / 25%);
+    box-shadow: none !important;
+    color: white !important;
+}
+.component_imageviewer .component_image_container {
+    background: transparent;
+}
+.component_thing form input {
+    color: white;
+}
+.nothing_placeholder {
+    border-radius: 7px !important;
+    background: rgb(255 255 255 / 25%) !important;
+    color: white !important;
+}
+.component_action {
+    color: white !important;
+    filter: brightness(10);
+}
+img.thumbnail {
+    border-radius: 7px;
+}
+.CodeMirror {
+    background: transparent;
+    color: white;
+}
+.dark-mode .component_frequently-access .frequent_wrapper a {
+    border-radius: 4px;
+}
+.dark-mode .component_modal {
+    background: rgb(0 0 0 / 75%);
+}
+a.label[href="/files/"] {
+    font-size: 0px;
+}
+a.label[href="/files/"]::before {
+    content: "Root";
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
