@@ -16,10 +16,10 @@ autoUpdater.logger = log
 let mainWindow;
 let dialogUpdateAvailable;
 
-if (process.windowsStore) {
-  global.update = console.log('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
+if (__dirname.includes('\\WindowsApps\\')) {
+  console.log('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
 }
-else if(process.platform == 'win32'){
+else {
   global.update = autoUpdater.checkForUpdates();
 }
 
