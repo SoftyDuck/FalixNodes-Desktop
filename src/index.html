@@ -27,7 +27,8 @@
         <div add-component="./components/sidebar.html"></div>
         <content>
             <div id="master" class="content">
-                <h1>Loading...</h1>
+                <temp id="logo"><i class="fa-light fa-square-dashed"></i></temp>
+                <p><i class="fa-duotone fa-spinner-third fa-spin"></i></p>
             </div>
             <div id="dashboard">
                 <div id="DashboardTB" class="content">
@@ -60,7 +61,7 @@
                     <webview id="sftp" src="https://demo.filestash.app/login"></webview>
                 </div>
                 <div id="Help" class="content">
-                    <cDemo><i class="fa-light fa-comments-question-check"></i> Help</cDemo>
+                    <webview class="fullSize" id="help" src="https://help.falixnodes.net/"></webview>
                 </div>
                 <div id="Support" class="content">
                     <cDemo><i class="fa-light fa-headset"></i> Support</cDemo>
