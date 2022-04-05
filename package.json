@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.0.0",
+  "version": "4.0.0-alpha-1",
   "description": "Accessing Falix, all from one place",
   "main": "src/assets/scripts/electronjs/index.js",
   "scripts": {
@@ -13,11 +13,7 @@
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
-    "glasstron": "^0.1.1",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.16.0",
-    "ssh2": "^1.4.0",
-    "es6-promise-pool": "^2.5.0"
+    "glasstron": "^0.1.1"
   },
   "devDependencies": {
     "electron": "^17.1.2",

@@ -1,11 +1,6 @@
 const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session } = require('electron')
 const glasstron = require('glasstron')
-const fs = require('fs');
 const path = require('path');
-const { Client, SFTPStream } = require('ssh2');
-const PromisePool = require('es6-promise-pool');
-let primaryWindow;
-let sftp;
 
 const createMainWindow = () => {
     primaryWindow = new glasstron.BrowserWindow({
@@ -41,7 +36,7 @@ const createMainWindow = () => {
       console.log('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
     }
     else {
-      global.update = autoUpdater.checkForUpdates();
+      // global.update = autoUpdater.checkForUpdates();
     }
 }
 
