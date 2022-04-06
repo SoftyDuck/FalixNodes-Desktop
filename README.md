@@ -29,8 +29,8 @@
    - Live Chat
  - New Welcome Back tab
  - Re-design blog posts
- - Convert Settings into a pop-up modal
- - Convert all dialogs into pop-ups modal
+ - ~~Convert Settings into a pop-up modal~~
+ - ~~Convert all dialogs into pop-ups modal~~
  - Add transitions between tabs
  - Add start animation when main window opens
  - Splash checklist: Check resources to see if machine has enough to run to FalixNodes Desktop, if not give user option to 'Run Anyway...'
