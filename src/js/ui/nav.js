@@ -14,7 +14,7 @@ function openPage(pageName,elmnt,color) {
 
 setTimeout(() => {
   document.getElementById("default_selection").click();
-}, 50);
+}, 2000);
 
 function openStPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
@@ -32,4 +32,4 @@ function openStPage(pageName,elmnt,color) {
 
 setTimeout(() => {
   document.getElementById("st-sc-default_selection").click();
-}, 2000);
+}, 2500);
