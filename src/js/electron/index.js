@@ -23,7 +23,7 @@ else {
   global.update = autoUpdater.checkForUpdates();
 }
 
-global.devMode = true
+global.devMode = false
 if (process.platform == 'darwin') {
     app.whenReady().then(() => {
       global.blur = "vibrancy"
