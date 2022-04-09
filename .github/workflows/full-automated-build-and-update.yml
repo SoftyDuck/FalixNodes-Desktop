@@ -105,8 +105,8 @@ jobs:
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/* /usr/share/nginx/updates/falix-software/
     
-    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/*blockmap.exe
-    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/*blockmap.dmg    
+    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/*.exe.blockmap
+    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/*.dmg.blockmap 
     
     - run: sudo mv /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/*.exe /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/FalixNodes-Desktop.exe
     - run: sudo mv /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/*.dmg /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/FalixNodes-Desktop.dmg
