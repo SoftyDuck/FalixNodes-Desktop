@@ -104,3 +104,14 @@ jobs:
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/* /usr/share/nginx/updates/falix-software/
     - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/* /usr/share/nginx/updates/falix-software/
+    
+    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/*.exe.blockmap
+    - run: sudo rm /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/*.dmg.blockmap 
+    
+    - run: sudo mv /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/*.exe /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/FalixNodes-Desktop.exe
+    - run: sudo mv /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/*.dmg /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/FalixNodes-Desktop.dmg
+    - run: sudo mv /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/*.AppImage /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/FalixNodes-Desktop.AppImage
+    
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/windows/FalixNodes-Desktop.exe /usr/share/nginx/cdn/files/downloads/falixnodes-desktop/FalixNodes-Desktop.exe
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/mac/FalixNodes-Desktop.dmg /usr/share/nginx/cdn/files/downloads/falixnodes-desktop/FalixNodes-Desktop.dmg
+    - run: sudo cp /usr/share/nginx/updates/.prepare/falixnodes-desktop/linux/FalixNodes-Desktop.AppImage /usr/share/nginx/cdn/files/downloads/falixnodes-desktop/FalixNodes-Desktop.AppImage
