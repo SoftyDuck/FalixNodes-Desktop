@@ -36,16 +36,16 @@
                         <div class="welcome">
                             <h1>Welcome back, <span id="username">Korbs</span></h1>
                         </div>
-                        <h1>At a Glace - Your Servers</h1>
-                        <div class="glace-servers">
-                            <webview id="glace-servers" preload="./assets/scripts/webviews/glace-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
+                        <h1>At a Glance - Your Servers</h1>
+                        <div class="glance-servers">
+                            <webview id="glance-servers" preload="./assets/scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
                         </div>
                     </dashboard>
                 </div>
                 <div id="Blog" class="content">
                     <blog>
                         <webview id="article-viewer" src="https://falixnodes.net/"></webview>
-                        <div add-component="http://localhost:4003/blog-desktop-v4-tennis/"></div>
+                        <div add-component="https://falixnodes.net/blog-desktop-v4/"></div>
                     </blog>
                 </div>
                 <div id="Client" class="content">
@@ -61,7 +61,7 @@
                     <webview id="sftp" src="https://demo.filestash.app/login"></webview>
                 </div>
                 <div id="Help" class="content">
-                    <webview class="fullSize" id="help" src="https://help.falixnodes.net/"></webview>
+                    <webview class="fullSize" id="help" src="https://falixnodes.net/help/"></webview>
                 </div>
                 <div id="Support" class="content">
                     <cDemo><i class="fa-light fa-headset"></i> Support</cDemo>
@@ -69,7 +69,7 @@
             </div>
             <div id="settings">
                 <div id="About" class="content">
-                    <cDemo><i class="fa-light fa-circle-info"></i> About</cDemo>
+                    <div add-component="./components/tabs/settings/about.html"></div>
                 </div>
                 <div id="Language" class="content">
                     <cDemo><i class="fa-light fa-language"></i> Language</cDemo>
@@ -118,3 +118,26 @@
 <script>
 function doc_keyUp(e) {if (e.ctrlKey && e.key === 'k') {openCommandModal(); search.start();}}document.addEventListener('keyup', doc_keyUp, false);
 </script>
+
+<script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+</script>
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⣷⣶⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡟⠁⣰⣿⣿⣿⡿⠿⠻⠿⣿⣿⣿⣿⣧⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠏⠀⣴⣿⣿⣿⠉⠀⠀⠀⠀⠀⠈⢻⣿⣿⣇⠀⠀⠀
+⠀⠀⠀⠀⢀⣠⣼⣿⣿⡏⠀⢠⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⡀⠀⠀
+⠀⠀⠀⣰⣿⣿⣿⣿⣿⡇⠀⢸⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀   Just chilling...
+⠀⠀⢰⣿⣿⡿⣿⣿⣿⡇⠀⠘⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⢀⣸⣿⣿⣿⠁⠀⠀
+⠀⠀⣿⣿⣿⠁⣿⣿⣿⡇⠀⠀⠻⣿⣿⣿⣷⣶⣶⣶⣶⣶⣿⣿⣿⣿⠃⠀⠀⠀
+⠀⢰⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀
+⠀⢸⣿⣿⡇⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠉⢉⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⢸⣿⣿⣇⠀⣿⣿⣿⠀⠀⠀⠀⠀⢀⣤⣤⣤⡀⠀⠀⢸⣿⣿⣿⣷⣦⠀⠀⠀
+⠀⠀⢻⣿⣿⣶⣿⣿⣿⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣦⡀⠀⠉⠉⠻⣿⣿⡇⠀⠀
+⠀⠀⠀⠛⠿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠈⠹⣿⣿⣇⣀⠀⣠⣾⣿⣿⡇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣦⣤⣤⣤⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢿⣿⣿⣿⣿⣿⣿⠿⠋⠉⠛⠋⠉⠉⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀
