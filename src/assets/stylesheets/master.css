@@ -74,6 +74,9 @@ sidebar .header button {
     color: white;
     padding: 10px;
 }
+sidebar .header img {
+    width: 20px;
+}
 
 sidebar .top, sidebar .bottom {
     display: block;
@@ -263,7 +266,7 @@ dashboard h1 {
     font-size: 24px;
     margin: 0px;
 }
-webview#glace-servers {
+webview#glance-servers {
     height: 160px;
 }
 
@@ -377,3 +380,32 @@ webview#article-viewer {
     opacity: 0;
     transition: 1.2s opacity, 1.2s right;
 }
+
+/** Settings **/
+settings.tab {
+    padding: 0px 0px 0px 26px;
+    position: absolute;
+    width: calc(100% - 52px);
+}
+
+.sContainer {
+    display: grid;
+    grid-template-rows: 30px auto;
+    background: rgb(255 255 255 / 10%);
+    border-radius: 7px;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+.sContainer h1 {
+    font-size: 18px;
+    background: rgb(255 255 255 / 3%);
+    margin: 0px -20px;
+    padding: 4px 25px;
+    border-radius: 7px 7px 0px 0px;
+}
+.sContainer iframe {
+    width: 100%;
+    margin-top: 5px;
+    height: auto;
+    border: none;
+}  
