@@ -1,5 +1,5 @@
 webview = document.querySelector('webview')
-var glaceServerWV = document.querySelector('webview#glace-servers')
+var glanceServerWV = document.querySelector('webview#glance-servers')
 var articleViewerWV = document.querySelector('webview#article-viewer')
 var sftpWV = document.querySelector('webview#sftp')
 var helpWV = document.querySelector('webview#help')
