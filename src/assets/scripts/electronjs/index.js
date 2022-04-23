@@ -25,6 +25,8 @@ const createMainWindow = () => {
       }
     })
     primaryWindow.loadFile('src/index.html')
+    ipcMain.on('logout', () => {(logout())})
+    ipcMain.on('relaunch', () => {(relaunch())})
 
     if (nativeTheme.shouldUseDarkColors) {
       console.log('Yes')
@@ -38,6 +40,12 @@ const createMainWindow = () => {
     else {
       // global.update = autoUpdater.checkForUpdates();
     }
+    const ses = primaryWindow.webContents.session
+    function logout() {ses.clearCache(); console.log('LOGGING OUT');}
 }
 
+function relaunch() {
+  app.relaunch
+  console.log('RESTARTING')
+}
 app.on('ready', createMainWindow);

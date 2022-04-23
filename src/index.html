@@ -22,12 +22,17 @@
     <body onload="addComponent()">
         <modals>
             <div add-component="./components/modals/search.html"></div>
+            <div add-component="./components/modals/pop-up/log-out.html"></div>
             <div trigger-notification-update="./components/modals/notifications/update.html"></div>
         </modals>
         <div add-component="./components/sidebar.html"></div>
         <content>
             <div id="master" class="content">
-                <temp id="logo"><i class="fa-light fa-square-dashed"></i></temp>
+                <img src="./assets/images/icons/app/256x256.png">
+                <div id="splash-message">
+                    <p id="sm-restart">Restarting in a few moments...</p>
+                    <p id="sm-loggingout">Logging out...</p>
+                </div>
                 <p><i class="fa-duotone fa-spinner-third fa-spin"></i></p>
             </div>
             <div id="dashboard">
@@ -90,10 +95,10 @@
                     <cDemo><i class="fa-light fa-toolbox"></i> Utitlity</cDemo>
                 </div>
                 <div id="Account" class="content">
-                    <cDemo><i class="fa-light fa-circle-user"></i> Account</cDemo>
+                    <webview class="fullSize" id="accountWV" src="https://client.falixnodes.net/profile/settings"></webview>
                 </div>
                 <div id="Uptime" class="content">
-                    <cDemo><i class="fa-light fa-hourglass-clock"></i> Uptime</cDemo>
+                    <webview class="fullSize" id="uptimeWV" src="https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/"></webview>
                 </div>
             </div>
         </content>
@@ -105,6 +110,7 @@
     <script src="./assets/scripts/interface/blog.js"></script>
     
     <script src="./assets/scripts/modals/command-menu.js"></script>
+    <script src="./assets/scripts/popups/logout.js"></script>
     
     <script src="./assets/scripts/system/platform.js"></script>
 
@@ -117,12 +123,6 @@
 </html>
 <script>
 function doc_keyUp(e) {if (e.ctrlKey && e.key === 'k') {openCommandModal(); search.start();}}document.addEventListener('keyup', doc_keyUp, false);
-</script>
-
-<script>
-    function resizeIframe(obj) {
-      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-    }
 </script>
 
 <!-- ⠀⠀⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⣷⣶⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀

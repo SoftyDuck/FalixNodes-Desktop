@@ -1,0 +1,39 @@
+html, body, .page-content {
+    background: transparent !important;
+}
+::-webkit-scrollbar {
+    width: 0px !important;
+}
+
+#bulkreportcontainer .note-bordered {
+    background: rgb(255 255 255 / 25%) !important;
+}
+tr.odd td {
+    background: rgb(255 255 255 / 25%) !important;
+}
+tr.even td {
+    background: rgb(255 255 255 / 20%) !important;
+}
+#bulkreportcontainer .table tr.heading>th {
+    background: rgb(255 255 255 / 3%) !important;
+}
+
+.portlet.light {
+    background: transparent !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+#bulkreportcontainer #datatable_products {
+    background: transparent !important;
+}
+
+.col-lg-4.col-md-12.col-sm-12.col-xs-12.dbbtns.dbbtnstop,
+.col-lg-4.col-md-6.col-sm-6.col-xs-12.searchcol,
+.col-lg-4.col-md-6.col-sm-6.col-xs-12.overalluptime,
+div#ann_row {
+    display: none !important;
+}
+
+div#uptimebody {
+    margin-top: -35px !important;
+}
