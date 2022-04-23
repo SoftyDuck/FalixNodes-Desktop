@@ -1,4 +1,4 @@
 var url = window.location.href;
-if(url.startsWith("https://help.falixnodes.net/")
+if(url.startsWith("https://falixnodes.net/")
 )
-{} else {setTimeout(() => {location.href = 'https://help.falixnodes.net/'}, 250);}
+{} else {setTimeout(() => {location.href = 'https://falixnodes.net/'}, 250);}

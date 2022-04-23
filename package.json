@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.61.24",
+  "version": "4.61.25",
   "description": "Accessing Falix, all from one place",
   "main": "src/js/electron/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "glasstron": "^0.1.1"
   },
   "devDependencies": {
-    "electron": "^18.0.3",
+    "electron": "^18.1.0",
     "electron-builder": "^22.14.13"
   },
   "build": {
