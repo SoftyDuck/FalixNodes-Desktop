@@ -5,11 +5,28 @@
             <div id="vpn" class="sContainer">
                 <div>
                     <h1>Controls</h1>
+                    <button id="nordvpn-windows" onclick="location.href = 'opera:///'" id="open-nordvpn"><img src="./assets/images/icons/NordVPN.png"> Open NordVPN</button>
                 </div>
                 <div style="height: 480px; justify-self: center;">
                     <vpn>
                         <button onclick="window.api.send('enableVPN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
                     </vpn>
+                </div>
+            </div>
+            <div id="NORDVPN-WINDOWS" class="sContainer">
+                <div>
+                    <h1>Note</h1>
+                </div>
+                <div>
+                    <p>FalixNodes Desktop has limited interactions with NordVPN on Windows. Make sure you're logged in or it won't work, due to the limited interactions there is no telling if NordVPN is working or not.</p>
+                </div>
+            </div>
+            <div id="NORDVPN-FAILED" class="sContainer redSC">
+                <div>
+                    <h1>ERROR</h1>
+                </div>
+                <div>
+                    <p>NordVPN failed to connect or <u onclick="window.api.send('loginVPN')">you're not logged in</u>. Try again.</p>
                 </div>
             </div>
             <div id="NORDVPN-NOT-FOUND" class="sContainer redSC">
