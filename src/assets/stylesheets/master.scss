@@ -501,7 +501,7 @@ vpn {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 300px;
+    top: 360px;
 	.vpn-connection {
 		color: white;
 		background: #2970cc;
@@ -517,7 +517,7 @@ vpn {
 }
 .sContainer#NORDVPN-NOT-FOUND {display: none;}
 .sContainer#NORDVPN-FAILED {display: none;}
-button#open-nordvpn {
+button#NORDVPN-WINDOWS {
     padding: 10px 20px;
     border-radius: 4px;
     border: none;
@@ -531,5 +531,31 @@ button#open-nordvpn {
 	img {
 		width: 14px;
 		margin-right: 10px;
+	}
+}
+
+vpnlocation {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 24px;
+	button {
+		background: rgba(255, 255, 255, 0.1);
+		border: none;
+		aspect-ratio: 1/1;
+		border-radius: 40px;
+		padding: 4px 8px 0px 8px;
+		cursor: pointer;
+		:hover {
+			opacity: 0.5;
+		}
+	}
+	img {
+		width: 40px;
+		height: 40px;
+		object-fit: cover;
+		object-position: left;
+		border-radius: 50px;
+		pointer-events: none;
 	}
 }

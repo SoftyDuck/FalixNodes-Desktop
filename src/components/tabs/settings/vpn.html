@@ -9,8 +9,17 @@
                 </div>
                 <div style="height: 480px; justify-self: center;">
                     <vpn>
-                        <button onclick="window.api.send('enableVPN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-UKLN" onclick="window.api.send('enableVPN-UKLN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-USNY" onclick="window.api.send('enableVPN-USNY');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-GRBR" onclick="window.api.send('enableVPN-GRBR');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-AUSY" onclick="window.api.send('enableVPN-AUSY');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
                     </vpn>
+                    <vpnlocation>
+                        <button onclick="switchLocation('uk')"><img src="./assets/images/icons/flags/uk.svg"></button>
+                        <button onclick="switchLocation('us')"><img src="./assets/images/icons/flags/us.svg"></button>
+                        <button onclick="switchLocation('de')"><img src="./assets/images/icons/flags/de.svg"></button>
+                        <button onclick="switchLocation('au')"><img src="./assets/images/icons/flags/au.svg"></button>
+                    </vpnlocation>
                 </div>
             </div>
             <div id="NORDVPN-WINDOWS" class="sContainer">

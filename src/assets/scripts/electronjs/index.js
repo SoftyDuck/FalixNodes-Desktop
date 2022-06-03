@@ -35,13 +35,14 @@ const createMainWindow = () => {
     ipcMain.on('logout', () => {(logout())})
     ipcMain.on('relaunch', () => {(relaunch())})
 
+    // NordVPN - Linux ONLY
     ipcMain.on('loginVPN', () => {
-      exec("sh nordvpn-login.sh");
+      exec("sh src/assets/scripts/shell/linux/nordvpn/login.sh");
       primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "none";')
     })
     
-    ipcMain.on('enableVPN', () => {
-      console.log('enableVPN')
+    ipcMain.on('enableVPN-UKLN', () => {
+      exec("sh src/assets/scripts/shell/linux/nordvpn/connect/UK_LN.sh");
       exec("nordvpn connect", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
@@ -57,9 +58,82 @@ const createMainWindow = () => {
         console.log(`stdout: ${stdout}`);
       });
     })
+    
+    ipcMain.on('enableVPN-USLA', () => {
+      exec("sh src/assets/scripts/shell/linux/nordvpn/connect/US_LA.sh");
+      exec("nordvpn connect", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "grid";')
+            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
+            exec("nordvpn-login.sh")
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
+    })
+    
+    ipcMain.on('enableVPN-USNY', () => {
+      exec("sh src/assets/scripts/shell/linux/nordvpn/connect/US_NY.sh");
+      exec("nordvpn connect", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "grid";')
+            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
+            exec("nordvpn-login.sh")
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
+    })
+    
+    ipcMain.on('enableVPN-GRBR', () => {
+      exec("sh src/assets/scripts/shell/linux/nordvpn/connect/GR_BR.sh");
+      exec("nordvpn connect", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "grid";')
+            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
+            exec("nordvpn-login.sh")
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
+    })
+    
+    ipcMain.on('enableVPN-AUSY', () => {
+      exec("sh src/assets/scripts/shell/linux/nordvpn/connect/AUSY.sh");
+      exec("nordvpn connect", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "grid";')
+            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
+            exec("nordvpn-login.sh")
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
+    })
+
     ipcMain.on('disableVPN', () => {
       console.log('disableVPN')
-      execute('nordvpn disconnect')
+      exec("sh src/assets/scripts/shell/linux/nordvpn/disconnect.sh");
     })
 
     if (nativeTheme.shouldUseDarkColors) {
