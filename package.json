@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.70.0-alpha-1",
+  "version": "4.70.0",
   "description": "Accessing Falix, all from one place",
   "main": "src/assets/scripts/electronjs/index.js",
   "scripts": {
