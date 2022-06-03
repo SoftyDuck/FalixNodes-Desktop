@@ -539,27 +539,45 @@ vpn .vpn-connection {
   transition: 3s background, 2s box-shadow;
 }
 
-.sContainer#NORDVPN-NOT-FOUND {
+.sContainer#MULLVAD-NOT-FOUND {
   display: none;
 }
 
-.sContainer#NORDVPN-FAILED {
+.sContainer#MULLVAD-FAILED {
   display: none;
 }
 
-button#NORDVPN-WINDOWS {
+button#open-mullvad {
   padding: 10px 20px;
   border-radius: 4px;
   border: none;
-  color: white;
-  background: rgb(70, 135, 255);
+  color: rgba(0, 0, 0, 0.7);
+  background: #ffd524;
   font-weight: bold;
   position: absolute;
   right: 20px;
   top: 103px;
   cursor: pointer;
 }
-button#NORDVPN-WINDOWS img {
+button#open-mullvad img {
+  width: 14px;
+  margin-right: 10px;
+}
+
+button#install-mullvad {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background: #44ad4d;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 103px;
+  cursor: pointer;
+  display: none;
+}
+button#install-mullvad img {
   width: 14px;
   margin-right: 10px;
 }

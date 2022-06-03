@@ -1,1 +1,0 @@
-nordvpn connect United_States Los_Angeles

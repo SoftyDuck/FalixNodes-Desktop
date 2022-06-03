@@ -1,1 +1,0 @@
-nordvpn connect Germany Berlin

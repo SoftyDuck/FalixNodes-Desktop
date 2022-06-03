@@ -1,0 +1,1 @@
+mullvad relay set location au

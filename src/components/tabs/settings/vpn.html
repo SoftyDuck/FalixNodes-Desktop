@@ -5,7 +5,8 @@
             <div id="vpn" class="sContainer">
                 <div>
                     <h1>Controls</h1>
-                    <button id="NORDVPN-WINDOWS" onclick="location.href = 'opera:///'" id="open-nordvpn"><img src="./assets/images/icons/NordVPN.png"> Open NordVPN</button>
+                    <button id="install-mullvad">Install Mullvad</button>
+                    <button id="open-mullvad">Open Mullvad</button>
                 </div>
                 <div style="height: 480px; justify-self: center;">
                     <vpn>
@@ -22,28 +23,20 @@
                     </vpnlocation>
                 </div>
             </div>
-            <div id="NORDVPN-WINDOWS" class="sContainer">
-                <div>
-                    <h1>Note</h1>
-                </div>
-                <div>
-                    <p>FalixNodes Desktop has limited interactions with NordVPN on Windows. Make sure you're logged in or it won't work, due to the limited interactions there is no telling if NordVPN is working or not.</p>
-                </div>
-            </div>
-            <div id="NORDVPN-FAILED" class="sContainer redSC">
+            <div id="MULLVAD-FAILED" class="sContainer redSC">
                 <div>
                     <h1>ERROR</h1>
                 </div>
                 <div>
-                    <p>NordVPN failed to connect or <u onclick="window.api.send('loginVPN')">you're not logged in</u>. Try again.</p>
+                    <p>Mullvad failed to connect or <u onclick="window.api.send('loginVPN')">you're not logged in</u>. Try again.</p>
                 </div>
             </div>
-            <div id="NORDVPN-NOT-FOUND" class="sContainer redSC">
+            <div id="MULLVAD-NOT-FOUND" class="sContainer redSC">
                 <div>
                     <h1>ERROR</h1>
                 </div>
                 <div>
-                    <p>NordVPN not detected on your system, please install NordVPN.</p>
+                    <p>Mullvad not detected on your system, please install Mullvad.</p>
                 </div>
             </div>
         </div>
