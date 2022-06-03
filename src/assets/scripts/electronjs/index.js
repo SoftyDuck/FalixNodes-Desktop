@@ -1,6 +1,7 @@
 const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents } = require('electron')
 const { exec} = require('child_process');
 const glasstron = require('glasstron');
+const log = require('electron-log')
 const path = require('path');
 var commandExistsSync = require('command-exists').sync;
 
@@ -33,10 +34,28 @@ const createMainWindow = () => {
     primaryWindow.loadFile('src/index.html')
     ipcMain.on('logout', () => {(logout())})
     ipcMain.on('relaunch', () => {(relaunch())})
+
+    ipcMain.on('loginVPN', () => {
+      exec("sh nordvpn-login.sh");
+      primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "none";')
+    })
     
     ipcMain.on('enableVPN', () => {
       console.log('enableVPN')
-      execute('nordvpn connect')
+      exec("nordvpn connect", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-FAILED").style.display = "grid";')
+            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
+            exec("nordvpn-login.sh")
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
     })
     ipcMain.on('disableVPN', () => {
       console.log('disableVPN')
