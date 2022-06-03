@@ -2,13 +2,6 @@ $color_1: white;
 $accent: #2970CC;
 $font-family_1: Poppins;
 
-:export {
-	variablename: $accent;
-  }
-  .text::after {
-	content: "\\00a0\\00a0";  // now it's just a simple plain string
-  }
-
 body {
 	background: rgb(0 0 0 / 75%);
 	color: $color_1;
