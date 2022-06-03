@@ -543,4 +543,25 @@ vpn .vpn-connection {
   display: none;
 }
 
+.sContainer#NORDVPN-FAILED {
+  display: none;
+}
+
+button#open-nordvpn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background: rgb(70, 135, 255);
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 103px;
+  cursor: pointer;
+}
+button#open-nordvpn img {
+  width: 14px;
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=master.css.map */
