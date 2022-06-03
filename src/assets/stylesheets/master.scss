@@ -2,6 +2,10 @@ $color_1: white;
 $accent: #2970CC;
 $font-family_1: Poppins;
 
+$boxHeader: rgb(18 30 46);
+$boxSubHeader: rgb(35 46 60);
+$boxBody: rgb(11 23 39);
+
 body {
 	background: rgb(0 0 0 / 75%);
 	color: $color_1;
@@ -484,7 +488,27 @@ button#popup-cancel {
 	color: $color_1;
 	background: transparent;
 	opacity: 0.5;
-	&:hover {
+	&:hover {	
 		text-decoration: underline;
+	}
+}
+
+
+vpn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 300px;
+	.vpn-connection {
+		color: white;
+		background: #2970cc;
+		border: none;
+		padding: 50px;
+		border-radius: 100px;
+		font-size: 32px;
+		cursor: pointer;
+		aspect-ratio: 1/1;
+		box-shadow: 0px 0px 0px 20px #234878;
+		transition: 3s background, 2s box-shadow;
 	}
 }

@@ -1,0 +1,25 @@
+<settings class="tab">
+    <h1>VPN</h1>
+    <div id="grid-it-2">
+        <div>
+            <div id="vpn" class="sContainer">
+                <div>
+                    <h1>Controls</h1>
+                </div>
+                <div style="height: 480px; justify-self: center;">
+                    <vpn>
+                        <button onclick="window.api.send('enableVPN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                    </vpn>
+                </div>
+            </div>
+            <div class="sContainer">
+                <div>
+                    <h1>Note</h1>
+                </div>
+                <div>
+                    <p>NordVPN Client is required. FalixNodes Desktop can't be certain if it's working or not, but can interact with NordVPN.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</settings>

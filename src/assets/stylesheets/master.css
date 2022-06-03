@@ -516,4 +516,23 @@ button#popup-cancel:hover {
   text-decoration: underline;
 }
 
+vpn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 300px;
+}
+vpn .vpn-connection {
+  color: white;
+  background: #2970cc;
+  border: none;
+  padding: 50px;
+  border-radius: 100px;
+  font-size: 32px;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  box-shadow: 0px 0px 0px 20px #234878;
+  transition: 3s background, 2s box-shadow;
+}
+
 /*# sourceMappingURL=master.css.map */

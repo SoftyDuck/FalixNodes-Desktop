@@ -1,6 +1,11 @@
 const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session } = require('electron')
-const glasstron = require('glasstron')
+const { exec} = require('child_process');
+const glasstron = require('glasstron');
 const path = require('path');
+
+function execute(command) {
+  exec(command);
+};
 
 const createMainWindow = () => {
     primaryWindow = new glasstron.BrowserWindow({
@@ -27,6 +32,15 @@ const createMainWindow = () => {
     primaryWindow.loadFile('src/index.html')
     ipcMain.on('logout', () => {(logout())})
     ipcMain.on('relaunch', () => {(relaunch())})
+    
+    ipcMain.on('enableVPN', () => {
+      console.log('enableVPN')
+      execute('nordvpn connect')
+    })
+    ipcMain.on('disableVPN', () => {
+      console.log('disableVPN')
+      execute('nordvpn disconnect')
+    })
 
     if (nativeTheme.shouldUseDarkColors) {
       console.log('Yes')
