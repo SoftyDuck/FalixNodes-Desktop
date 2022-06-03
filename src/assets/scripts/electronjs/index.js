@@ -1,7 +1,8 @@
-const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session } = require('electron')
+const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents } = require('electron')
 const { exec} = require('child_process');
 const glasstron = require('glasstron');
 const path = require('path');
+var commandExistsSync = require('command-exists').sync;
 
 function execute(command) {
   exec(command);
@@ -56,6 +57,13 @@ const createMainWindow = () => {
     }
     const ses = primaryWindow.webContents.session
     function logout() {ses.clearCache(); console.log('LOGGING OUT');}
+    if (commandExistsSync('nordvpn')) {
+    } else {
+      setTimeout(() => {
+        console.log('NordVPN was not detected.')
+        primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#NORDVPN-NOT-FOUND").style.display = "grid"; document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)"')
+      }, 10000); // Element doesn't load instantly
+    }
 }
 
 function relaunch() {

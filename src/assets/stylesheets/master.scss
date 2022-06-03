@@ -430,6 +430,9 @@ settings.tab {
 		border: none;
 	}
 }
+.redSC {
+    background: rgb(255 0 0 / 30%);
+}
 popup {
 	position: fixed;
 	top: 50%;
@@ -512,3 +515,4 @@ vpn {
 		transition: 3s background, 2s box-shadow;
 	}
 }
+.sContainer#NORDVPN-NOT-FOUND {display: none;}
