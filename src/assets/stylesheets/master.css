@@ -494,7 +494,7 @@ popup::before {
 .popup-actions {
   background: rgba(255, 255, 255, 0.03);
   display: grid;
-  grid-template-columns: auto 70px 90px;
+  grid-template-columns: auto auto auto;
   padding: 8px 25px;
 }
 .popup-actions button {

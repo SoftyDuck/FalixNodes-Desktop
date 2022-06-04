@@ -472,7 +472,7 @@ popup {
 .popup-actions {
 	background: rgb(255 255 255 / 3%);
 	display: grid;
-	grid-template-columns: auto 70px 90px;
+	grid-template-columns: auto auto auto;
 	padding: 8px 25px;
 	button {
 		background: white;
