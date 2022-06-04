@@ -10,16 +10,17 @@
                 </div>
                 <div style="height: 480px; justify-self: center;">
                     <vpn>
-                        <button id="VPN-LOCATION-UKLN" onclick="window.api.send('enableVPN-UKLN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
-                        <button id="VPN-LOCATION-USNY" onclick="window.api.send('enableVPN-USNY');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
-                        <button id="VPN-LOCATION-GRBR" onclick="window.api.send('enableVPN-GRBR');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
-                        <button id="VPN-LOCATION-AUSY" onclick="window.api.send('enableVPN-AUSY');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <p id="ph-location">Select a location</p>
+                        <button id="VPN-LOCATION-UKLN" style="display: none;" onclick="window.api.send('enableVPN'); document.getElementById('VPN-LOCATION-UKLN').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-UKLN').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-USNY" style="display: none;" onclick="window.api.send('enableVPN'); document.getElementById('VPN-LOCATION-USNY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-USNY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-GRBR" style="display: none;" onclick="window.api.send('enableVPN'); document.getElementById('VPN-LOCATION-GRBR').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-GRBR').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
+                        <button id="VPN-LOCATION-AUSY" style="display: none;" onclick="window.api.send('enableVPN'); document.getElementById('VPN-LOCATION-AUSY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-AUSY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON()" class="vpn-connection"><i class="fa-light fa-power-off"></i></button>
                     </vpn>
                     <vpnlocation>
-                        <button onclick="switchLocation('uk')"><img src="./assets/images/icons/flags/uk.svg"></button>
-                        <button onclick="switchLocation('us')"><img src="./assets/images/icons/flags/us.svg"></button>
-                        <button onclick="switchLocation('de')"><img src="./assets/images/icons/flags/de.svg"></button>
-                        <button onclick="switchLocation('au')"><img src="./assets/images/icons/flags/au.svg"></button>
+                        <button id="flag-uk" onclick="window.api.send('ukVPN'); hideAT(); document.getElementById('flag-uk').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-UKLN').style.display = 'inherit'; document.getElementById('ph-location').style.display = 'none';"><img src="./assets/images/icons/flags/uk.svg"></button>
+                        <button id="flag-us" onclick="window.api.send('usVPN'); hideAT(); document.getElementById('flag-us').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-USNY').style.display = 'inherit'; document.getElementById('ph-location').style.display = 'none';"><img src="./assets/images/icons/flags/us.svg"></button>
+                        <button id="flag-de" onclick="window.api.send('deVPN'); hideAT(); document.getElementById('flag-de').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-GRBR').style.display = 'inherit'; document.getElementById('ph-location').style.display = 'none';"><img src="./assets/images/icons/flags/de.svg"></button>
+                        <button id="flag-au" onclick="window.api.send('auVPN'); hideAT(); document.getElementById('flag-au').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-AUSY').style.display = 'inherit'; document.getElementById('ph-location').style.display = 'none';"><img src="./assets/images/icons/flags/au.svg"></button>
                     </vpnlocation>
                 </div>
             </div>

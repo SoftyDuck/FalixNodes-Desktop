@@ -42,25 +42,19 @@ const createMainWindow = () => {
     })
     
     ipcMain.on('enableVPN', () => {
-      exec("mullvad account get", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-FAILED").style.display = "grid";')
-            primaryWindow.webContents.executeJavaScript('document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)";')
-            return;
-        }
-        if (stderr) {
-            console.log(`${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-      });
+      console.log('enableVPN')
+      exec("sh src/assets/scripts/shell/linux/mullvad/connect.sh");
     })
 
     ipcMain.on('disableVPN', () => {
       console.log('disableVPN')
       exec("sh src/assets/scripts/shell/linux/mullvad/disconnect.sh");
     })
+
+    ipcMain.on('ukVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/uk.sh");})
+    ipcMain.on('usVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/us.sh");})
+    ipcMain.on('deVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/de.sh");})
+    ipcMain.on('auVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/au.sh");})
 
     if (nativeTheme.shouldUseDarkColors) {
       console.log('Yes')

@@ -94,6 +94,9 @@
                 <div id="VPN" class="content">
                     <div add-component="./components/tabs/settings/vpn.html"></div>
                 </div>
+                <div id="VPN-Setup" class="content">
+                    <div add-component="./components/tabs/settings/vpn-setup.html"></div>
+                </div>
                 <div id="Utitlity" class="content">
                     <cDemo><i class="fa-light fa-toolbox"></i> Utitlity</cDemo>
                 </div>
@@ -133,10 +136,26 @@ function doc_keyUp(e) {if (e.ctrlKey && e.key === 'k') {openCommandModal(); sear
 
 <script>
     function setVPNON() {
-        document.querySelector('vpn button').setAttribute("onclick", "window.api.send('disableVPN');document.querySelector('vpn button').style.backgroundColor = '#2970cc'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
+        document.getElementById('VPN-LOCATION-UKLN').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-UKLN').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-UKLN').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
+        document.getElementById('VPN-LOCATION-USNY').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-USNY').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-USNY').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
+        document.getElementById('VPN-LOCATION-GRBR').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-GRBR').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-GRBR').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
+        document.getElementById('VPN-LOCATION-AUSY').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-AUSY').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-AUSY').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
     }
     function setVPNOFF() {
-        document.querySelector('vpn button').setAttribute("onclick", "window.api.send('enableVPN');document.querySelector('vpn button').style.backgroundColor = '#29cc81'; document.querySelector('vpn button').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
+        document.getElementById('VPN-LOCATION-UKLN').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-UKLN').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-UKLN').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
+        document.getElementById('VPN-LOCATION-USNY').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-USNY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-USNY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
+        document.getElementById('VPN-LOCATION-GRBR').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-GRBR').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-GRBR').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
+        document.getElementById('VPN-LOCATION-AUSY').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-AUSY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-AUSY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
+    }
+    function hideAT() {
+        document.getElementById('VPN-LOCATION-UKLN').style.display = 'none';
+        document.getElementById('VPN-LOCATION-USNY').style.display = 'none';
+        document.getElementById('VPN-LOCATION-GRBR').style.display = 'none';
+        document.getElementById('VPN-LOCATION-AUSY').style.display = 'none';
+        document.getElementById('flag-uk').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
+        document.getElementById('flag-us').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
+        document.getElementById('flag-de').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
+        document.getElementById('flag-au').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
     }
 </script>
 

@@ -582,6 +582,17 @@ button#install-mullvad img {
   margin-right: 10px;
 }
 
+button#login-mullvad {
+  background: #44ad4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  width: 100%;
+  margin: 18px 0px;
+  font-weight: bold;
+}
+
 vpnlocation {
   position: absolute;
   left: 50%;
