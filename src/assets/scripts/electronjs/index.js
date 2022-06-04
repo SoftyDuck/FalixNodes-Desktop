@@ -1,5 +1,6 @@
 const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents } = require('electron')
 const { exec} = require('child_process');
+const PowerShell = require('powershell');
 const glasstron = require('glasstron');
 const log = require('electron-log')
 const path = require('path');
@@ -51,7 +52,7 @@ const createMainWindow = () => {
         `);
       }
       else if (process.platform = 'win32') {
-        exec(`
+        let ps = new PowerShell(`
         Add-Type -AssemblyName Microsoft.VisualBasic; [Microsoft.VisualBasic.Interaction]::InputBox('Your Mullvad Account Number:', 'FalixNodes Desktop - External Mullvad Login') > mull-id.tmp
         $MULLVADID = Get-Content -Path mull-id.tmp -RAW
 
