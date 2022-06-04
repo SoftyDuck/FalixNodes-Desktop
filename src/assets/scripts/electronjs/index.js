@@ -37,24 +37,75 @@ const createMainWindow = () => {
 
     // NordVPN - Linux ONLY
     ipcMain.on('loginVPN', () => {
-      exec("sh src/assets/scripts/shell/linux/mullvad/login.sh");
+      if (process.platform = 'linux') {
+        exec(`
+        zenity --title="Mullvad Login" --ok-label="Login to Mullvad" --extra-button="Create Mullvud Account" --cancel-label="I'm already logged in" --question --text "Mullvad Login is required. Let's get you logged in!"
+        MULLID=$( zenity --entry --text="Type in your Mullvad Account Number" )
+  
+        if [ $? = 0 ]
+        then
+            mullvad account set $MULLID
+        else
+            echo "Mullvad login was cancelled."
+        fi
+        `);
+      }
+      else if (process.platform = 'win32') {
+        exec(`
+        Add-Type -AssemblyName Microsoft.VisualBasic; [Microsoft.VisualBasic.Interaction]::InputBox('Your Mullvad Account Number:', 'FalixNodes Desktop - External Mullvad Login') > mull-id.tmp
+        $MULLVADID = Get-Content -Path mull-id.tmp -RAW
+
+        mullvad.exe account set $MULLVADID > mullvad-login.txt
+        $MULLVADMSG1 = Get-Content -Path mullvad-login.txt -RAW
+
+        Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::($MULLVADMSG1)
+        `)
+      }
       primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-FAILED").style.display = "none";')
     })
     
     ipcMain.on('enableVPN', () => {
-      console.log('enableVPN')
-      exec("sh src/assets/scripts/shell/linux/mullvad/connect.sh");
+      if (process.platform = 'linux') {exec("mullvad connect")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad connect
+      `);};
     })
-
     ipcMain.on('disableVPN', () => {
-      console.log('disableVPN')
-      exec("sh src/assets/scripts/shell/linux/mullvad/disconnect.sh");
+      if (process.platform = 'linux') {exec("mullvad disconnect")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad disconnect
+      `);};
     })
-
-    ipcMain.on('ukVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/uk.sh");})
-    ipcMain.on('usVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/us.sh");})
-    ipcMain.on('deVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/de.sh");})
-    ipcMain.on('auVPN', () => {exec("sh src/assets/scripts/shell/linux/mullvad/connect/au.sh");})
+    ipcMain.on('ukVPN', () => {
+      if (process.platform = 'linux') {exec("mullvad relay set location uk.sh")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad relay set location uk.sh
+      `);};
+    })
+    ipcMain.on('usVPN', () => {
+      if (process.platform = 'linux') {exec("mullvad relay set location us.sh")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad relay set location us.sh
+      `);};
+    })
+    ipcMain.on('deVPN', () => {
+      if (process.platform = 'linux') {exec("mullvad relay set location de.sh")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad relay set location de.sh
+      `);};
+    })
+    ipcMain.on('auVPN', () => {
+      if (process.platform = 'linux') {exec("mullvad relay set location au.sh")}
+      else if (process.platform = 'win32') {exec(`
+        cd\Program Files\Mullvad VPN\resources
+        mullvad relay set location au.sh
+      `);};
+    })
 
     if (nativeTheme.shouldUseDarkColors) {
       console.log('Yes')
