@@ -36,7 +36,7 @@ const createMainWindow = () => {
     ipcMain.on('logout', () => {(logout())})
     ipcMain.on('relaunch', () => {(relaunch())})
 
-    // NordVPN - Linux ONLY
+    // Mullvad VPN - Windows and Linux are supported. macOS support will come later.
     ipcMain.on('loginVPN', () => {
       if (process.platform = 'linux') {
         exec(`
