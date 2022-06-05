@@ -1,1 +1,0 @@
-mullvad relay set location gr
