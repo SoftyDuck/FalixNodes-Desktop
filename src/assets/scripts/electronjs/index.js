@@ -20,7 +20,7 @@ const createMainWindow = () => {
       frame: true,
       titleBarStyle: 'hidden',
       titleBarOverlay: {
-        color: '#121212',
+        color: '#161616',
         symbolColor: 'white'
       },
       blur: true,
@@ -80,28 +80,28 @@ const createMainWindow = () => {
       `);};
     })
     ipcMain.on('ukVPN', () => {
-      if (process.platform = 'linux') {exec("mullvad relay set location uk.sh")}
+      if (process.platform = 'linux') {exec("mullvad relay set location uk")}
       else if (process.platform = 'win32') {exec(`
         cd\Program Files\Mullvad VPN\resources
         mullvad relay set location uk.sh
       `);};
     })
     ipcMain.on('usVPN', () => {
-      if (process.platform = 'linux') {exec("mullvad relay set location us.sh")}
+      if (process.platform = 'linux') {exec("mullvad relay set location us")}
       else if (process.platform = 'win32') {exec(`
         cd\Program Files\Mullvad VPN\resources
         mullvad relay set location us.sh
       `);};
     })
     ipcMain.on('deVPN', () => {
-      if (process.platform = 'linux') {exec("mullvad relay set location de.sh")}
+      if (process.platform = 'linux') {exec("mullvad relay set location de")}
       else if (process.platform = 'win32') {exec(`
         cd\Program Files\Mullvad VPN\resources
         mullvad relay set location de.sh
       `);};
     })
     ipcMain.on('auVPN', () => {
-      if (process.platform = 'linux') {exec("mullvad relay set location au.sh")}
+      if (process.platform = 'linux') {exec("mullvad relay set location au")}
       else if (process.platform = 'win32') {exec(`
         cd\Program Files\Mullvad VPN\resources
         mullvad relay set location au.sh
