@@ -12,9 +12,16 @@ function toTab(pageName,elmnt,color) {
     elmnt.style.backgroundColor = color;
 }
 
-setTimeout(() => {
+do {
+  selectDashboard()
+}
+while (addComponent());
+
+function selectDashboard() {
+  setTimeout(() => {
     document.querySelector("button#fxdk1").click();
-}, 3690);
+  }, 1000);
+}
 
 function toNotifications() {
   document.querySelector('.tabs#dashboard').style.display = 'none'
