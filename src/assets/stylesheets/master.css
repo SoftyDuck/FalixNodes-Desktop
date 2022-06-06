@@ -115,6 +115,9 @@ sidebar .header img {
 sidebar .top {
   display: block;
 }
+sidebar .top #setup-vpn, sidebar .top #setup-vpnsetup {
+  cursor: progress;
+}
 sidebar .bottom {
   display: block;
   align-self: end;

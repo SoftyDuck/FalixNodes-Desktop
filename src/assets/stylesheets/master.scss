@@ -114,6 +114,9 @@ sidebar {
 	}
 	.top {
 		display: block;
+		#setup-vpn, #setup-vpnsetup {
+			cursor: progress;
+		}
 	}
 	.bottom {
 		display: block;
