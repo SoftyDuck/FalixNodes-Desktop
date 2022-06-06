@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
 
         <link rel="stylesheet" href="./assets/stylesheets/master.css">
+        <link rel="stylesheet" href="./assets/stylesheets/ninja-keys.css">
         <link rel="stylesheet" href="./assets/stylesheets/search.css">
         <link rel="stylesheet" href="./assets/stylesheets/animation.css">
 
@@ -21,7 +22,7 @@
     </head>
     <body onload="addComponent()">
         <modals>
-            <div add-component="./components/modals/search.html"></div>
+            <ninja-keys class="dark" placeholder="Command Menu" hideBreadcrumbs></ninja-keys>
             <div add-component="./components/modals/pop-up/log-out.html"></div>
             <div add-component="./components/modals/pop-up/w7.html"></div>
             <div trigger-notification-update="./components/modals/notifications/update.html"></div>
@@ -113,6 +114,8 @@
             </div>
         </content>
     </body>
+    <script type="module">import {NinjaKeys} from 'https://unpkg.com/ninja-keys?module';</script>
+
     <script src="./assets/scripts/interface/add-component.js"></script>
     <script src="./assets/scripts/interface/dismiss.js"></script>
     <script src="./assets/scripts/interface/notification-trigger-update.js"></script>
