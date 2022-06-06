@@ -5,7 +5,8 @@
   "main": "src/assets/scripts/electronjs/index.js",
   "scripts": {
     "start": "electron --enable-transparent-visuals --disable-gpu --disable-software-rasterizer .",
-    "build": "electron-builder build"
+    "build": "electron-builder build",
+    "scss": "sass --watch src/assets/stylesheets/master.scss src/assets/stylesheets/master.css"
   },
   "author": "KorbsStudio",
   "license": "MIT",
