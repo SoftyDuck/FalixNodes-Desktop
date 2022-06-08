@@ -16,7 +16,9 @@
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
     "glasstron": "^0.1.1",
-    "powershell": "^2.3.2"
+    "ninja-keys": "^1.2.1",
+    "powershell": "^2.3.2",
+    "pushy-electron": "^1.0.9"
   },
   "devDependencies": {
     "electron": "^17.1.2",

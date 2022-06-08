@@ -167,22 +167,29 @@ sidebar {
 	}
 }
 notification {
-	background: #2a2a2abd;
+	background: rgba(42, 42, 42, 0.75);
 	display: grid;
-	grid-template-columns: 30px auto;
+    grid-template-columns: 100%;
 	border-radius: 4px;
 	padding: 0px 10px;
 	margin-bottom: 12px;
 	height: fit-content;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px 0px;
 	i {
 		align-self: center;
 	}
 	.header {
 		display: inherit !important;
 		margin: 0px !important;
+		grid-template-columns: auto !important;
+		i {
+			margin-right: 18px;
+			display: none;
+		}
 		h1 {
 			font-size: 14px;
-			margin: 10px 0px -10px 10px;
+			margin: 10px 0px -10px 0px;
 		}
 	}
 }
@@ -191,14 +198,20 @@ notification {
 	display: block;
 }
 .actions {
-	text-align-last: start;
-	padding: 10px 0px;
-	button {
+	margin-left: -9px;
+    margin-top: -4px;
+    background: #363636f2;
+    width: calc(100% - -20px);
+    border-radius: 0px 0px 4px 4px;
+    text-align-last: right;
+	button, a {
 		color: $color_1;
 		background: transparent;
 		padding: 8px 10px;
 		margin-bottom: 0px;
 		border: none;
+		font-size: 14px;
+		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -291,7 +304,7 @@ dashboard {
 	padding: 14px 25px;
 }
 webview#glance-servers {
-	height: 160px;
+	height: 172px;
 }
 controls {
 	position: absolute;
@@ -590,3 +603,15 @@ vpnlocation {
 	}
 }
 
+input#notification-amount {
+    position: absolute;
+    width: 35px;
+    overflow: hidden;
+    border: none;
+    background: #2970cc;
+    color: white;
+    padding: 6px 0px 6px 18px;
+    border-radius: 20px;
+    margin: 5px 0px 0px 158px;
+	opacity: 0;
+}

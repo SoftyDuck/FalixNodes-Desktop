@@ -1,4 +1,5 @@
 const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents } = require('electron')
+const Pushy = require('pushy-electron');
 const { exec} = require('child_process');
 const PowerShell = require('powershell');
 const glasstron = require('glasstron');
@@ -11,28 +12,29 @@ function execute(command) {
 };
 
 const createMainWindow = () => {
-    primaryWindow = new glasstron.BrowserWindow({
-      width: 1200,
-      height: 800,
-      minHeight: 590,
-      minWidth: 720,
-      autoHideMenuBar: true,
-      frame: true,
-      titleBarStyle: 'hidden',
-      titleBarOverlay: {
-        color: '#161616',
-        symbolColor: 'white'
-      },
-      blur: true,
-      blurType: 'blurbehind',
-      webPreferences: {
-        preload: path.join(__dirname, 'preload.js'),
-        webviewTag: true,
-        contextIsolation: true,
-        nodeIntegration: false,
-      }
-    })
-    primaryWindow.loadFile('src/index.html')
+  primaryWindow = new glasstron.BrowserWindow({
+    width: 1200,
+    height: 800,
+    minHeight: 590,
+    minWidth: 720,
+    autoHideMenuBar: true,
+    frame: true,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#161616',
+      symbolColor: 'white'
+    },
+    blur: true,
+    blurType: 'blurbehind',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      webviewTag: true,
+      contextIsolation: true,
+      nodeIntegration: false,
+    }
+  })
+  primaryWindow.loadFile('src/index.html')
+
     ipcMain.on('logout', () => {(logout())})
     ipcMain.on('relaunch', () => {(relaunch())})
 
@@ -108,6 +110,21 @@ const createMainWindow = () => {
       `);};
     })
 
+    // Notifications System - Powered by Pushy
+    primaryWindow.webContents.on('did-finish-load', () => {Pushy.listen();});
+    Pushy.register({ appId: '62a020bfca130a4f54f56b4f' }).then((deviceToken) => {console.log('Pushy device token: ' + deviceToken);}).catch((err) => {console.log('Pushy registration error: ' + err.message);});
+    if (Pushy.isRegistered()) {Pushy.subscribe('primary').then(() => {console.log('Subscribed to topic successfully');}).catch((err) => {console.error(err);});}
+
+    Pushy.setNotificationListener((data) => {
+      primaryWindow.webContents.executeJavaScript(`
+      document.getElementById("notification-amount").style.opacity = '1';
+      document.getElementById("notification-amount").stepUp(1);
+      document.querySelector('.tabs#notifications hr').insertAdjacentHTML("afterEnd", "<notification><div class='header'><h1>` + data.icon + `` + data.title + `</h1></div><div class='n-content'>` + data.message + `</div><div class=actions><button>Dismiss</button> ` + data.action + `</div></div></notification>")
+      `)
+    });
+
+    // Etc
+
     if (nativeTheme.shouldUseDarkColors) {
       console.log('Yes')
     } else {
@@ -132,7 +149,7 @@ const createMainWindow = () => {
 }
 
 function relaunch() {
-  app.relaunch
-  console.log('RESTARTING')
+  app.relaunch({ args: process.argv.slice(1).concat(['--relaunch']) })
+  app.exit(0)
 }
 app.on('ready', createMainWindow);

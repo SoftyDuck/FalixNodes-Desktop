@@ -16,25 +16,14 @@
         <div class="bottom">
             <button onclick="toTab('Help', this, '#2970CC')" class="tab" id="fxdk7"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
             <button onclick="toTab('Support', this, '#2970CC')" class="tab" id="fxdk8"><i class="fa-light fa-headset"></i> Support</button>
-            <button onclick="toNotifications()" class="tab tab-menu" id="fxdk9"><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-angle-right"></i></button>
+            <button onclick="toNotifications();document.getElementById('notification-amount').style.opacity = '0'; " class="tab tab-menu" id="fxdk9"><input type="number" id="notification-amount" readonly><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-angle-right"></i></button>
             <button onclick="toSettings()" class="tab tab-menu" id="fxdk10"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-angle-right"></i></button>
         </div>
     </div>
     <div style="display: none;" class="tabs" id="notifications">
         <button onclick="toDashboard()" class="tab"><i class="fa-light fa-chevron-left"></i> Back</button>
         <hr>
-        <notification>
-            <i class="fa-light fa-cloud-exclamation"></i>
-            <div>
-            <div class="header">
-                <h1>Notification Title</h1>
-            </div>
-            <div class="actions">
-                <button>Dismiss</button>
-                <button>View</button>
-            </div>
-        </div>
-        </notification>
+        <!-- Notifications are generated here by Pushy -->
     </div>
     <div style="display: none;" class="tabs" id="settings">
         <div class="top">
