@@ -49,17 +49,11 @@
                         </div>
                     </dashboard>
                 </div>
-                <div id="Blog" class="content">
-                    <blog>
-                        <webview id="article-viewer" src="https://falixnodes.net/"></webview>
-                        <div add-component="https://falixnodes.net/blog-desktop-v4/"></div>
-                    </blog>
-                </div>
                 <div id="Client" class="content">
                     <webview class="fullSize" id="clientAreaWV" src="https://client.falixnodes.net/"></webview>
                 </div>
                 <div id="Server" class="content">
-                    <webview class="fullSize" id="gamePanelWV" src="https://panel.falixnodes.net/"></webview>
+                    <webview class="fullSize" id="gamePanelWV" preload="./scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net/"></webview>
                 </div>
                 <div id="Database" class="content">
                     <webview class="fullSize" id="phpWV" src="https://phpmyadmin.falixnodes.net/"></webview>
