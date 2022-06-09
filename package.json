@@ -21,7 +21,7 @@
     "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
-    "electron": "^17.1.2",
+    "electron": "^19.0.4",
     "electron-builder": "^22.14.13"
   },
   "build": {
