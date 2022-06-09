@@ -4,7 +4,7 @@
   "description": "Accessing Falix, all from one place",
   "main": "src/assets/scripts/electronjs/index.js",
   "scripts": {
-    "start": "electron --enable-transparent-visuals --disable-gpu --disable-software-rasterizer .",
+    "start": "electron .",
     "build": "electron-builder build",
     "scss": "sass --watch src/assets/stylesheets/master.scss src/assets/stylesheets/master.css"
   },
@@ -16,9 +16,9 @@
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
     "glasstron": "^0.1.1",
-    "ninja-keys": "^1.2.1",
     "powershell": "^2.3.2",
-    "pushy-electron": "^1.0.9"
+    "pushy-electron": "^1.0.9",
+    "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
     "electron": "^17.1.2",
@@ -29,7 +29,7 @@
     "productName": "FalixNodes Desktop",
     "publish": {
       "provider": "generic",
-      "url": "https://updates.korbsstudio.com/falixnodes-desktop/"
+      "url": "https://falixnodes.net/releases/updates/falixnodes-desktop/live/"
     },
     "win": {
       "target": [
