@@ -1,15 +1,12 @@
-const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents, shell } = require('electron')
-const Pushy = require('pushy-electron');
-const { exec} = require('child_process');
-const PowerShell = require('powershell');
-const glasstron = require('glasstron');
+const {app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents, shell} = require('electron')
+const Pushy = require('pushy-electron')
+const exec = require('child_process')
+const PowerShell = require('powershell')
+const glasstron = require('glasstron')
 const log = require('electron-log')
-const path = require('path');
-var commandExistsSync = require('command-exists').sync;
-
-function execute(command) {
-  exec(command);
-};
+const path = require('path')
+var commandExistsSync = require('command-exists').sync
+function execute(command) {exec(command)}
 
 const createMainWindow = () => {
   primaryWindow = new glasstron.BrowserWindow({
