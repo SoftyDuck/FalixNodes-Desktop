@@ -5,11 +5,14 @@
             <div id="vpn" class="sContainer">
                 <div>
                     <h1>Setup Mullvad</h1>
-                    <button style="display: inherit;" id="install-mullvad">Install Mullvad</button>
+                    <!-- <button onclick="location.href = 'https://mullvad.net/media/app/MullvadVPN-2022.1_x86_64.rpm'" style="display: inherit;" id="install-mullvad">Install Mullvad</button> -->
                 </div>
                 <div>
-                    <p>This area of FalixNodes Desktop relies on Mullvad, a VPN service. Once installed or if already installed, click the login button below.</p>
-                    <button onclick="window.api.send('loginVPN')" id="login-mullvad">Login to Mullvad</button>
+                    <p>This area of FalixNodes Desktop relies on Mullvad, a VPN service. Once installed or if already installed, choose an option below.</p>
+                    <div id="mullvad-ll-buttons">
+                        <!-- <button onclick="window.api.send('createVPN')" id="login-mullvad" style="background: rgb(100 100 100 / 75%);">Create Mullvad Account</button> -->
+                        <button onclick="window.api.send('loginVPN')" id="login-mullvad">Login to Mullvad</button>
+                    </div>
                 </div>
             </div>
         </div>

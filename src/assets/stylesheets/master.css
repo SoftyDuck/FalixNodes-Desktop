@@ -598,6 +598,10 @@ button#install-mullvad img {
   margin-right: 10px;
 }
 
+div#mullvad-ll-buttons {
+  display: flex;
+}
+
 button#login-mullvad {
   background: #44ad4d;
   color: white;
@@ -605,8 +609,12 @@ button#login-mullvad {
   padding: 10px 20px;
   border-radius: 4px;
   width: 100%;
-  margin: 18px 0px;
+  margin: 18px 8px;
   font-weight: bold;
+  cursor: pointer;
+}
+button#login-mullvad :hover {
+  opacity: 0.8;
 }
 
 vpnlocation {

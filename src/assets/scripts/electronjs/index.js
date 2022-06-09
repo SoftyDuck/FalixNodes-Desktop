@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents } = require('electron')
+const { app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents, shell } = require('electron')
 const Pushy = require('pushy-electron');
 const { exec} = require('child_process');
 const PowerShell = require('powershell');
@@ -39,10 +39,10 @@ const createMainWindow = () => {
     ipcMain.on('relaunch', () => {(relaunch())})
 
     // Mullvad VPN - Windows and Linux are supported. macOS support will come later.
+
     ipcMain.on('loginVPN', () => {
       if (process.platform = 'linux') {
         exec(`
-        zenity --title="Mullvad Login" --ok-label="Login to Mullvad" --extra-button="Create Mullvud Account" --cancel-label="I'm already logged in" --question --text "Mullvad Login is required. Let's get you logged in!"
         MULLID=$( zenity --entry --text="Type in your Mullvad Account Number" )
   
         if [ $? = 0 ]
