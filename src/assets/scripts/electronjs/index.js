@@ -139,7 +139,7 @@ const createMainWindow = () => {
     setTimeout(() => {
       console.log('Mullvad was not detected.')
       primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-NOT-FOUND").style.display = "grid"; document.querySelector(".sContainer#mullvad-install").style.display = "inherit"; document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)"')
-    }, 10000); // Element doesn't load instantly
+    }, 5000); // Element doesn't load instantly
   }
 }
 
