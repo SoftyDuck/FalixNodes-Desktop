@@ -19,7 +19,7 @@ const createMainWindow = () => {
     titleBarStyle: 'hidden',
     trafficLightPosition: {
       x: 20,
-      y: 13,
+      y: 28,
     },
     titleBarOverlay: {
       color: '#161616',
