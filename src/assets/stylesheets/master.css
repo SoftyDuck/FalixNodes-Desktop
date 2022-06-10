@@ -181,7 +181,6 @@ notification .header {
 }
 notification .header i {
   margin-right: 18px;
-  display: none;
 }
 notification .header h1 {
   font-size: 14px;

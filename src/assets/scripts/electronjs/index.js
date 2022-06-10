@@ -17,6 +17,10 @@ const createMainWindow = () => {
     autoHideMenuBar: true,
     frame: true,
     titleBarStyle: 'hidden',
+    trafficLightPosition: {
+      x: 20,
+      y: 13,
+    },
     titleBarOverlay: {
       color: '#161616',
       symbolColor: 'white'
