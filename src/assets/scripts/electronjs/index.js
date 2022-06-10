@@ -8,6 +8,22 @@ const path = require('path')
 var commandExistsSync = require('command-exists').sync
 function execute(command) {exec(command)}
 
+// Overwrite 'console.log' with 'log`
+console.log = log.info
+console.error = log.error
+Object.assign(console, log.functions)
+
+// Platform Check
+if (process.platform = 'win32') {
+    global.blur = 'acrylic'
+} else if (proc.platform = 'darwin') {
+    global.blur = 'vibrancy'
+    global.update = log.error('Auto update not supported on this platform.')
+} else if (proc.platform = 'linux') {
+    global.blur = 'blurbehind'
+}
+
+// App
 const createMainWindow = () => {
   primaryWindow = new glasstron.BrowserWindow({
     width: 1200,
@@ -125,23 +141,23 @@ const createMainWindow = () => {
 
   // Etc
   if (nativeTheme.shouldUseDarkColors) {
-    console.log('Native Theme: Dark')
+    log.info('Native Theme: Dark')
   } else {
-    console.log('Native Theme: Light')
+    log.info('Native Theme: Light')
   }
 
   if (__dirname.includes('\\WindowsApps\\')) {
-    console.log('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
+    log.error('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
   }
   else {
     // global.update = autoUpdater.checkForUpdates();
   }
   const ses = primaryWindow.webContents.session
-  function logout() {ses.clearCache(); console.log('LOGGING OUT');}
+  function logout() {ses.clearCache(); log.info('LOGGING OUT');}
   if (commandExistsSync('mullvad')) {
   } else {
     setTimeout(() => {
-      console.log('Mullvad was not detected.')
+      log.error('Mullvad was not detected.')
       primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-NOT-FOUND").style.display = "grid"; document.querySelector(".sContainer#mullvad-install").style.display = "inherit"; document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)"')
     }, 5000); // Element doesn't load instantly
   }
