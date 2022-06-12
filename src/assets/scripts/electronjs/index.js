@@ -32,6 +32,8 @@ const createMainWindow = () => {
     minWidth: 720,
     autoHideMenuBar: true,
     frame: true,
+    blur: true,
+    blurType: global.blur,
     titleBarStyle: 'hidden',
     trafficLightPosition: {
       x: 20,
@@ -41,8 +43,6 @@ const createMainWindow = () => {
       color: '#161616',
       symbolColor: 'white'
     },
-    blur: true,
-    blurType: 'blurbehind',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webviewTag: true,

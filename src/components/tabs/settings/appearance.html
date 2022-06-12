@@ -1,0 +1,66 @@
+<settings class="tab">
+    <h1>Appearance</h1>
+    <div style="grid-template-columns: 300px auto;" id="grid-it-ex">
+        <div style="width: 250px;" class="sContainer">
+            <div>
+                <h1>Accent Color</h1>
+            </div>
+            <div>
+                <div class="appearance" id="accent-colors">
+                    <button onclick="setAccentColor('default')" alt="default" style="background-color: #2970CC;" class="accent-color" id="ac-default"></button>
+                    <button onclick="setAccentColor('classic')" alt="classic" style="background-color: #6b5fd2;" class="accent-color" id="ac-classic"></button>
+                    <button onclick="setAccentColor('strawberry')" alt="strawberry" style="background-color: #c6262e;" class="accent-color" id="ac-strawberry"></button>
+                    <button onclick="setAccentColor('orange')" alt="orange" style="background-color: #f37329;" class="accent-color" id="ac-orange"></button>
+                    <button onclick="setAccentColor('banana')" alt="banana" style="background-color: #f9c440;" class="accent-color" id="ac-banana"></button>
+                    <button onclick="setAccentColor('lime')" alt="lime" style="background-color: #68b723;" class="accent-color" id="ac-lime"></button>
+                    <button onclick="setAccentColor('mint')" alt="mint" style="background-color: #28bca3;" class="accent-color" id="ac-mint"></button>
+                    <button onclick="setAccentColor('grape')" alt="grape" style="background-color: #a56de2;" class="accent-color" id="ac-grape"></button>
+                    <button onclick="setAccentColor('bubblegum')" alt="bubblegum" style="background-color: #de3e80;" class="accent-color" id="ac-bubblegum"></button>
+                    <button onclick="setAccentColor('slate')" alt="slate" style="background-color: #485a6c;" class="accent-color" id="ac-slate"></button>
+                </div>
+            </div>
+        </div>
+        <div style="width: max-content;" class="sContainer">
+            <div>
+                <h1>Window Blur</h1>
+            </div>
+            <div>
+                <div class="appearance" id="window-blur">
+                    <button onclick="setBG0(); setWindowBlur('Transparent')" class="window-blur" id="br-Transparent"><img src="./assets/images/settings/blur-type/Blur - Transparent.png"></button>
+                    <button onclick="setBG0(); setWindowBlur('Plain')" class="window-blur" id="br-Plain"><img src="./assets/images/settings/blur-type/Blur - Plain.png"></button>
+                    <button onclick="setBG0(); setWindowBlur('Strong')" class="window-blur" id="br-Strong"><img src="./assets/images/settings/blur-type/Blur - Strong.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="grid-it-2">
+        <div>
+            <div class="sContainer">
+                <div>
+                    <h1>Background</h1>
+                    <button id="custom-background">Custom Background</button>
+                </div>
+                <div style="display: none;" id="use-provided-backgrounds">
+                    <p>Setting a background will disable blur and transparency of the window.</p>
+                    <div class="backgrounds-sw">
+                        <img onclick="setBG1()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-2310646.jpg">
+                        <img onclick="setBG2()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-844297.jpg">
+                        <img onclick="setBG3()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-12365968.jpg">
+                        <img onclick="setBG4()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-12366149.jpg">
+                        <img onclick="setBG5()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-12366148.jpg">
+                        <img onclick="setBG6()" src="./assets/images/backgrounds/pexels-eberhard-grossgasteiger-12366150.jpg">
+                    </div> 
+                </div>
+                <div id="use-custom-background">
+                    <p>Setting a background will disable blur and transparency of the window.</p>
+                    <div>
+                        <label for="lead">Background URL: </label>
+                        <input type="text" class="storage" id="nameField">
+                        <p class="lead mt-3 text">There is no custom background set.</p>
+                        <button class="btn btn-secondary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</settings>
