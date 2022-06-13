@@ -1,50 +1,14 @@
-const {
-    app, BrowserWindow, dialog, ipcMain, ipcRenderer, nativeTheme, protocol, powerMonitor, session, webContents, shell
-} = require('electron');
+const { app, ipcMain, nativeTheme } = require('electron');
 const Pushy = require('pushy-electron');
 const {exec} = require('child_process');
 const PowerShell = require('powershell');
 const glasstron = require('glasstron');
 const log = require('electron-log');
 const path = require('path');
-const fs = require("fs");
+const { launcherEventManager, vpnEventManager, electronEventManager, platformCheck, initializePushy,
+    primaryWindowEventManager
+} = require("./util");
 let commandExistsSync = require('command-exists').sync;
-
-const launcherEventManager = () => {
-    const eventFiles = fs
-        .readdirSync(`${__dirname}/ipcMain_Events/launcherEvents`)
-        .filter((file) => file.endsWith(".js"));
-    for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/launcherEvents/${file}`);
-        event.once ?
-            ipcMain.once(event.name, (...args) => event.execute(...args)) :
-            ipcMain.on(event.name, (...args) => event.execute(...args));
-    }
-}
-
-const vpnEventManager = () => {
-    const eventFiles = fs
-        .readdirSync(`${__dirname}/ipcMain_Events/vpnEvents`)
-        .filter((file) => file.endsWith(".js"));
-    for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/vpnEvents/${file}`);
-        event.once ?
-            ipcMain.once(event.name, (...args) => event.execute(...args)) :
-            ipcMain.on(event.name, (...args) => event.execute(...args));
-    }
-}
-
-const electronEventManager = (ses) => {
-    const eventFiles = fs
-        .readdirSync(`${__dirname}/ipcMain_Events/electronEvents`)
-        .filter((file) => file.endsWith(".js"));
-    for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/electronEvents/${file}`);
-        event.once ?
-            ipcMain.once(event.name, (...args) => event.execute(...args, ses, app)) :
-            ipcMain.on(event.name, (...args) => event.execute(...args, ses, app));
-    }
-}
 
 
 /*
@@ -59,18 +23,7 @@ Object.assign(console, log.functions)
 # Platform Check
 */
 
-switch (process.platform) {
-    case "win32":
-        global.blur = 'acrylic'
-        break
-    case "darwin":
-        global.blur = 'vibrancy'
-        global.update = log.error('Auto update not supported on this platform.')
-        break
-    case "linux":
-        global.blur = 'blurbehind'
-        break
-}
+platformCheck();
 
 /*
 # Main app function
@@ -140,16 +93,11 @@ const createMainWindow = () => {
     # Notifications System Initialization - Powered by Pushy
     */
 
-    primaryWindow.webContents.on('did-finish-load', () => {
+    /*primaryWindow.webContents.on('did-finish-load', () => {
         Pushy.listen();
-    });
-
-    Pushy.register({appId: '62a020bfca130a4f54f56b4f'}).then((deviceToken) => {log.info("Registered Pushy")});
-
-    if (Pushy.isRegistered()) {
-        Pushy.subscribe('primary').then(r => log.info("Subscribed to primary notifications"));
-    }
-
+    });*/
+    primaryWindowEventManager(primaryWindow.webContents)
+    initializePushy();
     Pushy.setNotificationListener((data) => {
         primaryWindow.webContents.executeJavaScript(`
     document.getElementById("notification-amount").style.opacity = '1';
