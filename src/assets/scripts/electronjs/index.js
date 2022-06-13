@@ -18,7 +18,7 @@ const launcherEventManager = () => {
         .readdirSync(`${__dirname}/ipcMain_Events/launcherEvents`)
         .filter((file) => file.endsWith(".js"));
     for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/launcherEvents${file}`);
+        const event = require(`${__dirname}/ipcMain_Events/launcherEvents/${file}`);
         event.once ?
             ipcMain.once(event.name, (...args) => event.execute(...args)) :
             ipcMain.on(event.name, (...args) => event.execute(...args));
@@ -30,7 +30,7 @@ const vpnEventManager = () => {
         .readdirSync(`${__dirname}/ipcMain_Events/vpnEvents`)
         .filter((file) => file.endsWith(".js"));
     for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/vpnEvents${file}`);
+        const event = require(`${__dirname}/ipcMain_Events/vpnEvents/${file}`);
         event.once ?
             ipcMain.once(event.name, (...args) => event.execute(...args)) :
             ipcMain.on(event.name, (...args) => event.execute(...args));
@@ -42,7 +42,7 @@ const electronEventManager = (ses) => {
         .readdirSync(`${__dirname}/ipcMain_Events/electronEvents`)
         .filter((file) => file.endsWith(".js"));
     for (const file of eventFiles) {
-        const event = require(`${__dirname}/ipcMain_Events/electronEvents${file}`);
+        const event = require(`${__dirname}/ipcMain_Events/electronEvents/${file}`);
         event.once ?
             ipcMain.once(event.name, (...args) => event.execute(...args, ses, app)) :
             ipcMain.on(event.name, (...args) => event.execute(...args, ses, app));
