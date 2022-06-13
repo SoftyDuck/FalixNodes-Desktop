@@ -7,11 +7,8 @@ const PowerShell = require('powershell');
 const glasstron = require('glasstron');
 const log = require('electron-log');
 const path = require('path');
-const {info} = require("electron-log");
 const fs = require("fs");
 let commandExistsSync = require('command-exists').sync;
-
-const execute = command => exec(command);
 
 const launcherEventManager = () => {
     const eventFiles = fs
