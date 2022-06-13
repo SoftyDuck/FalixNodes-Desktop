@@ -1,14 +1,28 @@
-const { app, ipcMain, nativeTheme } = require('electron');
-const Pushy = require('pushy-electron');
-const {exec} = require('child_process');
-const PowerShell = require('powershell');
-const glasstron = require('glasstron');
-const log = require('electron-log');
-const path = require('path');
+const { app, nativeTheme, ipcMain } = require('electron'), Pushy = require('pushy-electron'), glasstron = require('glasstron'), log = require('electron-log'), path = require('path');
 const { launcherEventManager, vpnEventManager, electronEventManager, platformCheck, initializePushy,
-    primaryWindowEventManager
+    primaryWindowEventManager, that
 } = require("./util");
-let commandExistsSync = require('command-exists').sync;
+let commandExistsSync = require('command-exists').sync, options = {
+    minHeight: 720,
+    minWidth: 1200,
+    autoHideMenuBar: true,
+    frame: true,
+    blur: true,
+    blurType: global.blur,
+    titleBarStyle: 'hidden',
+    trafficLightPosition: {
+        x: 20, y: 28,
+    },
+    titleBarOverlay: {
+        color: '#161616', symbolColor: 'white'
+    },
+    webPreferences: {
+        preload: path.join(__dirname, 'preload.js'),
+        webviewTag: true,
+        contextIsolation: true,
+        nodeIntegration: false,
+    }
+}
 
 
 /*
@@ -30,81 +44,23 @@ platformCheck();
 */
 
 const createMainWindow = () => {
-    let primaryWindow = new glasstron.BrowserWindow({
-        minHeight: 720,
-        minWidth: 1200,
-        autoHideMenuBar: true,
-        frame: true,
-        blur: true,
-        blurType: global.blur,
-        titleBarStyle: 'hidden',
-        trafficLightPosition: {
-            x: 20, y: 28,
-        },
-        titleBarOverlay: {
-            color: '#161616', symbolColor: 'white'
-        },
-        webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
-            webviewTag: true,
-            contextIsolation: true,
-            nodeIntegration: false,
-        }
-    })
+    let primaryWindow = new glasstron.BrowserWindow(options)
     primaryWindow.loadFile('src/index.html').then(r => log.info("Loaded index.html"));
-
     electronEventManager(primaryWindow.webContents.session);
 
-    // Mullvad VPN - Windows and Linux are supported. macOS support will come later.
-    ipcMain.on('loginVPN', () => {
-        switch (process.platform) {
-            case "linux":
-                exec(`
-      MULLID=$( zenity --entry --text="Type in your Mullvad Account Number" )
+    /*
+    # Mullvad VPN - Windows and Linux are supported. macOS support will come later.
+    */
 
-      if [ $? = 0 ]
-      then
-          mullvad account set $MULLID
-      else
-          echo "Mullvad login was cancelled."
-      fi
-      `);
-                break
-            case "win32":
-                let ps = new PowerShell(`
-      Add-Type -AssemblyName Microsoft.VisualBasic; [Microsoft.VisualBasic.Interaction]::InputBox('Your Mullvad Account Number:', 'FalixNodes Desktop - External Mullvad Login') > mull-id.tmp
-      $MULLVADID = Get-Content -Path mull-id.tmp -RAW
-
-      mullvad.exe account set $MULLVADID > mullvad-login.txt
-      $MULLVADMSG1 = Get-Content -Path mullvad-login.txt -RAW
-
-      Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::($MULLVADMSG1)
-      `)
-                break
-        }
-        primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-FAILED").style.display = "none";').then(r => {
-            log.info("Successfully changed #mullvad-failed container style to none");
-        })
-    })
-
+    that(primaryWindow.webContents);
     vpnEventManager();
 
     /*
     # Notifications System Initialization - Powered by Pushy
     */
 
-    /*primaryWindow.webContents.on('did-finish-load', () => {
-        Pushy.listen();
-    });*/
     primaryWindowEventManager(primaryWindow.webContents)
-    initializePushy();
-    Pushy.setNotificationListener((data) => {
-        primaryWindow.webContents.executeJavaScript(`
-    document.getElementById("notification-amount").style.opacity = '1';
-    document.getElementById("notification-amount").stepUp(1);
-    document.querySelector('.tabs#notifications hr').insertAdjacentHTML("afterEnd", "<notification><div class='header'><h1>` + data.icon + `` + data.title + `</h1></div><div class='n-content'>` + data.message + `</div><div class=actions><button>Dismiss</button> ` + data.action + `</div></div></notification>")
-    `).then(r => log.info("successfully executed this javascript code"));
-    });
+    initializePushy(primaryWindow.webContents);
 
     /*
     # Other important bits of code
@@ -129,6 +85,12 @@ const createMainWindow = () => {
             primaryWindow.webContents.executeJavaScript('document.querySelector(".sContainer#MULLVAD-NOT-FOUND").style.display = "grid"; document.querySelector(".sContainer#mullvad-install").style.display = "inherit"; document.querySelector("vpn .vpn-connection").style.backgroundColor = "rgb(255 0 0 / 30%)";  document.querySelector("vpn .vpn-connection").style.boxShadow = "0px 0px 0px 20px rgb(255 0 0 / 10%)"')
         }, 5000); // the element doesn't load instantly
     }
+
+    ipcMain.on("relaunch", () => {
+        log.info("Goodbye! *kisses*")
+        app.relaunch({args: process.argv.slice(1).concat(['--relaunch'])});
+        app.exit(0);
+    });
 
     /*
     # FalixNodes Desktop Minecraft Launcher - EXPERIMENTAL
