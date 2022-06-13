@@ -12,7 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "command-exists": "^1.2.9",
-    "electron": "^18.0.0",
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
@@ -22,7 +21,8 @@
     "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
-    "electron-builder": "^22.14.13"
+    "electron-builder": "^22.14.13",
+    "electron": "^18.0.0"
   },
   "build": {
     "appId": "com.korbsstudio.falixnodes-desktop",
