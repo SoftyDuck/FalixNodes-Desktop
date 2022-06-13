@@ -692,3 +692,71 @@ button#custom-background {
 		border-radius: 4px;
 	}
 }
+
+mccontent {
+    background: #00000073;
+    display: flex;
+    margin: 25px;
+    border-radius: 10px;
+}
+div#m-2c {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.mc-player img {
+    width: 200px;
+    height: 200px;
+    object-position: 0px 20px;
+    object-fit: cover;
+    background: #2970cc;
+    border-radius: 10px 0px 0px 10px;
+}
+.mc-player {
+    display: flex;
+    align-items: center;
+}
+.mc-player h1 {
+    margin-left: 45px;
+    font-size: 24px;
+}
+.s-v-version {
+    text-align: right;
+    position: absolute;
+    right: 80px;
+    top: 72px;
+}
+.s-v-version h2 {
+    color: #2970cc;
+    font-size: 16px;
+    margin: 0px;
+}
+.s-v-version h1 {
+    margin: 0px;
+    font-size: 52px;
+}
+mcfooter {
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+mcfooter p {
+    font-size: 12px;
+    margin-left: 25px;
+    opacity: 0.2;
+}
+mcfooter button {
+    background: #2970cc;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0px 40px;
+    border-radius: 4px;
+    height: 40px;
+    position: fixed;
+    right: 35px;
+    bottom: 25px;
+	cursor: pointer;
+}
