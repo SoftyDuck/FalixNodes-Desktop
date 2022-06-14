@@ -1,8 +1,15 @@
-const { app, nativeTheme, ipcMain } = require('electron'), Pushy = require('pushy-electron'), glasstron = require('glasstron'), log = require('electron-log'), path = require('path');
-const { launcherEventManager, vpnEventManager, electronEventManager, platformCheck, initializePushy,
-    primaryWindowEventManager, that
-} = require("./util");
-let commandExistsSync = require('command-exists').sync, options = {
+const { app, nativeTheme, ipcMain } = require('electron');
+Pushy = require('pushy-electron');
+glasstron = require('glasstron');
+log = require('electron-log');
+path = require('path');
+const { launcherEventManager, vpnEventManager, electronEventManager, platformCheck, initializePushy, primaryWindowEventManager, that } = require("./util");
+
+let commandExistsSync = require('command-exists').sync
+
+platformCheck();
+
+options = {
     minHeight: 720,
     minWidth: 1200,
     autoHideMenuBar: true,
@@ -14,7 +21,8 @@ let commandExistsSync = require('command-exists').sync, options = {
         x: 20, y: 28,
     },
     titleBarOverlay: {
-        color: '#161616', symbolColor: 'white'
+        color: '#161616',
+        symbolColor: 'white'
     },
     webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
@@ -25,46 +33,30 @@ let commandExistsSync = require('command-exists').sync, options = {
 }
 
 
-/*
-# Overwrite 'console.log' with 'log`
-*/
+// Overwrite 'console.log' with 'log`
 
 console.log = log.info
 console.error = log.error
 Object.assign(console, log.functions)
 
-/*
-# Platform Check
-*/
-
-platformCheck();
-
-/*
-# Main app function
-*/
+// Main app function
 
 const createMainWindow = () => {
     let primaryWindow = new glasstron.BrowserWindow(options)
     primaryWindow.loadFile('src/index.html').then(r => log.info("Loaded index.html"));
     electronEventManager(primaryWindow.webContents.session);
 
-    /*
-    # Mullvad VPN - Windows and Linux are supported. macOS support will come later.
-    */
+    // Mullvad VPN - Windows and Linux are supported. macOS support will come later.
 
     that(primaryWindow.webContents);
     vpnEventManager();
 
-    /*
-    # Notifications System Initialization - Powered by Pushy
-    */
+    // Notifications System Initialization - Powered by Pushy
 
     primaryWindowEventManager(primaryWindow.webContents)
     initializePushy(primaryWindow.webContents);
-
-    /*
-    # Other important bits of code
-    */
+    
+    // Other important bits of code
 
     if (nativeTheme.shouldUseDarkColors) {
         log.info('Native Theme: Dark')
@@ -92,11 +84,8 @@ const createMainWindow = () => {
         app.exit(0);
     });
 
-    /*
-    # FalixNodes Desktop Minecraft Launcher - EXPERIMENTAL
-    # Credit: https://github.com/MrShieh-X/console-minecraft-launcher/
-    */
-
+    // FalixNodes Desktop Minecraft Launcher - EXPERIMENTAL
+    // Credit: https://github.com/MrShieh-X/console-minecraft-launcher/
     launcherEventManager();
 }
 
