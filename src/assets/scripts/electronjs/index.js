@@ -9,7 +9,7 @@ let commandExistsSync = require('command-exists').sync
 
 platformCheck();
 
-options = {
+window = {
     minHeight: 720,
     minWidth: 1200,
     autoHideMenuBar: true,
@@ -42,7 +42,7 @@ Object.assign(console, log.functions)
 // Main app function
 
 const createMainWindow = () => {
-    let primaryWindow = new glasstron.BrowserWindow(options)
+    let primaryWindow = new glasstron.BrowserWindow(window)
     primaryWindow.loadFile('src/index.html').then(r => log.info("Loaded index.html"));
     electronEventManager(primaryWindow.webContents.session);
 
