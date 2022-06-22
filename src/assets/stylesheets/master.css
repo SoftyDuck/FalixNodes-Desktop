@@ -23,6 +23,7 @@ img#primary-background {
   object-fit: cover;
   object-position: center;
   opacity: 0.1;
+  transform: scale(1.032);
 }
 
 content {
@@ -485,7 +486,7 @@ settings.tab {
   border-radius: 3px;
   padding: 4px 2px;
 }
-.sContainer button#save {
+.sContainer .save {
   float: right;
   margin: 0px 0px 10px 0px;
   background: #2970CC;
