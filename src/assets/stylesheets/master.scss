@@ -6,6 +6,12 @@ $boxHeader: rgb(18 30 46);
 $boxSubHeader: rgb(35 46 60);
 $boxBody: rgb(11 23 39);
 
+* {
+	::focus {
+		outline: none;
+	}
+}
+
 body {
 	background: rgb(0 0 0 / 75%);
 	color: $color_1;
@@ -454,6 +460,24 @@ settings.tab {
 		height: 356px;
 		margin-top: 5px;
 		border: none;
+	}
+	input {
+		background: rgb(255 255 255 / 10%);
+		color: white;
+		border: none;
+		border-radius: 3px;
+		padding: 4px 2px;
+	}
+	button#save {
+		float: right;
+		margin: 0px 0px 10px 0px;
+		background: #2970CC;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 4px;
+		cursor: pointer;
+		font-weight: bold;
 	}
 }
 .redSC {
