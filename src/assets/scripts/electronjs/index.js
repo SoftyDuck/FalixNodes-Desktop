@@ -1,4 +1,4 @@
-const { app, nativeTheme, ipcMain } = require('electron');
+const { app, ipcMain, webContents } = require('electron');
 Pushy = require('pushy-electron');
 glasstron = require('glasstron');
 log = require('electron-log');
@@ -58,12 +58,6 @@ const createMainWindow = () => {
     
     // Other important bits of code
 
-    if (nativeTheme.shouldUseDarkColors) {
-        log.info('Native Theme: Dark')
-    } else {
-        log.info('Native Theme: Light')
-    }
-
     if (__dirname.includes('\\WindowsApps\\')) {
         log.error('The built-in auto updater is not supported on Microsoft Store, please use the Microsoft Store to update FalixNodes Desktop.');
     } else {
@@ -79,14 +73,13 @@ const createMainWindow = () => {
     }
 
     ipcMain.on("relaunch", () => {
-        log.info("Goodbye! *kisses*")
         app.relaunch({args: process.argv.slice(1).concat(['--relaunch'])});
         app.exit(0);
     });
 
     // FalixNodes Desktop Minecraft Launcher - EXPERIMENTAL
     // Credit: https://github.com/MrShieh-X/console-minecraft-launcher/
-    launcherEventManager();
+    // launcherEventManager();
 }
 
 app.on('ready', createMainWindow);
