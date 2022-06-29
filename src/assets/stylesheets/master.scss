@@ -6,6 +6,16 @@ $boxHeader: rgb(18 30 46);
 $boxSubHeader: rgb(35 46 60);
 $boxBody: rgb(11 23 39);
 
+:root {
+	--color1: white;
+	--accent: #2970CC;
+	--font-family: Poppins;
+
+	--boxHeader: rgb(18 30 46);
+	--boxSubHeader: rgb(35 46 60);
+	--boxBody: rgb(11 23 39);
+}
+
 * {
 	::focus {
 		outline: none;
@@ -285,7 +295,7 @@ notification#large {
 	overflow: scroll;
 	height: calc(100% - 85px);
 	a {
-		color: $accent;
+		color: var(--accent);
 	}
 	img {
 		width: 100%;
@@ -303,7 +313,7 @@ notification#dismiss {
 	background: rgb(12 12 12 / 75%);
 }
 span#username {
-	color: $accent;
+	color: var(--accent);
 	text-decoration: underline;
 }
 dashboard {
@@ -480,7 +490,7 @@ settings.tab {
 	.save {
 		float: right;
 		margin: 0px 0px 10px 0px;
-		background: #2970CC;
+		background: var(--accent);
 		color: white;
 		border: none;
 		padding: 10px 20px;
