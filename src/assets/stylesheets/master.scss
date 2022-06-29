@@ -323,6 +323,14 @@ dashboard {
 webview#glance-servers {
 	height: 172px;
 }
+
+
+controls#clientarea, controls#serverspanel {
+	position: fixed;
+	top: 43px;
+	left: 95px;
+}
+
 controls {
 	position: absolute;
 	right: 0px;

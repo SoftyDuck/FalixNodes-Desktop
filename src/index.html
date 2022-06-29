@@ -46,16 +46,26 @@
                         <div class="welcome">
                             <h1>Welcome back, <span id="username"><i class="fa-duotone fa-spinner-third fa-spin"></i></span></h1>
                         </div>
-                        <!-- <h1>At a Glance - Your Servers</h1>
+                        <h1>At a Glance - Your Servers</h1>
                         <div class="glance-servers">
                             <webview id="glance-servers" preload="./assets/scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
-                        </div> -->
+                        </div>
+                        <br>
+                        <h1>Featured Servers</h1>
+                        <p>There are currently no servers to display.</p>
+                        <br>
+                        <h1>What's New</h1>
+                        <br>
+                        <h1>Latest Blog Posts</h1>
+                        <br>
                     </dashboard>
                 </div>
                 <div id="Client" class="content">
+                    <div add-component="./components/controls/client-area.html"></div>
                     <webview class="fullSize" id="clientAreaWV" src="https://client.falixnodes.net/"></webview>
                 </div>
                 <div id="Server" class="content">
+                    <div add-component="./components/controls/servers-panel.html"></div>
                     <webview class="fullSize" id="gamePanelWV" preload="./scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net/"></webview>
                 </div>
                 <!-- <div id="Database" class="content">
@@ -136,6 +146,7 @@
 
     <script src="./assets/scripts/webviews/id.js"></script>
     <script src="./assets/scripts/webviews/css.js"></script>
+    <script src="./assets/scripts/webviews/controls.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>

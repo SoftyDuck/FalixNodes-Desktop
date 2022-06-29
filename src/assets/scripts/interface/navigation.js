@@ -38,3 +38,12 @@ function toDashboard() {
   document.querySelector('.tabs#notifications').style.display = 'none'
   document.querySelector('.tabs#settings').style.display = 'none'
 }
+
+function tgMH() {
+  document.querySelector('button#command-menu-o').style.display = 'none';
+  document.querySelector('button#profile').style.display = 'none';
+}
+function tgMS() {
+  document.querySelector('button#command-menu-o').style.display = 'inherit';
+  document.querySelector('button#profile').style.display = 'inherit';
+}
