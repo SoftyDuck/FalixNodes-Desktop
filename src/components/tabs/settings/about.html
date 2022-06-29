@@ -16,7 +16,7 @@
                     <h1>License Agreement</h1>
                 </div>
                 <div>
-                    <iframe src="../LICENSE"></iframe>
+                    <div add-component="./components/extra/license.html"></div>
                 </div>
             </div>
             <div class="sContainer">
@@ -24,9 +24,10 @@
                     <h1>Credits</h1>
                 </div>
                 <div>
-                    <p>Developer: <a href="https://korbsstudio.com/" target="_blank">Korbs Studio</a></p>
-                    <p>Framework: <a href="https://electronjs.org/" target="_blank">ElectronJS</a></p>
-                    <p>Blur Composition Effect: <a href="#">Glasstron</a></p>
+                    <p>Developer: <a style="text-decoration: underline; cursor: pointer;" onclick="window.api.send('creditKS')" target="_blank">Korbs Studio</a></p>
+                    <p>Framework: <a style="text-decoration: underline; cursor: pointer;" onclick="window.api.send('creditEJS')" target="_blank">ElectronJS</a></p>
+                    <p>Blur Composition Effect: <a style="text-decoration: underline; cursor: pointer;" onclick="window.api.send('creditGT')">Glasstron</a></p>
+                    <p>Command Menu: <a style="text-decoration: underline; cursor: pointer;" onclick="window.api.send('creditNK')">Ninja Keys</a></p>
                 </div>
             </div>
         </div>

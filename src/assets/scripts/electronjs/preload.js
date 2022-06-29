@@ -4,6 +4,10 @@ contextBridge.exposeInMainWorld( "api", { send: (channel, data) => {let validCha
 "sftpClose",
 "logout",
 "relaunch",
+"creditKS",
+"creditEJS",
+"creditGT",
+"creditNK",
 // Mullvad VPN
 "enableVPN",
 "disableVPN",

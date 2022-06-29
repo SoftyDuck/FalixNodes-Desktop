@@ -1,10 +1,9 @@
-const { app, ipcMain, webContents } = require('electron');
+const { app, ipcMain, webContents, shell } = require('electron');
 Pushy = require('pushy-electron');
 glasstron = require('glasstron');
 log = require('electron-log');
 path = require('path');
 const { launcherEventManager, vpnEventManager, electronEventManager, platformCheck, initializePushy, primaryWindowEventManager, that } = require("./util");
-
 let commandExistsSync = require('command-exists').sync
 
 platformCheck();
@@ -80,6 +79,11 @@ const createMainWindow = () => {
     // FalixNodes Desktop Minecraft Launcher - EXPERIMENTAL
     // Credit: https://github.com/MrShieh-X/console-minecraft-launcher/
     // launcherEventManager();
+
+    ipcMain.on("creditKS", () => {shell.openExternal('https://korbsstudio.com/')})
+    ipcMain.on("creditEJS", () => {shell.openExternal('https://electronjs.org/')})
+    ipcMain.on("creditGT", () => {shell.openExternal('https://github.com/NyaomiDEV/Glasstron')})
+    ipcMain.on("creditNK", () => {shell.openExternal('https://ninja-keys-demo.vercel.app/')})
 }
 
 app.on('ready', createMainWindow);
