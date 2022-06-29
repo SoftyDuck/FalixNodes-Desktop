@@ -10,8 +10,8 @@ let commandExistsSync = require('command-exists').sync
 platformCheck();
 
 window = {
-    minHeight: 720,
-    minWidth: 1200,
+    minHeight: 800,
+    minWidth: 1300,
     autoHideMenuBar: true,
     frame: true,
     blur: true,
