@@ -31,6 +31,12 @@ body {
 a {
 	color: $color_1;
 }
+
+.selectall {
+	-moz-user-select: all;
+	-webkit-user-select: all;
+	-ms-user-select: all;
+}
 img#primary-background {
     position: fixed;
     z-index: -1;
@@ -802,4 +808,42 @@ mcfooter button {
     right: 35px;
     bottom: 25px;
 	cursor: pointer;
+}
+
+ul#f-s-featured-servers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    margin: 0px !important;
+    padding: 0px !important;
+    width: calc(100% - 40px);
+}
+ul#f-s-featured-servers li {
+    background: rgb(72 72 72 / 50%);
+    list-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    height: 60px;
+	img {
+		border-radius: 7px;
+		margin-right: 20px;
+		pointer-events: none;
+	}
+}
+div#f-s-info {
+    align-self: center;
+	h1 {
+		font-size: 14px;
+		margin: 0px;
+		color: var(--accent);
+		pointer-events: none;
+	}
+	p {
+		font-size: 12px;
+		margin: 0px;
+		font-weight: bold;
+		opacity: 0.5;
+		cursor: pointer;
+	}
 }
