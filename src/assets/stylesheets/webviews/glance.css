@@ -1,44 +1,55 @@
 body {
     background: transparent !important;
-    pointer-events: none !important;
+    color: white !important;
+    font-size: 0px !important;
+    overflow: hidden !important;
 }
-
-.dRhlIo {
-    background: rgb(255 255 255 / 10%) !important;
+svg {
+    width: 0px !important;
 }
-
-.NavigationBar__Navigation-tupl2x-0,
-.ContentContainer-x3r2dw-0.PageContentBlock___StyledContentContainer2-kbxq2g-2.hiUzTH.fcjicp,
-.ServerRow___StyledDiv4-sc-1ibsw91-10
-{ 
+button,
+.IQTcj,
+svg[data-icon="ethernet"],
+[href="https://pterodactyl.io"] {
     display: none !important;
 }
 
-.ContentContainer-x3r2dw-0.PageContentBlock___StyledContentContainer-kbxq2g-0.hiUzTH.ckLneN {
-    display: grid !important;
-    grid-template-columns: auto auto !important;
-    grid-gap: 10px !important;
-    margin-right: 40px !important;
-    margin-top: -20px !important;
-    margin-bottom: 0px !important;
-    margin-left: 0px !important;
+svg[data-icon="server"] {
+    width: 16px !important;
 }
 
-.bEKRkc {
-    grid-template-columns: auto !important;
+svg[data-icon="microchip"], svg[data-icon="memory"], svg[data-icon="hdd"] {
+    margin: 20px 0px 20px 0px !important;
 }
 
-.jbVWLN {
-    margin-top: 0px !important;
+section {
+    pointer-events: none !important;
 }
 
-.CbttB {
-    background: rgb(255 255 255 / 25%) !important;
-    box-shadow: none !important;
-    height: 4px !important; 
-    border-radius: 10px !important; 
-    margin: 0px 20px !important; 
-    width: calc(100% - 60px) !important;
-    top: 0px !important;
-    position: fixed !important; 
+section > div {
+    display: flex !important;
+    font-size: 14px !important;
+}
+section > div > a {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 60px !important;
+    background: rgb(42 42 42 / 50%) !important;
+    border-radius: 10px !important;
+    color: white !important;
+    font-family: arial !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    padding: 10px !important;
+    margin: 0px 20px 0px 0px !important;
+}
+section > div > a * {
+    margin: 0px !important;
+}
+section > div > a > div {
+    display: flex !important;
+    margin: 0px 0px -14px 0px !important;
+}
+section > div > a > div > div {
+    margin: 0px 12px !important;
 }
