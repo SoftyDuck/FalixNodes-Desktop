@@ -13,15 +13,18 @@
    - Updates
  - Add VPN Settings (Mullvad Required)
  - Add Command Menu
+ 
 **v4.1.0** - Optimization Update (August 14th, 2022)
  - Improve usage of system resources
  - Minimze file size of executables
  - Match System Preferences
  - Add battery saver; when toggled it will disable blur, animations, certain tabs.
+ 
 **4.2.0** - Utilily Update (August 14th, 2022)
  - Add tools:
    - Server Check
    - Internet Speed Test
+   
 **4.3.0** - Minecraft Launcher Update (Sepember 1st, 2022)
  - Add built-in Minecraft Launcher
  
