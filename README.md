@@ -1,5 +1,5 @@
 # 🛣️ Roadmap
-**v4.0.0** - Design Update (August 1st, 2022)
+**v4.0.0** - Design Update
  - Improve warning messages
  - Improve design and layout
  - New Customization Settings:
@@ -14,21 +14,19 @@
  - Add VPN Settings (Mullvad Required)
  - Add Command Menu
  
-**v4.1.0** - Optimization Update (August 14th, 2022)
+**v4.1.0** - Optimization Update
  - Improve usage of system resources
  - Minimze file size of executables
  - Match System Preferences
  - Add battery saver; when toggled it will disable blur, animations, certain tabs.
  
-**4.2.0** - Utilily Update (August 14th, 2022)
+**4.2.0** - Utilily Update
  - Add tools:
    - Server Check
    - Internet Speed Test
    
-**4.3.0** - Minecraft Launcher Update (Sepember 1st, 2022)
- - Add built-in Minecraft Launcher
- 
- > Dates are NOT final
+**4.3.0** - Minecraft Launcher Update
+ - Add built-in Minecraft Launcher\
 
 # FalixNodes Desktop v4
 ![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
