@@ -15,6 +15,7 @@
  - Add Command Menu
  
 **v4.1.0** - Optimization Update
+ - Discontinue Snap Store/Microsoft Store version
  - Improve usage of system resources
  - Minimze file size of executables
  - Match System Preferences
