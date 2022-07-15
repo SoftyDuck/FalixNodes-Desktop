@@ -1,3 +1,10 @@
+## ✍🏻 Directive Rewrite Update
+FalixNodes Desktop has been in development for further than 7 - 8 months, which is an unreasonably long time.
+The reason it's taking so long to develop v4 is that there's "too much" to add because of the feature list that was published back in late 2021.
+So, with this "Directive Rewrite" method, we'll provide fewer "new" features in the first release of v4, then add the additional ones subsequently. 
+
+The roadmap presented below is an expected future changelog, however it is subject to change based on progress. 
+
 # 🛣️ Roadmap
 **v4.0.0** - Design Update
  - Improve warning messages
@@ -27,7 +34,7 @@
    - Internet Speed Test
    
 **4.3.0** - Minecraft Launcher Update
- - Add built-in Minecraft Launcher\
+ - Add built-in Minecraft Launcher
 
 # FalixNodes Desktop v4
 ![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
