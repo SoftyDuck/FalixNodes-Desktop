@@ -18,7 +18,7 @@ The roadmap presented below is an expected future changelog, however it is subje
    - Glance
    - Featured Servers
    - Updates
- - Add VPN Settings (Mullvad Required)
+ - ~~Add VPN Settings (Mullvad Required)~~ (Won't happen)
  - Add Command Menu
  
 **v4.1.0** - Optimization Update
