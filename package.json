@@ -2,11 +2,13 @@
   "name": "falixnodes",
   "version": "4.70.0",
   "description": "Accessing Falix, all from one place",
-  "main": "src/assets/scripts/electronjs/index.js",
+  "main": "src/js/main/electron.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build",
-    "scss": "sass --watch src/assets/stylesheets/master.scss src/assets/stylesheets/master.css"
+    "scss": "sass --watch src/css/master.scss:src/css/master.css",
+    "dev": "npx parcel src/index.html --dist-dir src-bundle/",
+    "dev:all": ""
   },
   "author": "KorbsStudio",
   "license": "MIT",
@@ -18,11 +20,14 @@
     "glasstron": "^0.1.1",
     "powershell": "^2.3.2",
     "pushy-electron": "^1.0.9",
+    "v8-compile-cache": "^2.3.0",
     "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
+    "concurrently": "^7.3.0",
+    "electron": "^18.0.0",
     "electron-builder": "^22.14.13",
-    "electron": "^18.0.0"
+    "parcel": "^2.6.2"
   },
   "build": {
     "appId": "com.korbsstudio.falixnodes-desktop",
