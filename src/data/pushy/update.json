@@ -1,6 +1,0 @@
-{
-    "icon": "<i class='fa-light fa-cloud-check'></i>",
-    "title": "Update Ready",
-    "message": "FalixNodes Desktop v4.7.2 is ready, restart the app to update.",
-    "action": "<button onclick='restart()'>Restart</button>"
-}
