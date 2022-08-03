@@ -1,200 +1,35 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title>FalixNodes Desktop</title>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
-
-        <link rel="stylesheet" href="./assets/stylesheets/master.css">
-        <link rel="stylesheet" href="./assets/stylesheets/ninja-keys.css">
-        <link rel="stylesheet" href="./assets/stylesheets/search.css">
-        <link rel="stylesheet" href="./assets/stylesheets/animation.css">
-
-        <link id="accent-setting" rel="stylesheet" type="text/css" href="./assets/stylesheets/settings/accent-color/default.css">
-
-        <link rel="stylesheet" href="./assets/stylesheets/platforms/windows/menubar.css">
-
-        <link rel="stylesheet" href="./assets/stylesheets/fonts.css">
-        <link rel="stylesheet" href="./assets/fonts/fontawesome-pro-6.0.0-web/css/all.css">
-        
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+        <title>FalixNodes</title>
+        <link rel="stylesheet" href="./css/master.css">
     </head>
-    <body onload="addComponent()">
-        <modals>
-            <ninja-keys class="dark" placeholder="Command Menu"></ninja-keys>
-            <div add-component="./components/modals/pop-up/log-out.html"></div>
-            <div add-component="./components/modals/pop-up/w7.html"></div>
-            <div trigger-notification-update="./components/modals/notifications/update.html"></div>
-        </modals>
-        <div add-component="./components/sidebar.html"></div>
-        <div class="background">
-          <img id="primary-background">
+    <sidebar>
+        <div class="sidebar-top">
+            <button class="sidebar-tab">Dashboard</button>
+            <button class="sidebar-tab">Client Area</button>
+            <button class="sidebar-tab">Servers Panel</button>
         </div>
-        <content>
-            <div id="master" class="content">
-                <img src="./assets/images/icons/app/256x256.png">
-                <div id="splash-message">
-                    <p id="sm-restart">Restarting in a few moments...</p>
-                    <p id="sm-loggingout">Logging out...</p>
-                </div>
-                <p><i class="fa-duotone fa-spinner-third fa-spin"></i></p>
-            </div>
-            <div id="dashboard">
-                <div id="DashboardTB" class="content">
-                    <dashboard>
-                        <div class="welcome">
-                            <h1>Welcome back, <span id="username"><i class="fa-duotone fa-spinner-third fa-spin"></i></span></h1>
-                        </div>
-                        <h1>At a Glance - Your Servers</h1>
-                        <div class="glance-servers">
-                            <webview id="glance-servers" preload="./assets/scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
-                        </div>
-                        <br>
-                        <h1>Featured Servers</h1>
-                        <!-- <p>There are currently no servers to display.</p> -->
-                        <div add-component="https://falixnodes.net/en/servers-nine/"></div>
-                        <br>
-                        <h1>What's New</h1>
-                        <br>
-                        <h1>Latest Blog Posts</h1>
-                        <br>
-                    </dashboard>
-                </div>
-                <div id="Client" class="content">
-                    <div add-component="./components/controls/client-area.html"></div>
-                    <webview class="fullSize" id="clientAreaWV" src="https://client.falixnodes.net/"></webview>
-                </div>
-                <div id="Server" class="content">
-                    <div add-component="./components/controls/servers-panel.html"></div>
-                    <webview class="fullSize" id="gamePanelWV" preload="./scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net/"></webview>
-                </div>
-                <!-- <div id="Database" class="content">
-                    <webview class="fullSize" id="phpWV" src="https://phpmyadmin.falixnodes.net/"></webview>
-                </div> -->
-                <div id="SFTP" class="content">
-                    <webview id="sftp" src="https://demo.filestash.app/login"></webview>
-                </div>
-                <!-- <div id="Launcher" class="content">
-                    <div add-component="./components/tabs/dashboard/minecraft-launcher.html"></div>
-                </div> -->
-                <div id="Help" class="content">
-                    <webview class="fullSize" id="help" src="https://falixnodes.net/help/"></webview>
-                </div>
-                <div id="Support" class="content">
-                    <cDemo><i class="fa-light fa-headset"></i> Support</cDemo>
-                </div>
-            </div>
-            <div id="settings">
-                <div id="About" class="content">
-                    <div add-component="./components/tabs/settings/about.html"></div>
-                </div>
-                <div id="Language" class="content">
-                    <cDemo><i class="fa-light fa-language"></i> Language</cDemo>
-                </div>
-                <div id="Customization" class="content">
-                    <div add-component="./components/tabs/settings/customization.html"></div>
-                </div>
-                <div id="Notifications" class="content">
-                    <cDemo><i class="fa-light fa-bells"></i> Notifications</cDemo>
-                </div>
-                <div id="Security" class="content">
-                    <cDemo><i class="fa-light fa-shield-check"></i> Security</cDemo>
-                </div>
-                <div id="System" class="content">
-                    <cDemo><i class="fa-light fa-computer-classic"></i> System</cDemo>
-                </div>
-                <div id="VPN" class="content">
-                    <div add-component="./components/tabs/settings/vpn.html"></div>
-                </div>
-                <div id="VPN-Setup" class="content">
-                    <div add-component="./components/tabs/settings/vpn-setup.html"></div>
-                </div>
-                <div id="Utitlity" class="content">
-                    <cDemo><i class="fa-light fa-toolbox"></i> Utitlity</cDemo>
-                </div>
-                <div id="Sandbox" class="content">
-                    <div add-component="./components/tabs/settings/sandbox.html"></div>
-                </div>
-                <div id="Account" class="content">
-                    <webview class="fullSize" id="accountWV" src="https://client.falixnodes.net/profile/settings"></webview>
-                </div>
-                <div id="Uptime" class="content">
-                    <webview class="fullSize" id="uptimeWV" src="https://wl.hetrixtools.com/r/64ff7310029db59cdd2e69792cca6182/"></webview>
-                </div>
-            </div>
-        </content>
-    </body>
-    <script type="module">import {NinjaKeys} from 'https://unpkg.com/ninja-keys?module';</script>
-
-    <script src="./assets/scripts/interface/add-component.js"></script>
-    <script src="./assets/scripts/interface/dismiss.js"></script>
-    <script src="./assets/scripts/interface/notification-trigger-update.js"></script>
-    <script src="./assets/scripts/interface/navigation.js"></script>
-    <script src="./assets/scripts/interface/blog.js"></script>
-
-    <script src="./assets/scripts/settings/accent-color.js"></script>
-    <script src="./assets/scripts/settings/background.js"></script>
-    <script src="./assets/scripts/settings/name.js"></script>
-    
-    <script src="./assets/scripts/state/vpn.js"></script>
-    
-    <script src="./assets/scripts/command-menu/search.js"></script>
-
-    <script src="./assets/scripts/modals/command-menu.js"></script>
-    <script src="./assets/scripts/popups/logout.js"></script>
-    
-    <script src="./assets/scripts/system/platform.js"></script>
-
-    <script src="./assets/scripts/webviews/id.js"></script>
-    <script src="./assets/scripts/webviews/css.js"></script>
-    <script src="./assets/scripts/webviews/controls.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+        <div class="sidebar-bottom">
+            <button class="sidebar-tab">Help Center</button>
+            <button class="sidebar-tab">Notifications</button>
+            <button class="sidebar-tab">Settings</button>
+        </div>
+    </sidebar>
+    <content>
+        <div id="dashboard" class="content">
+            <h1>Dashboard</h1>
+        </div>
+        <div id="client-area" class="content">
+            <h1>Client Area</h1>
+        </div>
+        <div id="servers-panel" class="content">
+            <h1>Servers Panel</h1>
+        </div>
+        <div id="help-center" class="content">
+            <h1>Help Center</h1>
+        </div>
+        <div id="settings" class="content">
+            <h1>Settings</h1>
+        </div>
+    </content>
 </html>
-
-<script>
-    function setVPNON() {
-        document.getElementById('VPN-LOCATION-UKLN').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-UKLN').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-UKLN').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
-        document.getElementById('VPN-LOCATION-USNY').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-USNY').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-USNY').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
-        document.getElementById('VPN-LOCATION-GRBR').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-GRBR').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-GRBR').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
-        document.getElementById('VPN-LOCATION-AUSY').setAttribute("onclick", "window.api.send('disableVPN');document.getElementById('VPN-LOCATION-AUSY').style.backgroundColor = '#2970cc'; document.getElementById('VPN-LOCATION-AUSY').style.boxShadow = '0px 0px 0px 20px #234878'; setVPNOFF();") 
-    }
-    function setVPNOFF() {
-        document.getElementById('VPN-LOCATION-UKLN').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-UKLN').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-UKLN').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
-        document.getElementById('VPN-LOCATION-USNY').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-USNY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-USNY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
-        document.getElementById('VPN-LOCATION-GRBR').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-GRBR').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-GRBR').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
-        document.getElementById('VPN-LOCATION-AUSY').setAttribute("onclick", "window.api.send('enableVPN');document.getElementById('VPN-LOCATION-AUSY').style.backgroundColor = '#29cc81'; document.getElementById('VPN-LOCATION-AUSY').style.boxShadow = '0px 0px 0px 32px #269461e8'; setVPNON();") 
-    }
-    function hideAT() {
-        document.getElementById('VPN-LOCATION-UKLN').style.display = 'none';
-        document.getElementById('VPN-LOCATION-USNY').style.display = 'none';
-        document.getElementById('VPN-LOCATION-GRBR').style.display = 'none';
-        document.getElementById('VPN-LOCATION-AUSY').style.display = 'none';
-        document.getElementById('flag-uk').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
-        document.getElementById('flag-us').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
-        document.getElementById('flag-de').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
-        document.getElementById('flag-au').style.backgroundColor = 'rgba(225, 255, 255, 0.1)';
-    }
-</script>
-
-
-<!-- Look at this cute axolotl
-⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡤⠤⠤⠤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢴⠋⠙⠳⣤⡀⣠⠖⠋⠁⠀⠀⠀⠀⠀⠀⠀⠉⠓⠤⡀⣠⡴⠟⠛⣷⠀⠀
-⠀⠀⠈⠳⢤⣀⢈⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢏⣀⣠⡴⠋⠀⠀
-⢀⣠⣤⣄⣄⣉⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⣡⣤⡴⣦⣀
-⢹⣅⡀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠁⠀⢀⣠⠏
-⠀⠈⠙⠉⢋⣉⣇⠀⠀⣾⣷⠄⠀⠀⠀⠀⠀⠀⠀⢴⣿⡆⠀⢀⣿⡙⠋⠋⠀⠀
-⠀⠀⢤⠶⠋⠉⢈⣦⡀⠈⠉⠀⠀⠀⠉⠉⠉⠀⠀⠀⠉⠀⣠⣎⠈⠉⠛⢷⡀⠀
-⠀⠀⠻⣤⣤⠶⠋⠀⠈⠑⠠⠄⣀⣀⣀⣀⣀⣀⡀⠤⠐⠉⠀⠈⠻⠶⠖⠶⠃
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠤⡀⠀⡠⠤⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠉⠁⠀⠉⠉⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢀⠤⡀⠀⡠⢄⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠢⣀⣀⣀⣈⡠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡌⡇⠀⣎⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⡇⣸⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⠉⠀⠀

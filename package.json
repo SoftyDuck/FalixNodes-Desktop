@@ -7,8 +7,8 @@
     "start": "electron .",
     "build": "electron-builder build",
     "scss": "sass --watch src/css/master.scss:src/css/master.css",
-    "dev": "npx parcel src/index.html --dist-dir src-bundle/",
-    "dev:all": ""
+    "dev": "npx parcel ./src/index.html --dist-dir ./bundle/",
+    "dev:all": "concurrently --kill-others \"sass --watch src/css/master.scss:src/css/master.css\" \"npx parcel src/index.html --dist-dir bundle/ --lazy --no-source-maps --public-url ./ -p 2022\" \"npm start\""
   },
   "author": "KorbsStudio",
   "license": "MIT",
@@ -24,6 +24,8 @@
     "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
+    "@parcel/compressor-brotli": "^2.6.2",
+    "@parcel/compressor-gzip": "^2.6.2",
     "concurrently": "^7.3.0",
     "electron": "^18.0.0",
     "electron-builder": "^22.14.13",

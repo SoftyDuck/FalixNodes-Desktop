@@ -1,2 +1,5 @@
-node_modules
+.parcel-cache
+.sass-cache
+bundle
 dist
+node_modules
