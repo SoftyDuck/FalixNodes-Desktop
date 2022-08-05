@@ -1,0 +1,77 @@
+:root {
+  --accent: #2970CC; }
+
+body {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: 'Poppins'; }
+
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  font-weight: normal; }
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Bold.ttf);
+  font-weight: bold; }
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+  font-weight: lighter; }
+sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  height: 100%; }
+  sidebar button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 10px 0px 10px 20px;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer; }
+  sidebar button:hover {
+    background: rgba(255, 255, 255, 0.1); }
+  sidebar .sidebar-header {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    display: grid;
+    grid-template-columns: auto 33px 33px;
+    grid-gap: 6px;
+    width: calc(100% - 35px);
+    align-items: center; }
+    sidebar .sidebar-header img {
+      width: 20px !important;
+      margin-left: 8px; }
+    sidebar .sidebar-header button {
+      padding: 10px 0px 10px 10px;
+      border-radius: 50px;
+      background-color: transparent;
+      cursor: default; }
+    sidebar .sidebar-header button:hover {
+      background: rgba(255, 255, 255, 0.1); }
+  sidebar .sidebar-top {
+    position: absolute;
+    top: 52px;
+    display: grid;
+    width: calc(100% - 36px);
+    margin: 0px 16px;
+    grid-gap: 6px; }
+  sidebar .sidebar-bottom {
+    position: absolute;
+    bottom: 16px;
+    display: grid;
+    width: calc(100% - 36px);
+    margin: 0px 16px;
+    grid-gap: 6px; }
+
+content {
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  width: calc(100% - 250px); }
+
+/*# sourceMappingURL=master.css.map */

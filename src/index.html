@@ -1,35 +1,55 @@
 <html>
     <head>
         <title>FalixNodes</title>
-        <link rel="stylesheet" href="./css/master.css">
+
+        <link rel="stylesheet" href="./base/css/master/master.css">
+        <link rel="stylesheet" href="./base/css/extra/fonts.css">
+        <link rel="stylesheet" href="./base/css/extra/ninja-keys.css">
+        <link rel="stylesheet" href="./base/fonts/fontawesome-pro-6.0.0-web/css/all.css">
     </head>
-    <sidebar>
-        <div class="sidebar-top">
-            <button class="sidebar-tab">Dashboard</button>
-            <button class="sidebar-tab">Client Area</button>
-            <button class="sidebar-tab">Servers Panel</button>
-        </div>
-        <div class="sidebar-bottom">
-            <button class="sidebar-tab">Help Center</button>
-            <button class="sidebar-tab">Notifications</button>
-            <button class="sidebar-tab">Settings</button>
-        </div>
-    </sidebar>
-    <content>
-        <div id="dashboard" class="content">
-            <h1>Dashboard</h1>
-        </div>
-        <div id="client-area" class="content">
-            <h1>Client Area</h1>
-        </div>
-        <div id="servers-panel" class="content">
-            <h1>Servers Panel</h1>
-        </div>
-        <div id="help-center" class="content">
-            <h1>Help Center</h1>
-        </div>
-        <div id="settings" class="content">
-            <h1>Settings</h1>
-        </div>
-    </content>
+    <body onload="addComponent()">
+        <ninja-keys class="dark" placeholder="Command Menu"></ninja-keys>
+        <sidebar>
+            <div class="primary-sidebar">
+                <div class="sidebar-header">
+                    <img src="./base/img/icon/app/256x256.png">
+                    <button class="sidebar-tab"><i class="fa-light fa-command"></i></button>
+                    <button class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
+                </div>
+                <div class="sidebar-top">
+                    <button onclick="toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab">Dashboard</button>
+                    <button onclick="toTab('client-area', this, 'var(--accent)');" class="sidebar-tab">Client Area</button>
+                    <button onclick="toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab">Servers Panel</button>
+                </div>
+                <div class="sidebar-bottom">
+                    <button onclick="toTab('help-center', this, 'var(--accent)');" class="sidebar-tab">Help Center</button>
+                    <button class="sidebar-tab">Notifications</button>
+                    <button class="sidebar-tab">Settings</button>
+                </div>
+            </div>
+        </sidebar>
+        <content>
+            <div id="dashboard" class="content">
+                <h1>Dashboard</h1>
+            </div>
+            <div id="client-area" class="content">
+                <h1>Client Area</h1>
+            </div>
+            <div id="servers-panel" class="content">
+                <h1>Servers Panel</h1>
+            </div>
+            <div id="help-center" class="content">
+                <h1>Help Center</h1>
+            </div>
+            <div id="settings" class="content">
+                <h1>Settings</h1>
+            </div>
+        </content>
+    </body>
+    <script type="module">import {NinjaKeys} from 'https://unpkg.com/ninja-keys?module';</script>
+
+    <script src="./base/js/command-menu/search.js"></script>
+
+    <script src="./base/js/extra/add-component.js"></script>
+    <script src="./base/js/extra/navigation.js"></script>
 </html>
