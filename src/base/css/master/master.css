@@ -35,7 +35,7 @@ sidebar {
   sidebar button:hover {
     background: rgba(255, 255, 255, 0.1); }
   sidebar .sidebar-header {
-    grid-template-columns: auto 33px 33px;
+    grid-template-columns: auto auto;
     align-items: center;
     display: grid;
     width: calc(100% - 36px);
@@ -45,17 +45,22 @@ sidebar {
       width: 24px !important;
       margin-left: 8px; }
     sidebar .sidebar-header button {
-      padding: 10px 0px 10px 10px;
+      padding: 10px;
       border-radius: 50px;
       background-color: transparent;
       cursor: default; }
     sidebar .sidebar-header button:hover {
       background: rgba(255, 255, 255, 0.1); }
+  sidebar .sidebar-header-controls {
+    text-align: right; }
   sidebar .sidebar-top {
     display: grid;
     width: calc(100% - 36px);
     margin: 0px 16px;
     grid-gap: 6px; }
+    sidebar .sidebar-top button {
+      display: grid;
+      grid-template-columns: 32px auto; }
   sidebar .sidebar-bottom {
     position: absolute;
     bottom: 16px;
@@ -63,6 +68,9 @@ sidebar {
     width: calc(100% - 36px);
     margin: 0px 16px;
     grid-gap: 6px; }
+    sidebar .sidebar-bottom button {
+      display: grid;
+      grid-template-columns: 32px auto; }
   sidebar .primary-sidebar {
     display: grid;
     grid-template-rows: 60px auto auto; }
