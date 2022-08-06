@@ -22,29 +22,27 @@ sidebar {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 250px;
+  width: 246px;
   height: 100%; }
   sidebar button {
     background: transparent;
     color: white;
     border: none;
-    padding: 10px 0px 10px 20px;
+    padding: 12px 0px 12px 20px;
     text-align: left;
     border-radius: 4px;
     cursor: pointer; }
   sidebar button:hover {
     background: rgba(255, 255, 255, 0.1); }
   sidebar .sidebar-header {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    display: grid;
     grid-template-columns: auto 33px 33px;
-    grid-gap: 6px;
-    width: calc(100% - 35px);
-    align-items: center; }
+    align-items: center;
+    display: grid;
+    width: calc(100% - 36px);
+    margin: 0px 16px;
+    grid-gap: 6px; }
     sidebar .sidebar-header img {
-      width: 20px !important;
+      width: 24px !important;
       margin-left: 8px; }
     sidebar .sidebar-header button {
       padding: 10px 0px 10px 10px;
@@ -54,8 +52,6 @@ sidebar {
     sidebar .sidebar-header button:hover {
       background: rgba(255, 255, 255, 0.1); }
   sidebar .sidebar-top {
-    position: absolute;
-    top: 52px;
     display: grid;
     width: calc(100% - 36px);
     margin: 0px 16px;
@@ -67,6 +63,9 @@ sidebar {
     width: calc(100% - 36px);
     margin: 0px 16px;
     grid-gap: 6px; }
+  sidebar .primary-sidebar {
+    display: grid;
+    grid-template-rows: 60px auto auto; }
 
 content {
   position: absolute;
