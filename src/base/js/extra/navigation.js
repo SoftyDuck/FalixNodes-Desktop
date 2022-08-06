@@ -13,15 +13,10 @@ function toTab(pageName,elmnt,color) {
 }
 
 do {
-  selectDashboard()
+  document.querySelector("body > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
 }
 while (addComponent());
 
-function selectDashboard() {
-  setTimeout(() => {
-    document.querySelector("body > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
-  }, 1000);
-}
 
 function toNotifications() {
   document.querySelector('.tabs#dashboard').style.display = 'none'
