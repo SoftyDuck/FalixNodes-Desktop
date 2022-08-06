@@ -13,18 +13,32 @@
             <div class="primary-sidebar">
                 <div class="sidebar-header">
                     <img src="./base/img/icon/app/32x32.png">
-                    <button class="sidebar-tab"><i class="fa-light fa-command"></i></button>
-                    <button class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
+                    <div id="default" class="sidebar-header-controls">
+                        <button class="sidebar-tab"><i class="fa-light fa-command"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
+                    </div>
+                    <div hidden id="client-area" class="sidebar-header-controls">
+                        <button class="sidebar-tab"><i class="fa-light fa-user-crown"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-rotate-right"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-right-long"></i></button>
+                    </div>
+                    <div hidden id="servers-panel" class="sidebar-header-controls">
+                        <button class="sidebar-tab"><i class="fa-light fa-server"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-rotate-right"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
+                        <button class="sidebar-tab"><i class="fa-light fa-arrow-right-long"></i></button>
+                    </div>
                 </div>
                 <div class="sidebar-top">
-                    <button onclick="toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab">Dashboard</button>
-                    <button onclick="toTab('client-area', this, 'var(--accent)');" class="sidebar-tab">Client Area</button>
-                    <button onclick="toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab">Servers Panel</button>
+                    <button onclick="toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-hexagon"></i> Dashboard</button>
+                    <button onclick="toTab('client-area', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-user-crown"></i> Client Area</button>
+                    <button onclick="toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-server"></i> Servers Panel</button>
                 </div>
                 <div class="sidebar-bottom">
-                    <button onclick="toTab('help-center', this, 'var(--accent)');" class="sidebar-tab">Help Center</button>
-                    <button class="sidebar-tab">Notifications</button>
-                    <button class="sidebar-tab">Settings</button>
+                    <button onclick="toTab('help-center', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
+                    <button class="sidebar-tab"><i class="fa-light fa-bell"></i> Notifications</button>
+                    <button class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings</button>
                 </div>
             </div>
         </sidebar>
