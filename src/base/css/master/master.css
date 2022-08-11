@@ -60,7 +60,7 @@ sidebar {
     grid-gap: 6px; }
     sidebar .sidebar-top button {
       display: grid;
-      grid-template-columns: 32px auto; }
+      grid-template-columns: 32px auto 26px; }
   sidebar .sidebar-bottom {
     position: absolute;
     bottom: 16px;
@@ -70,15 +70,109 @@ sidebar {
     grid-gap: 6px; }
     sidebar .sidebar-bottom button {
       display: grid;
-      grid-template-columns: 32px auto; }
+      grid-template-columns: 32px auto 26px; }
   sidebar .primary-sidebar {
     display: grid;
     grid-template-rows: 60px auto auto; }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 600px;
+  max-width: 900px;
+  max-height: 600px;
+  min-width: 600px;
+  min-height: 300px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 24, 24, 0.859);
+  border: 1px rgba(52, 52, 52, 0.961) solid;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  z-index: 5; }
+  .modal .modal-header {
+    display: grid;
+    grid-template-columns: auto 31px;
+    align-items: center;
+    padding-right: 20px;
+    border-bottom: 1px #333333 solid;
+    position: fixed;
+    width: calc(100% - 271px);
+    left: 233px;
+    top: 2px;
+    padding-left: 18px; }
+  .modal #close-button {
+    color: white;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    border-radius: 50px;
+    aspect-ratio: 1/ 1;
+    padding: 1px 0px 0px 0px;
+    cursor: pointer; }
+  .modal .modal-header-buttons {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 14px;
+    z-index: 24; }
+  .modal h1 {
+    font-size: 20px; }
+  .modal h2 {
+    font-size: 16px; }
+  .modal .modal-sidebar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px 0px 0px 10px;
+    padding: 0px 16px;
+    border-right: 1px rgba(52, 52, 52, 0.961) solid; }
+    .modal .modal-sidebar .modal-sidebar-top {
+      margin-top: 16px; }
+    .modal .modal-sidebar .modal-sidebar-bottom {
+      position: absolute;
+      bottom: 14px;
+      width: 200px; }
+    .modal .modal-sidebar .modal-sidebar-tab {
+      background: transparent;
+      color: white;
+      border: none;
+      padding: 9px 0px 9px 20px;
+      text-align: left;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      font-size: 14px; }
+    .modal .modal-sidebar .modal-sidebar-tab:hover {
+      background: rgba(255, 255, 255, 0.1); }
+  .modal .modal-content {
+    position: absolute;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: calc(100% - 59px);
+    overflow: scroll;
+    bottom: 0px; }
+  .modal .modal-content::-webkit-scrollbar {
+    height: 0px;
+    width: 0px; }
+
+div#null {
+  opacity: 0;
+  pointer-events: none; }
 
 content {
   position: absolute;
   top: 0px;
   left: 250px;
   width: calc(100% - 250px); }
+
+.full-window {
+  position: fixed;
+  width: calc(100% - 250px);
+  height: 100%; }
 
 /*# sourceMappingURL=master.css.map */
