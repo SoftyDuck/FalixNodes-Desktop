@@ -17,13 +17,13 @@
                         <button class="sidebar-tab"><i class="fa-light fa-command"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
                     </div>
-                    <div hidden id="client-area" class="sidebar-header-controls">
+                    <div style="display: none;" id="master-control-client-area" class="sidebar-header-controls">
                         <button class="sidebar-tab"><i class="fa-light fa-user-crown"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-arrow-rotate-right"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-arrow-right-long"></i></button>
                     </div>
-                    <div hidden id="servers-panel" class="sidebar-header-controls">
+                    <div style="display: none;" id="master-control-servers-panel" class="sidebar-header-controls">
                         <button class="sidebar-tab"><i class="fa-light fa-server"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-arrow-rotate-right"></i></button>
                         <button class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
@@ -31,32 +31,162 @@
                     </div>
                 </div>
                 <div class="sidebar-top">
-                    <button onclick="toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-hexagon"></i> Dashboard</button>
-                    <button onclick="toTab('client-area', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-user-crown"></i> Client Area</button>
-                    <button onclick="toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-server"></i> Servers Panel</button>
+                    <button onclick="toggleDefaultControls(); toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-hexagon"></i> Dashboard</button>
+                    <button onclick="toggleCAControls(); toTab('client-area', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-user-crown"></i> Client Area</button>
+                    <button onclick="toggleSPControls(); toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-server"></i> Servers Panel</button>
                 </div>
                 <div class="sidebar-bottom">
-                    <button onclick="toTab('help-center', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
-                    <button class="sidebar-tab"><i class="fa-light fa-bell"></i> Notifications</button>
-                    <button class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings</button>
+                    <button onclick="toggleDefaultControls(); toTab('help-center', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
+                    <button class="sidebar-tab"><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-arrow-up-right"></i></button>
+                    <button onclick="toggleModal('settings')" class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-arrow-up-right"></i></button>
                 </div>
             </div>
         </sidebar>
+        <modal>
+            <div id="null" class="modal"></div>
+            <div id="settings" class="modal">
+                <div class="modal-sidebar">
+                    <div class="modal-sidebar-top">
+                        <div onclick="toSettingsTab('about', this, '#323232');" class="modal-sidebar-tab">About</div>
+                        <div onclick="toSettingsTab('account', this, '#323232');" class="modal-sidebar-tab">Account</div>
+                        <div onclick="toSettingsTab('downloads', this, '#323232');" class="modal-sidebar-tab">Downloads</div>
+                        <div onclick="toSettingsTab('language', this, '#323232');" class="modal-sidebar-tab">Language</div>
+                        <div onclick="toSettingsTab('personalization', this, '#323232');" class="modal-sidebar-tab">Personalization</div>
+                        <div onclick="toSettingsTab('privacy', this, '#323232');" class="modal-sidebar-tab">Privacy</div>
+                    </div>
+                    <div class="modal-sidebar-bottom">
+                        <div class="modal-sidebar-tab">Log Out</div>
+                    </div>
+                </div>
+                <div id="has-sidebar" class="modal-content">
+                    <div id="about" class="hs-content">
+                        <div class="modal-header">
+                            <h1>About FalixNodes Desktop</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <h2>Versions</h2>
+                        <p>App Version: v4.0.0</p>
+                        <p>Package Version: v4.70.0</p>
+                        <h2>Software License Agreement</h2>
+                        <pre id="license">
+MIT License
+
+Copyright (c) 2020 - 2022 FalixNodes Limited
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+                        </pre>
+                    </div>
+                    <div id="personalization" class="hs-content">
+                        <div class="modal-header">
+                            <h1>Personalization</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <h2>Username</h2>
+                        <input value="Your Username Here">
+                        <h2>Theme</h2>
+                        <div class="grid-theming" id="box-tb">
+                            <div>
+                                <img src="#">
+                                <p>Light</p>
+                            </div>
+                            <div>
+                                <img src="#">
+                                <p>Blue</p>
+                            </div>
+                            <div>
+                                <img src="#">
+                                <p>Black</p>
+                            </div>
+                            <div>
+                                <img src="#">
+                                <p>Auto</p>
+                            </div>
+                        </div>
+                        <h2>View</h2>
+                        <div class="grid-theming" id="box-tb">
+                            <div>
+                                <img src="#">
+                                <p>Default</p>
+                            </div>
+                            <div>
+                                <img src="#">
+                                <p>Compact</p>
+                            </div>
+                        </div>
+                        <h2>Accent Color</h2>
+                        <div class="grid-theming" id="ro-colors"></div>
+                    </div>
+                    <div id="account" class="hs-content">
+                        <div class="modal-header">
+                            <h1>Account</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                    <div id="downloads" class="hs-content">
+                        <div class="modal-header">
+                            <h1>Downloads</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                    <div id="language" class="hs-content">
+                        <div class="modal-header">
+                            <h1>Language</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                    <div id="privacy" class="hs-content">
+                        <div class="modal-header">
+                            <h1>Privacy</h1>
+                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </modal>
         <content>
             <div id="dashboard" class="content">
-                <h1>Dashboard</h1>
+                <div class="content-header">
+                    <h1>Welcome back, <span id="username"><i class="fa-duotone fa-spinner-third fa-spin"></i></span></h1>
+                </div>
+                <h2>At a Glance - Your Servers</h2>
+                <div class="glance-servers">
+                    <webview id="glance-servers" preload="./assets/scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
+                </div>
+                <br>
+                <h2>Featured Servers</h2>
+                <p>There are currently no servers to display.</p>
+                <br>
+                <h2>What's New</h2>
+                <p>There nothing to display.</p>
+                <br>
+                <h2>Latest Blog Posts</h2>
+                <p>There nothing to display.</p>
+                <br>
             </div>
             <div id="client-area" class="content">
-                <h1>Client Area</h1>
+                <webview class="full-window" id="web-client-area" src="https://client.falixnodes.net/" preload="./base/js/webview/client.js"></webview>
             </div>
             <div id="servers-panel" class="content">
-                <h1>Servers Panel</h1>
+                <webview class="full-window" id="web-servers-panel" src="https://dev-panel.falixnodes.net/" preload="./base/js/webview/panel.js"></webview>
             </div>
             <div id="help-center" class="content">
-                <h1>Help Center</h1>
-            </div>
-            <div id="settings" class="content">
-                <h1>Settings</h1>
+                <webview class="full-window" id="web-help-center" src="https://falixnodes.net/help/"></webview>
             </div>
         </content>
     </body>
@@ -65,5 +195,6 @@
     <script src="./base/js/command-menu/search.js"></script>
 
     <script src="./base/js/extra/add-component.js"></script>
+    <script src="./base/js/extra/controls.js"></script>
     <script src="./base/js/extra/navigation.js"></script>
 </html>
