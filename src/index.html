@@ -176,13 +176,63 @@ SOFTWARE.
                                 </div>
                                 <div id="adblock-S2" class="troubleshoot-check">
                                     <i class="fa-duotone fa-circle-2"></i>
-                                    <h2>Check Your System Host File</h2>
-                                    <p>As a last resort, we noticed customers may of modified their host file to block ads system-wise. This done for common reasons for like blocking ads in Spotify and other applications, doing so will also affect FalixNodes Dekstop.</p>
+                                    <h2>Check Your System Hosts File</h2>
+                                    <p>As a last resort, we noticed customers may of modified their hosts file to block ads system-wide. Modifying the hosts file is done for common reasons for like blocking ads in Spotify and other applications, doing so will also affect FalixNodes Dekstop.</p>
                                     <p>Hosts file is used to store mappings of hostnames to IP addresses. This file is consulted first when resolving hostnames, so it can be used to override the results from DNS lookups.</p>
-                                    <p><strong>By clicking "Reset Host File" below, you agree to FalixNodes Desktop resetting your system's host file.</strong> As a reminder, FalixNodes Desktop does not come with wararnty and is not liable for any damange to your system. The function has been tested.</p>
+                                    <p><strong>By clicking "Reset Hosts File" below, you agree to FalixNodes Desktop resetting your system's hosts file.</strong> As a reminder, FalixNodes Desktop does not come with wararnty and is not liable for any damage to your system. The function has been tested on Windows 10 and Linux.</p>
+                                    <p id="windows">Running FalixNodes Desktop is required on Windows for the reset hosts file button to fully work.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
-                                        <button onclick="window.api.send('resetSystemHostFile')">Reset Host File</button>
+                                        <button onclick="window.api.send('resetSystemHostFile')">Reset Hosts File</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="slow-system">
+                                <div id="slow-system-S0" class="troubleshoot-check">
+                                    <i class="fa-duotone fa-turtle"></i>
+                                    <h2>System is Slow</h2>
+                                    <p>There are several reasons why your system may be performing slowly. You may have too many applications open, insufficient resources to tackle more processes, and other problems. This troubleshooting may help you speed up your system utilizing simple actions. There are parts for Windows, macOS, and Linux.</p>
+                                    <div class="troubleshoot-check-footer">
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
+                                    </div>
+                                </div>
+                                <div id="slow-system-S1" class="troubleshoot-check">
+                                    <i class="fa-duotone fa-circle-1"></i>
+                                    <h2>Optimize FalixNodes Desktop</h2>
+                                    <p>Before we get started on boosting your computer's performance, let's have a look at FalixNodes Desktop. Let's make a few adjustments to FalixNodes Desktop's settings to help it consume fewer resources. Click "Adjust Settings" below to: </p>
+                                    <ui>
+                                        <li>Toggle Windows Blur off</li>
+                                        <li>Toggle Animations off</li>
+                                        <li>Don't load Servers Panel by default (Will unload Servers Panel)</li>
+                                        <li>Disable tabs: Help Center, Support, and Account (in Settings)</li>
+                                        <li>Toggle all Dashboard content off</li>
+                                    </ui>
+                                    <div class="troubleshoot-check-footer">
+                                        <button>Adjust Settings</button>
+                                        <hr>
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="Troubleshooting('slow-system-WIN')">Next</button>
+                                    </div>
+                                </div>
+                                <div id="slow-system-WIN" class="troubleshoot-check">
+                                    <i class="fa-brands fa-windows"></i>
+                                    <h2>Speeding up Windows</h2>
+                                    <h3>Taking Out The Trash</h3>
+                                    <p>There are a few places on Windows that you should delete, starting with the most obvious one being your Recycle Bin.</p>
+                                    <br>
+                                    <p><strong>Recycle Bin</strong></p>
+                                    <p>Before you go emptying the Recycle Bin, let's learn more about it first and see if you really need to empty it in the first place.</p>
+                                    <p>The Recycle Bin is a folder or directory in Windows where deleted files are temporarily stored. Unless they are too large, deleted files are not permanently removed from the hard disk but instead placed to the Recycle Bin. The Recycle Bin files can be restored to their original place.</p>
+                                    <p>Obviously, empty the Recycle Bin, but be sure the files in there are no longer needed.</p>
+                                    <br>
+                                    <p><strong>Temporary Files</strong></p>
+                                    <p>Temp files are files that your operating system only required to exist for just a short period of time while in use but are now basically taking up space. The majority of temporary files are stored in the Windows Temp folder, which differs per machine.</p>
+                                    <p>To find and delete all temp files, press <span id="key-letter"><i class="fa-brands fa-windows"></i></span> + <span id="key-letter">R</span> and run <u>%temp%</u>. Running this will open up Windows File Explorer and reveal where the temp folder is stored on your machine.</p>
+                                    <p>Select all files and delete. If a dialog shows up saying "File in Use", just select "Do this for all current items" and click "Skip".</p>
+                                    <div class="troubleshoot-check-footer">
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +246,7 @@ SOFTWARE.
                             <div>
                                 <i class="fa-duotone fa-turtle"></i>
                                 <h2>System is Slow</h2>
-                                <button>Start Troubleshooting</button>
+                                <button onclick="TroubleshootingHideStart(); Troubleshooting('slow-system-S0')">Start Troubleshooting</button>
                             </div>
                             <div>
                                 <i class="fa-duotone fa-cloud-exclamation"></i>
