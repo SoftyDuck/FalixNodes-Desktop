@@ -217,6 +217,7 @@ SOFTWARE.
                                 </div>
                                 <div id="slow-system-WIN" class="troubleshoot-check">
                                     <i class="fa-brands fa-windows"></i>
+                                    <p>Most of the steps below are intended to be done on Windows 10 and Windows 11. FalixNodes Desktop does not officially support Windows 7 or Windows 8.1, let alone any other older versions of Microsoft Windows.</p>
                                     <h2>Speeding up Windows</h2>
                                     <h3>Taking Out The Trash</h3>
                                     <p>There are a few places on Windows that you should delete, starting with the most obvious one being your Recycle Bin.</p>
@@ -230,6 +231,40 @@ SOFTWARE.
                                     <p>Temp files are files that your operating system only required to exist for just a short period of time while in use but are now basically taking up space. The majority of temporary files are stored in the Windows Temp folder, which differs per machine.</p>
                                     <p>To find and delete all temp files, press <span id="key-letter"><i class="fa-brands fa-windows"></i></span> + <span id="key-letter">R</span> and run <u>%temp%</u>. Running this will open up Windows File Explorer and reveal where the temp folder is stored on your machine.</p>
                                     <p>Select all files and delete. If a dialog shows up saying "File in Use", just select "Do this for all current items" and click "Skip".</p>
+                                    <p><strong>Uninstall Unused Applications</strong></p>
+                                    <p>You probably have some, or a lot, of unused applications you either didn't ever use or simply don't use anymore. Some Windows PCs even come with a bunch of software pre-installed, also known as bloatware. </p>
+                                    <p>Open your System Settings > Apps > Then uninstall apps you no longer need.</p>
+                                    <p>Otionally, you can also remove built-in programs that come with Windows like Internet Explorer, Paint, and more. You can do this by going to System Settings > Apps > Optional Features > and uninstall Internet Explorer and/or more.</p>
+                                    <h3>Settings Adjustment</h3>
+                                    <p><strong>Adjusting Performance Settings</strong></p>
+                                    <p>Many visual effects, such as animations, blur, and shadow effects are included in Windows 10 and later. These are visually appealing, but they can consume additional system resources and slow down your computer. This is especially the case if you have a PC with very little memory (RAM).</p>
+                                    <p>Luckily, these visual effects can be disabled to free up additional system resources, helping your PC run a little faster than it did before.</p>
+                                    <p>Open your File Explorer > right-click on "This PC" > click "Properties". A new window should appear that displays your system's information, click on "Advanced system settings" located on the left side.</p>
+                                    <p>In the Advanced tab, click on "Settings..." under Performance. Then, in the Visual Effects tab, disable the following:</p>
+                                    <ul>
+                                        <li>Animate contorls and elements inside windows</li>
+                                        <li>Animate windows when minimizing and maximizing</li>
+                                        <li>Animations in the taskbar</li>
+                                        <li>Enable Peek</li>
+                                        <li>Fade or slide menus into view</li>
+                                        <li>Fade or slide ToolTips into view</li>
+                                        <li>Save taskbar thumbnail previews</li>
+                                        <li>Show shadows under mouse pointer</li>
+                                        <li>Show shadows under windows</li>
+                                        <li>Show translucent selection of rectangle</li>
+                                        <li>Slide open combo boxes</li>
+                                        <li>Smooth-scroll list boxes</li>
+                                        <li>Use drop shadows for icons labels on the desktop</li>
+                                    </ul>
+                                    <p>Then, make sure the following remains enabled:</p>
+                                    <ul>
+                                        <li>Show thumbnails instead of icons</li>
+                                        <li>Show window contents while dragging</li>
+                                        <li>Smooth edges of screen fonts</li>
+                                    </ul>
+                                    <p><strong>Adjust Appearance Settings</strong></p>
+                                    <p>As mentioned before, blur is one of the visual effects that comes with Windows, since the release of Microsoft Windows 7. This can also take up performance on your CPU, you can disable it in the System Settings app.</p>
+                                    <p>Open System Settings > Personalization > Colors > and disable Transparency effects. Also make sure the blur effect is disabled too in the FalixNodes Desktop appearance settings, even if Transparency effects is disabled on Windows's side, the blur effect in FalixNodes Desktop is forced if left enabled.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
                                         <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
