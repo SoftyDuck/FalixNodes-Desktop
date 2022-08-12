@@ -27,7 +27,10 @@ function resetSystemHostFile() {
       else if(process.platform == 'win32'){
         console.log('Resetting Host File');
         let ps = new PowerShell(`
-
+        cp C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\hosts_backup
+        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/FalixNodes-Software/FalixNodes-Desktop/directive-rewrite-of-v4/src/base/etc/hosts" -OutFile "C:\Windows\System32\drivers\etc\hosts"
+        powershell (New-Object -ComObject Wscript.Shell).Popup("Host file has been resetted.",0,"FalixNodes Desktop - Troubleshooting",0x0)
+        powershell (New-Object -ComObject Wscript.Shell).Popup("Original hosts file was backed up to your Documents.",0,"FalixNodes Desktop - Troubleshooting",0x0)
       `)
       }
       else{
@@ -35,7 +38,7 @@ function resetSystemHostFile() {
         exec(`
         PASSWD="$(zenity --password --title=Authentication Required)\n"
         echo -e $PASSWD | sudo -S \
-        sudo cp /etc/hosts ~/Documents/hosts_backup
+        sudo cp /etc/hosts /etc/hosts_backup
         cd /etc/
         sudo rm hosts
         
