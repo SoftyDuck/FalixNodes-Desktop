@@ -20,7 +20,6 @@
     "glasstron": "^0.1.1",
     "powershell": "^2.3.2",
     "pushy-electron": "^1.0.9",
-    "v8-compile-cache": "^2.3.0",
     "x11": "github:KorbsStudio/node-x11"
   },
   "devDependencies": {
