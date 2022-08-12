@@ -1,3 +1,5 @@
+// Sidebar Tabs
+
 function toTab(pageName,elmnt,color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("content");
@@ -10,15 +12,6 @@ function toTab(pageName,elmnt,color) {
     }
     document.getElementById(pageName).style.display = "inherit";
     elmnt.style.backgroundColor = color;
-}
-
-function toggleModal(pageName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("modal");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  document.getElementById(pageName).style.display = "inherit";
 }
 
 function toSettingsTab(pageName,elmnt,color) {
@@ -35,8 +28,36 @@ function toSettingsTab(pageName,elmnt,color) {
   elmnt.style.backgroundColor = color;
 }
 
+// Modals
+
+function toggleModal(pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("modal");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(pageName).style.display = "inherit";
+}
+
+//// Modals - Settings - Troubleshoot Navigation
+
+function TroubleshootingHideStart() {document.querySelector("#troubleshooting > div.co1").style.display = 'none'}
+function TroubleshootingShowStart() {document.querySelector("#troubleshooting > div.co1").style.display = 'grid'}
+
+function Troubleshooting(pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("troubleshoot-check");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(pageName).style.display = "inherit";
+}
+
+// Do on startup
+
 do {
   document.querySelector("body > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
   document.querySelector("#settings > div.modal-sidebar > div.modal-sidebar-top > div:nth-child(1)").click();
+  Troubleshooting('null')
 }
 while (addComponent());

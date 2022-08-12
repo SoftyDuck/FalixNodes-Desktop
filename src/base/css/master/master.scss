@@ -136,7 +136,7 @@ sidebar {
     }
     #close-button {
         color: white;
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(117, 117, 117, 0.98);
         border: none;
         border-radius: 50px;
         aspect-ratio: 1/ 1;
@@ -206,6 +206,7 @@ sidebar {
 div#null {
     opacity: 0;
     pointer-events: none;
+    height: 0px !important;
 }
 
 content {
@@ -219,4 +220,72 @@ content {
     position: fixed;
     width: calc(100% - 250px);
     height: 100%;
+}
+
+.co1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 8px;
+    width: calc(100% - 20px);
+    div {
+        background: rgba(46, 48, 49, 0.5);
+        border: 2px rgba(52, 52, 52, 0.961) solid;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        display: grid;
+        grid-template-rows: 100px auto 30px;
+        h2 {
+            font-size: 14px;
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        i {
+            font-size: 44px;
+            margin-top: 40px;
+        }
+    }
+}
+
+.co2 {
+    div {
+        border-radius: 10px;
+        width: calc(100% - 42px);
+        margin-bottom: 10px;
+    }
+    i {font-size: 48px;}
+    h2 {font-size: 20px;}
+}
+
+.troubleshoot-check {
+    i {font-size: 74px;}
+    .troubleshoot-check-footer {
+        position: fixed;
+        bottom: -10px;
+        right: 0px;
+        text-align: right;
+        width: calc(100% - 260px) !important;
+        border-top: 1px #333333 solid;
+        border-radius: 0px 0px 10px 0px !important;
+        height: 30px;
+        padding: 14px;
+        backdrop-filter: blur(2px);
+        button {
+            background: #323232;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: -3px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
 }

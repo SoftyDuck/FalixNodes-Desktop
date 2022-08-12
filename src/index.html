@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>FalixNodes</title>
+        <title>FalixNodes Desktop</title>
 
         <link rel="stylesheet" href="./base/css/master/master.css">
         <link rel="stylesheet" href="./base/css/extra/fonts.css">
@@ -49,12 +49,11 @@
                     <div class="modal-sidebar-top">
                         <div onclick="toSettingsTab('about', this, '#323232');" class="modal-sidebar-tab">About</div>
                         <div onclick="toSettingsTab('account', this, '#323232');" class="modal-sidebar-tab">Account</div>
-                        <div onclick="toSettingsTab('downloads', this, '#323232');" class="modal-sidebar-tab">Downloads</div>
                         <div onclick="toSettingsTab('language', this, '#323232');" class="modal-sidebar-tab">Language</div>
                         <div onclick="toSettingsTab('personalization', this, '#323232');" class="modal-sidebar-tab">Personalization</div>
-                        <div onclick="toSettingsTab('privacy', this, '#323232');" class="modal-sidebar-tab">Privacy</div>
                     </div>
                     <div class="modal-sidebar-bottom">
+                        <div onclick="toSettingsTab('troubleshooting', this, '#323232');" class="modal-sidebar-tab">Troubleshooting</div>
                         <div class="modal-sidebar-tab">Log Out</div>
                     </div>
                 </div>
@@ -138,22 +137,77 @@ SOFTWARE.
                             <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                     </div>
-                    <div id="downloads" class="hs-content">
-                        <div class="modal-header">
-                            <h1>Downloads</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </div>
                     <div id="language" class="hs-content">
                         <div class="modal-header">
                             <h1>Language</h1>
                             <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                     </div>
-                    <div id="privacy" class="hs-content">
+                    <div id="troubleshooting" class="hs-content">
                         <div class="modal-header">
-                            <h1>Privacy</h1>
+                            <h1>Troubleshooting</h1>
                             <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <br>
+                        <div class="co2">
+                            <div id="null" class="troubleshoot-check"></div>
+                            <div id="adblock">
+                                <div id="adblock-S0" class="troubleshoot-check">
+                                    <i class="fa-duotone fa-ban"></i>
+                                    <h2>False AdBlock Detection</h2>
+                                    <p>FalixNodes Desktop does not contain an adblocker, therefore if FalixNodes detects an adblock, it is due to another factor.</p>
+                                    <p>To begin, we'll check for a few things that may be blocking ads on your system affecting FalixNodes Desktop.</p>
+                                    <div class="troubleshoot-check-footer">
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="Troubleshooting('adblock-S1')">Begin Troubleshooting</button>
+                                    </div>
+                                </div>
+                                <div id="adblock-S1" class="troubleshoot-check">
+                                    <i class="fa-duotone fa-circle-1"></i>
+                                    <h2>Check Your Anti-Virus</h2>
+                                    <p>Some anti-virus software these days now come with a system-wide adblocker, which will affect FalixNodes Desktop. If you have an anti-virus, please check it and find the AdBlock settings if any. If the anti-virus software does have an AdBlock system, either disable the option, or if optional whitelist FalixNodes Desktop to allow ads.</p>
+                                    <p>If you do not have anti-virus or it's not to blame, move on to the next step.</p>
+                                    <div class="troubleshoot-check-footer">
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="Troubleshooting('adblock-S2')">Next</button>
+                                    </div>
+                                    <div id="step-2">
+                                    </div>
+                                </div>
+                                <div id="adblock-S2" class="troubleshoot-check">
+                                    <i class="fa-duotone fa-circle-2"></i>
+                                    <h2>Check Your System Host File</h2>
+                                    <p>As a last resort, we noticed customers may of modified their host file to block ads system-wise. This done for common reasons for like blocking ads in Spotify and other applications, doing so will also affect FalixNodes Dekstop.</p>
+                                    <p>Hosts file is used to store mappings of hostnames to IP addresses. This file is consulted first when resolving hostnames, so it can be used to override the results from DNS lookups.</p>
+                                    <p><strong>By clicking "Reset Host File" below, you agree to FalixNodes Desktop resetting your system's host file.</strong> As a reminder, FalixNodes Desktop does not come with wararnty and is not liable for any damange to your system. The function has been tested.</p>
+                                    <div class="troubleshoot-check-footer">
+                                        <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                        <button onclick="window.api.send('resetSystemHostFile')">Reset Host File</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="co1">
+                            <div>
+                                <i class="fa-duotone fa-ban"></i>
+                                <h2>False AdBlock Detection</h2>
+                                <button onclick="TroubleshootingHideStart(); Troubleshooting('adblock-S0')">Start Troubleshooting</button>
+                            </div>
+                            <div>
+                                <i class="fa-duotone fa-turtle"></i>
+                                <h2>System is Slow</h2>
+                                <button>Start Troubleshooting</button>
+                            </div>
+                            <div>
+                                <i class="fa-duotone fa-cloud-exclamation"></i>
+                                <h2>Update Failing</h2>
+                                <button>Start Troubleshooting</button>
+                            </div>
+                            <div>
+                                <i class="fa-duotone fa-wifi-exclamation"></i>
+                                <h2>No Internet</h2>
+                                <button>Start Troubleshooting</button>
+                            </div>
                         </div>
                     </div>
                 </div>
