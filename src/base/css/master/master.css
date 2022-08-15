@@ -235,4 +235,12 @@ content {
     font-weight: bold;
     cursor: pointer; }
 
+webview#inSettings-account {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px; }
+
 /*# sourceMappingURL=master.css.map */

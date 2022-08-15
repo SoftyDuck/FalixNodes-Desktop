@@ -1,6 +1,7 @@
 webview = document.querySelector('webview')
 var webviewCP = document.getElementById('web-client-area');
 var webviewGP = document.getElementById('web-servers-panel');
+var webviewISAC = document.getElementById('inSettings-account');
 
 // Toggle Controls in Sidebar Header
 function toggleDefaultControls() {
