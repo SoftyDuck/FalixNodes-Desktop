@@ -1,3 +1,11 @@
+var url = window.location.href;
+if(url == "https://client.falixnodes.net/profile/settings"
+|| url == "https://client.falixnodes.net/auth/login"
+|| url.startsWith("https://accounts.google.com/")
+|| url == "https://client.falixnodes.net/login"
+|| url == "https://discord.com/oauth2/authorize?client_id=853716286768676874&redirect_uri=https%3A%2F%2Fclient.falixnodes.net%2Flogin.php&response_type=code&scope=identify+guilds+guilds.join+email")
+{} else {setTimeout(() => {location.href = 'https://client.falixnodes.net/profile/settings'}, 0500);}
+
 setTimeout(() => {
     var styles = `
     body {
@@ -7,7 +15,7 @@ setTimeout(() => {
         width: 0 !important;
     }
 
-    .navbar-top, #top > div > div > div:nth-child(2), #top > div > div > div:nth-child(3), footer {
+    .navbar-top, #top > div > div > div:nth-child(2), #top > div > div > div:nth-child(3), footer, #top > div > div > div > div > div > div > div.col-md-5.text-center.bg-card-gradient {
         display: none !important;
     }
 

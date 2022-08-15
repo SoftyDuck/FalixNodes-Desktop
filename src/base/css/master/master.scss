@@ -297,3 +297,44 @@ webview#inSettings-account {
     height: 100%;
     border-radius: 7px;
 }
+
+input {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px rgba(52, 52, 52, 0.961) solid;
+    border-radius: 4px !important;
+    color: white;
+    padding: 10px;
+}
+input:hover {border-color: transparent;}
+input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.grid-theming#ro-colors i {
+    font-size: 26px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.grid-theming {
+    display: flex;
+    div {
+        display: grid;
+        margin-right: 6px;
+        p {
+            font-size: 12px;
+            margin: 8px 0px 0px 0px;
+        }
+        i {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px rgba(52, 52, 52, 0.961) solid;
+            border-radius: 6px !important;
+            color: white;
+            width: 70px;
+            text-align: center;
+            padding: 26px 0px;
+            cursor: pointer;
+        }
+        i:hover {border-color: transparent;}
+    }
+}
