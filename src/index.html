@@ -180,7 +180,7 @@ SOFTWARE.
                                     <p>As a last resort, we noticed customers may of modified their hosts file to block ads system-wide. Modifying the hosts file is done for common reasons for like blocking ads in Spotify and other applications, doing so will also affect FalixNodes Dekstop.</p>
                                     <p>Hosts file is used to store mappings of hostnames to IP addresses. This file is consulted first when resolving hostnames, so it can be used to override the results from DNS lookups.</p>
                                     <p><strong>By clicking "Reset Hosts File" below, you agree to FalixNodes Desktop resetting your system's hosts file.</strong> As a reminder, FalixNodes Desktop does not come with wararnty and is not liable for any damage to your system. The function has been tested on Windows 10 and Linux.</p>
-                                    <p id="windows">Running FalixNodes Desktop is required on Windows for the reset hosts file button to fully work.</p>
+                                    <p id="windows">Running FalixNodes Desktop as admin is required on Windows for the reset hosts file button to fully work.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
                                         <button onclick="window.api.send('resetSystemHostFile')">Reset Hosts File</button>
@@ -191,7 +191,7 @@ SOFTWARE.
                                 <div id="slow-system-S0" class="troubleshoot-check">
                                     <i class="fa-duotone fa-turtle"></i>
                                     <h2>System is Slow</h2>
-                                    <p>There are several reasons why your system may be performing slowly. You may have too many applications open, insufficient resources to tackle more processes, and other problems. This troubleshooting may help you speed up your system utilizing simple actions. There are parts for Windows, macOS, and Linux.</p>
+                                    <p>There are several reasons why your system may be performing slowly. You may have too many applications open, insufficient resources to tackle more processes, and other problems. This troubleshooting may help you speed up your system utilizing simple actions.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
                                         <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
@@ -236,6 +236,10 @@ SOFTWARE.
                                     <p>Open your System Settings > Apps > Then uninstall apps you no longer need.</p>
                                     <p>Otionally, you can also remove built-in programs that come with Windows like Internet Explorer, Paint, and more. You can do this by going to System Settings > Apps > Optional Features > and uninstall Internet Explorer and/or more.</p>
                                     <h3>Settings Adjustment</h3>
+                                    <p><strong>Disable Startup Programs</strong></p>
+                                    <p>Some applications, such as Discord, Spotify, and Steam, will automatically launch when you log onto Windows after powering on your computer or logging out and back in. You can configure this by either changing the option in the application's preferences or changing it in your Task Manager.</p>
+                                    <p>To access your Task Manager, right-click in an empty space on your Taskbar, then click on "Task Manager". If you don't have empty space left on the taskbar, addtionally you can also right-click on the Start button and access Task Manager from there as well.</p>
+                                    <p>In the Task Manager, toggle the option on or off on applications you don't want starting up by default in the "Startup" tab. </p>
                                     <p><strong>Adjusting Performance Settings</strong></p>
                                     <p>Many visual effects, such as animations, blur, and shadow effects are included in Windows 10 and later. These are visually appealing, but they can consume additional system resources and slow down your computer. This is especially the case if you have a PC with very little memory (RAM).</p>
                                     <p>Luckily, these visual effects can be disabled to free up additional system resources, helping your PC run a little faster than it did before.</p>
@@ -267,7 +271,6 @@ SOFTWARE.
                                     <p>Open System Settings > Personalization > Colors > and disable Transparency effects. Also make sure the blur effect is disabled too in the FalixNodes Desktop appearance settings, even if Transparency effects is disabled on Windows's side, the blur effect in FalixNodes Desktop is forced if left enabled.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
-                                        <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
                                     </div>
                                 </div>
                             </div>
