@@ -9,6 +9,7 @@
     </head>
     <body onload="addComponent()">
         <ninja-keys class="dark" placeholder="Command Menu"></ninja-keys>
+        <img id="primary-background">
         <sidebar>
             <div class="primary-sidebar">
                 <div class="sidebar-header">
@@ -155,6 +156,22 @@ SOFTWARE.
                             <i style="color: #a56de2 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
                             <i style="color: #de3e80 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
                             <i style="color: #485a6c ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                        </div>
+                        <h2>Custom Background</h2>
+                        <p style="font-size: 12px; opacity: 0.5;">(Reloading is required for change to take effect)</p>
+                        <div class="mb-3 p-5">
+                            <label for="lead">Background URL</label>
+                            <input type="text" class="storage" id="nameField">
+                            <button class="btn btn-secondary">Save</button>
+                            <p class="lead mt-3 text">Background URL:</p>
+                        </div>
+                        <div class="grid-theming" id="bg-switcher">
+                            <img onclick="setBG1()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-2310646.jpg">
+                            <img onclick="setBG2()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-844297.jpg">
+                            <img onclick="setBG3()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-12365968.jpg">
+                            <img onclick="setBG4()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-12366149.jpg">
+                            <img onclick="setBG5()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-12366148.jpg">
+                            <img onclick="setBG6()" src="./base/img/backgrounds/pexels-eberhard-grossgasteiger-12366150.jpg">
                         </div>
                     </div>
                     <div id="account" class="hs-content">
@@ -362,6 +379,8 @@ SOFTWARE.
     <script type="module">import {NinjaKeys} from 'https://unpkg.com/ninja-keys?module';</script>
 
     <script src="./base/js/command-menu/search.js"></script>
+
+    <script src="./base/js/settings/custom-background.js"></script>
 
     <script src="./base/js/extra/add-component.js"></script>
     <script src="./base/js/extra/controls.js"></script>
