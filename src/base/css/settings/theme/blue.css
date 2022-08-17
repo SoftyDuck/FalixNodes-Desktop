@@ -1,0 +1,8 @@
+:root {
+    --primary-background: rgba(22, 35, 49, 0.749);
+    --secondary-background: #0b1725;
+}
+
+#theme-blue {
+    border-color: var(--accent);
+}

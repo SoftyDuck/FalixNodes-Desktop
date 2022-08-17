@@ -1,0 +1,11 @@
+sidebar button {padding: 8px 0px 8px 16px !important;}
+.grid-theming#bg-switcher {grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;}
+.modal .modal-sidebar .modal-sidebar-tab {
+    padding: 5px 0px 5px 16px !important;
+    margin-bottom: 4px !important;
+}
+.grid-theming div i {
+    width: 48px !important;
+    padding: 16px 0px !important;
+}
+#view-compact {border-color: var(--accent);}

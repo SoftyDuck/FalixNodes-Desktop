@@ -1,0 +1,8 @@
+:root {
+    --primary-background: rgba(0, 0, 0, 50%);
+    --secondary-background: rgba(25, 25, 25, 25%);
+}
+
+#theme-dark {
+    border-color: var(--accent);
+}
