@@ -434,3 +434,13 @@ button#cswU {
     border-color: transparent;
     transition: 0.3s border-color;
 }
+
+div#license {
+    overflow: scroll;
+    height: 340px;
+    font-family: monospace;
+    font-size: 12px;
+    width: calc(100% - 60px);
+    p {margin: 4px 0px;}
+}
+div#license::-webkit-scrollbar {width: 0px;}
