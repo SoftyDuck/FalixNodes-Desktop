@@ -317,6 +317,49 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="update-failed">
+                            <div id="update-failed-S0" class="troubleshoot-check">
+                                <i class="fa-duotone fa-cloud-exclamation"></i>
+                                <h2>Update Failing</h2>
+                                <p>FalixNodes Desktop is failing to update? Let's look into that.</p>
+                                <div class="troubleshoot-check-footer">
+                                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                    <button onclick="Troubleshooting('update-failed-S1')">Next</button>
+                                </div>
+                            </div>
+                            <div id="update-failed-S1" class="troubleshoot-check">
+                                <i class="fa-duotone fa-circle-1"></i>
+                                <h2>Check Update Server</h2>
+                                <p>Either your internet is having trouble reaching the update server or the update server itself is down.</p>
+                                <p>To quickly check this, open a regular web browser and go to <u><strong>https://falixnodes.net/releases/updates/stable/</strong></u>, you should see a list of files.</p>
+                                <p>If you can't reach it, check your internet connection. If you're able to connect to every other website with your internet connection, then the update server itself may be at fault in which case just wait a while.</p>
+                                <div class="troubleshoot-check-footer">
+                                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                    <button onclick="Troubleshooting('update-failed-S2')">Next</button>
+                                </div>
+                            </div>
+                            <div id="update-failed-S2" class="troubleshoot-check">
+                                <i class="fa-duotone fa-circle-2"></i>
+                                <h2>Microsoft Store</h2>
+                                <p>If you're using a Microsoft Store version of FalixNodes Desktop, the built-in auto updater is fully disabled. If the Update Failed message shows up, then a script in FalixNodes Desktop failed to stop this message from showing. Message should not appear next time, hopefully.</p>
+                                <p>The built-in auto updater is blocked when running FalixNodes Desktop as a Microsoft Store application(also as UWP). Usually you need to update the app via Microsoft Store, <u><strong>however, there are plans to discontinue the Microsoft Store version in v4.1.0.</strong></u></p>
+                                <div class="troubleshoot-check-footer">
+                                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                    <button onclick="Troubleshooting('update-failed-S3')">Next</button>
+                                </div>
+                            </div>
+                            <div id="update-failed-S3" class="troubleshoot-check">
+                                <i class="fa-duotone fa-circle-3"></i>
+                                <h2>Unsupported Operating System</h2>
+                                <p>You may be using FalixNodes Desktop on an unsupported operating system. FalixNodes Desktop does NOT support auto updating on specifically macOS due to app signing issues.</p>
+                                <p>On the topic of operating systems, FalixNodes Desktop does not officially support Windows 7, Windows 8.1, and Chrome OS...but can run on those named operating systems.</p>
+                                <br>
+                                <p>Auto updating is officially supported and tested on Windows 10, Windows 11, and Linux.</p>
+                                <div class="troubleshoot-check-footer">
+                                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="co1">
                             <div>
                                 <i class="fa-duotone fa-ban"></i>
@@ -331,13 +374,13 @@
                             <div>
                                 <i class="fa-duotone fa-cloud-exclamation"></i>
                                 <h2>Update Failing</h2>
-                                <button>Start Troubleshooting</button>
+                                <button onclick="TroubleshootingHideStart(); Troubleshooting('update-failed-S0')">Start Troubleshooting</button>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <i class="fa-duotone fa-wifi-exclamation"></i>
                                 <h2>No Internet</h2>
                                 <button>Start Troubleshooting</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
