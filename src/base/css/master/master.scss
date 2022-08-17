@@ -241,6 +241,9 @@ content {
 }
 
 .co1 {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 6px;
     width: calc(100% - 20px);
     div {
         background: rgba(46, 48, 49, 0.5);
