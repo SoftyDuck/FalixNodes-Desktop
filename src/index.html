@@ -44,7 +44,7 @@
                 <div class="sidebar-bottom">
                     <button onclick="toggleDefaultControls(); toTab('help-center', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
                     <button class="sidebar-tab"><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-arrow-up-right"></i></button>
-                    <button onclick="toggleModal('settings')" class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-arrow-up-right"></i></button>
+                    <button onclick="toggleModal('settings'); modalOpen()" class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-arrow-up-right"></i></button>
                 </div>
             </div>
         </sidebar>
@@ -67,7 +67,7 @@
                     <div id="about" class="hs-content">
                         <div class="modal-header">
                             <h1>About FalixNodes Desktop</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                            <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <h2>Versions</h2>
                         <p>App Version: v4.0.0</p>
@@ -100,10 +100,10 @@ SOFTWARE.
                     <div id="personalization" class="hs-content">
                         <div class="modal-header">
                             <h1>Personalization</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                            <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <h2>Username</h2>
-                        <p style="font-size: 10px; opacity: 0.4;">(Reloading is required for change to take effect)</p>
+                        <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
                         <input type="text" class="appUsername" id="nameField">
                         <p class="lead mt-3 setName" style="display: none;">There is no name set.</p>
                         <button id="cswU" class="btn btn-secondary save">Save</button>
@@ -165,7 +165,7 @@ SOFTWARE.
                             <i id="ss-color-gray" onclick="accentColorReset(); document.querySelector('#ss-color-gray').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/gray.css')" style="color: #485a6c" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
                         </div>
                         <h2>Custom Background</h2>
-                        <p style="font-size: 10px; opacity: 0.4;">(Reloading is required for change to take effect)</p>
+                        <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
                         <div class="mb-3 p-5">
                             <label for="lead">Background URL</label>
                             <input type="text" class="storage" id="nameField">
@@ -184,20 +184,33 @@ SOFTWARE.
                     <div id="account" class="hs-content">
                         <div class="modal-header">
                             <h1>Account</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                            <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <webview id="inSettings-account" src="https://client.falixnodes.net/profile/settings" preload="./base/js/webview/account.js"></webview>
                     </div>
                     <div id="language" class="hs-content">
                         <div class="modal-header">
                             <h1>Language</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                            <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="grid-language">
+                            <button><i class="fa-duotone fa-circle-check"></i> English</button>
+                            <button><i class="fa-duotone fa-circle"></i> Bengali</button>
+                            <button><i class="fa-duotone fa-circle"></i> Chinese</button>
+                            <button><i class="fa-duotone fa-circle"></i> French</button>
+                            <button><i class="fa-duotone fa-circle"></i> German</button>
+                            <button><i class="fa-duotone fa-circle"></i> Hindi</button>
+                            <button><i class="fa-duotone fa-circle"></i> Latvian</button>
+                            <button><i class="fa-duotone fa-circle"></i> Portuguese</button>
+                            <button><i class="fa-duotone fa-circle"></i> Russian</button>
+                            <button><i class="fa-duotone fa-circle"></i> Spanish</button>
+                            <button><i class="fa-duotone fa-circle"></i> Turkish</button>
                         </div>
                     </div>
                     <div id="troubleshooting" class="hs-content">
                         <div class="modal-header">
                             <h1>Troubleshooting</h1>
-                            <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                            <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <br>
                         <div class="co2">

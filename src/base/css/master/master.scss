@@ -138,7 +138,6 @@ sidebar {
     transform: translate(-50%, -50%);
     background: rgba(25, 25, 25, 50%);
     border: 1px rgba(52, 52, 52, 0.961) solid;
-    backdrop-filter: blur(2px);
     border-radius: 10px;
     z-index: 5;
     .modal-header {
@@ -317,11 +316,15 @@ webview#inSettings-account {
 input {
     background: rgba(0, 0, 0, 0.25);
     border: 1px rgba(52, 52, 52, 0.961) solid;
+    transition: 0.3s border-color;
     border-radius: 4px !important;
     color: white;
     padding: 10px;
 }
-input:hover {border-color: transparent;}
+input:hover {
+    border-color: transparent;
+    transition: 0.3s border-color
+}
 input:focus {
     border-color: var(--accent);
     outline: none;
@@ -344,6 +347,7 @@ input:focus {
         i {
             background: rgba(0, 0, 0, 0.25);
             border: 1px rgba(52, 52, 52, 0.961) solid;
+            transition: 0.3s border-color;
             border-radius: 6px !important;
             color: white;
             width: 70px;
@@ -351,7 +355,10 @@ input:focus {
             padding: 26px 0px;
             cursor: pointer;
         }
-        i:hover {border-color: transparent;}
+        i:hover {
+            border-color: transparent;
+            transition: 0.3s border-color;
+        }
     }
 }
 
@@ -367,9 +374,13 @@ input:focus {
     width: 100%;
     border-radius: 6px;
     border: 2px rgba(52, 52, 52, 0.961) solid;
+    transition: 0.3s border-color;
     cursor: pointer;
 }
-.grid-theming#bg-switcher img:hover {border-color: transparent;}
+.grid-theming#bg-switcher img:hover {
+    border-color: transparent;
+    transition: 0.3s border-color
+}
 
 .mb-3.p-5 {
         button {
@@ -396,4 +407,30 @@ button#cswU {
     margin-top: -3px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.grid-language {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 6px;
+    width: 324px;
+    margin-top: 16px;
+    button {
+        color: white;
+        text-align: left;
+        padding: 12px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px rgba(52, 52, 52, 0.961) solid;
+        transition: 0.3s border-color;
+    }
+    i {
+        color: white;
+        margin-right: 8px;
+    }
+}
+.grid-language button:hover {
+    border-color: transparent;
+    transition: 0.3s border-color;
 }

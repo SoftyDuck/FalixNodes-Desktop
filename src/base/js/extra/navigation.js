@@ -39,6 +39,16 @@ function toggleModal(pageName) {
   document.getElementById(pageName).style.display = "inherit";
 }
 
+function modalOpen() {
+  document.querySelector("body > content").style.filter = 'blur(20px)'
+  document.querySelector("body > sidebar").style.filter = 'blur(20px)'
+}
+
+function modalClose() {
+  document.querySelector("body > content").style.filter = 'blur(0px)'
+  document.querySelector("body > sidebar").style.filter = 'blur(0px)'
+}
+
 //// Modals - Settings - Troubleshoot Navigation
 
 function TroubleshootingHideStart() {document.querySelector("#troubleshooting > div.co1").style.display = 'none'}
