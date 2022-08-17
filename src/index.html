@@ -129,15 +129,15 @@ SOFTWARE.
                         <h2>Window Blur</h2>
                         <div class="grid-theming" id="box-tb">
                             <div>
-                                <i class="fa-duotone fa-raindrops"></i>
+                                <i id="blur-setting-On" onclick="setBlur('blurOn')" class="fa-duotone fa-raindrops"></i>
                                 <p>Blurry</p>
                             </div>
                             <div>
-                                <i class="fa-light fa-raindrops"></i>
+                                <i id="blur-setting-Transparent" onclick="setBlur('blurTransparent')" class="fa-light fa-raindrops"></i>
                                 <p>Transparent</p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-raindrops"></i>
+                                <i id="blur-setting-Off" onclick="setBlur('blurOff')" class="fa-solid fa-raindrops"></i>
                                 <p>Disabled</p>
                             </div>
                         </div>
@@ -388,6 +388,7 @@ SOFTWARE.
     <script src="./base/js/command-menu/search.js"></script>
 
     <script src="./base/js/settings/accent-color.js"></script>
+    <script src="./base/js/settings/blur.js"></script>
     <script src="./base/js/settings/custom-background.js"></script>
     <script src="./base/js/settings/theme.js"></script>
     <script src="./base/js/settings/username.js"></script>

@@ -4,6 +4,29 @@ const PowerShell = require("powershell");
 const { exec } = require("child_process");
 const path = require('path');
 
+if (process.platform == 'darwin') {
+  app.whenReady().then(() => {
+    global.blur = "vibrancy"
+    global.frame = false
+    global.titleBarStyle = 'hiddenInset'
+  }
+)
+}
+else if(process.platform == 'win32'){
+  app.whenReady().then(() => {
+    global.blur = "acrylic"
+    global.frame = false
+  }
+)
+}
+else{ 
+  app.whenReady().then(() => {
+    global.blur = "blurbehind"
+    global.frame = true
+  }
+)
+}
+
 const createMainWindow = () => {
   let primaryWindow = new glasstron.BrowserWindow({
     width: 1200,
@@ -19,6 +42,11 @@ const createMainWindow = () => {
   })
   primaryWindow.loadFile('./src/index.html')
   ipcMain.on('resetSystemHostFile',  () => {resetSystemHostFile()})
+
+  ipcMain.on("blurOn", async (e, value) => {if(primaryWindow !== null){e.sender.send("blurStatus", await primaryWindow.setBlur(true))}});
+  ipcMain.on("blurOff", async (e, value) => {if(primaryWindow !== null){e.sender.send("blurStatus", await primaryWindow.setBlur(false))}});
+  ipcMain.on("blurTransparent", () => {primaryWindow.blurType = 'transparent';});
+  ipcMain.on("enableBlur", () => {primaryWindow.blurType = global.blur;});
 }
 
 function resetSystemHostFile() {

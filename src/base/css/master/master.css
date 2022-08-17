@@ -326,4 +326,14 @@ input:focus {
 .mb-3.p-5 input {
   width: 340px; }
 
+button#cswU {
+  background: #323232;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: -3px;
+  font-weight: bold;
+  cursor: pointer; }
+
 /*# sourceMappingURL=master.css.map */
