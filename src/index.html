@@ -2,6 +2,11 @@
     <head>
         <title>FalixNodes Desktop</title>
 
+
+        <link id="accent-setting" rel="stylesheet" type="text/css" href="./base/css/settings/accent-colors/default.css">
+        <link id="theme-setting" rel="stylesheet" type="text/css" href="./base/css/settings/theme/dark.css">
+        <link id="view-setting" rel="stylesheet" type="text/css" href="./base/css/settings/view/default.css">
+
         <link rel="stylesheet" href="./base/css/master/master.css">
         <link rel="stylesheet" href="./base/css/extra/fonts.css">
         <link rel="stylesheet" href="./base/css/extra/ninja-keys.css">
@@ -90,7 +95,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-                        </pre>
+                        </pre> <!-- Keep indent like this -->
                     </div>
                     <div id="personalization" class="hs-content">
                         <div class="modal-header">
@@ -98,23 +103,26 @@ SOFTWARE.
                             <button onclick="toggleModal('null')" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <h2>Username</h2>
-                        <input value="Your Username Here">
+                        <p style="font-size: 10px; opacity: 0.4;">(Reloading is required for change to take effect)</p>
+                        <input type="text" class="appUsername" id="nameField">
+                        <p class="lead mt-3 setName" style="display: none;">There is no name set.</p>
+                        <button id="cswU" class="btn btn-secondary save">Save</button>
                         <h2>Theme</h2>
                         <div class="grid-theming" id="box-tb">
                             <div>
-                                <i class="fa-solid fa-sun-bright"></i>
+                                <i style="cursor: not-allowed;" class="fa-solid fa-sun-bright"></i>
                                 <p>Light</p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-sun-haze"></i>
+                                <i id="theme-blue" onclick="swapTheme('./base/css/settings/theme/blue.css')" class="fa-solid fa-sun-haze"></i>
                                 <p>Blue</p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-moon"></i>
+                                <i id="theme-dark" onclick="swapTheme('./base/css/settings/theme/dark.css')" class="fa-solid fa-moon"></i>
                                 <p>Black</p>
                             </div>
                             <div>
-                                <i class="fa-duotone fa-eclipse"></i>
+                                <i style="cursor: not-allowed;" class="fa-duotone fa-eclipse"></i>
                                 <p>Auto</p>
                             </div>
                         </div>
@@ -136,29 +144,28 @@ SOFTWARE.
                         <h2>View</h2>
                         <div class="grid-theming" id="box-tb">
                             <div>
-                                <i class="fa-light fa-distribute-spacing-vertical"></i>
+                                <i id="view-comfortable" onclick="setView('./base/css/settings/view/default.css')" class="fa-light fa-distribute-spacing-vertical"></i>
                                 <p>Default</p>
                             </div>
                             <div>
-                                <i class="fa-light fa-objects-align-left"></i>
+                                <i id="view-compact" onclick="setView('./base/css/settings/view/compact.css')" class="fa-light fa-objects-align-left"></i>
                                 <p>Compact</p>
                             </div>
                         </div>
                         <h2>Accent Color</h2>
                         <div class="grid-theming" id="ro-colors">
-                            <i style="color: #2970CC ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #6b5fd2 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #c6262e ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #f37329 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #f9c440 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #68b723 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #28bca3 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #a56de2 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #de3e80 ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
-                            <i style="color: #485a6c ;" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-default" onclick="accentColorReset(); document.querySelector('#ss-color-default').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/default.css')" style="color: #2970CC" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-classic" onclick="accentColorReset(); document.querySelector('#ss-color-classic').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/classic.css')" style="color: #6b5fd2" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-red" onclick="accentColorReset(); document.querySelector('#ss-color-red').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/red.css')" style="color: #c6262e" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-orange" onclick="accentColorReset(); document.querySelector('#ss-color-orange').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/orange.css')" style="color: #f37329" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-yellow" onclick="accentColorReset(); document.querySelector('#ss-color-yellow').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/yellow.css')" style="color: #f9c440" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-green" onclick="accentColorReset(); document.querySelector('#ss-color-green').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/green.css')" style="color: #68b723" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-lime" onclick="accentColorReset(); document.querySelector('#ss-color-lime').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/lime.css')" style="color: #28bca3" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-pink" onclick="accentColorReset(); document.querySelector('#ss-color-pink').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/pink.css')" style="color: #de3e80" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+                            <i id="ss-color-gray" onclick="accentColorReset(); document.querySelector('#ss-color-gray').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/gray.css')" style="color: #485a6c" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
                         </div>
                         <h2>Custom Background</h2>
-                        <p style="font-size: 12px; opacity: 0.5;">(Reloading is required for change to take effect)</p>
+                        <p style="font-size: 10px; opacity: 0.4;">(Reloading is required for change to take effect)</p>
                         <div class="mb-3 p-5">
                             <label for="lead">Background URL</label>
                             <input type="text" class="storage" id="nameField">
@@ -352,7 +359,7 @@ SOFTWARE.
                 </div>
                 <h2>At a Glance - Your Servers</h2>
                 <div class="glance-servers">
-                    <webview id="glance-servers" preload="./assets/scripts/webviews/glance-servers.js" src="https://panel.falixnodes.net" autosize="on"></webview>
+                    <webview id="glance-servers" src="https://panel.falixnodes.net" autosize="on"></webview>
                 </div>
                 <br>
                 <h2>Featured Servers</h2>
@@ -380,7 +387,11 @@ SOFTWARE.
 
     <script src="./base/js/command-menu/search.js"></script>
 
+    <script src="./base/js/settings/accent-color.js"></script>
     <script src="./base/js/settings/custom-background.js"></script>
+    <script src="./base/js/settings/theme.js"></script>
+    <script src="./base/js/settings/username.js"></script>
+    <script src="./base/js/settings/view.js"></script>
 
     <script src="./base/js/extra/add-component.js"></script>
     <script src="./base/js/extra/controls.js"></script>

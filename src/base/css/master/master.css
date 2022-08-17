@@ -1,8 +1,5 @@
-:root {
-  --accent: #2970CC; }
-
 body {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--primary-background);
   color: white;
   font-family: 'Poppins'; }
 
@@ -92,7 +89,7 @@ sidebar {
   left: 50%;
   width: 1000%;
   height: 1000%;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(25, 25, 25, 0.5);
   transform: translate(-50%, -50%);
   z-index: -10; }
 
@@ -108,7 +105,7 @@ sidebar {
   min-width: 600px;
   min-height: 300px;
   transform: translate(-50%, -50%);
-  background: rgba(24, 24, 24, 0.859);
+  background: rgba(25, 25, 25, 0.5);
   border: 1px rgba(52, 52, 52, 0.961) solid;
   backdrop-filter: blur(2px);
   border-radius: 10px;
@@ -148,7 +145,7 @@ sidebar {
     left: 0px;
     width: 200px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(25, 25, 25, 0.5);
     border-radius: 10px 0px 0px 10px;
     padding: 0px 16px;
     border-right: 1px rgba(52, 52, 52, 0.961) solid; }
