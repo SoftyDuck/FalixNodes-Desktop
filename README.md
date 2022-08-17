@@ -118,16 +118,105 @@ A: Nothing, literally nothing. The fork only removes a lot of `console.log` code
 
 But I got sick of seeing the error over and over.
 
+## How-To
+### Chaning Panels' Destination
+FalixNodes' has two panels as it's customers to use; for starters is the client area where customers can create, manage, or delete their server and also manage their account if needed; and then the servers panel where customers can interact with each of their servers from sending commands to the console, mananging and editing files, configuring databases, and much more. Since both of these panels are seperate, they both get their tab in FalixNodes Desktop, if you're forking this repo for another host, this *how-to* will show what you need to do in order to change both tabs to the host's panels instead of showing FalixNodes' panel.
+
+First you need to know how each panel is setup in FalixNodes Desktop, as special functions are put in place to ensure better experience for the user. 
+
+Let's discuss those functions first, they're three functions put in place for both panels: CSS injection, basic navigation, and domain restriction.
+
+**CSS Injection**
+
+As a visual appeal, FalixNodes Desktop has a blur effect applied behind it's window, with CSS injection this blur effect can be seen behind the WebView that the panel is displayed in. Without the CSS injection, this blur effect is not shown, and the background is plain solid in the WebView. Besides showing the blur effect, more CSS code has been added to change styles in the Pterodactyl panel that FalixNodes uses. If your host uses Pterodactyl, then you probably don't need to make any changes for the CSS injection in the Servers Panel, mostly. As for the Client Area, you will probably need to make changes on your own, you'll need to remove all CSS codes and just add more opacity to the webpage background.
+
+**Basic Navigation**
+
+In FalixNodes Desktop, you'll noticing when selecting either of the tabs, different controls are displayed in the sidenbar header, these controls are(obviously) for the selected panel. In order the controls shown are: Home, Refresh, Back, and Forward.
+
+**Domain Restriction**
+
+If a user clicks on something, commonly an advertisement, that directs them outside the panel's URL, the domain restriction script will display a security warning and then shortly redirect the user back to the panel.
+
+This function has been created due to common cases where users will mistakingly click on advertisements. You'll need to modify the script to whitelist URLs you'll need to be accessed in both panels, make sure to include social logins if needed.
+
+**Adjustments to CSS Injection**
+
+ - Located At: `/src/base/js/webview/`
+ - You can open developer tools for the panel if needed (e.x. `webviewCP.openDevTools()` in DevTools console)
+
+
+**Adjustments to Domain Restriction**
+ - Located At: `/src/base/js/webview/`
+ The script uses an if statement and detects the URL the WebView is currently on. Viewing the script, you'll see that's it pretty straight forward to edit. As a reminder, add social logins if needed.
+
+**Changing WebView Destination**
+
+Of course, make sure to change where the WebView goes by default in the __index.html__ file. Simply edit the `src` variable.
+
+### Managing Updates
+**Building Your Own Update Server**
+
+When a new update is available for FalixNodes Desktop, the app will detect that from a specific URL, that being __https://falixnodes.net/releases/updates/falixnodes-desktop/live/__. This is set in the __package.json__ file under the build configuration for `electron-builder`. All you really need is just a VPS/Web Server.
+
+It's common for updates to be done with GitHub Releases when it comes to use Electron Builder handling updates, however I don't recommend this to avoid token conflicts in the future, so a VPS is more future-proof and as long as you have access to the domain and can afford renewing the domain down the line.
+
+ - With GitHub Actions (Workflow is included with repo):
+
+ If you want full automation, then you're in-luck! I've made sure that building and releasing updates for FalixNodes Desktop is fully automated by GitHub Actions. The workflow file that I've built does everything needed, in order: Build the app for each platform(Windows, macOS, and Linux), upload the new builds to VPS with SFTP to a prepare folder(Repo Secret required for SFTP username and password), and then copying the new builds on the VPS from the prepare folder to the live folder where the app will detect new updates.
+
+ First, you'll need to setup three repo secrets for the VPS' IP address, username, and password. Adding information like this as secrets will keep the information hidden when looking at GitHub Actions logs.
+ You'll need to add these secrets as is:
+ IP: `SFTP_IP`
+ Username: `SFTP_USERNAME`
+ Password: `SFTP_PASSWORD`
+
+ In the workflow file, you'll only need to edit the directory path that being `remoteDir`. If you don't, the upload will fail.
+
+ The reason why you need a prepare folder for each operating system, is because the SFTP action used always overwrites the entire folder it uploads to, deleting all old files. 
+
+ It usually takes 10 minutes to each build to occur and upload to the VPS(could vary on your VPS' network speed), so you'll need to add GitHub Actions onto your VPS so it can runs commands to move the builds from the prepare folders to the live folders. 
+ Go to the repo settings > Actions > Runners and follow instructions.
+
+ - Without GitHub Actions (Manually):
+
+ If you're not interested in using GitHub Actions for automation, using an alternative, or maybe having trouble with it there is always the old fashioned way.
+ Build the app for each OS you have access to by using the `npm run build` command and uploading it manually to your VPS.
+ The following files must be included:
+
+ (For Windows)
+  - `.exe`
+  - `.exe.blockmap`
+  - `latest.yml`
+
+ (For macOS)
+  - `.dmg`
+  - `.dmg.blockmap`
+  - `latest-macos.yml`
+  
+ (For Linux)
+  - `.AppImage`
+  - `latest-linux.yml`
+
+**NOTES**
+> DMG files must be signed in order for auto updating to work, by default FalixNodes Desktop does not support auto updating for macOS in the first place. 
+
+> Only the formats `nsis`, `dmg`, and `AppImage` are auto update supported in Electron Builder. So you must use these options.
+
+> If you plan to publish app to Microsoft Store, you do not need to include AppX file in your update server. When running the app as a Windows UWP application, pinging the update server appears to be blocked causing the update to fail automatically. That is why auto update has been fully disabled if the application is detected running in the WindowsApp directory. (There are future plans to discontiue FalixNodes Desktop's Microsoft Store version, sorry if this disappoints you)
+
 ## Preparing to Develop FalixNodes Desktop
 ### Requirements
- - NodeJS 16 or up
+ - NodeJS 18 or up
  - Python 3.10 or up
  - g++ (Linux)
  - Visual Studio (Windows)
   - Development with C++
  - Visual C++ Redistributable (Windows)
- - At least 2GB of storage (macOS/Linux)
- - At least 8GB of storage (Windows)
+ - At least 4GB of storage available, recommended is 8GB (macOS/Linux)
+ - At least 8GB of storage available, recommended is 16GB (Windows)
+
+ > If you're using Windows, please be using Windows 10 or Windows 11. Windows 8.1 or older are not supported by FalixNodes Desktop, older versions may be able to run the application but may run into some issues along the way.
 
 ### Building FalixNodes Desktop
 #### Electron Builder Environment
@@ -149,7 +238,7 @@ You need to change the following files as they may include the name "FalixNodes"
  - `/build/background.png` - Background of the DMG installer (macOS)
  - `/build/installSidebar.bmp` - Sidebar banner of the NSIS installer (Windows)
  - `/build/license_*.txt` - All license files
- - `/build/icons`/ - Obviously the icon, the icon included is trademark of FalixNodes Limited
+ - `/build/icons/` - Obviously the icon, the icon included is trademark of FalixNodes Limited
 
  A Figma file is included if you want to the same layout for the background and banner, Figma is a free tool to use.
 
@@ -181,7 +270,7 @@ Then Electron builder will start building for your operating system.
 If you desire to, or are required to, create the software for multiple operating systems, you may leverage GitHub Actions. Using GitHub Actions, you can write software on many operating systems without having to use them. You can build a DMG file for macOS, for example, without owning or having access to a Mac. Workflow files have been added and are ready to be deployed.
 
 ## Credits
- - Developer: [Korbs Studio](https://github.com/KorbsStudio/)
+ - Creator/Developer: [Korbs Studio](https://github.com/KorbsStudio/)
  - Contributors: 
   [LogicApples](https://github.com/LogicApples/), 
   [Alex](https://github.com/Alex-idk)
@@ -192,9 +281,8 @@ If you desire to, or are required to, create the software for multiple operating
 
 ### Packages Used
  - For Blur composition effect: [Glasstron](https://github.com/NyaomiDEV/Glasstron/)
- - Push Notifications: [Pushy](https://pushy.me/)
  - Building for distrubtion: [Electron Builder](https://github.com/electron-userland/electron-builder/)
 
 ### 3rd-Party Services
- - VPN Service: [Mullvad](https://mullvad.net/)
- - Command Menu: [Ninja Keys](https://github.com/ssleptsov/ninja-keys)s
+ - Command Menu: [Ninja Keys](https://github.com/ssleptsov/ninja-keys)
+ - Push Notifications: [Pushy](https://pushy.me/)
