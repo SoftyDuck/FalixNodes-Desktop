@@ -120,7 +120,7 @@ But I got sick of seeing the error over and over.
 
 ## How-To
 ### Chaning Panels' Destination
-FalixNodes' has two panels as it's customers to use; for starters is the client area where customers can create, manage, or delete their server and also manage their account if needed; and then the servers panel where customers can interact with each of their servers from sending commands to the console, mananging and editing files, configuring databases, and much more. Since both of these panels are seperate, they both get their tab in FalixNodes Desktop, if you're forking this repo for another host, this *how-to* will show what you need to do in order to change both tabs to the host's panels instead of showing FalixNodes' panel.
+FalixNodes' has two panels for it's customers to use; for starters is the client area where customers can create, manage, or delete their server and also manage their account if needed; and then the servers panel where customers can interact with each of their servers from sending commands to the console, mananging and editing files, configuring databases, and much more. Since both of these panels are seperate, they both get their tab in FalixNodes Desktop, if you're forking this repo for another host, this *how-to* will show what you need to do in order to change both tabs to the host's panels instead of showing FalixNodes' panel.
 
 First you need to know how each panel is setup in FalixNodes Desktop, as special functions are put in place to ensure better experience for the user. 
 
