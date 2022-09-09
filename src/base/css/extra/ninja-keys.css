@@ -14,4 +14,5 @@ ninja-keys {
     --ninja-group-text-color: rgb(144, 149, 157) !important;
     --ninja-footer-background: rgba(30, 30, 30, 85%) !important;
     --ninja-icon-size: 16px !important;
+    --ninja-z-index: 50;
 }
