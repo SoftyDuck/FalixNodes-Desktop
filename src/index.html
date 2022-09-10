@@ -6,6 +6,7 @@
         <link id="accent-setting" rel="stylesheet" type="text/css" href="./base/css/settings/accent-colors/default.css">
         <link id="theme-setting" rel="stylesheet" type="text/css" href="./base/css/settings/theme/dark.css">
         <link id="view-setting" rel="stylesheet" type="text/css" href="./base/css/settings/view/default.css">
+        <link id="language-setting" rel="stylesheet" type="text/css" href="./base/css/settings/language/english.css">
 
         <link rel="stylesheet" href="./base/css/master/master.css">
         <link rel="stylesheet" href="./base/css/extra/fonts.css">
@@ -174,17 +175,17 @@
                             <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <div class="grid-language">
-                            <button><i class="fa-duotone fa-circle-check"></i> English</button>
-                            <button><i class="fa-duotone fa-circle"></i> Bengali</button>
-                            <button><i class="fa-duotone fa-circle"></i> Chinese</button>
-                            <button><i class="fa-duotone fa-circle"></i> French</button>
-                            <button><i class="fa-duotone fa-circle"></i> German</button>
-                            <button><i class="fa-duotone fa-circle"></i> Hindi</button>
-                            <button><i class="fa-duotone fa-circle"></i> Latvian</button>
-                            <button><i class="fa-duotone fa-circle"></i> Portuguese</button>
-                            <button><i class="fa-duotone fa-circle"></i> Russian</button>
-                            <button><i class="fa-duotone fa-circle"></i> Spanish</button>
-                            <button><i class="fa-duotone fa-circle"></i> Turkish</button>
+                            <button id="ss-language-english" onclick="languageReset(); document.querySelector('#ss-language-english i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/english.css')"><i class="fa-duotone fa-circle-check"></i> English</button>
+                            <button id="ss-language-bengali" onclick="languageReset(); document.querySelector('#ss-language-bengali i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/bengali.css')"><i class="fa-duotone fa-circle"></i> Bengali</button>
+                            <button id="ss-language-chinese" onclick="languageReset(); document.querySelector('#ss-language-chinese i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/chinese.css')"><i class="fa-duotone fa-circle"></i> Chinese</button>
+                            <button id="ss-language-french" onclick="languageReset(); document.querySelector('#ss-language-french i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/french.css')"><i class="fa-duotone fa-circle"></i> French</button>
+                            <button id="ss-language-german" onclick="languageReset(); document.querySelector('#ss-language-german i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/german.css')"><i class="fa-duotone fa-circle"></i> German</button>
+                            <button id="ss-language-hindi" onclick="languageReset(); document.querySelector('#ss-language-hindi i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/hindi.css')"><i class="fa-duotone fa-circle"></i> Hindi</button>
+                            <button id="ss-language-latvian" onclick="languageReset(); document.querySelector('#ss-language-latvian i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/latvian.css')"><i class="fa-duotone fa-circle"></i> Latvian</button>
+                            <button id="ss-language-portuguese" onclick="languageReset(); document.querySelector('#ss-language-portuguese i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/portuguese.css')"><i class="fa-duotone fa-circle"></i> Portuguese</button>
+                            <button id="ss-language-russian" onclick="languageReset(); document.querySelector('#ss-language-russian i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/russian.css')"><i class="fa-duotone fa-circle"></i> Russian</button>
+                            <button id="ss-language-spanish" onclick="languageReset(); document.querySelector('#ss-language-spanish i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/spanish.css')"><i class="fa-duotone fa-circle"></i> Spanish</button>
+                            <button id="ss-language-turkish" onclick="languageReset(); document.querySelector('#ss-language-turkish i').setAttribute('class', 'fa-duotone fa-circle-check'); swapLanguage('./base/css/settings/language/turkish.css')"><i class="fa-duotone fa-circle"></i> Turkish</button>
                         </div>
                     </div>
                     <div id="troubleshooting" class="hs-content">
@@ -426,6 +427,7 @@
     <script src="./base/js/settings/accent-color.js"></script>
     <script src="./base/js/settings/blur.js"></script>
     <script src="./base/js/settings/custom-background.js"></script>
+    <script src="./base/js/settings/language.js"></script>
     <script src="./base/js/settings/theme.js"></script>
     <script src="./base/js/settings/username.js"></script>
     <script src="./base/js/settings/view.js"></script>
