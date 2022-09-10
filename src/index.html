@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="./base/fonts/fontawesome-pro-6.0.0-web/css/all.css">
     </head>
     <body onload="addComponent()">
-        <ninja-keys class="dark" placeholder="Command Menu"></ninja-keys>
-        <img id="primary-background">
+        <ninja-keys class="dark" placeholder="Command Menu" hideBreadcrumbs></ninja-keys>
+        <img src="" id="primary-background">
         <sidebar>
             <div class="primary-sidebar">
                 <div class="sidebar-header">
@@ -82,6 +82,7 @@
                         </div>
                         <h2>Username</h2>
                         <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
+                        <label>Username</label>
                         <input type="text" class="appUsername" id="nameField">
                         <p class="lead mt-3 setName" style="display: none;">There is no name set.</p>
                         <button id="cswU" class="btn btn-secondary save">Save</button>
@@ -145,7 +146,8 @@
                         <h2>Custom Background</h2>
                         <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
                         <div class="mb-3 p-5">
-                            <label for="lead">Background URL</label>
+                            <label id="background-url" for="lead">Background URL</label>
+                            <label for="nameField"></label>
                             <input type="text" class="storage" id="nameField">
                             <button class="btn btn-secondary">Save</button>
                             <p class="lead mt-3 text">Background URL:</p>
