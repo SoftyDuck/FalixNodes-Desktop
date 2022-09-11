@@ -49,8 +49,17 @@
                 </div>
             </div>
         </sidebar>
+        <toasts> <!-- YUM! -->
+            <toast id="null"></toast>
+            <toast id="username-set">
+                <p onclick="window.api.send('restartApp')">Restart required</p>
+            </toast>
+        </toasts>
         <modal>
             <div id="null" class="modal"></div>
+
+            <div add-component="./components/modals/command-menu-quick-access/settings-username.html"></div>
+
             <div id="settings" class="modal">
                 <div class="modal-sidebar">
                     <div class="modal-sidebar-top">
@@ -84,7 +93,7 @@
                         <h2>Username</h2>
                         <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
                         <label>Username</label>
-                        <input type="text" class="appUsername" id="nameField">
+                        <input type="text" class="appUsername" id="nameField" onkeypress="inputEnterUsername(event)">
                         <p class="lead mt-3 setName" style="display: none;">There is no name set.</p>
                         <button id="cswU" class="btn btn-secondary save">Save</button>
                         <h2>Theme</h2>
@@ -147,7 +156,7 @@
                         <h2>Custom Background</h2>
                         <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
                         <div class="mb-3 p-5">
-                            <label id="background-url" for="lead">Background URL</label>
+                            <label id="background-url" for="nameField">Background URL</label>
                             <label for="nameField"></label>
                             <input type="text" class="storage" id="nameField">
                             <button class="btn btn-secondary">Save</button>
