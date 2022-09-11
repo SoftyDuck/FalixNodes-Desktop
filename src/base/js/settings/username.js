@@ -20,3 +20,11 @@ setTimeout(() => {
       document.querySelector('#username').innerHTML = username + '!';
     }
 }, 2750);
+
+function inputEnterUsername(event) {
+    if (event.key === "Enter") {
+        // usernameSaved()
+        document.querySelector("#cswU").click()
+        if (document.querySelector("#quickie-settings-username") === 'none'){} else {toggleModal('null'); toastRR(); modalClose();}
+    }
+}
