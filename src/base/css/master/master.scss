@@ -1,7 +1,7 @@
 body {
     background: var(--primary-background);
     color: white;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 @font-face {
@@ -16,12 +16,6 @@ body {
     font-weight: bold;
 }
 
-@font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins/Poppins-Light.ttf);
-    font-weight: lighter;
-}
-
 img#primary-background {
     position: fixed;
     top: 0px;
@@ -32,6 +26,8 @@ img#primary-background {
     opacity: 0.6;
     filter: brightness(0.2);
 }
+
+:host {display: flex !important}
 
 sidebar {
     position: fixed;
@@ -447,3 +443,47 @@ div#license {
     p {margin: 4px 0px;}
 }
 div#license::-webkit-scrollbar {width: 0px;}
+
+div#quickie-settings-username {
+    min-height: 0px !important;
+    min-width: 0px !important;
+    height: fit-content;
+    width: fit-content;
+    padding: 6px;
+    background: rgba(17, 17, 17, 0.85) !important;
+    border: 1px white solid !important;
+    input {border-radius: 8px !important}
+    label {margin: 0px 20px}
+}
+
+div#quickie-settings-username::before {
+    height: 3000%;
+    background: rgb(50 50 50 / 94%) !important;
+}
+
+toast {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%);
+    background: black;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s opacity;
+    * {margin: 0px}
+}
+
+toast#null {
+    opacity: 0 !important;
+    display: none !important;
+}
+
+@keyframes toast {
+    0% {opacity: 1}
+    80% {opacity: 1}
+    100% {opacity: 0}
+}

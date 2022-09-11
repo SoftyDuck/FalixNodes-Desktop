@@ -28,15 +28,22 @@ function toSettingsTab(pageName,elmnt,color) {
   elmnt.style.backgroundColor = color;
 }
 
+// Toast
+function toastRR() {
+    document.querySelector("#username-set").style.display = 'inherit'
+    setTimeout(() => {document.querySelector("#username-set").style.opacity = '1'}, 1000)
+    setTimeout(() => {document.querySelector("#username-set").style.opacity = '0'}, 3000)
+    setTimeout(() => {document.querySelector("#username-set").style.display = 'none'}, 4000)
+}
 // Modals
 
-function toggleModal(pageName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("modal");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  document.getElementById(pageName).style.display = "inherit";
+function toggleModal(modalName) {
+    var i, modalcontent;
+    modalcontent = document.getElementsByClassName("modal");
+    for (i = 0; i < modalcontent.length; i++) {
+        modalcontent[i].style.display = "none";
+    }
+    document.getElementById(modalName).style.display = "inherit";
 }
 
 function modalOpen() {
