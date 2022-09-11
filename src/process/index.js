@@ -26,7 +26,6 @@ else{
   }
 )
 }
-
 const createMainWindow = () => {
   let primaryWindow = new glasstron.BrowserWindow({
     width: 1200,
@@ -41,6 +40,8 @@ const createMainWindow = () => {
     }
   })
   primaryWindow.loadFile('./src/index.html')
+  ipcMain.on('restartApp',  () => {appRestart()})
+
   ipcMain.on('resetSystemHostFile',  () => {resetSystemHostFile()})
 
   ipcMain.on("blurOn", async (e, value) => {if(primaryWindow !== null){e.sender.send("blurStatus", await primaryWindow.setBlur(true))}});
@@ -76,6 +77,11 @@ function resetSystemHostFile() {
       zenity --info --text="Original hosts file was backed up to your Documents."
     `)
   }
+}
+
+function appRestart() {
+  app.relaunch({ args: process.argv.slice(1).concat(['--relaunch']) })
+  app.exit(0)
 }
 
 app.on('ready', createMainWindow);

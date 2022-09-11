@@ -2,6 +2,7 @@ const { contextBridge, ipcRenderer} = require("electron");
 const path = require('path');
 
 contextBridge.exposeInMainWorld( "api", { send: (channel, data) => {let validChannels = [
+  "restartApp",
   "resetSystemHostFile",
   "enableBlur",
   "blurOn",
