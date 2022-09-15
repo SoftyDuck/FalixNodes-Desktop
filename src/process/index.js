@@ -32,8 +32,14 @@ const createMainWindow = () => {
     height: 800,
     frame: true,
     autoHideMenuBar: true,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: true,
     blur: true,
     blurType: 'blurbehind',
+    titleBarOverlay: {
+      color: '#191919',
+      symbolColor: 'white'
+    },
     webPreferences: {
       preload: path.join(__dirname, "./preload.js"),
       webviewTag: true
