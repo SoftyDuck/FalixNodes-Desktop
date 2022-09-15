@@ -6,43 +6,48 @@ const path = require('path');
 
 if (process.platform == 'darwin') {
   app.whenReady().then(() => {
-    global.blur = "vibrancy"
-    global.frame = false
-    global.titleBarStyle = 'hiddenInset'
-  }
-)
-}
+    global.frame = false;
+    global.titleBarStyle = 'hiddenInset';
+})}
 else if(process.platform == 'win32'){
   app.whenReady().then(() => {
+    global.frame = false;
+    global.titleBarStyle = 'hidden';
     global.blur = "acrylic"
-    global.frame = false
-  }
-)
-}
-else{ 
+})}
+else{
   app.whenReady().then(() => {
+    global.frame = true;
+    global.titleBarStyle = 'default';
     global.blur = "blurbehind"
-    global.frame = true
-  }
-)
-}
+})}
+
 const createMainWindow = () => {
   let primaryWindow = new glasstron.BrowserWindow({
     width: 1200,
     height: 800,
-    frame: true,
+    frame: global.frame,
     autoHideMenuBar: true,
-    titleBarStyle: 'hidden',
-    titleBarOverlay: true,
+    darkTheme: true,
+    vibrancy: "dark",
+    fullscreenWindowTitle: true,
     blur: true,
-    blurType: 'blurbehind',
+    blurType: global.blur,
+    titleBarStyle: global.titleBarStyle,
+    titleBarOverlay: true,
     titleBarOverlay: {
-      color: '#191919',
-      symbolColor: 'white'
+      color: '#232323',
+      symbolColor: 'white',
+      height: 40,
+    },
+    trafficLightPosition: {
+      x: 20,
+      y: 13,
     },
     webPreferences: {
       preload: path.join(__dirname, "./preload.js"),
-      webviewTag: true
+      webviewTag: true,
+      sandbox: true,
     }
   })
   primaryWindow.loadFile('./src/index.html')
@@ -90,4 +95,6 @@ function appRestart() {
   app.exit(0)
 }
 
-app.on('ready', createMainWindow);
+app.on('ready', () => {
+  setTimeout(() => {createMainWindow()}, 0); // Global variables work if used in a `setTimeout` function, it's weird
+})
