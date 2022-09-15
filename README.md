@@ -1,10 +1,3 @@
-## ✍🏻 Directive Rewrite Update
-FalixNodes Desktop has been in development for further than 7 - 8 months, which is an unreasonably long time.
-The reason it's taking so long to develop v4 is that there's "too much" to add because of the feature list that was published back in late 2021.
-So, with this "Directive Rewrite" method, we'll provide fewer "new" features in the first release of v4, then add the additional ones subsequently. 
-
-The roadmap presented below is an expected future changelog, however it is subject to change based on progress. 
-
 # 🛣️ Roadmap
 **v4.0.0** - Design Update
  - Improve warning messages
@@ -269,7 +262,22 @@ Then Electron builder will start building for your operating system.
 
 If you desire to, or are required to, create the software for multiple operating systems, you may leverage GitHub Actions. Using GitHub Actions, you can write software on many operating systems without having to use them. You can build a DMG file for macOS, for example, without owning or having access to a Mac. Workflow files have been added and are ready to be deployed.
 
-## Credits
+## Support
+Reach out to the maintainer at one of the following places:
+
+- [GitHub issues](https://github.com/FalixNodes-Software/falixnodes-desktop/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
+- Contact options listed on [Korbs Studio's GitHub profile](https://github.com/KorbsStudio)
+
+## Contributing
+Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
+
+## Security
+FalixNodes Desktop follows good practices of security, but 100% security cannot be assured.
+FalixNodes Desktop is provided **"as is"** without any **warranty**. Use at your own risk.
+
+_For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
+
+## Acknowledgements
  - Creator/Developer: [Korbs Studio](https://github.com/KorbsStudio/)
  - Contributors: 
   [LogicApples](https://github.com/LogicApples/), 
