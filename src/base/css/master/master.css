@@ -502,5 +502,42 @@ toast#null {
     opacity: 0;
   }
 }
+.featured-servers {
+  display: flex;
+}
+
+.featured-servers img {
+  width: 30px;
+}
+
+.featured-servers .server {
+  border: 1px rgba(255, 255, 255, 0.25) solid;
+  border-radius: 10px;
+  padding: 16px 24px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 12px;
+  cursor: default;
+}
+
+.featured-servers .server p {
+  font-size: 14px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.featured-servers .server p#ip-address {
+  font-weight: normal;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.featured-servers .server img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  margin-right: 24px;
+  pointer-events: none;
+}
 
 /*# sourceMappingURL=master.css.map */
