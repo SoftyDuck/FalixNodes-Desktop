@@ -95,6 +95,4 @@ function appRestart() {
   app.exit(0)
 }
 
-app.on('ready', () => {
-  setTimeout(() => {createMainWindow()}, 0); // Global variables work if used in a `setTimeout` function, it's weird
-})
+app.on('ready', () => {setTimeout(() => {createMainWindow()}, 0)}) // Global variables work if used in a `setTimeout` function, it's weird
