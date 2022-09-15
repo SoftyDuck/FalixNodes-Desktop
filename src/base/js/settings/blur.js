@@ -12,17 +12,17 @@ for (let i of switches_bt) {
 
 function setBlur(theme) {
   if (theme == 'blurOn') {
-    window.api.send('blurOn')
+    window.function.send('blurOn')
     document.querySelector('#blur-setting-On').style.borderColor = 'var(--accent)';
     document.querySelector('#blur-setting-Off').style.borderColor = 'rgba(52, 52, 52, 0.961)';
     document.querySelector('#blur-setting-Transparent').style.borderColor = 'rgba(52, 52, 52, 0.961)';
   } else if (theme == 'blurTransparent') {
-    window.api.send('blurTransparent')
+    window.function.send('blurTransparent')
     document.querySelector('#blur-setting-On').style.borderColor = 'rgba(52, 52, 52, 0.961)';
     document.querySelector('#blur-setting-Off').style.borderColor = 'rgba(52, 52, 52, 0.961)';
     document.querySelector('#blur-setting-Transparent').style.borderColor = 'var(--accent)';
   } else if (theme == 'blurOff') {
-    window.api.send('blurOff')
+    window.function.send('blurOff')
     document.querySelector('#blur-setting-On').style.borderColor = 'rgba(52, 52, 52, 0.961)';
     document.querySelector('#blur-setting-Off').style.borderColor = 'var(--accent)';
     document.querySelector('#blur-setting-Transparent').style.borderColor = 'rgba(52, 52, 52, 0.961)';

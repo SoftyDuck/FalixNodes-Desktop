@@ -52,7 +52,7 @@
         <toasts> <!-- YUM! -->
             <toast id="null"></toast>
             <toast id="username-set">
-                <p onclick="window.api.send('restartApp')">Restart required</p>
+                <p onclick="window.function.send('restartApp')">Restart required</p>
             </toast>
         </toasts>
         <modal>
@@ -238,7 +238,7 @@
                                     <p id="windows">Running FalixNodes Desktop as admin is required on Windows for the reset hosts file button to fully work.</p>
                                     <div class="troubleshoot-check-footer">
                                         <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
-                                        <button onclick="window.api.send('resetSystemHostFile')">Reset Hosts File</button>
+                                        <button onclick="window.function.send('resetSystemHostFile')">Reset Hosts File</button>
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +410,7 @@
                 </div>
                 <br>
                 <h2>Featured Servers</h2>
-                <p>There are currently no servers to display.</p>
+                <div add-component="../temp/servers.html"></div>
                 <br>
                 <h2>What's New</h2>
                 <p>There nothing to display.</p>
