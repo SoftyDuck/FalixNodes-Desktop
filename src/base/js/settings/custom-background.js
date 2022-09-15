@@ -19,6 +19,17 @@ if (storageInput) {
   document.querySelector('img#primary-background').setAttribute('src', storedInput);
 }
 
+function inputEnterCustomBackground(event) {
+  if (event.key === "Enter") {
+    // usernameSaved()
+    document.querySelector("#personalization > div.mb-3.p-5 > button").click()
+    if (document.querySelector("#quickie-settings-username") === 'none'){} else {toggleModal('null'); toastRR(); modalClose();}
+  }
+}
+
+console.table({Username:"Korbs", Accent_Color:"Default (Blue)", Theme:"Dark", View:"Default", Language:"English"});
+
+
 function setBG1() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-2310646.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
 function setBG2() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-844297.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
 function setBG3() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-12365968.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}

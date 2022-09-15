@@ -444,7 +444,7 @@ div#license {
 }
 div#license::-webkit-scrollbar {width: 0px;}
 
-div#quickie-settings-username {
+div#quickie-settings-username, div#quickie-settings-custom-background {
     min-height: 0px !important;
     min-width: 0px !important;
     height: fit-content;
@@ -456,7 +456,7 @@ div#quickie-settings-username {
     label {margin: 0px 20px}
 }
 
-div#quickie-settings-username::before {
+div#quickie-settings-username::before, div#quickie-settings-custom-background::before {
     height: 3000%;
     background: rgb(50 50 50 / 94%) !important;
 }

@@ -36,7 +36,6 @@ function toastRR() {
     setTimeout(() => {document.querySelector("#username-set").style.display = 'none'}, 4000)
 }
 // Modals
-
 function toggleModal(modalName) {
     var i, modalcontent;
     modalcontent = document.getElementsByClassName("modal");
