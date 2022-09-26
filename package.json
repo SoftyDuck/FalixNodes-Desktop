@@ -17,7 +17,7 @@
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
-    "glasstron": "^0.1.1",
+    "glasstron-clarity": "^0.1.21",
     "powershell": "^2.3.2",
     "pushy-electron": "^1.0.9",
     "x11": "github:KorbsStudio/node-x11"

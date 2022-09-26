@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron')
-const glasstron = require('glasstron')
+const glasstron = require('glasstron-clarity')
 const PowerShell = require("powershell");
 const { exec } = require("child_process");
 const path = require('path');
@@ -13,13 +13,11 @@ else if(process.platform == 'win32'){
   app.whenReady().then(() => {
     global.frame = false;
     global.titleBarStyle = 'hidden';
-    global.blur = "acrylic"
 })}
 else{
   app.whenReady().then(() => {
     global.frame = true;
     global.titleBarStyle = 'default';
-    global.blur = "blurbehind"
 })}
 
 const createMainWindow = () => {
@@ -32,7 +30,6 @@ const createMainWindow = () => {
     vibrancy: "dark",
     fullscreenWindowTitle: true,
     blur: true,
-    blurType: global.blur,
     titleBarStyle: global.titleBarStyle,
     titleBarOverlay: true,
     titleBarOverlay: {
