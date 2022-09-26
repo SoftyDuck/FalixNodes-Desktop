@@ -1,0 +1,86 @@
+<div id="personalization" class="hs-content">
+    <div class="modal-header">
+        <h1>Personalization</h1>
+        <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <h2>Username</h2>
+    <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
+    <label>Username</label>
+    <input type="text" class="appUsername" id="nameField" onkeypress="inputEnterUsername(event)">
+    <p class="lead mt-3 setName" style="display: none;">There is no name set.</p>
+    <button id="cswU" class="btn btn-secondary save">Save</button>
+    <h2>Theme</h2>
+    <div class="grid-theming" id="box-tb">
+        <div>
+            <i style="cursor: not-allowed;" class="fa-solid fa-sun-bright"></i>
+            <p>Light</p>
+        </div>
+        <div>
+            <i id="theme-blue" onclick="swapTheme('./base/css/settings/theme/blue.css')" class="fa-solid fa-sun-haze"></i>
+            <p>Blue</p>
+        </div>
+        <div>
+            <i id="theme-dark" onclick="swapTheme('./base/css/settings/theme/dark.css')" class="fa-solid fa-moon"></i>
+            <p>Black</p>
+        </div>
+        <div>
+            <i style="cursor: not-allowed;" class="fa-duotone fa-eclipse"></i>
+            <p>Auto</p>
+        </div>
+    </div>
+    <h2>Window Blur</h2>
+    <div class="grid-theming" id="box-tb">
+        <div>
+            <i id="blur-setting-On" onclick="setBlur('blurOn')" class="fa-duotone fa-raindrops"></i>
+            <p>Blurry</p>
+        </div>
+        <div>
+            <i id="blur-setting-Transparent" onclick="setBlur('blurTransparent')" class="fa-light fa-raindrops"></i>
+            <p>Transparent</p>
+        </div>
+        <div>
+            <i id="blur-setting-Off" onclick="setBlur('blurOff')" class="fa-solid fa-raindrops"></i>
+            <p>Disabled</p>
+        </div>
+    </div>
+    <h2>View</h2>
+    <div class="grid-theming" id="box-tb">
+        <div>
+            <i id="view-comfortable" onclick="setView('./base/css/settings/view/default.css')" class="fa-light fa-distribute-spacing-vertical"></i>
+            <p>Default</p>
+        </div>
+        <div>
+            <i id="view-compact" onclick="setView('./base/css/settings/view/compact.css')" class="fa-light fa-objects-align-left"></i>
+            <p>Compact</p>
+        </div>
+    </div>
+    <h2>Accent Color</h2>
+    <div class="grid-theming" id="ro-colors">
+        <i id="ss-color-default" onclick="accentColorReset(); document.querySelector('#ss-color-default').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/default.css')" style="color: #2970CC" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-classic" onclick="accentColorReset(); document.querySelector('#ss-color-classic').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/classic.css')" style="color: #6b5fd2" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-red" onclick="accentColorReset(); document.querySelector('#ss-color-red').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/red.css')" style="color: #c6262e" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-orange" onclick="accentColorReset(); document.querySelector('#ss-color-orange').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/orange.css')" style="color: #f37329" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-yellow" onclick="accentColorReset(); document.querySelector('#ss-color-yellow').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/yellow.css')" style="color: #f9c440" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-green" onclick="accentColorReset(); document.querySelector('#ss-color-green').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/green.css')" style="color: #68b723" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-lime" onclick="accentColorReset(); document.querySelector('#ss-color-lime').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/lime.css')" style="color: #28bca3" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-pink" onclick="accentColorReset(); document.querySelector('#ss-color-pink').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/pink.css')" style="color: #de3e80" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+        <i id="ss-color-gray" onclick="accentColorReset(); document.querySelector('#ss-color-gray').setAttribute('class', 'fa-duotone fa-circle-check fa-swap-opacity'); swapAccentColor('./base/css/settings/accent-colors/gray.css')" style="color: #485a6c" class="fa-duotone fa-circle-dot fa-swap-opacity"></i>
+    </div>
+    <h2>Custom Background</h2>
+    <p style="font-size: 10px; opacity: 0.4;">(Restarting is required for change to take effect)</p>
+    <div class="mb-3 p-5">
+        <label id="background-url" for="nameField">Background URL</label>
+        <label for="nameField"></label>
+        <input type="text" class="storage" id="nameField">
+        <button class="btn btn-secondary">Save</button>
+        <p class="lead mt-3 text">Background URL:</p>
+    </div>
+    <div class="grid-theming" id="bg-switcher">
+        <img onclick="setBG1()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-2310646.jpg">
+        <img onclick="setBG2()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-844297.jpg">
+        <img onclick="setBG3()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-12365968.jpg">
+        <img onclick="setBG4()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-12366149.jpg">
+        <img onclick="setBG5()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-12366148.jpg">
+        <img onclick="setBG6()" src="./base/img/backgrounds/preview/pexels-eberhard-grossgasteiger-12366150.jpg">
+    </div>
+</div>

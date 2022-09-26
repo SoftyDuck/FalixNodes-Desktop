@@ -71,9 +71,8 @@ function Troubleshooting(pageName) {
 
 // Do on startup
 
-do {
-  document.querySelector("body > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
-  document.querySelector("#settings > div.modal-sidebar > div.modal-sidebar-top > div:nth-child(1)").click();
+setTimeout(() => {
+  document.querySelector("body > div > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
+  document.querySelector("#settings > div:nth-child(1) > div > div.modal-sidebar-top > div:nth-child(1)").click();1
   Troubleshooting('null')
-}
-while (addComponent());
+}, 4000);

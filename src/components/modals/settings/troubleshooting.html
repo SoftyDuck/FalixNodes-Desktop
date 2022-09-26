@@ -1,0 +1,198 @@
+<div id="troubleshooting" class="hs-content">
+    <div class="modal-header">
+        <h1>Troubleshooting</h1>
+        <button onclick="toggleModal('null'); modalClose();" id="close-button"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <br>
+    <div class="co2">
+        <div id="null" class="troubleshoot-check"></div>
+        <div id="adblock">
+            <div id="adblock-S0" class="troubleshoot-check">
+                <i class="fa-duotone fa-ban"></i>
+                <h2>False AdBlock Detection</h2>
+                <p>FalixNodes Desktop does not contain an adblocker, therefore if FalixNodes detects an adblock, it is due to another factor.</p>
+                <p>To begin, we'll check for a few things that may be blocking ads on your system affecting FalixNodes Desktop.</p>
+                <div class="troubleshoot-check-footer">
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                    <button onclick="Troubleshooting('adblock-S1')">Begin Troubleshooting</button>
+                </div>
+            </div>
+            <div id="adblock-S1" class="troubleshoot-check">
+                <i class="fa-duotone fa-circle-1"></i>
+                <h2>Check Your Anti-Virus</h2>
+                <p>Some anti-virus software these days now come with a system-wide adblocker, which will affect FalixNodes Desktop. If you have an anti-virus, please check it and find the AdBlock settings if any. If the anti-virus software does have an AdBlock system, either disable the option, or if optional whitelist FalixNodes Desktop to allow ads.</p>
+                <p>If you do not have anti-virus or it's not to blame, move on to the next step.</p>
+                <div class="troubleshoot-check-footer">
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                    <button onclick="Troubleshooting('adblock-S2')">Next</button>
+                </div>
+                <div id="step-2">
+                </div>
+            </div>
+            <div id="adblock-S2" class="troubleshoot-check">
+                <i class="fa-duotone fa-circle-2"></i>
+                <h2>Check Your System Hosts File</h2>
+                <p>As a last resort, we noticed customers may of modified their hosts file to block ads system-wide. Modifying the hosts file is done for common reasons for like blocking ads in Spotify and other applications, doing so will also affect FalixNodes Dekstop.</p>
+                <p>Hosts file is used to store mappings of hostnames to IP addresses. This file is consulted first when resolving hostnames, so it can be used to override the results from DNS lookups.</p>
+                <p><strong>By clicking "Reset Hosts File" below, you agree to FalixNodes Desktop resetting your system's hosts file.</strong> As a reminder, FalixNodes Desktop does not come with wararnty and is not liable for any damage to your system. The function has been tested on Windows 10 and Linux.</p>
+                <p id="windows">Running FalixNodes Desktop as admin is required on Windows for the reset hosts file button to fully work.</p>
+                <div class="troubleshoot-check-footer">
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                    <button onclick="window.api.send('resetSystemHostFile')">Reset Hosts File</button>
+                </div>
+            </div>
+        </div>
+        <div id="slow-system">
+            <div id="slow-system-S0" class="troubleshoot-check">
+                <i class="fa-duotone fa-turtle"></i>
+                <h2>System is Slow</h2>
+                <p>There are several reasons why your system may be performing slowly. You may have too many applications open, insufficient resources to tackle more processes, and other problems. This troubleshooting may help you speed up your system utilizing simple actions.</p>
+                <div class="troubleshoot-check-footer">
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                    <button onclick="Troubleshooting('slow-system-S1')">Begin Troubleshooting</button>
+                </div>
+            </div>
+            <div id="slow-system-S1" class="troubleshoot-check">
+                <i class="fa-duotone fa-circle-1"></i>
+                <h2>Optimize FalixNodes Desktop</h2>
+                <p>Before we get started on boosting your computer's performance, let's have a look at FalixNodes Desktop. Let's make a few adjustments to FalixNodes Desktop's settings to help it consume fewer resources. Click "Adjust Settings" below to: </p>
+                <ui>
+                    <li>Toggle Windows Blur off</li>
+                    <li>Toggle Animations off</li>
+                    <li>Don't load Servers Panel by default (Will unload Servers Panel)</li>
+                    <li>Disable tabs: Help Center, Support, and Account (in Settings)</li>
+                    <li>Toggle all Dashboard content off</li>
+                </ui>
+                <div class="troubleshoot-check-footer">
+                    <button>Adjust Settings</button>
+                    <hr>
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                    <button onclick="Troubleshooting('slow-system-WIN')">Next</button>
+                </div>
+            </div>
+            <div id="slow-system-WIN" class="troubleshoot-check">
+                <i class="fa-brands fa-windows"></i>
+                <p>Most of the steps below are intended to be done on Windows 10 and Windows 11. FalixNodes Desktop does not officially support Windows 7 or Windows 8.1, let alone any other older versions of Microsoft Windows.</p>
+                <h2>Speeding up Windows</h2>
+                <h3>Taking Out The Trash</h3>
+                <p>There are a few places on Windows that you should delete, starting with the most obvious one being your Recycle Bin.</p>
+                <br>
+                <p><strong>Recycle Bin</strong></p>
+                <p>Before you go emptying the Recycle Bin, let's learn more about it first and see if you really need to empty it in the first place.</p>
+                <p>The Recycle Bin is a folder or directory in Windows where deleted files are temporarily stored. Unless they are too large, deleted files are not permanently removed from the hard disk but instead placed to the Recycle Bin. The Recycle Bin files can be restored to their original place.</p>
+                <p>Obviously, empty the Recycle Bin, but be sure the files in there are no longer needed.</p>
+                <br>
+                <p><strong>Temporary Files</strong></p>
+                <p>Temp files are files that your operating system only required to exist for just a short period of time while in use but are now basically taking up space. The majority of temporary files are stored in the Windows Temp folder, which differs per machine.</p>
+                <p>To find and delete all temp files, press <span id="key-letter"><i class="fa-brands fa-windows"></i></span> + <span id="key-letter">R</span> and run <u>%temp%</u>. Running this will open up Windows File Explorer and reveal where the temp folder is stored on your machine.</p>
+                <p>Select all files and delete. If a dialog shows up saying "File in Use", just select "Do this for all current items" and click "Skip".</p>
+                <p><strong>Uninstall Unused Applications</strong></p>
+                <p>You probably have some, or a lot, of unused applications you either didn't ever use or simply don't use anymore. Some Windows PCs even come with a bunch of software pre-installed, also known as bloatware. </p>
+                <p>Open your System Settings > Apps > Then uninstall apps you no longer need.</p>
+                <p>Otionally, you can also remove built-in programs that come with Windows like Internet Explorer, Paint, and more. You can do this by going to System Settings > Apps > Optional Features > and uninstall Internet Explorer and/or more.</p>
+                <h3>Settings Adjustment</h3>
+                <p><strong>Disable Startup Programs</strong></p>
+                <p>Some applications, such as Discord, Spotify, and Steam, will automatically launch when you log onto Windows after powering on your computer or logging out and back in. You can configure this by either changing the option in the application's preferences or changing it in your Task Manager.</p>
+                <p>To access your Task Manager, right-click in an empty space on your Taskbar, then click on "Task Manager". If you don't have empty space left on the taskbar, addtionally you can also right-click on the Start button and access Task Manager from there as well.</p>
+                <p>In the Task Manager, toggle the option on or off on applications you don't want starting up by default in the "Startup" tab. </p>
+                <p><strong>Adjusting Performance Settings</strong></p>
+                <p>Many visual effects, such as animations, blur, and shadow effects are included in Windows 10 and later. These are visually appealing, but they can consume additional system resources and slow down your computer. This is especially the case if you have a PC with very little memory (RAM).</p>
+                <p>Luckily, these visual effects can be disabled to free up additional system resources, helping your PC run a little faster than it did before.</p>
+                <p>Open your File Explorer > right-click on "This PC" > click "Properties". A new window should appear that displays your system's information, click on "Advanced system settings" located on the left side.</p>
+                <p>In the Advanced tab, click on "Settings..." under Performance. Then, in the Visual Effects tab, disable the following:</p>
+                <ul>
+                    <li>Animate contorls and elements inside windows</li>
+                    <li>Animate windows when minimizing and maximizing</li>
+                    <li>Animations in the taskbar</li>
+                    <li>Enable Peek</li>
+                    <li>Fade or slide menus into view</li>
+                    <li>Fade or slide ToolTips into view</li>
+                    <li>Save taskbar thumbnail previews</li>
+                    <li>Show shadows under mouse pointer</li>
+                    <li>Show shadows under windows</li>
+                    <li>Show translucent selection of rectangle</li>
+                    <li>Slide open combo boxes</li>
+                    <li>Smooth-scroll list boxes</li>
+                    <li>Use drop shadows for icons labels on the desktop</li>
+                </ul>
+                <p>Then, make sure the following remains enabled:</p>
+                <ul>
+                    <li>Show thumbnails instead of icons</li>
+                    <li>Show window contents while dragging</li>
+                    <li>Smooth edges of screen fonts</li>
+                </ul>
+                <p><strong>Adjust Appearance Settings</strong></p>
+                <p>As mentioned before, blur is one of the visual effects that comes with Windows, since the release of Microsoft Windows 7. This can also take up performance on your CPU, you can disable it in the System Settings app.</p>
+                <p>Open System Settings > Personalization > Colors > and disable Transparency effects. Also make sure the blur effect is disabled too in the FalixNodes Desktop appearance settings, even if Transparency effects is disabled on Windows's side, the blur effect in FalixNodes Desktop is forced if left enabled.</p>
+                <div class="troubleshoot-check-footer">
+                    <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="update-failed">
+        <div id="update-failed-S0" class="troubleshoot-check">
+            <i class="fa-duotone fa-cloud-exclamation"></i>
+            <h2>Update Failing</h2>
+            <p>FalixNodes Desktop is failing to update? Let's look into that.</p>
+            <div class="troubleshoot-check-footer">
+                <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                <button onclick="Troubleshooting('update-failed-S1')">Next</button>
+            </div>
+        </div>
+        <div id="update-failed-S1" class="troubleshoot-check">
+            <i class="fa-duotone fa-circle-1"></i>
+            <h2>Check Update Server</h2>
+            <p>Either your internet is having trouble reaching the update server or the update server itself is down.</p>
+            <p>To quickly check this, open a regular web browser and go to <u><strong>https://falixnodes.net/releases/updates/stable/</strong></u>, you should see a list of files.</p>
+            <p>If you can't reach it, check your internet connection. If you're able to connect to every other website with your internet connection, then the update server itself may be at fault in which case just wait a while.</p>
+            <div class="troubleshoot-check-footer">
+                <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                <button onclick="Troubleshooting('update-failed-S2')">Next</button>
+            </div>
+        </div>
+        <div id="update-failed-S2" class="troubleshoot-check">
+            <i class="fa-duotone fa-circle-2"></i>
+            <h2>Microsoft Store</h2>
+            <p>If you're using a Microsoft Store version of FalixNodes Desktop, the built-in auto updater is fully disabled. If the Update Failed message shows up, then a script in FalixNodes Desktop failed to stop this message from showing. Message should not appear next time, hopefully.</p>
+            <p>The built-in auto updater is blocked when running FalixNodes Desktop as a Microsoft Store application(also as UWP). Usually you need to update the app via Microsoft Store, <u><strong>however, there are plans to discontinue the Microsoft Store version in v4.1.0.</strong></u></p>
+            <div class="troubleshoot-check-footer">
+                <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+                <button onclick="Troubleshooting('update-failed-S3')">Next</button>
+            </div>
+        </div>
+        <div id="update-failed-S3" class="troubleshoot-check">
+            <i class="fa-duotone fa-circle-3"></i>
+            <h2>Unsupported Operating System</h2>
+            <p>You may be using FalixNodes Desktop on an unsupported operating system. FalixNodes Desktop does NOT support auto updating on specifically macOS due to app signing issues.</p>
+            <p>On the topic of operating systems, FalixNodes Desktop does not officially support Windows 7, Windows 8.1, and Chrome OS...but can run on those named operating systems.</p>
+            <br>
+            <p>Auto updating is officially supported and tested on Windows 10, Windows 11, and Linux.</p>
+            <div class="troubleshoot-check-footer">
+                <button onclick="Troubleshooting('null'); TroubleshootingShowStart();">Go Back</button>
+            </div>
+        </div>
+    </div>
+    <div class="co1">
+        <div>
+            <i class="fa-duotone fa-ban"></i>
+            <h2>False AdBlock Detection</h2>
+            <button onclick="TroubleshootingHideStart(); Troubleshooting('adblock-S0')">Start Troubleshooting</button>
+        </div>
+        <div>
+            <i class="fa-duotone fa-turtle"></i>
+            <h2>System is Slow</h2>
+            <button onclick="TroubleshootingHideStart(); Troubleshooting('slow-system-S0')">Start Troubleshooting</button>
+        </div>
+        <div>
+            <i class="fa-duotone fa-cloud-exclamation"></i>
+            <h2>Update Failing</h2>
+            <button onclick="TroubleshootingHideStart(); Troubleshooting('update-failed-S0')">Start Troubleshooting</button>
+        </div>
+        <!-- <div>
+            <i class="fa-duotone fa-wifi-exclamation"></i>
+            <h2>No Internet</h2>
+            <button>Start Troubleshooting</button>
+        </div> -->
+    </div>
+</div>
