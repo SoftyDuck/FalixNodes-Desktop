@@ -3,6 +3,7 @@ const glasstron = require('glasstron-clarity')
 const PowerShell = require("powershell");
 const { exec } = require("child_process");
 const path = require('path');
+const { profile } = require('console');
 
 if (process.platform == 'darwin') {
   app.whenReady().then(() => {
@@ -21,15 +22,31 @@ else{
 })}
 
 const createMainWindow = () => {
+  let splashWindow = new glasstron.BrowserWindow({
+    width: 700,
+    height: 200,
+    maxWidth: 700,
+    maxHeight: 200,
+    minWidth: 700,
+    minHeight: 200,
+    frame: false,
+    minimizable: false,
+    blur: true
+  })
+  splashWindow.loadFile('./src/components/splash/index.html')
+
   let primaryWindow = new glasstron.BrowserWindow({
     width: 1200,
     height: 800,
+    minWidth: 430,
+    minHeight: 520,
     frame: global.frame,
     autoHideMenuBar: true,
     darkTheme: true,
     vibrancy: "dark",
     fullscreenWindowTitle: true,
     blur: true,
+    show: false,
     titleBarStyle: global.titleBarStyle,
     titleBarOverlay: true,
     titleBarOverlay: {
@@ -48,6 +65,12 @@ const createMainWindow = () => {
     }
   })
   primaryWindow.loadFile('./src/index.html')
+
+  setTimeout(() => {
+    splashWindow.hide();
+    primaryWindow.show();
+  }, 5000);
+
   ipcMain.on('restartApp',  () => {appRestart()})
 
   ipcMain.on('resetSystemHostFile',  () => {resetSystemHostFile()})

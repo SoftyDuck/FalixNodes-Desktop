@@ -1,0 +1,31 @@
+body {background: rgb(0 0 0 / 50%)}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    background: rgb(0 0 0 / 25%);
+}
+
+h1 {
+    position: fixed;
+    top: 50%;
+    left: 230px;
+    transform: translate(0px, -50%);
+    margin: 0px;
+    color: white;
+    font-family: 'Poppins';
+}
+
+img {
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translate(0px, -50%);
+    width: 100px;
+}
+
+i.fa-duotone.fa-spinner.fa-spin-pulse {margin-left: 32px}
