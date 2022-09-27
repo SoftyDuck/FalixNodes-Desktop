@@ -34,7 +34,6 @@ setTimeout(() => {
   function setBG4() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-12366149.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
   function setBG5() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-12366148.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
   function setBG6() {localStorage.setItem('textInput', './base/img/backgrounds/pexels-eberhard-grossgasteiger-12366150.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
-  function setFallbackBG() {localStorage.setItem('textInput', './base/img/backgrounds/null.png'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
 }, 2500);
 
 
