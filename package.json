@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "command-exists": "^1.2.9",
-    "electron": "^18.0.1",
     "electron-context-menu": "^3.1.2",
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
@@ -24,6 +23,7 @@
   },
   "devDependencies": {
     "concurrently": "^7.3.0",
+    "electron": "^18.0.1",
     "electron-builder": "^22.14.13"
   },
   "build": {
@@ -31,7 +31,7 @@
     "productName": "FalixNodes Desktop",
     "publish": {
       "provider": "generic",
-      "url": "https://falixnodes.net/releases/updates/falixnodes-desktop/live/"
+      "url": "https://updates.korbsstudio.com/falixnodes-desktop/"
     },
     "win": {
       "target": [
