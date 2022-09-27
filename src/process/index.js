@@ -69,6 +69,7 @@ const createMainWindow = () => {
   setTimeout(() => {
     splashWindow.hide();
     primaryWindow.show();
+    primaryWindow.maximize();
   }, 5000);
 
   ipcMain.on('restartApp',  () => {appRestart()})

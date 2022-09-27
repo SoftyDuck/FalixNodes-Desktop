@@ -22,6 +22,49 @@ function toggleSPControls() { /* Show Servers Panel controls */
     document.querySelector('.sidebar-header-controls#default').style.display = 'none';
 }
 
+// Navigation Controls
+function rootCP() {webviewCP.loadURL('https://client.falixnodes.net/')}
+function reloadCP() {webviewCP.reload()}
+function backCP() {webviewCP.goBack()}
+function forwardCP() {webviewCP.goForward()}
+
+function rootGP() {webviewGP.loadURL('https://dev-panel.falixnodes.net/')}
+function reloadGP() {webviewGP.reload()}
+function backGP() {webviewGP.goBack()}
+function forwardGP() {webviewGP.goForward()}
+
 // For Developers
 function CP_wvDevTools(){webviewCP.openDevTools()}
 function wvDevTools(){webviewGP.openDevTools()}
+
+// CSS
+webviewCP.addEventListener('dom-ready', function () {
+    webviewCP.insertCSS(`
+    body,
+    .navbar-vertical .navbar-collapse,
+    .navbar-glass,
+    .dark .table, .bg-200
+    {
+        background: transparent !important;
+        --falcon-table-striped-bg: transparent !important;
+    }
+    
+    body::-webkit-scrollbar {
+        width: 0px !important;
+    }
+    
+    .card.py-3.mb-3,
+    .card.h-100,
+    .card.mb-3,
+    .card.h-lg-100.overflow-hidden {
+        border: 1px rgb(255 255 255 / 25%) solid !important;
+        border-radius: 10px !important;
+        padding: 16px 24px !important;
+        display: flex !important;
+        background: rgba(255,255,255,0.1) !important;
+        margin-right: 12px !important;
+        cursor: default !important;
+    }
+    .card.mb-3, .card.h-lg-100.overflow-hidden {padding: 0px !important}
+    `)
+})

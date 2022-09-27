@@ -1,3 +1,11 @@
+sidebar {
+  -webkit-app-region: drag !important;
+}
+
+button, svg, img, i, svg, p, h1, input {
+  -webkit-app-region: no-drag !important;
+}
+
 body {
   background: var(--primary-background);
   color: white;
@@ -504,12 +512,11 @@ toast#null {
 }
 .featured-servers {
   display: flex;
+  overflow-x: scroll;
 }
-
 .featured-servers img {
   width: 30px;
 }
-
 .featured-servers .server {
   border: 1px rgba(255, 255, 255, 0.25) solid;
   border-radius: 10px;
@@ -519,25 +526,26 @@ toast#null {
   margin-right: 12px;
   cursor: default;
 }
-
 .featured-servers .server p {
   font-size: 14px;
   margin: 0px;
   font-weight: bold;
 }
-
 .featured-servers .server p#ip-address {
   font-weight: normal;
   opacity: 0.5;
   font-size: 12px;
 }
-
 .featured-servers .server img {
   width: 42px;
   height: 42px;
   border-radius: 50px;
   margin-right: 24px;
   pointer-events: none;
+}
+
+.featured-servers::-webkit-scrollbar {
+  width: 0px;
 }
 
 /*# sourceMappingURL=master.css.map */
