@@ -1,5 +1,7 @@
-const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron')
-const glasstron = require('glasstron-clarity')
+const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron');
+const {autoUpdater} = require("electron-updater");
+const glasstron = require('glasstron-clarity');
+const log = require('electron-log');
 const path = require('path');
 
 if (process.platform == 'darwin') {
@@ -84,4 +86,4 @@ function appRestart() {
   app.exit(0)
 }
 
-app.on('ready', () => {setTimeout(() => {createMainWindow()}, 0)}) // Global variables work if used in a `setTimeout` function, it's weird
+app.on('ready', () => {setTimeout(() => {createMainWindow(); autoUpdater.checkForUpdatesAndNotify();}, 0)}) // Global variables work if used in a `setTimeout` function, it's weird
