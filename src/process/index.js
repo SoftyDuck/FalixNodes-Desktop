@@ -66,7 +66,7 @@ const createMainWindow = () => {
   primaryWindow.loadFile('./src/index.html')
 
   setTimeout(() => {
-    splashWindow.hide();
+    splashWindow.close();
     primaryWindow.show();
     primaryWindow.maximize();
   }, 5000);
@@ -87,4 +87,3 @@ function appRestart() {
 }
 
 app.on('ready', () => {setTimeout(() => {createMainWindow(); autoUpdater.checkForUpdatesAndNotify();}, 0)}) // Global variables work if used in a `setTimeout` function, it's weird
-app.on('window-all-closed', function () {if (process.platform !== 'darwin') app.quit()})
