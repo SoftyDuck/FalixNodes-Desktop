@@ -3,8 +3,8 @@
         <div class="sidebar-header">
             <img src="./base/img/icon/app/32x32.png">
             <div id="default" class="sidebar-header-controls">
-                <button class="sidebar-tab"><i class="fa-light fa-command"></i></button>
-                <button class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
+                <button onclick="ninja.open()" class="sidebar-tab"><i class="fa-light fa-command"></i></button>
+                <button onclick='document.querySelector("body > div:nth-child(3) > sidebar > div > div.sidebar-bottom > button:nth-child(2)").click(); document.querySelector("#settings > div:nth-child(1) > div > div.modal-sidebar-top > div:nth-child(2)").click(); ' class="sidebar-tab"><i class="fa-light fa-circle-user"></i></button>
             </div>
             <div style="display: none;" id="master-control-client-area" class="sidebar-header-controls">
                 <button onclick="rootCP()" class="sidebar-tab"><i class="fa-light fa-user-crown"></i></button>
