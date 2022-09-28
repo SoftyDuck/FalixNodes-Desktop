@@ -53,19 +53,23 @@ webviewCP.addEventListener('dom-ready', function () {
     body::-webkit-scrollbar {
         width: 0px !important;
     }
+
     
-    .card.py-3.mb-3,
-    .card.h-100,
-    .card.mb-3,
-    .card.h-lg-100.overflow-hidden {
+
+    a#navbarDropdownUser {
+        background: #ffffff1a !important;
+        padding: 4px 12px !important;
+        border-radius: 50px !important;
+        border: 1px rgb(255 255 255 / 25%) solid !important;
+    }
+    
+    .card {
         border: 1px rgb(255 255 255 / 25%) solid !important;
         border-radius: 10px !important;
-        padding: 16px 24px !important;
         background: rgba(255,255,255,0.1) !important;
         margin-right: 12px !important;
         cursor: default !important;
     }
-    .card.mb-3, .card.h-lg-100.overflow-hidden {padding: 0px !important}
     `)
 })
 
@@ -88,7 +92,7 @@ webviewGP.addEventListener('dom-ready', function () {
         width: 0px !important;
     }
 
-    .style-module_1WqkLT9X, .oLbNP, .style-module_2Vp6MaXq, .style-module_2XbmHEcn.group, .shadow-md.rounded.p-3.text-xs.bg-gray-600 {
+    .card, .style-module_1WqkLT9X, .oLbNP, .style-module_2Vp6MaXq, .style-module_2XbmHEcn.group, .shadow-md.rounded.p-3.text-xs.bg-gray-600 {
         border: 1px rgb(255 255 255 / 25%) solid !important;
         border-radius: 10px !important;
         padding: 16px 24px !important;

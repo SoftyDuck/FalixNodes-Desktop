@@ -17,7 +17,6 @@
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
     "glasstron-clarity": "^0.1.21",
-    "powershell": "^2.3.2",
     "pushy-electron": "^1.0.9",
     "x11": "github:KorbsStudio/node-x11"
   },
@@ -25,46 +24,5 @@
     "concurrently": "^7.3.0",
     "electron": "^18.0.1",
     "electron-builder": "^22.14.13"
-  },
-  "build": {
-    "appId": "com.korbsstudio.falixnodes-desktop",
-    "productName": "FalixNodes Desktop",
-    "publish": {
-      "provider": "generic",
-      "url": "https://updates.korbsstudio.com/falixnodes-desktop/"
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "appx"
-      ]
-    },
-    "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ],
-      "darkModeSupport": true,
-      "category": "public.app-category.utilities"
-    },
-    "linux": {
-      "target": [
-        "snap",
-        "AppImage"
-      ],
-      "maintainer": "package.korbsstudio.falixnodes",
-      "category": "Network",
-      "vendor": "Korbs Studio",
-      "description": "Accessing Falix, all from one place"
-    },
-    "nsis": {
-      "deleteAppDataOnUninstall": true,
-      "shortcutName": "FalixNodes Desktop",
-      "displayLanguageSelector": true,
-      "oneClick": false,
-      "allowElevation": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": false
-    }
   }
 }

@@ -1,9 +1,6 @@
 const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron')
 const glasstron = require('glasstron-clarity')
-const PowerShell = require("powershell");
-const { exec } = require("child_process");
 const path = require('path');
-const { profile } = require('console');
 
 if (process.platform == 'darwin') {
   app.whenReady().then(() => {

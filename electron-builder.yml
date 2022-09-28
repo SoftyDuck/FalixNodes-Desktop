@@ -1,0 +1,40 @@
+productName: "FalixNodes Desktop"
+appId: "com.korbsstudio.falixnodes-desktop"
+
+asar: true
+
+# macOS
+mac:
+  darkModeSupport: true
+  category: "public.app-category.utilities"
+  target:
+    - "dmg"
+
+# Windows
+win:
+  target:
+    - "appx"
+    - "nsis"
+
+nsis:
+  deleteAppDataOnUninstall: true
+  shortcutName: "FalixNodes Desktop"
+  displayLanguageSelector: true
+  oneClick: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: false
+
+# Linux
+linux:
+  category: Network
+  maintainer: "package.korbsstudio.falixnodes"
+  vendor: "Korbs Studio"
+  description: "Accessing Falix, all from one place"
+  target:
+    - "AppImage"
+    - "snap"
+
+publish:
+  provider: "generic"
+  url: "https://updates.korbsstudio.com/falixnodes-desktop/"

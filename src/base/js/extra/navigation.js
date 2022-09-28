@@ -46,13 +46,11 @@ function toggleModal(modalName) {
 }
 
 function modalOpen() {
-  document.querySelector("body > content").style.filter = 'blur(20px)'
-  document.querySelector("body > sidebar").style.filter = 'blur(20px)'
+  document.querySelector(".modal#backdrop").style.filter = 'opacity(0.5)'
 }
 
 function modalClose() {
-  document.querySelector("body > content").style.filter = 'blur(0px)'
-  document.querySelector("body > sidebar").style.filter = 'blur(0px)'
+  document.querySelector(".modal#backdrop").style.filter = 'opacity(0)'
 }
 
 //// Modals - Settings - Troubleshoot Navigation
@@ -75,4 +73,4 @@ setTimeout(() => {
   document.querySelector("body > div > sidebar > div > div.sidebar-top > button:nth-child(1)").click();
   document.querySelector("#settings > div:nth-child(1) > div > div.modal-sidebar-top > div:nth-child(1)").click();1
   Troubleshooting('null')
-}, 4000);
+}, 2500);
