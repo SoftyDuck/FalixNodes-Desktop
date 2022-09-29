@@ -1,6 +1,7 @@
 webview = document.querySelector('webview')
 var webviewCP = document.getElementById('web-client-area');
 var webviewGP = document.getElementById('web-servers-panel');
+var webviewFC = document.getElementById('web-forums');
 var webviewHC = document.getElementById('web-help-center');
 var webviewISAC = document.getElementById('inSettings-account');
 
@@ -8,18 +9,28 @@ var webviewISAC = document.getElementById('inSettings-account');
 function toggleDefaultControls() { /* Show default controls when user selects other tabs other than panels */
     document.querySelector('.sidebar-header-controls#master-control-client-area').style.display = 'none';
     document.querySelector('.sidebar-header-controls#master-control-servers-panel').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#master-control-forums').style.display = 'none';
     document.querySelector('.sidebar-header-controls#default').style.display = 'initial';
 }
 
 function toggleCAControls() { /* Show Client Area controls */
     document.querySelector('.sidebar-header-controls#master-control-client-area').style.display = 'initial';
-    document.querySelector('.sidebar-header-controls#master-control-servers-panel').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#master-control-forums').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#default').style.display = 'none';
     document.querySelector('.sidebar-header-controls#default').style.display = 'none';
 }
 
 function toggleSPControls() { /* Show Servers Panel controls */
     document.querySelector('.sidebar-header-controls#master-control-servers-panel').style.display = 'initial';
     document.querySelector('.sidebar-header-controls#master-control-client-area').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#master-control-forums').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#default').style.display = 'none';
+}
+
+function toggleFCControls() { /* Show Servers Panel controls */
+    document.querySelector('.sidebar-header-controls#master-control-servers-panel').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#master-control-client-area').style.display = 'none';
+    document.querySelector('.sidebar-header-controls#master-control-forums').style.display = 'initial';
     document.querySelector('.sidebar-header-controls#default').style.display = 'none';
 }
 
@@ -33,6 +44,11 @@ function rootGP() {webviewGP.loadURL('https://dev-panel.falixnodes.net/')}
 function reloadGP() {webviewGP.reload()}
 function backGP() {webviewGP.goBack()}
 function forwardGP() {webviewGP.goForward()}
+
+function rootFC() {webviewFC.loadURL('https://forum.falixnodes.net/')}
+function reloadFC() {webviewFC.reload()}
+function backFC() {webviewFC.goBack()}
+function forwardFC() {webviewFC.goForward()}
 
 // For Developers
 function CP_wvDevTools(){webviewCP.openDevTools()}
@@ -116,6 +132,21 @@ webviewGP.addEventListener('dom-ready', function () {
     ::-webkit-scrollbar-thumb {
         border-radius: 0px !important;
         box-shadow: rgb(255 255 255 / 10%) 0px 0px 0px 1px inset, rgb(255 255 255 / 10%) 0px 0px 0px 4px inset;
+    }
+    `)
+})
+
+webviewFC.addEventListener('dom-ready', function () {
+    webviewFC.insertCSS(`
+    html, body, header, .p-nav {
+        background: transparent !important;
+    }
+    ::-webkit-scrollbar {
+        width: 0px !important;
+    }
+    .p-sectionLinks {
+        border-radius: 6px !important;
+        margin-right: 16px !important;
     }
     `)
 })

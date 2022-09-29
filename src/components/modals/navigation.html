@@ -18,6 +18,12 @@
                 <button onclick="backGP()" class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
                 <button onclick="forwardGP()" class="sidebar-tab"><i class="fa-light fa-arrow-right-long"></i></button>
             </div>
+            <div style="display: none;" id="master-control-forums" class="sidebar-header-controls">
+                <button onclick="rootFC()" class="sidebar-tab"><i class="fa-light fa-server"></i></button>
+                <button onclick="reloadFC()" class="sidebar-tab"><i class="fa-light fa-arrow-rotate-right"></i></button>
+                <button onclick="backFC()" class="sidebar-tab"><i class="fa-light fa-arrow-left-long"></i></button>
+                <button onclick="forwardFC()" class="sidebar-tab"><i class="fa-light fa-arrow-right-long"></i></button>
+            </div>
         </div>
         <div class="sidebar-top">
             <button onclick="toggleDefaultControls(); toTab('dashboard', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-hexagon"></i> Dashboard</button>
@@ -25,6 +31,7 @@
             <button onclick="toggleSPControls(); toTab('servers-panel', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-server"></i> Servers Panel</button>
         </div>
         <div class="sidebar-bottom">
+            <button onclick="toggleFCControls(); toTab('forums', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-users"></i> Forums</button>
             <button onclick="toggleDefaultControls(); toTab('help-center', this, 'var(--accent)');" class="sidebar-tab"><i class="fa-light fa-comments-question-check"></i> Help Center</button>
             <!-- <button class="sidebar-tab"><i class="fa-light fa-bell"></i> Notifications <i class="fa-light fa-arrow-up-right"></i></button> -->
             <button onclick="toggleModal('settings'); modalOpen()" class="sidebar-tab"><i class="fa-light fa-sliders-simple"></i> Settings <i class="fa-light fa-arrow-up-right"></i></button>

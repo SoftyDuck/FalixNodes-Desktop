@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.70.0-beta.1",
+  "version": "4.70.0-beta.2",
   "description": "Accessing Falix, all from one place",
   "main": "src/process/index.js",
   "author": "KorbsStudio",
