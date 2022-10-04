@@ -1,1 +1,56 @@
 button#ss-language-spanish {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Tablero"}
+i18n[text="Client Area"]::before {content: "Área de Clientes"}
+i18n[text="Servers Panel"]::before {content: "Panel de Servidores"}
+i18n[text="Forums"]::before {content: "Foros"}
+i18n[text="Help Center"]::before {content: "Centro de ayuda"}
+i18n[text="Settings"]::before {content: "Ajustes"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "Sobre"}
+
+i18n[text="Versions"]::before {content: "Versiones"}
+i18n[text="App Version"]::before {content: "Version de aplicacion"}
+i18n[text="Package Version"]::before {content: "Versión del paquete"}
+
+i18n[text="Software License"]::before {content: "Licencia de software"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Cuenta"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Idioma"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "personificación"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(Es necesario reiniciar para que el cambio surta efecto)"}
+
+i18n[text="Theme"]::before {content: "Tema"}
+i18n[text="Light"]::before {content: "Luz"}
+i18n[text="Blue"]::before {content: "Azul"}
+i18n[text="Dark"]::before {content: "Oscuro"}
+i18n[text="Auto"]::before {content: "Auto"}
+
+i18n[text="Window Blur"]::before {content: "Desenfoque de ventana"}
+i18n[text="Blurry"]::before {content: "Borroso"}
+i18n[text="Transaprent"]::before {content: "transparente"}
+i18n[text="Disabled"]::before {content: "Desactivado"}
+
+i18n[text="View"]::before {content: "Vista"}
+i18n[text="Accent Color"]::before {content: "Acentuar el color"}
+
+i18n[text="Custom Background"]::before {content: "Fondo personalizado"}
+i18n[text="Background URL"]::before {content: "URL de fondo"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Solución de problemas"} /* esta sección no se traducirá*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Cerrar sesión"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Recarga requerida"}
