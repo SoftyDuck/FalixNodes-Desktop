@@ -14,9 +14,9 @@ function toggleDefaultControls() { /* Show default controls when user selects ot
 }
 
 function toggleCAControls() { /* Show Client Area controls */
+    document.querySelector('.sidebar-header-controls#master-control-servers-panel').style.display = 'none';
     document.querySelector('.sidebar-header-controls#master-control-client-area').style.display = 'initial';
     document.querySelector('.sidebar-header-controls#master-control-forums').style.display = 'none';
-    document.querySelector('.sidebar-header-controls#default').style.display = 'none';
     document.querySelector('.sidebar-header-controls#default').style.display = 'none';
 }
 
