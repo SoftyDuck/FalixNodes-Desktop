@@ -1,1 +1,56 @@
 button#ss-language-chinese {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "仪表板"}
+i18n[text="Client Area"]::before {content: "客户专区"}
+i18n[text="Servers Panel"]::before {content: "服务器面板"}
+i18n[text="Forums"]::before {content: "论坛"}
+i18n[text="Help Center"]::before {content: "帮助中心"}
+i18n[text="Settings"]::before {content: "设置"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "关于"}
+
+i18n[text="Versions"]::before {content: "版本"}
+i18n[text="App Version"]::before {content: "应用版本"}
+i18n[text="Package Version"]::before {content: "包版本"}
+
+i18n[text="Software License"]::before {content: "软件许可证"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "帐户"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "语"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "拟人化"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(需要重启才能使更改生效）"}
+
+i18n[text="Theme"]::before {content: "主题"}
+i18n[text="Light"]::before {content: "光"}
+i18n[text="Blue"]::before {content: "蓝色的"}
+i18n[text="Dark"]::before {content: "黑暗的"}
+i18n[text="Auto"]::before {content: "汽车"}
+
+i18n[text="Window Blur"]::before {content: "窗口模糊"}
+i18n[text="Blurry"]::before {content: "模糊"}
+i18n[text="Transaprent"]::before {content: "透明的"}
+i18n[text="Disabled"]::before {content: "已禁用"}
+
+i18n[text="View"]::before {content: "看法"}
+i18n[text="Accent Color"]::before {content: "强调色"}
+
+i18n[text="Custom Background"]::before {content: "自定义背景"}
+i18n[text="Background URL"]::before {content: "背景网址"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "疑难解答"} /* 这部分不会被翻译*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "登出"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "需要重新加载"}

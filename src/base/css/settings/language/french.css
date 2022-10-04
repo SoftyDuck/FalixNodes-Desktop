@@ -1,1 +1,56 @@
 button#ss-language-french {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Tableau de bord"}
+i18n[text="Client Area"]::before {content: "Espace Client"}
+i18n[text="Servers Panel"]::before {content: "Panneau des serveurs"}
+i18n[text="Forums"]::before {content: "Forums"}
+i18n[text="Help Center"]::before {content: "Centre d'aide"}
+i18n[text="Settings"]::before {content: "Réglages"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "À propos de"}
+
+i18n[text="Versions"]::before {content: "Versions"}
+i18n[text="App Version"]::before {content: "Version de l'application"}
+i18n[text="Package Version"]::before {content: "Version du package"}
+
+i18n[text="Software License"]::before {content: "Licence de logiciel"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Compte"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Langue"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "Personnalisation"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(Le redémarrage est nécessaire pour que le changement prenne effet)"}
+
+i18n[text="Theme"]::before {content: "Thème"}
+i18n[text="Light"]::before {content: "Lumière"}
+i18n[text="Blue"]::before {content: "Bleu"}
+i18n[text="Dark"]::before {content: "Sombre"}
+i18n[text="Auto"]::before {content: "Auto"}
+
+i18n[text="Window Blur"]::before {content: "Flou de la fenêtre"}
+i18n[text="Blurry"]::before {content: "Flou"}
+i18n[text="Transaprent"]::before {content: "Transparent"}
+i18n[text="Disabled"]::before {content: "Handicapé"}
+
+i18n[text="View"]::before {content: "Voir"}
+i18n[text="Accent Color"]::before {content: "Couleur d'accentuation"}
+
+i18n[text="Custom Background"]::before {content: "Arrière-plan personnalisé"}
+i18n[text="Background URL"]::before {content: "URL d'arrière-plan"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Dépannage"} /* cette section ne sera pas traduite*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Se déconnecter"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Rechargement requis"}

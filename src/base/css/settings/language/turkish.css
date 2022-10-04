@@ -1,1 +1,56 @@
 button#ss-language-turkish {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Gösterge Paneli"}
+i18n[text="Client Area"]::before {content: "Müşteri Alanı"}
+i18n[text="Servers Panel"]::before {content: "Sunucular Paneli"}
+i18n[text="Forums"]::before {content: "Forumlar"}
+i18n[text="Help Center"]::before {content: "Yardım Merkezi"}
+i18n[text="Settings"]::before {content: "Ayarlar"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "Hakkında"}
+
+i18n[text="Versions"]::before {content: "Sürümler"}
+i18n[text="App Version"]::before {content: "Uygulama sürümü"}
+i18n[text="Package Version"]::before {content: "Paket Sürümü"}
+
+i18n[text="Software License"]::before {content: "Yazılım lisansı"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Hesap"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Dil"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "kişileştirme"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(Değişikliğin geçerli olması için yeniden başlatma gereklidir)"}
+
+i18n[text="Theme"]::before {content: "Tema"}
+i18n[text="Light"]::before {content: "Işık"}
+i18n[text="Blue"]::before {content: "Mavi"}
+i18n[text="Dark"]::before {content: "Karanlık"}
+i18n[text="Auto"]::before {content: "Oto"}
+
+i18n[text="Window Blur"]::before {content: "Pencere Bulanıklığı"}
+i18n[text="Blurry"]::before {content: "Bulanık"}
+i18n[text="Transaprent"]::before {content: "şeffaf"}
+i18n[text="Disabled"]::before {content: "Engelli"}
+
+i18n[text="View"]::before {content: "görüş"}
+i18n[text="Accent Color"]::before {content: "Vurgu Rengi"}
+
+i18n[text="Custom Background"]::before {content: "Özel Arka Plan"}
+i18n[text="Background URL"]::before {content: "Arka Plan URL'si"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Sorun giderme"} /* bu bölüm çevrilmeyecek*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Çıkış Yap"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Yeniden Yükleme Gerekli"}

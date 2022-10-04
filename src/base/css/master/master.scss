@@ -1,5 +1,5 @@
 sidebar {-webkit-app-region: drag !important}
-button, svg, img, i, svg, p, h1, input {-webkit-app-region: no-drag !important;}
+button, svg, img, i, svg, p, h1, input, .modal {-webkit-app-region: no-drag !important;}
 
 body {
     background: var(--primary-background);

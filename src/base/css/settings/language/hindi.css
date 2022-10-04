@@ -1,1 +1,56 @@
 button#ss-language-hindi {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "डैशबोर्ड"}
+i18n[text="Client Area"]::before {content: "क्लाइंट क्षेत्र"}
+i18n[text="Servers Panel"]::before {content: "सर्वर पैनल"}
+i18n[text="Forums"]::before {content: "मंचों"}
+i18n[text="Help Center"]::before {content: "सहायता केंद्र"}
+i18n[text="Settings"]::before {content: "समायोजन"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "के बारे में"}
+
+i18n[text="Versions"]::before {content: "संस्करणों"}
+i18n[text="App Version"]::before {content: "एप्लिकेशन वेरीज़न"}
+i18n[text="Package Version"]::before {content: "पैकेज संस्करण"}
+
+i18n[text="Software License"]::before {content: "सॉफ़्टवेयर लाइसेंस"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "खाता"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "भाषा"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "निजीकरण"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(परिवर्तन को प्रभावी करने के लिए पुनरारंभ करना आवश्यक है)"}
+
+i18n[text="Theme"]::before {content: "थीम"}
+i18n[text="Light"]::before {content: "रोशनी"}
+i18n[text="Blue"]::before {content: "नीला"}
+i18n[text="Dark"]::before {content: "अँधेरा"}
+i18n[text="Auto"]::before {content: "ऑटो"}
+
+i18n[text="Window Blur"]::before {content: "विंडो ब्लर"}
+i18n[text="Blurry"]::before {content: "धुँधली"}
+i18n[text="Transaprent"]::before {content: "पारदर्शक"}
+i18n[text="Disabled"]::before {content: "अक्षम"}
+
+i18n[text="View"]::before {content: "राय"}
+i18n[text="Accent Color"]::before {content: "स्वरोंका रंग"}
+
+i18n[text="Custom Background"]::before {content: "कस्टम पृष्ठभूमि"}
+i18n[text="Background URL"]::before {content: "पृष्ठभूमि URL"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "समस्या निवारण"} /* इस अनुभाग का अनुवाद नहीं किया जाएगा*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "लॉग आउट"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "पुनः लोड आवश्यक"}

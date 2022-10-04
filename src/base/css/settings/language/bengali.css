@@ -1,1 +1,56 @@
 button#ss-language-bengali {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "ড্যাশবোর্ড"}
+i18n[text="Client Area"]::before {content: "ক্লায়েন্ট এলাকা"}
+i18n[text="Servers Panel"]::before {content: "সার্ভার প্যানেল"}
+i18n[text="Forums"]::before {content: "ফোরাম"}
+i18n[text="Help Center"]::before {content: "সাহায্য কেন্দ্র"}
+i18n[text="Settings"]::before {content: "সেটিংস"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "সম্পর্কিত"}
+
+i18n[text="Versions"]::before {content: "সংস্করণ"}
+i18n[text="App Version"]::before {content: "অ্যাপ সংস্করণ"}
+i18n[text="Package Version"]::before {content: "প্যাকেজ সংস্করণ"}
+
+i18n[text="Software License"]::before {content: "সফ্টওয়্যার লাইসেন্স"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "হিসাব"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "ভাষা"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "ব্যক্তিত্ব"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(পরিবর্তন কার্যকর হওয়ার জন্য পুনরায় চালু করা প্রয়োজন)"}
+
+i18n[text="Theme"]::before {content: "থিম"}
+i18n[text="Light"]::before {content: "আলো"}
+i18n[text="Blue"]::before {content: "নীল"}
+i18n[text="Dark"]::before {content: "অন্ধকার"}
+i18n[text="Auto"]::before {content: "অটো"}
+
+i18n[text="Window Blur"]::before {content: "জানালার ঝাপসা"}
+i18n[text="Blurry"]::before {content: "ঝাপসা"}
+i18n[text="Transaprent"]::before {content: "ট্রান্সপ্রেন্ট"}
+i18n[text="Disabled"]::before {content: "অক্ষম"}
+
+i18n[text="View"]::before {content: "দেখুন"}
+i18n[text="Accent Color"]::before {content: "সুরের ধাপের রঙ"}
+
+i18n[text="Custom Background"]::before {content: "কাস্টম ব্যাকগ্রাউন্ড"}
+i18n[text="Background URL"]::before {content: "পটভূমি URL"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "ট্রাবশুটিং"} /* এই বিভাগটি অনুবাদ করা হবে না*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "প্রস্থান"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "পুনরায় লোড প্রয়োজন"}

@@ -1,1 +1,56 @@
 button#ss-language-latvian {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Mērinstrumentu panelis"}
+i18n[text="Client Area"]::before {content: "Klientu zona"}
+i18n[text="Servers Panel"]::before {content: "Serveru panelis"}
+i18n[text="Forums"]::before {content: "Forumi"}
+i18n[text="Help Center"]::before {content: "Palīdzības centrs"}
+i18n[text="Settings"]::before {content: "Iestatījumi"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "Par"}
+
+i18n[text="Versions"]::before {content: "Versijas"}
+i18n[text="App Version"]::before {content: "Lietotnes versija"}
+i18n[text="Package Version"]::before {content: "Pakotnes versija"}
+
+i18n[text="Software License"]::before {content: "Programmatūras licence"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Konts"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Valoda"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "Personifikācija"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(Lai izmaiņas stātos spēkā, ir jārestartē)"}
+
+i18n[text="Theme"]::before {content: "Tēma"}
+i18n[text="Light"]::before {content: "Gaisma"}
+i18n[text="Blue"]::before {content: "Zils"}
+i18n[text="Dark"]::before {content: "Tumšs"}
+i18n[text="Auto"]::before {content: "Auto"}
+
+i18n[text="Window Blur"]::before {content: "Logu aizmiglojums"}
+i18n[text="Blurry"]::before {content: "Izplūdis"}
+i18n[text="Transaprent"]::before {content: "Caurspīdīgs"}
+i18n[text="Disabled"]::before {content: "Atspējots"}
+
+i18n[text="View"]::before {content: "Skatīt"}
+i18n[text="Accent Color"]::before {content: "Akcenta krāsa"}
+
+i18n[text="Custom Background"]::before {content: "Pielāgots fons"}
+i18n[text="Background URL"]::before {content: "Fona URL"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Problēmu novēršana"} /* šī sadaļa netiks tulkota*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Izlogoties"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Nepieciešama atkārtota ielāde"}

@@ -1,1 +1,56 @@
 button#ss-language-russian {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Приборная доска"}
+i18n[text="Client Area"]::before {content: "Клиентская зона"}
+i18n[text="Servers Panel"]::before {content: "Панель серверов"}
+i18n[text="Forums"]::before {content: "Форумы"}
+i18n[text="Help Center"]::before {content: "Центр помощи"}
+i18n[text="Settings"]::before {content: "Настройки"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "О"}
+
+i18n[text="Versions"]::before {content: "Версии"}
+i18n[text="App Version"]::before {content: "Версия приложения"}
+i18n[text="Package Version"]::before {content: "Версия пакета"}
+
+i18n[text="Software License"]::before {content: "Лицензия на программное обеспечение"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Счет"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Язык"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "Персонификация"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(Чтобы изменения вступили в силу, требуется перезагрузка)"}
+
+i18n[text="Theme"]::before {content: "Тема"}
+i18n[text="Light"]::before {content: "Легкий"}
+i18n[text="Blue"]::before {content: "Синий"}
+i18n[text="Dark"]::before {content: "Темный"}
+i18n[text="Auto"]::before {content: "Авто"}
+
+i18n[text="Window Blur"]::before {content: "Размытие окна"}
+i18n[text="Blurry"]::before {content: "Размыто"}
+i18n[text="Transaprent"]::before {content: "Прозрачный"}
+i18n[text="Disabled"]::before {content: "Неполноценный"}
+
+i18n[text="View"]::before {content: "Вид"}
+i18n[text="Accent Color"]::before {content: "Акцентный цвет"}
+
+i18n[text="Custom Background"]::before {content: "Пользовательский фон"}
+i18n[text="Background URL"]::before {content: "Фоновый URL-адрес"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Устранение неполадок"} /* этот раздел не будет переведен*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Выйти"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Требуется перезагрузка"}

@@ -1,1 +1,56 @@
 button#ss-language-portuguese {border: 1px var(--accent) solid;}
+
+/* Sidebar */
+i18n[text="Dashboard"]::before {content: "Painel"}
+i18n[text="Client Area"]::before {content: "Área do cliente"}
+i18n[text="Servers Panel"]::before {content: "Painel de servidores"}
+i18n[text="Forums"]::before {content: "Fóruns"}
+i18n[text="Help Center"]::before {content: "Centro de ajuda"}
+i18n[text="Settings"]::before {content: "Definições"}
+
+/* Modals */
+/** About **/
+i18n[text="About"]::before {content: "Sobre"}
+
+i18n[text="Versions"]::before {content: "Versões"}
+i18n[text="App Version"]::before {content: "Versão do aplicativo"}
+i18n[text="Package Version"]::before {content: "Versão do pacote"}
+
+i18n[text="Software License"]::before {content: "Licença de software"}
+
+/** Account **/
+i18n[text="Account"]::before {content: "Conta"}
+
+/** Language **/
+i18n[text="Language"]::before {content: "Linguagem"}
+
+/** Personilation **/
+i18n[text="Personilation"]::before {content: "Personalização"}
+
+i18n[text="(Restarting is required for change to take effect)"]::before {content: "(A reinicialização é necessária para que a alteração tenha efeito)"}
+
+i18n[text="Theme"]::before {content: "Tema"}
+i18n[text="Light"]::before {content: "Leve"}
+i18n[text="Blue"]::before {content: "Azul"}
+i18n[text="Dark"]::before {content: "Escuro"}
+i18n[text="Auto"]::before {content: "Auto"}
+
+i18n[text="Window Blur"]::before {content: "Desfoque da janela"}
+i18n[text="Blurry"]::before {content: "Embaçado"}
+i18n[text="Transaprent"]::before {content: "Transaprente"}
+i18n[text="Disabled"]::before {content: "Desabilitado"}
+
+i18n[text="View"]::before {content: "Visão"}
+i18n[text="Accent Color"]::before {content: "Cor de destaque"}
+
+i18n[text="Custom Background"]::before {content: "Plano de fundo personalizado"}
+i18n[text="Background URL"]::before {content: "URL de fundo"}
+
+/** Troubeshooting **/
+i18n[text="Troubeshooting"]::before {content: "Solucionando problemas"} /* esta seção não será traduzida*/
+
+/** Log Out **/
+i18n[text="Log Out"]::before {content: "Sair"}
+
+/* Toasts */
+i18n[text="Reload Required"]::before {content: "Recarregar Necessário"}
