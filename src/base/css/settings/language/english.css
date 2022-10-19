@@ -49,8 +49,8 @@ i18n[text="Accent Color"]::before {content: "Accent Color"}
 i18n[text="Custom Background"]::before {content: "Custom Background"}
 i18n[text="Background URL"]::before {content: "Background URL"}
 
-/** Troubeshooting **/
-i18n[text="Troubeshooting"]::before {content: "Troubeshooting"} /* this section won't be translated */
+/** Troubleshooting **/
+i18n[text="Troubleshooting"]::before {content: "Troubleshooting"} /* this section won't be translated */
 
 /** Log Out **/
 i18n[text="Log Out"]::before {content: "Log Out"}

@@ -1,34 +1,3 @@
-# 🛣️ Roadmap
-**v4.0.0** - Design Update
- - Improve warning messages
- - Improve design and layout
- - New Customization Settings:
-   - Username
-   - Background
-   - Tab Controls Position
-   - Notifications Toggle
- - New Dashboard
-   - Glance
-   - Featured Servers
-   - Updates
- - ~~Add VPN Settings (Mullvad Required)~~ (Won't happen)
- - Add Command Menu
- 
-**v4.1.0** - Optimization Update
- - Discontinue Snap Store/Microsoft Store version
- - Improve usage of system resources
- - Minimze file size of executables
- - Match System Preferences
- - Add battery saver; when toggled it will disable blur, animations, certain tabs.
- 
-**4.2.0** - Utilily Update
- - Add tools:
-   - Server Check
-   - Internet Speed Test
-   
-**4.3.0** - Minecraft Launcher Update
- - Add built-in Minecraft Launcher
-
 # FalixNodes Desktop v4
 ![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
 

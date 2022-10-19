@@ -4,7 +4,6 @@
   "description": "Accessing Falix, all from one place",
   "main": "src/process/index.js",
   "author": "KorbsStudio",
-  "license": "MIT",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder build",
