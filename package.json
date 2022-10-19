@@ -1,6 +1,6 @@
 {
   "name": "falixnodes",
-  "version": "4.70.0-beta.2",
+  "version": "4.70.0-beta.3",
   "description": "Accessing Falix, all from one place",
   "main": "src/process/index.js",
   "author": "KorbsStudio",
@@ -16,8 +16,7 @@
     "electron-log": "^4.4.6",
     "electron-updater": "^4.6.5",
     "glasstron-clarity": "^0.1.21",
-    "pushy-electron": "^1.0.9",
-    "x11": "github:KorbsStudio/node-x11"
+    "pushy-electron": "^1.0.9"
   },
   "devDependencies": {
     "concurrently": "^7.3.0",
