@@ -247,19 +247,19 @@ FalixNodes Desktop is provided **"as is"** without any **warranty**. Use at your
 _For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
 
 ## Acknowledgements
- - Creator/Developer: [Korbs Studio](https://github.com/KorbsStudio/)
- - Contributors: 
+ - Creator/Developer: [Korbs Studio](https://korbsstudio.com/)
+ - Past Contributors: 
   [LogicApples](https://github.com/LogicApples/), 
   [Alex](https://github.com/Alex-idk)
 
 ### Frameworks
  - Built on: [ElectronJS](https://electronjs.org/)
- - SCSS: [SASS](https://sass-lang.com/)
+ - Styled with: [SASS](https://sass-lang.com/)
 
 ### Packages Used
- - For Blur composition effect: [Glasstron](https://github.com/NyaomiDEV/Glasstron/)
+ - For Blur composition effect: [Glasstron Clarity](https://code.korbsstudio.com/KorbsStudio/Glasstron-Clarity)
  - Building for distrubtion: [Electron Builder](https://github.com/electron-userland/electron-builder/)
 
 ### 3rd-Party Services
  - Command Menu: [Ninja Keys](https://github.com/ssleptsov/ninja-keys)
- - Push Notifications: [Pushy](https://pushy.me/)
+ - ~~Push Notifications: [Pushy](https://pushy.me/)~~
