@@ -1,3 +1,6 @@
+# This is a fork of FalixNodes Desktop
+This is just a fork. This is not offical copy.
+
 # FalixNodes Desktop v4
 ![image](https://user-images.githubusercontent.com/51213244/156048274-c4eb3840-8b3a-41be-8439-3fedc24f5aa5.png)
 
